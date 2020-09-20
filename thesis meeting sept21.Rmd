@@ -40,7 +40,12 @@ Conduct a meta-analysis on some subsection of the ecological literature with res
     + Community: biomass?, NPP? Other rate based metrics?
 * Potential outcome: a more nuanced understanding of how the type of variation manipulation can drive differential responses across different levels of organization
 
-**Option 2:** Look exclusively at diurnal fluctuations of 3 different environmental variables (temp, pH, salinity) across all levels of organization 
+```{r, echo=FALSE}
+knitr::include_graphics("images/kroeker_fig1.png")
+```
+
+
+**Option 2:** Look exclusively at diurnal fluctuations of 3 different environmental variables (temp, pH, salinity, DO, light, etc.) across all levels of organization 
 
 * Driving question(s):
   + Is there a differential response at different levels of organization to variation in each of these variables 
@@ -51,6 +56,9 @@ Conduct a meta-analysis on some subsection of the ecological literature with res
     + Population: population growth rate, population density, carrying capacity
     + Community: biomass?, NPP? Other rate based metrics?
 * Potential outcome: a better understanding of these metrics that covary may not necessarily covary in their responses to variation across different levels of organization?
+```{r, echo=FALSE}
+knitr::include_graphics("images/kroeker_fig1.png")
+```
 
 
 # Methods

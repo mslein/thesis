@@ -32,7 +32,8 @@ Ha2: Environmental variation alters how rates scale across levels of biological 
 # Methods
 1. I will conduct a series of ISI literature searches to get a hollistic set of studies referencing environmental variation with selected keywords. I will then select studies based on a strict set of criteria and enter those studies into a spreadsheet, recording relevant information (study organism, biological organization level, variation type, response variable, etc.). 
 
-Current search term ideas:
+### Current search term ideas:
+
 * "environmental variability" AND ecology AND temperature (1,281 results)
 * "environmental variability" AND ecology (4049 results)
 * "environmental variability" AND rate AND ecology (1,062 results)

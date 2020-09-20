@@ -1,0 +1,71 @@
+---
+title: "thesis meeting 9/21/20"
+author: "Maggie Slein"
+date: "9/20/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Goals for today's meeting 
+1. Updates to project questions and goals
+2. Updates about ISI search results and terms 
+3. Next steps for implementing methods
+
+# Project updates
+
+Last week we discussed how the second question listed below would be a better thematic guide to approaching this review but less able to address a quantitative question: 
+
+*How is environmental variation (temperature, pH, nutrient composition) systematically studied and manipulated (duration and periodicity) across organismal, population, and community ecology and how does study design influence conclusions about environmental variation compare across these bodies of literature?*
+
+I spent some time reading through the papers that Mary sent as well as looking through Web of Science for any inspiration. I have centered on the following directions for a quantitative project that is a more detailed version of the question I posed last week: 
+
+*Does environmental variation affect how rates scale across levels of biological organization?*
+
+## Overarching goal:
+Conduct a meta-analysis on some subsection of the ecological literature with respect to environmental variation across different levels of organizations
+
+Option 1.	Look exclusively at temperature manipulations across all levels of organization 
+
+*Driving question:*
+
+  + How does the magnitude of temperature response connect across different levels of organization when exposed to different types of temperature variation (diurnal, stochastic, autocorrelated etc.)
+  +	Potential response variables: 
+    + Individual: metabolic rate, TPC 
+    +	Population: population growth rate, population density, carrying capacity
+    + Community: biomass?, NPP? Other rate based metrics?
+  + Potential outcomes: a more nuanced understanding how the type of variation manipulation can influence differential responses across different levels of organization
+
+Option 2: Look exclusively at diurnal fluctuations of 3 different environmental variables (temp, pH, salinity) across all levels of organization 
+
+*Driving question(s):*
+
+  + Is there a differential response at different levels of organization to variation in each of these variables 
+  +	How do non-linear and linear response variables respond to stochastic vs. predictable variation?
+      + look at a couple different environmental variables and how different manipulations of those variables coincides with either linear or non-linear response variables
+  +	Potential response variables:
+      + Individual: metabolic rate, growth rate, respiration rate (MMR)?
+      + Population: population growth rate, population density, carrying capacity
+      + Community: biomass?, NPP? Other rate based metrics?
+  + Potential outcomes: a better understanding of these metrics that covary may not necessarily covary in their responses to variation across different levels of organization?
+3.	Looking at the trade-off between spatial and temporal variation in temperature in marine and aquatic systems
+
+##Methods
+
+I spent some time reading the papers Mary sent as well as several other meta-analyses to draw ideas for how to conduct this meta-analysis. 
+
+I really like the study design from Hackett et al 2013, specifically how they excluded factors that have been demonstrated as important (the effect of earthworms on soil biomass) to isolate the nuanced effects of micro and mega fauna outside of those influential factors. This inspired more attempts to devise a more detailed set of questions and outcomes from my original proposal. 
+
+I was mainly inspired by a review by Kroeker et al 2020 that address the themes in studying environmental variability from mainly an organismal perspective. This paper really addresses a lot of the thoughts Joey's Life paper addressed and I really liked the organization of this paper (really focusing on the importance and motivation behind drivers at different time scales). I would be really interested in asking similar questions with a quantitative lens. This paper focused mainly on predictable variation and wonder how these conclusion might different when compared with unpredictable variation. 
+
+This figure somewhat address what I wanted to accomplish with an NMDS plot, but I think it a good jumping off place for thinking about how to design search terms and contextualize environmental variability bodies of literature
+```{r}
+knitr::include_graphics("images/kroeker_fig1")
+```
+
+
+
+
+

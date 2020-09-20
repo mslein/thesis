@@ -29,6 +29,8 @@ I have centered on the following directions for a quantitative project:
 ## Overarching goal:
 Conduct a meta-analysis on some subsection of the ecological literature with respect to environmental variation across different levels of organizations
 
+\newpage
+
 **Option 1.**	Look exclusively at how temperature manipulations alter ecological rates across all levels of organization
 
 * Driving question:
@@ -41,9 +43,10 @@ Conduct a meta-analysis on some subsection of the ecological literature with res
 * Potential outcome: a more nuanced understanding of how the type of variation manipulation can drive differential responses across different levels of organization
 
 ```{r, echo=FALSE}
-knitr::include_graphics("images/kroeker_fig1.png")
+knitr::include_graphics("images/option1_projprop.png")
 ```
 
+\newpage
 
 **Option 2:** Look exclusively at diurnal fluctuations of 3 different environmental variables (temp, pH, salinity, DO, light, etc.) across all levels of organization 
 
@@ -56,10 +59,11 @@ knitr::include_graphics("images/kroeker_fig1.png")
     + Population: population growth rate, population density, carrying capacity
     + Community: biomass?, NPP? Other rate based metrics?
 * Potential outcome: a better understanding of these metrics that covary may not necessarily covary in their responses to variation across different levels of organization?
-```{r, echo=FALSE}
-knitr::include_graphics("images/kroeker_fig1.png")
-```
 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/option2_projprop.png")
+```
 
 # Methods
 
@@ -69,11 +73,7 @@ I really like the study design from Hackett et al 2013, specifically how they ex
 
 I was mainly inspired by a review by Kroeker et al 2020 that addressed themes in studying environmental variability from mainly an organismal perspective. This paper really referenced a lot of the thoughts Joey's Life paper addressed and I really liked the organization of this paper (really focusing on the importance and motivation behind drivers at different time scales). I would be really interested in asking similar questions with a quantitative lens. This paper focused mainly on predictable variation and I wonder how these conclusions might differ when compared with unpredictable variation. 
 
-Figure 1 somewhat addresses what I wanted to accomplish with an NMDS plot, but I think it a good jumping off place for thinking about how to design search terms and contextualize environmental variability bodies of literature
-
-```{r, fig.width=5, fig.height=5, echo=FALSE}
-knitr::include_graphics("images/kroeker_fig1.png")
-```
+Figure 1 in Kroeker et al 2020 somewhat addresses what I wanted to accomplish with an NMDS plot, but I think it is a good jumping off place for thinking about how to design search terms and contextualize environmental variability bodies of literature
 
 I conducted several advanced ISI searches to no avail, ending up with many more hits than my basic search, even when restricting by year and three specific journals:
 
@@ -91,11 +91,12 @@ Search language=Auto  *(11,242)*
 5. TS=( "environmental variation" AND temperature AND rates AND diurnal OR circadian) OR SO=(JOURNAL OF ANIMAL ECOLOGY OR JOURNAL OF ANIMAL ECOLOGY OR THE JOURNAL OF ANIMAL ECOLOGY OR THE JOURNAL OF ANIMAL ECOLOGY) OR SO=(FRESHWATER ECOLOGY) OR SO=(ECOLOGY LETTERS OR ECOLOGY LETTERS) AND PY=(1970-2020) OR AK=("variable environments")
 *(276,317)*
 
+
+\newpage
 # Next steps and questions 
 * Is the world predicted to become more variable or more autocorrelated? 
     + And if the answer is both, how do they interact? 
     + Is it that while the world will become more like its surrounding conditions, those conditions will increase in amplitude or become more severe?
-
 * How do I properly use ISI advanced searches to get narrower results?
 * How do I accumulate the right amount of keywords to accomplish this?
 * What is the right scope for the two proposed detailed questions for this thesis project?

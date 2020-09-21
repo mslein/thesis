@@ -24,7 +24,7 @@ I spent some time reading through the papers that Mary sent as well as looking t
 
 *Does environmental variation affect how rates scale across levels of biological organization?*
 
-I have centered on the following directions for a quantitative project:
+I have centered on the following potential directions for a quantitative project:
 
 ## Overarching goal:
 Conduct a meta-analysis on some subsection of the ecological literature with respect to environmental variation across different levels of organizations

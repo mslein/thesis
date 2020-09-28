@@ -1,0 +1,51 @@
+---
+title: "Thesis"
+author: "Maggie Slein"
+date: "9/28/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Goals for today's meeting
+1. Discuss figure(s) from preliminary extraction 
+2. Outline extract methods and binning
+3. Next steps for conducting hollistic search terms 
+
+
+###Study selection 
+
+Khelifa et al 2019
+
+I really enjoy this paper and feel that its figures and methods are very straightforward. I'd like my final figure to ultimately look like this 
+
+```{r}
+knitr::include_graphics("khelifa-fig2.png")
+```
+
+
+
+
+```{r, echo= FALSE}
+library(tidyverse)
+extract<-read_csv("prelim_extact.csv")
+names(extract)
+
+ggplot(extract, aes(x=org_level, y=cohen_d, color=fluctuation_pattern))+
+  geom_boxplot()+
+  theme_classic()+
+  ggtitle("Cohen D values for effect of flux patterns across different levels of organization")
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

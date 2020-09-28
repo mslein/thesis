@@ -1,0 +1,78 @@
+---
+title: "Thesis meeting"
+author: "Maggie Slein"
+date: "9/28/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Goals for today's meeting
+1. Discuss figure(s) from preliminary extraction 
+2. Outline extract methods and binning
+3. Next steps for conducting hollistic search terms 
+
+
+## Study selection 
+
+### Khelifa et al 2019
+
+I really enjoy this paper and feel that its figures and methods are very straightforward. I'd like my final figure to ultimately look like this (Figure 2). I extracted all the data from this figure in my composite figure beyond. 
+
+```{r, echo=FALSE}
+knitr::include_graphics("meeting materials/images/khelifa-fig2.png")
+```
+\newpage
+
+### Petchey et al 2002
+
+I wanted to include a study that feature community level responses to colored environmental variation and I settled on this one. Admittedly the papers I looked at this summer had fewer color maniupulations of temperature than I anticipated. They often manipulated other independent variables (resource concentration, dispersal etc). 
+
+I extracted that data for this study from Figure 3a, though I am not quite sure how I should have binned it. I extracted each of the data points for each treatment (fast--white, slow--red, and constant). However, I wasn't sure how to make sense of the x-axis which seems to be species richness, I assume it means how many organisms were in a given community since they varied community composition from 2 to 8 species. I ended up just taking the average of the data points and excluding community composition (this doesn't seem quite right) since I wasn't sure how to delineate this in the figure. 
+
+```{r, echo= FALSE}
+knitr::include_graphics("meeting materials/images/petchey2002_fig3a.png")
+```
+
+\newpage
+
+### Joshi et al 1996 
+
+I also seemed to struggle to find individual level studies that seemed easily wrangle-able. I landed on Joshi et al 1996 from my pre-existing library. I wasn't quite sure how to bin the sex differentiation between flux treatments and response variables, so I just ended up including them. I wasn't sure if I should just average the response and SE for both?
+
+```{r, echo = FALSE }
+knitr::include_graphics("meeting materials/images/joshi_tab1.png")
+```
+\newpage
+
+## Preliminary Results
+
+```{r, echo= FALSE, message= FALSE, results='hide'}
+library(tidyverse)
+extract<-read_csv("prelim_extact.csv")
+names(extract)
+
+ggplot(extract, aes(x=org_level, y=cohen_d, color=fluctuation_pattern))+
+  geom_boxplot()+
+  theme_classic()+
+  ggtitle("Cohen D values for effect of flux patterns across different levels of organization")
+```
+
+## Current concerns and questions about selecting studies:
+
+1. Hard to find studies that are very explicit about their variation regime and I’m not sure if I should be binning diurnal cycles that are sinusoidal or square in their pattern into different groups 
+2. How should I bin diurnal cycles that vary in amplitude?
+3. How should I be calculating effect size?
+    * Should I split Petchey et al Figure by community composition number?
+4. SD vs SE? Should these be treated differently and if so, how?
+5. I’m now thinking about whether it would be good to section off time series data (like population density over time, or biomass over time) and mean effect sizes (an aggregate of all time series as well as just effect sizes listed in study)
+
+
+
+
+
+
+
+

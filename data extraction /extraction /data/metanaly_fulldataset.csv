@@ -87,40 +87,40 @@
 15,glass2019,figure 2b,0,1,1,,28,23,33,24,"testes mass, dry",mg,8.165975104,1,,0,0.67219917,Gryllus ,firmus,1,1,1,,,,food availability ,high  ,morph ,short winged,,,
 15,glass2019,figure 2b,0,0,,,28,28,28,,"testes mass, dry",mg,9.958506224,1,,0,0.423236515,Gryllus ,firmus,1,1,1,,,,food availability ,high  ,morph ,long winged,,,
 15,glass2019,figure 2b,0,0,,,28,28,28,,"testes mass, dry",mg,8.315352697,1,,0,0.746887967,Gryllus ,firmus,1,1,1,,,,food availability ,high  ,morph ,short winged,,,
-16,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,90.79,0,,0,0.72,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,115.55,0,,0,0.86,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,338.24,0,,0,7.41,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,320.95,0,,0,5.4,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,12.44,0,,0,0.1,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,12.46,0,,0,0.1,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,26.2,0,,0,0.3,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-16,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,25.12,0,,0,0.25,Limnodynastes,peronii,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,156.43,0,,0,1.1,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,200.93,0,,0,0.65,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,463.13,0,,0,8.92,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,370.12,0,,0,9.24,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,14.16,0,,0,0.12,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,13.46,0,,0,0.13,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,28.03,0,,0,0.24,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-17,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,24.1,0,,0,0.25,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,29.75,0,,0,0.38,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,25.6,0,,0,0.33,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,28,18,38,24,development to stages 35-37,days ,25.74,0,,0,0.46,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,243.26,0,,0,6.16,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,182.66,0,,0,4.62,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,28,18,38,24,body mass,g ,140.45,0,,0,3.6,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,11.48,0,,0,0.12,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,10.46,0,,0,0.11,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,28,18,38,24,body length,mm,9.67,0,,0,0.09,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,19.77,0,,0,0.21,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,17.78,0,,0,0.22,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-18,kern_2015phys,table 1,0,1,1,,28,18,38,24,tail length,mm,17.02,0,,0,0.2,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
-19,kern_2015plasticity ,figure 1,0,0,,,18,18,18,,survival ,percent,92.11195929,1,12,0,2.162849873,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
-19,kern_2015plasticity ,figure 1,0,0,,,18,18,18,,survival ,percent,89.3129771,1,12,0,5.979643766,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
-20,kern_2015plasticity ,figure 1,0,1,1,,23,18,28,24,survival ,percent,83.4605598,1,12,0,6.361323155,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
-20,kern_2015plasticity ,figure 1,0,1,1,,23,18,28,24,survival ,percent,80.91603053,1,12,0,6.997455471,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
-21,kern_2015plasticity ,figure 1,0,0,,,28,28,28,,survival ,percent,80.91603053,1,12,0,4.071246819,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
-21,kern_2015plasticity ,figure 1,0,0,,,28,28,28,,survival ,percent,67.68447837,1,12,0,6.997455471,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
+16,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,90.79,0,7,0,0.72,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,115.55,0,7,0,0.86,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,338.24,0,7,0,7.41,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,320.95,0,7,0,5.4,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,12.44,0,7,0,0.1,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,12.46,0,7,0,0.1,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,26.2,0,7,0,0.3,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+16,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,25.12,0,7,0,0.25,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,156.43,0,7,0,1.1,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,200.93,0,7,0,0.65,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,463.13,0,7,0,8.92,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,370.12,0,7,0,9.24,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,14.16,0,7,0,0.12,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,13.46,0,7,0,0.13,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,28.03,0,7,0,0.24,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+17,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,24.1,0,7,0,0.25,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,0,,,24,24,24,,development to stages 35-37,days ,29.75,0,7,0,0.38,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,25,20,30,24,development to stages 35-37,days ,25.6,0,7,0,0.33,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,28,18,38,24,development to stages 35-37,days ,25.74,0,7,0,0.46,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,0,,,24,24,24,,body mass,g ,243.26,0,7,0,6.16,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,25,20,30,24,body mass,g ,182.66,0,7,0,4.62,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,28,18,38,24,body mass,g ,140.45,0,7,0,3.6,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,0,,,24,24,24,,body length,mm,11.48,0,7,0,0.12,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,25,20,30,24,body length,mm,10.46,0,7,0,0.11,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,28,18,38,24,body length,mm,9.67,0,7,0,0.09,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,0,,,24,24,24,,tail length,mm,19.77,0,7,0,0.21,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,25,20,30,24,tail length,mm,17.78,0,7,0,0.22,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+18,kern_2015phys,table 1,0,1,1,,28,18,38,24,tail length,mm,17.02,0,7,0,0.2,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+19,kern_2015plasticity ,figure 1,1,0,,,18,18,18,,survival ,percent,92.11195929,1,12,0,2.162849873,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
+19,kern_2015plasticity ,figure 1,1,0,,,18,18,18,,survival ,percent,89.3129771,1,12,0,5.979643766,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
+20,kern_2015plasticity ,figure 1,1,1,1,,23,18,28,24,survival ,percent,83.4605598,1,12,0,6.361323155,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
+20,kern_2015plasticity ,figure 1,1,1,1,,23,18,28,24,survival ,percent,80.91603053,1,12,0,6.997455471,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
+21,kern_2015plasticity ,figure 1,1,0,,,28,28,28,,survival ,percent,80.91603053,1,12,0,4.071246819,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
+21,kern_2015plasticity ,figure 1,1,0,,,28,28,28,,survival ,percent,67.68447837,1,12,0,6.997455471,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
 22,kern_2015plasticity ,figure 2,0,0,,,18,18,18,,CT max,C,38.47718348,1,12,0,0.123569794,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
 22,kern_2015plasticity ,figure 2,0,0,,,18,18,18,,CT max,C,38.89969637,1,12,0,0.169336384,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV presence,,,,,
 23,kern_2015plasticity ,figure 2,0,1,1,,23,18,28,24,CT max,C,40.29342261,1,12,0,0.068649886,Limnodynastes,peronii,1,1,2,,,,UV exposure,UV absence,,,,,
@@ -130,9 +130,9 @@
 25,maneti2014,figure 2a,0,0,,23,23,23,23,,productivity,offspring/female,78.12,1,20,0,2.16,Drosophila ,simulans,1,1,1,,,,,,,,,,
 25,maneti2014,figure 2a,0,2,1,23,23,13,28,24,productivity,offspring/female,70.56,1,20,0,2.7,Drosophila ,simulans,1,1,1,,,,,,,,,,
 25,maneti2014,figure 2a,0,3,1,23,23,13,28,24,productivity,offspring/female,72.84,1,20,0,2.4,Drosophila ,simulans,1,1,1,,,,,,,,,,
-26,maneti2014,figure 2c,0,0,,23,23,23,23,,egg to adult viability ,percent,70.90687473,1,20,0,2.389558233,Drosophila ,simulans,1,1,1,,,,,,,,,,
-26,maneti2014,figure 2c,0,2,1,23,23,13,28,24,egg to adult viability ,percent,71.96135094,1,20,0,3.092369478,Drosophila ,simulans,1,1,1,,,,,,,,,,
-26,maneti2014,figure 2c,0,3,1,23,23,13,28,24,egg to adult viability ,percent,82.01181108,1,20,0,3.092369478,Drosophila ,simulans,1,1,1,,,,,,,,,,
+26,maneti2014,figure 2c,1,0,,23,23,23,23,,egg to adult viability ,percent,70.90687473,1,20,0,2.389558233,Drosophila ,simulans,1,1,1,,,,,,,,,,
+26,maneti2014,figure 2c,1,2,1,23,23,13,28,24,egg to adult viability ,percent,71.96135094,1,20,0,3.092369478,Drosophila ,simulans,1,1,1,,,,,,,,,,
+26,maneti2014,figure 2c,1,3,1,23,23,13,28,24,egg to adult viability ,percent,82.01181108,1,20,0,3.092369478,Drosophila ,simulans,1,1,1,,,,,,,,,,
 27,maneti2014,figure 2e,0,0,,23,23,23,23,,developmental time,days ,10.2313253,1,20,0,0.014457831,Drosophila ,simulans,1,1,1,,,,,,,,,,
 27,maneti2014,figure 2e,0,2,1,23,23,13,28,24,developmental time,days ,11.0939759,1,20,0,0.01686747,Drosophila ,simulans,1,1,1,,,,,,,,,,
 27,maneti2014,figure 2e,0,3,1,23,23,13,28,24,developmental time,days ,10.04819277,1,20,0,0.019277108,Drosophila ,simulans,1,1,1,,,,,,,,,,
@@ -145,145 +145,383 @@
 30,maneti2014,figure 2h ,0,0,,23,23,23,23,,startvation tolerance,time to  death (hour),4.001205617,1,20,0,0.059459459,Drosophila ,simulans,1,1,1,,,,,,,,,,
 30,maneti2014,figure 2h ,0,2,1,23,23,13,28,24,startvation tolerance,time to  death (hour),4.017421834,1,20,0,0.057657658,Drosophila ,simulans,1,1,1,,,,,,,,,,
 30,maneti2014,figure 2h ,0,3,1,23,23,13,28,24,startvation tolerance,time to  death (hour),3.810227875,1,20,0,0.05586248,Drosophila ,simulans,1,1,1,,,,,,,,,,
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.086286595,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,1.97309417,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.468412943,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,4.962630792,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.084745763,1,,0,0.474576271,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,6.980568012,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.972265023,1,,0,0.677966102,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,8.923766816,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,7.050847458,1,,0,1.251155624,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,11.95067265,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,7.198767334,1,,0,0.986132512,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,13.96860987,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,4.191063174,1,,0,0.788906009,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.94917788,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,5.029275809,1,,0,0.665639445,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.97608371,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,2.859784284,1,,0,0.523882897,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.95665172,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.838212635,1,,0,0.215716487,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.97458894,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.838212635,1,,0,0.2403698,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96412556,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.468412943,1,,0,0.197226502,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.98206278,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.234206471,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9715994,days after feeding 
-31,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.98953662,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.295839753,1,,0,1.97309417,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,1.97309417,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.024653313,1,,0,4.962630792,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,4.962630792,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.295839753,1,,0,6.980568012,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,6.980568012,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.208012327,1,,0,8.961136024,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,8.961136024,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,5.177195686,1,,0,11.98804185,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,11.98804185,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,4.733436055,1,,0,13.93124066,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,13.93124066,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.588597843,1,,0,15.94917788,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.94917788,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.588597843,1,,0,18.9387145,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.9387145,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.144838213,1,,0,20.95665172,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.95665172,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.714946071,1,,0,22.97458894,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.97458894,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.320493066,1,,0,25.96412556,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96412556,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.098613251,1,,0,27.98206278,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.98206278,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.024653313,1,,0,30.9715994,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9715994,days after feeding 
-32,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.073959938,1,,0,32.91479821,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.91479821,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,1.97309417,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.07395994,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.962630792,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,6.980568012,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.02465331,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,8.923766816,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.12326656,1,,0,0.123266564,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,11.91330344,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.07395994,1,,0,0.086286595,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,13.96860987,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.12326656,1,,0,0.073959938,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,15.94917788,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,0.110939908,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.9387145,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.01078582,1,,0,0.406779661,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,20.95665172,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,2.16949153,1,,0,0.758089368,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.97458894,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.65177196,1,,0,0.647149461,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,25.96412556,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.7257319,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.98206278,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.52850539,1,,0,0.530046225,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9715994,days after feeding 
-33,rolandi2018,figure 2a,0,,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.25731895,1,,0,0.560862866,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.98953662,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,1.97309417,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.962630792,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,6.980568012,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,8.998505232,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.123266564,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,11.91330344,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.591679507,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,13.93124066,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.961479199,1,,0,0.468412943,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,15.94917788,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.06009245,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.9387145,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.602465331,1,,0,0.554699538,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,20.95665172,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.1201849,1,,0,0.567026194,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.97458894,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.725731895,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,25.96412556,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.06009245,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.90732436,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.419106317,1,,0,0.197226502,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9715994,days after feeding 
-34,rolandi2018,figure 2a,1,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,-0.012326656,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.95216741,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.054762784,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,2.078618074,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.62201968,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,5.034497244,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,1.646473261,1,,0,0.663263618,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,7.016752167,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,3.691408786,1,,0,1.071425844,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,9.035159184,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,10.7383174,1,,0,1.683669183,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,12.02038011,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,17.88528075,1,,0,2.040811131,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,14.03242232,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,22.07299159,1,,0,2.193871966,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,16.01073106,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,27.18112963,1,,0,2.295912522,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.99837061,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,30.04231322,1,,0,2.397953079,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.9783342,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,30.86260932,1,,0,2.37244294,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.92341866,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,31.73614064,1,,0,2.321422661,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.95376606,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.19937116,1,,0,2.244892244,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.93672111,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.40956248,1,,0,2.244892244,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.93047087,days after feeding 
-35,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.56667133,1,,0,2.219420294,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.91380781,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.105630307,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,2.003704317,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.315974388,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,5.072304187,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.626220451,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,7.092875237,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,1.854678768,1,,0,0.510202783,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,9.037450514,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,7.013913464,1,,0,1.301017096,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,12.06245147,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,11.76284736,1,,0,1.632648905,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,14.04006008,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,14.41987347,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.98285321,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,16.97707397,1,,0,1.938808763,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,19.01110022,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,19.12397368,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.99195489,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,19.84230559,1,,0,2.142813498,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.9745917,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.15453747,1,,0,2.142813498,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96821416,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.26062604,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.95161475,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.26673626,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9456191,days after feeding 
-36,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.37290121,1,,0,2.117341548,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.96644475,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.207670863,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,2.003577021,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.213857454,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,5.035006428,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.218058225,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,7.093384422,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.222029864,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,9.039487251,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.330180633,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,12.03336431,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.436345583,1,,0,0.255101391,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,14.05418995,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.542357778,1,,0,0.357141948,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,16.00016548,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.752549104,1,,0,0.30612167,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.99391525,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,1.777079064,1,,0,0.663263618,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,21.01359522,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,3.924055145,1,,0,1.326527235,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,23.03187494,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,5.664854819,1,,0,1.530608348,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,26.02371526,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,7.301475362,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.96778136,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,8.736153366,1,,0,1.938770574,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.96000356,days after feeding 
-37,rolandi2018,figure 2b,0,,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,10.066805,1,,0,2.091831409,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.97930165,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.105935817,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,2.153404534,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,-0.041320315,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.997899614,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,-0.037119544,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,7.056277607,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.017948751,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,9.039741844,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.228140077,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,12.0334916,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.946548366,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,14.05355347,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,1.715900556,1,,0,0.688811945,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,16.03612663,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,2.793360235,1,,0,1.096897794,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.99136932,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,4.328092977,1,,0,1.377547513,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,21.01041282,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,6.47499268,1,,0,1.581628626,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.99126749,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,8.113828176,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,26.02066016,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.240245936,1,,0,1.73472765,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.96536273,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.552477819,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9589852,days after feeding 
-38,rolandi2018,figure 2b,1,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.556602212,1,,0,1.836730018,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.97993813,days after feeding 
-39,simonici,table 1,0,,,,31,31,31,,percent females,percent,100,0,18,0,0,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-39,simonici,table 1,0,,,,31,31,31,,incubation period,days ,75.6,0,18,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-39,simonici,table 1,0,,,,31,31,31,,hatching success,percent,71,0,18,0,5,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-39,simonici,table 1,0,,,,31,31,31,,total length ,cm ,24.2,0,18,0,0.2,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-39,simonici,table 1,0,,,,31,31,31,,mass ,g ,51.6,0,18,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-40,simonici,table 1,1,1,1,,31,29,33,24,percent females,percent,89.4,0,27,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-40,simonici,table 1,1,1,1,,31,29,33,24,incubation period,days ,74.9,0,27,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-40,simonici,table 1,1,1,1,,31,29,33,24,hatching success,percent,83,0,27,0,4,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-40,simonici,table 1,1,1,1,,31,29,33,24,total length ,cm ,24.9,0,27,0,0.5,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-40,simonici,table 1,1,1,1,,31,29,33,24,mass ,g ,51.4,0,27,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
-41,simonici,table 1,0,,,,32,32,32,,percent females,percent,71.6,0,25,0,10,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-41,simonici,table 1,0,,,,32,32,32,,incubation period,days ,71.4,0,25,0,0.4,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-41,simonici,table 1,0,,,,32,32,32,,hatching success,percent,85,0,25,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-41,simonici,table 1,0,,,,32,32,32,,total length ,cm ,22.2,0,25,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-41,simonici,table 1,0,,,,32,32,32,,mass ,g ,44.3,0,25,0,0.7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-42,simonici,table 1,1,1,1,,32,31,33,24,percent females,percent,65,0,21,0,11,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-42,simonici,table 1,1,1,1,,32,31,33,24,incubation period,days ,71.8,0,21,0,0.4,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-42,simonici,table 1,1,1,1,,32,31,33,24,hatching success,percent,52.5,0,21,0,8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-42,simonici,table 1,1,1,1,,32,31,33,24,total length ,cm ,20.3,0,21,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-42,simonici,table 1,1,1,1,,32,31,33,24,mass ,g ,37.3,0,21,0,0.7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-43,simonici,table 1,1,1,1,,32,30,34,24,percent females,percent,84,0,26,0,7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-43,simonici,table 1,1,1,1,,32,30,34,24,incubation period,days ,70.6,0,26,0,0.6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-43,simonici,table 1,1,1,1,,32,30,34,24,hatching success,percent,62,0,26,0,8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-43,simonici,table 1,1,1,1,,32,30,34,24,total length ,cm ,20.3,0,26,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-43,simonici,table 1,1,1,1,,32,30,34,24,mass ,g ,37.9,0,26,0,0.8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-44,simonici,table 1,0,,,,33,33,33,,percent females,percent,0,0,34,0,0,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-44,simonici,table 1,0,,,,33,33,33,,incubation period,days ,69.1,0,34,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-44,simonici,table 1,0,,,,33,33,33,,hatching success,percent,85.6,0,34,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-44,simonici,table 1,0,,,,33,33,33,,total length ,cm ,22,0,34,0,0.2,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
-44,simonici,table 1,0,,,,33,33,33,,mass ,g ,42.2,0,34,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.086286595,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,1.97309417,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.468412943,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,4.962630792,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.084745763,1,,0,0.474576271,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,6.980568012,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.972265023,1,,0,0.677966102,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,8.923766816,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,7.050847458,1,,0,1.251155624,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,11.95067265,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,7.198767334,1,,0,0.986132512,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,13.96860987,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,4.191063174,1,,0,0.788906009,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.94917788,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,5.029275809,1,,0,0.665639445,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.97608371,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,2.859784284,1,,0,0.523882897,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.95665172,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.838212635,1,,0,0.215716487,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.97458894,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.838212635,1,,0,0.2403698,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96412556,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.468412943,1,,0,0.197226502,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.98206278,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.234206471,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9715994,days after feeding 
+31,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.98953662,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.295839753,1,,0,1.97309417,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,1.97309417,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.024653313,1,,0,4.962630792,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,4.962630792,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.295839753,1,,0,6.980568012,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,6.980568012,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.208012327,1,,0,8.961136024,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,8.961136024,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,5.177195686,1,,0,11.98804185,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,11.98804185,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,4.733436055,1,,0,13.93124066,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,13.93124066,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.588597843,1,,0,15.94917788,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.94917788,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.588597843,1,,0,18.9387145,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.9387145,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.144838213,1,,0,20.95665172,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.95665172,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.714946071,1,,0,22.97458894,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.97458894,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.320493066,1,,0,25.96412556,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96412556,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.098613251,1,,0,27.98206278,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.98206278,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.024653313,1,,0,30.9715994,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9715994,days after feeding 
+32,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.073959938,1,,0,32.91479821,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.91479821,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,1.97309417,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.07395994,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.962630792,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,6.980568012,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.02465331,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,8.923766816,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.12326656,1,,0,0.123266564,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,11.91330344,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.07395994,1,,0,0.086286595,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,13.96860987,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.12326656,1,,0,0.073959938,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,15.94917788,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,0.17257319,1,,0,0.110939908,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.9387145,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.01078582,1,,0,0.406779661,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,20.95665172,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,2.16949153,1,,0,0.758089368,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.97458894,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.65177196,1,,0,0.647149461,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,25.96412556,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.7257319,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.98206278,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.52850539,1,,0,0.530046225,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9715994,days after feeding 
+33,rolandi2018,figure 2a,0,0,,,24,24,24,,average number of eggs laid per female,eggs laid ,1.25731895,1,,0,0.560862866,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.98953662,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,1.97309417,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.962630792,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,6.980568012,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,8.998505232,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.123266564,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,11.91330344,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.591679507,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,13.93124066,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.961479199,1,,0,0.468412943,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,15.94917788,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.06009245,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.9387145,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.602465331,1,,0,0.554699538,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,20.95665172,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,2.1201849,1,,0,0.567026194,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.97458894,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.725731895,1,,0,0.456086287,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,25.96412556,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,1.06009245,1,,0,0.246533128,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.90732436,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,0.419106317,1,,0,0.197226502,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9715994,days after feeding 
+34,rolandi2018,figure 2a,0,1,1,,24,17,32,24,average number of eggs laid per female,eggs laid ,-0.012326656,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.95216741,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.054762784,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,2.078618074,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.62201968,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,5.034497244,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,1.646473261,1,,0,0.663263618,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,7.016752167,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,3.691408786,1,,0,1.071425844,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,9.035159184,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,10.7383174,1,,0,1.683669183,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,12.02038011,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,17.88528075,1,,0,2.040811131,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,14.03242232,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,22.07299159,1,,0,2.193871966,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,16.01073106,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,27.18112963,1,,0,2.295912522,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,18.99837061,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,30.04231322,1,,0,2.397953079,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.9783342,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,30.86260932,1,,0,2.37244294,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.92341866,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,31.73614064,1,,0,2.321422661,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.95376606,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.19937116,1,,0,2.244892244,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.93672111,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.40956248,1,,0,2.244892244,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.93047087,days after feeding 
+35,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,32.56667133,1,,0,2.219420294,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.91380781,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.105630307,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,2.003704317,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.315974388,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,5.072304187,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.626220451,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,7.092875237,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,1.854678768,1,,0,0.510202783,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,9.037450514,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,7.013913464,1,,0,1.301017096,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,12.06245147,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,11.76284736,1,,0,1.632648905,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,14.04006008,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,14.41987347,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,15.98285321,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,16.97707397,1,,0,1.938808763,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,19.01110022,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,19.12397368,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,20.99195489,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,19.84230559,1,,0,2.142813498,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,22.9745917,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.15453747,1,,0,2.142813498,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,25.96821416,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.26062604,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,27.95161475,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.26673626,1,,0,2.168361826,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,30.9456191,days after feeding 
+36,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,20.37290121,1,,0,2.117341548,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,mated females,,,,32.96644475,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.207670863,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,2.003577021,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.213857454,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,5.035006428,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.218058225,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,7.093384422,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.222029864,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,9.039487251,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.330180633,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,12.03336431,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.436345583,1,,0,0.255101391,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,14.05418995,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.542357778,1,,0,0.357141948,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,16.00016548,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,0.752549104,1,,0,0.30612167,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.99391525,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,1.777079064,1,,0,0.663263618,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,21.01359522,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,3.924055145,1,,0,1.326527235,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,23.03187494,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,5.664854819,1,,0,1.530608348,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,26.02371526,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,7.301475362,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.96778136,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,8.736153366,1,,0,1.938770574,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.96000356,days after feeding 
+37,rolandi2018,figure 2b,0,0,,,24,24,24,,average cumulative number of eggs laid per female,eggs laid ,10.066805,1,,0,2.091831409,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.97930165,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.105935817,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,2.153404534,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,-0.041320315,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,4.997899614,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,-0.037119544,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,7.056277607,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.017948751,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,9.039741844,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.228140077,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,12.0334916,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,0.946548366,1,,0,,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,14.05355347,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,1.715900556,1,,0,0.688811945,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,16.03612663,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,2.793360235,1,,0,1.096897794,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,18.99136932,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,4.328092977,1,,0,1.377547513,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,21.01041282,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,6.47499268,1,,0,1.581628626,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,22.99126749,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,8.113828176,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,26.02066016,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.240245936,1,,0,1.73472765,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,27.96536273,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.552477819,1,,0,1.785709739,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,30.9589852,days after feeding 
+38,rolandi2018,figure 2b,0,1,1,,24,17,32,24,average cumulative number of eggs laid per female,eggs laid ,9.556602212,1,,0,1.836730018,Rhodnius,prolixus,1,2,1,,,,sexual maturity ,virgin females,,,,32.97993813,days after feeding 
+39,simonici2019,table 1,1,0,,,31,31,31,,percent females,percent,100,0,18,0,0,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+39,simonici2019,table 1,0,0,,,31,31,31,,incubation period,days ,75.6,0,18,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+39,simonici2019,table 1,1,0,,,31,31,31,,hatching success,percent,71,0,18,0,5,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+39,simonici2019,table 1,0,0,,,31,31,31,,total length ,cm ,24.2,0,18,0,0.2,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+39,simonici2019,table 1,0,0,,,31,31,31,,mass ,g ,51.6,0,18,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+40,simonici2019,table 1,1,1,1,,31,29,33,24,percent females,percent,89.4,0,27,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+40,simonici2019,table 1,0,1,1,,31,29,33,24,incubation period,days ,74.9,0,27,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+40,simonici2019,table 1,1,1,1,,31,29,33,24,hatching success,percent,83,0,27,0,4,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+40,simonici2019,table 1,0,1,1,,31,29,33,24,total length ,cm ,24.9,0,27,0,0.5,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+40,simonici2019,table 1,0,1,1,,31,29,33,24,mass ,g ,51.4,0,27,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,first year,,,,,
+41,simonici2019,table 1,1,0,,,32,32,32,,percent females,percent,71.6,0,25,0,10,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+41,simonici2019,table 1,0,0,,,32,32,32,,incubation period,days ,71.4,0,25,0,0.4,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+41,simonici2019,table 1,1,0,,,32,32,32,,hatching success,percent,85,0,25,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+41,simonici2019,table 1,0,0,,,32,32,32,,total length ,cm ,22.2,0,25,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+41,simonici2019,table 1,0,0,,,32,32,32,,mass ,g ,44.3,0,25,0,0.7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+42,simonici2019,table 1,1,1,1,,32,31,33,24,percent females,percent,65,0,21,0,11,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+42,simonici2019,table 1,0,1,1,,32,31,33,24,incubation period,days ,71.8,0,21,0,0.4,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+42,simonici2019,table 1,1,1,1,,32,31,33,24,hatching success,percent,52.5,0,21,0,8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+42,simonici2019,table 1,0,1,1,,32,31,33,24,total length ,cm ,20.3,0,21,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+42,simonici2019,table 1,0,1,1,,32,31,33,24,mass ,g ,37.3,0,21,0,0.7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+43,simonici2019,table 1,1,1,1,,32,30,34,24,percent females,percent,84,0,26,0,7,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+43,simonici2019,table 1,0,1,1,,32,30,34,24,incubation period,days ,70.6,0,26,0,0.6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+43,simonici2019,table 1,1,1,1,,32,30,34,24,hatching success,percent,62,0,26,0,8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+43,simonici2019,table 1,0,1,1,,32,30,34,24,total length ,cm ,20.3,0,26,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+43,simonici2019,table 1,0,1,1,,32,30,34,24,mass ,g ,37.9,0,26,0,0.8,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+44,simonici2019,table 1,1,0,,,33,33,33,,percent females,percent,0,0,34,0,0,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+44,simonici2019,table 1,0,0,,,33,33,33,,incubation period,days ,69.1,0,34,0,0.3,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+44,simonici2019,table 1,1,0,,,33,33,33,,hatching success,percent,85.6,0,34,0,6,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+44,simonici2019,table 1,0,0,,,33,33,33,,total length ,cm ,22,0,34,0,0.2,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+44,simonici2019,table 1,0,0,,,33,33,33,,mass ,g ,42.2,0,34,0,1,Caiman,latirostris,1,1,3,,,,year of experiment ,second year,,,,,
+45,wang2015,figure 1,0,0,,,26,26,26,,dry weight of mycelium per petri dish ,g ,0.095596073,1,,1,0.011949509,Esteya ,vermicola,2,0,1,,,,,,,,,,
+45,wang2015,figure 1,0,1,0,,20.5,15,26,24,dry weight of mycelium per petri dish ,g ,0.090042076,1,,1,0.00454418,Esteya ,vermicola,2,0,1,,,,,,,,,,
+45,wang2015,figure 1,0,1,0,,30.5,26,35,24,dry weight of mycelium per petri dish ,g ,0.078934081,1,,1,0.020701262,Esteya ,vermicola,2,0,1,,,,,,,,,,
+45,wang2015,figure 1,0,1,0,,25,20,30,24,dry weight of mycelium per petri dish ,g ,0.104347826,1,,1,0.00740533,Esteya ,vermicola,2,0,1,,,,,,,,,,
+45,wang2015,figure 1,0,1,0,,25,15,35,24,dry weight of mycelium per petri dish ,g ,0.047629734,1,,1,0.012622721,Esteya ,vermicola,2,0,1,,,,,,,,,,
+46,delava2016,table 1,1,0,,25,20.1,20.1,20.1,,survival ,percent ,67,0,125,0,11.4,Drosophila ,melanogaster,1,1,1,,,,,,,,,,
+46,delava2016,table 1,0,0,,25,20.1,20.1,20.1,,development time,days ,36.27,0,125,0,4.82,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+46,delava2016,table 1,1,0,,25,20.1,20.1,20.1,,infestation rate ,percent ,70,0,125,0,14.4,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+46,delava2016,table 1,1,0,,25,20.1,20.1,20.1,,success of parasitism,percent,39.84,0,125,0,13.3,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+47,delava2016,table 1,1,1,0,25,20.1,16,23,24,survival ,percent ,65.2,0,125,0,13.18,Drosophila ,melanogaster,1,1,1,,,,,,,,,,
+47,delava2016,table 1,0,1,0,25,20.1,16,23,24,development time,days ,30.51,0,125,0,0.89,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+47,delava2016,table 1,1,1,0,25,20.1,16,23,24,infestation rate ,percent ,61.25,0,125,0,10.84,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+47,delava2016,table 1,1,1,0,25,20.1,16,23,24,success of parasitism,percent,60.19,0,125,0,15.35,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+48,delava2016,table 1,1,1,0,25,20.1,16,26,24,survival ,percent ,66.8,0,125,0,9.96,Drosophila ,melanogaster,1,1,1,,,,,,,,,,
+48,delava2016,table 1,0,1,0,25,20.1,16,26,24,development time,days ,30.52,0,125,0,0.64,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+48,delava2016,table 1,1,1,0,25,20.1,16,26,24,infestation rate ,percent ,63.17,0,125,0,17.78,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+48,delava2016,table 1,1,1,0,25,20.1,16,26,24,success of parasitism,percent,69.21,0,125,0,11.33,Leptopilina,bourlardi,1,1,1,,,,,,,,,,
+49,lowenborg2012,figure 2a,0,0,,,19,19,19,,incubation time ,days ,75.83333333,1,28,1,13.34129829,Natrix ,natrix,1,1,2,,,,,,,,,,
+49,lowenborg2012,figure 2a,0,0,,,25,25,25,,incubation time ,days ,40.08064516,1,25,1,0.39824771,Natrix ,natrix,1,1,2,,,,,,,,,,
+49,lowenborg2012,figure 2a,0,1,1,,25,19,31,24,incubation time ,days ,41.69354839,1,29,1,1.393866985,Natrix ,natrix,1,1,2,,,,,,,,,,
+49,lowenborg2012,figure 2a,0,0,,,31,31,31,,incubation time ,days ,32.01612903,1,25,1,1.393866985,Natrix ,natrix,1,1,2,,,,,,,,,,
+50,lowenborg2012,figure 2b,0,0,,,19,19,19,,days to first slough,days ,13.50537634,1,28,1,14.72321784,Natrix ,natrix,1,1,2,,,,,,,,,,
+50,lowenborg2012,figure 2b,0,0,,,25,25,25,,days to first slough,days ,9.075268817,1,25,1,0.49382716,Natrix ,natrix,1,1,2,,,,,,,,,,
+50,lowenborg2012,figure 2b,0,1,1,,25,19,31,24,days to first slough,days ,10.27956989,1,29,1,0.541616886,Natrix ,natrix,1,1,2,,,,,,,,,,
+50,lowenborg2012,figure 2b,0,0,,,31,31,31,,days to first slough,days ,13.39784946,1,25,1,0.860215054,Natrix ,natrix,1,1,2,,,,,,,,,,
+51,lowenborg2012,figure 4a,0,0,,,19,19,19,,aquatic speed ,m * s^-1,0.201706485,1,28,1,0.018202503,Natrix ,natrix,1,1,2,,,,,,,,,,
+51,lowenborg2012,figure 4a,0,0,,,25,25,25,,aquatic speed ,m * s^-1,0.246757679,1,25,1,0.025281254,Natrix ,natrix,1,1,2,,,,,,,,,,
+51,lowenborg2012,figure 4a,0,1,1,,25,19,31,24,aquatic speed ,m * s^-1,0.272696246,1,29,1,0.022247503,Natrix ,natrix,1,1,2,,,,,,,,,,
+51,lowenborg2012,figure 4a,0,0,,,31,31,31,,aquatic speed ,m * s^-1,0.256313993,1,25,1,0.031348755,Natrix ,natrix,1,1,2,,,,,,,,,,
+52,lowenborg2012,figure 4b,0,0,,,19,19,19,,terrestrial speed,m * s^-1,0.067091837,1,28,1,0.071365583,Natrix ,natrix,1,1,2,,,,,,,,,,
+52,lowenborg2012,figure 4b,0,0,,,25,25,25,,terrestrial speed,m * s^-1,0.152210884,1,25,1,0.029100529,Natrix ,natrix,1,1,2,,,,,,,,,,
+52,lowenborg2012,figure 4b,0,1,1,,25,19,31,24,terrestrial speed,m * s^-1,0.149404762,1,29,1,0.042957924,Natrix ,natrix,1,1,2,,,,,,,,,,
+52,lowenborg2012,figure 4b,0,0,,,31,31,31,,terrestrial speed,m * s^-1,0.153146259,1,25,1,0.031872008,Natrix ,natrix,1,1,2,,,,,,,,,,
+53,lowenborg2012,figure 4c,0,0,,,19,19,19,,distance covered,m  ,1.701388889,1,28,1,1.28600823,Natrix ,natrix,1,1,2,,,,,,,,,,
+53,lowenborg2012,figure 4c,0,0,,,25,25,25,,distance covered,m  ,2.8125,1,25,1,1.774691358,Natrix ,natrix,1,1,2,,,,,,,,,,
+53,lowenborg2012,figure 4c,0,1,1,,25,19,31,24,distance covered,m  ,3.125,1,29,1,1.800411523,Natrix ,natrix,1,1,2,,,,,,,,,,
+53,lowenborg2012,figure 4c,0,0,,,31,31,31,,distance covered,m  ,5.625,1,25,1,3.858024691,Natrix ,natrix,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,body mass ,g ,0.71,0,20,0,0.02,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,snout-vent length,mm,31.3,0,20,0,0.2,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,abdomen length,mm,14,0,20,0,0.2,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,tail length,mm,37.6,0,20,0,0.5,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,head length,mm,7.2,0,20,0,0.03,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,head width,mm,5.2,0,20,0,0.04,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,fore-limb length,mm,6.2,0,20,0,0.04,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,hind-limb length,mm,7.2,0,20,0,0.05,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,maximal length ,m,0.55,0,20,0,0.03,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+54,qu2014,table 2 ,0,0,,,27,27,27,,sprint speed ,m * s^-1,0.43,0,20,0,0.01,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,body mass ,g ,0.7,0,20,0,0.01,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,snout-vent length,mm,30.7,0,20,0,0.3,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,abdomen length,mm,13.9,0,20,0,0.2,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,tail length,mm,37.2,0,20,0,0.5,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,head length,mm,7.2,0,20,0,0.05,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,head width,mm,5.1,0,20,0,0.03,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,fore-limb length,mm,6.1,0,20,0,0.06,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,hind-limb length,mm,7.1,0,20,0,0.07,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,maximal length ,m,0.67,0,20,0,0.08,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,24,30,24,sprint speed ,m * s^-1,0.43,0,20,0,0.02,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,body mass ,g ,0.67,0,20,0,0.01,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,snout-vent length,mm,30.8,0,20,0,0.3,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,abdomen length,mm,13.8,0,20,0,0.2,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,tail length,mm,36.9,0,20,0,0.6,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,head length,mm,7.1,0,20,0,0.05,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,head width,mm,5.1,0,20,0,0.04,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,fore-limb length,mm,6,0,20,0,0.06,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,hind-limb length,mm,7.1,0,20,0,0.06,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,maximal length ,m,0.67,0,20,0,0.06,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+55,qu2014,table 2 ,0,1,1,,27,22,32,24,sprint speed ,m * s^-1,0.46,0,20,0,0.03,Plestiodon ,chinensis,1,1,2,,,,,,,,,,
+56,kern2014,figure 2,0,0,,24,24,24,24,,body mass ,g ,0.283544304,1,91,0,0.005907173,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+56,kern2014,figure 2,0,0,,24,24,24,24,,body mass ,g ,0.266666667,1,94,0,0.006469761,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+56,kern2014,figure 2,0,1,1,24,24,18,32,24,body mass ,g ,0.251476793,1,107,0,0.005907173,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+56,kern2014,figure 2,0,1,1,24,24,18,32,24,body mass ,g ,0.241912799,1,84,0,0.006188467,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+57,kern2014,figure 3,0,0,,24,24,24,24,,CT max,C ,42.15384615,1,8,0,0.125874126,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+57,kern2014,figure 3,0,0,,24,24,24,24,,CT max,C ,41.3986014,1,8,0,0.122377622,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+57,kern2014,figure 3,0,1,1,24,24,18,32,24,CT max,C ,42.33566434,1,8,0,0.129370629,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+57,kern2014,figure 3,0,1,1,24,24,18,32,24,CT max,C ,43.00699301,1,8,0,0.195804196,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+58,pendlebury2004,figure 1a,0,0,,20,18.3,18.3,18.3,,daily energy expenditure,kJ *day^-1 *kg^-1,300.0770416,1,20,0,17.85714286,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+58,pendlebury2004,figure 1a,0,0,,20,18.3,18.3,18.3,,daily energy expenditure,kJ *day^-1 *kg^-1,409.4486022,1,20,0,18.66883117,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+58,pendlebury2004,figure 1a,0,1,1,20,20,15,25,24,daily energy expenditure,kJ *day^-1 *kg^-1,354.559212,1,20,0,21.1038961,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+58,pendlebury2004,figure 1a,0,1,1,20,20,15,25,24,daily energy expenditure,kJ *day^-1 *kg^-1,414.4177856,1,20,0,20.29220779,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+58,pendlebury2004,figure 1a,0,1,1,20,20,11.7,31.7,24,daily energy expenditure,kJ *day^-1 *kg^-1,386.3141096,1,20,0,23.53896104,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+58,pendlebury2004,figure 1a,0,1,1,20,20,11.7,31.7,24,daily energy expenditure,kJ *day^-1 *kg^-1,478.6402157,1,20,0,19.48327097,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+59,pendlebury2004,figure 1b,0,0,,20,18.3,18.3,18.3,,egg mass,g ,8.658064516,1,20,0,0.361290323,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+59,pendlebury2004,figure 1b,0,0,,20,18.3,18.3,18.3,,egg mass,g ,9.109677419,1,20,0,0.529032258,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+59,pendlebury2004,figure 1b,0,1,1,20,20,15,25,24,egg mass,g ,8.709677419,1,20,0,0.258064516,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+59,pendlebury2004,figure 1b,0,1,1,20,20,15,25,24,egg mass,g ,7.341935484,1,20,0,0.283870968,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+59,pendlebury2004,figure 1b,0,1,1,20,20,11.7,31.7,24,egg mass,g ,8.529032258,1,20,0,0.335483871,Coturnix ,japonica,1,2,2,,,,food level,high food,,,,,
+59,pendlebury2004,figure 1b,0,1,1,20,20,11.7,31.7,24,egg mass,g ,6.748387097,1,20,0,0.490322581,Coturnix ,japonica,1,2,2,,,,food level,low food ,,,,,
+60,piccau2017,figure 1,1,1,1,,17.5,10,25,24,germination,percent,86.8719611,1,120,1,6.88816856,Clematis,vitalba,0,0,1,,,,irradiance per day ,12 hours ,,,,,
+60,piccau2017,figure 1,1,0,,,10,10,10,,germination,percent,0.81037277,1,120,1,1.62074554,Clematis,vitalba,0,0,1,,,,irradiance per day ,0 hours ,,,,,
+60,piccau2017,figure 1,1,1,1,,17.5,10,25,24,germination,percent,87.5202593,1,120,1,7.37439222,Clematis,vitalba,0,0,1,,,,irradiance per day ,0 hours ,,,,,
+61,semenov2007,figure 1a,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,26366508.99,1,3,1,4587583.937,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+61,semenov2007,figure 1a,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,57464349.69,1,3,1,8929535.202,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+61,semenov2007,figure 1a,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,44321713.42,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+61,semenov2007,figure 1a,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,8557183.145,1,3,1,1948886.107,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+61,semenov2007,figure 1a,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,31350220.63,1,3,1,6547903.179,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+61,semenov2007,figure 1a,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,44321713.42,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+61,semenov2007,figure 1a,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,1168608.855,1,3,1,181593.1785,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+61,semenov2007,figure 1a,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,10174634.03,1,3,1,1770313.531,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+61,semenov2007,figure 1a,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,44321713.42,1,3,1,22155856.71,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+61,semenov2007,figure 1a,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,10000,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,3,days
+62,semenov2007,figure 1a,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,18649907.91,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+62,semenov2007,figure 1a,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,44321713.42,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+62,semenov2007,figure 1a,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,48329302.39,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+62,semenov2007,figure 1a,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,3926313.402,1,3,1,1031123.618,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+62,semenov2007,figure 1a,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,22175052.75,1,3,1,4253290.586,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+62,semenov2007,figure 1a,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,48329302.39,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+62,semenov2007,figure 1a,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,246023.9821,1,3,1,94114.19375,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,14,days
+62,semenov2007,figure 1a,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,7847599.704,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,7,days
+62,semenov2007,figure 1a,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,48329302.39,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,0,days
+63,semenov2007,figure 1b,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,84048177.74,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+63,semenov2007,figure 1b,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,70640961.82,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+63,semenov2007,figure 1b,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,154411359,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+63,semenov2007,figure 1b,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,6763767.635,1,3,1,1417884.025,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+63,semenov2007,figure 1b,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,10444025.52,1,3,1,2753380.321,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+63,semenov2007,figure 1b,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+63,semenov2007,figure 1b,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,457485.5262,1,3,1,346317.5923,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+63,semenov2007,figure 1b,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,1684283.113,1,3,1,597246.494,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+63,semenov2007,figure 1b,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+63,semenov2007,figure 1b,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,10907.76692,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,17,days
+63,semenov2007,figure 1b,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,56848.23444,1,3,1,20012.70815,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+63,semenov2007,figure 1b,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+64,semenov2007,figure 1b,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,41941263.48,1,3,1,7013860.294,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+64,semenov2007,figure 1b,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,38450824.82,1,3,1,33960708,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+64,semenov2007,figure 1b,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+64,semenov2007,figure 1b,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,2600724.444,1,3,1,545188.1027,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+64,semenov2007,figure 1b,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,6200872.908,1,3,1,1083019.7,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+64,semenov2007,figure 1b,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+64,semenov2007,figure 1b,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,80474.88734,1,3,1,43881.29432,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,21,days
+64,semenov2007,figure 1b,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,1415609.264,1,3,1,456586.4491,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,14,days
+64,semenov2007,figure 1b,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+64,semenov2007,figure 1b,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,10000,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,7,days
+64,semenov2007,figure 1b,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,168428311.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,0,days
+65,semenov2007,figure 1c,1,0,,37,16,7,7,,survival ,CFU * g dry weight manure^-1,1857022665,1,3,1,418897865.9,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+65,semenov2007,figure 1c,1,0,,37,16,7,7,,survival ,CFU * g dry weight manure^-1,959574841.7,1,3,1,153940775.5,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+65,semenov2007,figure 1c,1,0,,37,16,7,7,,survival ,CFU * g dry weight manure^-1,172408685.2,1,3,1,29546619,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+65,semenov2007,figure 1c,1,0,,37,23,16,16,,survival ,CFU * g dry weight manure^-1,1095031275,1,3,1,247011667.1,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+65,semenov2007,figure 1c,1,0,,37,23,16,16,,survival ,CFU * g dry weight manure^-1,689778537.9,1,3,1,184292593.5,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7.1,days
+65,semenov2007,figure 1c,1,0,,37,23,16,16,,survival ,CFU * g dry weight manure^-1,172408685.2,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+65,semenov2007,figure 1c,1,0,,37,7,23,23,,survival ,CFU * g dry weight manure^-1,73080125.27,1,3,1,14569949.46,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+65,semenov2007,figure 1c,1,0,,37,7,23,23,,survival ,CFU * g dry weight manure^-1,89088323.96,1,3,1,29946906.91,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+65,semenov2007,figure 1c,1,0,,37,7,23,23,,survival ,CFU * g dry weight manure^-1,184175973.8,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+65,semenov2007,figure 1c,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,46034394.72,1,3,1,17521103.29,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,13.9,days
+65,semenov2007,figure 1c,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,35349811.05,1,3,1,43340157.18,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+65,semenov2007,figure 1c,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,184175973.8,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+66,semenov2007,figure 1c,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,64040042.71,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+66,semenov2007,figure 1c,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,78068011.65,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+66,semenov2007,figure 1c,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,172408685.2,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+66,semenov2007,figure 1c,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,1169769675,1,3,1,263870780.7,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+66,semenov2007,figure 1c,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,736857507.2,1,3,1,146906927.2,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+66,semenov2007,figure 1c,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,172408685.2,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+66,semenov2007,figure 1c,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,196746407,1,3,1,20171870.06,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,14,days
+66,semenov2007,figure 1c,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,101664296.3,1,3,1,13463603.11,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+66,semenov2007,figure 1c,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,161393226.8,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+66,semenov2007,figure 1c,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,2875950.203,1,3,1,380867.7531,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,13.9,days
+66,semenov2007,figure 1c,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,4000834.049,1,3,1,529838.3376,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,7,days
+66,semenov2007,figure 1c,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,172408685.2,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,0,days
+67,semenov2007,figure 1d ,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,68326073.87,1,3,1,22489985.98,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,7,7,7,,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,2335721469,1,3,1,488749082.2,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,413562691.8,1,3,1,135588260.7,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,16,16,16,,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,1489129032,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,826595873.9,1,3,1,213353714.5,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,23,23,23,,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,1652133406,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,1541593693,1,3,1,492030391.8,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+67,semenov2007,figure 1d ,1,0,,37,33,33,33,,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,90133703.9,1,3,1,18860453.03,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,90133703.9,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,7,0,14,24,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,2179444754,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,360073348.5,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,16,9,23,24,survival ,CFU * g dry weight manure^-1,127427498.6,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,443217134.2,1,3,1,179015636.4,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,313502206.3,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,23,16,30,24,survival ,CFU * g dry weight manure^-1,118901674.2,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,335981828.6,1,3,1,79435423.94,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,254691843.9,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+68,semenov2007,figure 1d ,1,1,1,37,33,26,40,24,survival ,CFU * g dry weight manure^-1,118901674.2,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+69,semenov2007,figure 2a,1,0,,37,7,7,7,,rate of change,1 day ^-1,-0.050359712,1,3,1,0.013669065,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,,
+69,semenov2007,figure 2a,1,0,,37,16,16,16,,rate of change,1 day ^-1,-0.10647482,1,3,1,0.002877698,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,,
+69,semenov2007,figure 2a,1,0,,37,23,23,23,,rate of change,1 day ^-1,-0.161151079,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,,
+70,semenov2007,figure 2a,1,1,1,37,7,0,14,24,rate of change,1 day ^-1,-0.077697842,1,3,1,0.01942446,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,,
+70,semenov2007,figure 2a,1,1,1,37,16,9,23,24,rate of change,1 day ^-1,-0.128057554,1,3,1,0.003597122,Escherichia ,coli,3,1,0,,,,manure type,untreated,,,,,
+70,semenov2007,figure 2a,1,1,1,37,23,16,30,24,rate of change,1 day ^-1,-0.189208633,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+71,semenov2007,figure 2b,1,0,,37,7,7,7,,rate of change,1 day ^-1,-0.018587361,1,3,1,0.002973978,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+71,semenov2007,figure 2b,1,0,,37,16,16,16,,rate of change,1 day ^-1,-0.057249071,1,3,1,0.002973978,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+71,semenov2007,figure 2b,1,0,,37,23,23,23,,rate of change,1 day ^-1,-0.091449814,1,3,1,0.007434944,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+72,semenov2007,figure 2b,1,1,1,37,7,0,14,24,rate of change,1 day ^-1,-0.033457249,1,3,1,0.003717472,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+72,semenov2007,figure 2b,1,1,1,37,16,9,23,24,rate of change,1 day ^-1,-0.067657993,1,3,1,,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+72,semenov2007,figure 2b,1,1,1,37,23,16,30,24,rate of change,1 day ^-1,-0.098884758,1,3,1,0.00669145,Salmonella,enetrica,3,1,0,,,,manure type,untreated,,,,,
+73,semenov2007,figure 2c ,1,0,,37,7,7,7,,rate of change,1 day ^-1,-0.054901961,1,3,1,0.033333333,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+73,semenov2007,figure 2c ,1,0,,37,16,16,16,,rate of change,1 day ^-1,0.27254902,1,3,1,0.058823529,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+73,semenov2007,figure 2c ,1,0,,37,23,23,23,,rate of change,1 day ^-1,0.160784314,1,3,1,0.049019608,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+73,semenov2007,figure 2c ,1,0,,37,33,33,33,,rate of change,1 day ^-1,-0.047058824,1,3,1,0.008823529,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+74,semenov2007,figure 2c ,1,1,1,37,7,0,14,24,rate of change,1 day ^-1,-0.031372549,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+74,semenov2007,figure 2c ,1,1,1,37,16,9,23,24,rate of change,1 day ^-1,0.156862745,1,3,1,0.032352941,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+74,semenov2007,figure 2c ,1,1,1,37,23,16,30,24,rate of change,1 day ^-1,0,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+74,semenov2007,figure 2c ,1,1,1,37,33,26,40,24,rate of change,1 day ^-1,-0.101960784,1,3,1,,Escherichia ,coli,3,1,0,,,,manure type,sterilized,,,,,
+75,semenov2007,figure 2d,1,0,,37,6,7,7,,rate of change,1 day ^-1,-0.160526316,1,3,1,0.096710526,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+75,semenov2007,figure 2d,1,0,,37,16,16,16,,rate of change,1 day ^-1,0.714473684,1,3,1,0.041447368,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+75,semenov2007,figure 2d,1,0,,37,23,23,23,,rate of change,1 day ^-1,0.742105263,1,3,1,0.039144737,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+75,semenov2007,figure 2d,1,0,,37,33,33,33,,rate of change,1 day ^-1,0.797368421,1,3,1,0.059868421,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+76,semenov2007,figure 2d,1,1,1,37,6,0,14,24,rate of change,1 day ^-1,-0.114473684,1,3,1,0.059868421,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+76,semenov2007,figure 2d,1,1,1,37,16,9,23,24,rate of change,1 day ^-1,0.668421053,1,3,1,0.059868421,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+76,semenov2007,figure 2d,1,1,1,37,23,16,30,24,rate of change,1 day ^-1,0.346052632,1,3,1,0.115131579,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+76,semenov2007,figure 2d,1,1,1,37,33,26,40,24,rate of change,1 day ^-1,0.272368421,1,3,1,0.154276316,Salmonella,enetrica,3,1,0,,,,manure type,sterilized,,,,,
+77,triedel 2015,figure 2a,0,0,,,29.5,29.5,29.5,,oxidative damage ,nmol CHE / mgww,33.04137931,1,69,0,0.631034483,Trachemys,scripta,1,1,2,,,,,,,,,,
+77,triedel 2015,figure 2a,0,1,1,,28.7,25.7,31.7,24,oxidative damage ,nmol CHE / mgww,34.17931034,1,63,0,0.668965517,Trachemys,scripta,1,1,2,,,,,,,,,,
+77,triedel 2015,figure 2a,0,0,,,29.5,29.5,29.5,,TAC,uM Trolox Equivalents/ mgww,5.433815088,1,69,0,0.006896552,Trachemys,scripta,1,1,2,,,,,,,,,,
+77,triedel 2015,figure 2a,0,1,1,,28.7,25.7,31.7,24,TAC,uM Trolox Equivalents/ mgww,5.545049465,1,63,0,0.006896552,Trachemys,scripta,1,1,2,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,24,24,24,,total offspring,total offspring,175,1,1600,1,74.19054274,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,24,21,27,24,total offspring,total offspring,108.9622642,1,1600,1,94.57255998,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,24,24,24,,offspring per mating,offspring per mating,66.16416255,1,1600,1,22.06461781,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,24,21,27,24,offspring per mating,offspring per mating,48.07653524,1,1600,1,30.33884949,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,24,24,24,,wing centroid,wing centroid,1972.5,1,1600,1,61.11111111,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,24,21,27,24,wing centroid,wing centroid,1925,1,1600,1,59.25925926,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,17,17,17,,total offspring,total offspring,83.80752638,1,1600,1,65.82586826,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,17,14,20,24,total offspring,total offspring,81.60275261,1,1600,1,72.33144087,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,17,17,17,,offspring per mating,offspring per mating,54.99302556,1,1600,1,32.30649435,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,17,14,20,24,offspring per mating,offspring per mating,54.99554644,1,1600,1,37.0364146,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,0,,20.5,17,17,17,,wing centroid,wing centroid,2252.5,1,1600,1,70.37037037,Drosophila ,birchii,1,2,1,,,,,,,,,,
+78,saxon2017,figure 1,0,1,1,20.5,17,14,20,24,wing centroid,wing centroid,2207.5,1,1600,1,79.62962963,Drosophila ,birchii,1,2,1,,,,,,,,,,
+79,saxon2017,figure 2,0,0,,20.5,21,21,21,,wing centroid,wing centroid,2242.076503,1,480,1,64.76421777,Drosophila ,birchii,1,2,1,,,,,,,,,,
+79,saxon2017,figure 2,0,1,1,20.5,24,21,27,24,wing centroid,wing centroid,2006.010929,1,480,1,74.47885044,Drosophila ,birchii,1,2,1,,,,,,,,,,
+79,saxon2017,figure 2,0,0,,20.5,27,27,27,,wing centroid,wing centroid,1936.065574,1,480,1,84.1934831,Drosophila ,birchii,1,2,1,,,,,,,,,,
+80,kern_2015phys,figure 5a,0,0,,,24,24,24,,CT max,C,39.72140293,1,7,0,0.075117371,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5a,0,1,1,,25,20,30,24,CT max,C,40.51499586,1,7,0,0.169014085,Limnodynastes,peronii,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5b,0,0,,,24,24,24,,CT max,C,40.48826291,1,7,0,0.112676056,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5b,0,1,1,,25,20,30,24,CT max,C,41.57722708,1,7,0,0.093896714,Limnodynastes,tasmaniensis,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5c,0,0,,,24,24,24,,CT max,C,41.73584906,1,7,0,0.150943396,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5c,0,1,1,,25,20,30,24,CT max,C,42.90566038,1,7,0,0.132075472,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+80,kern_2015phys,figure 5c,0,1,1,,28,18,38,24,CT max,C,43.35849057,1,7,0,0.132075472,Platyplectrum ,ornatum,1,1,2,,,,,,,,,,
+81,duncan2016,figure 2,0,0,,,28,28,28,48,phage density ,ml^-1,0.548371235,1,,0,0.122282423,lytic phage,SBWΦ2.,3,1,0,,,,,,,,,,
+81,duncan2016,figure 2,0,4,0,,30,28,32,48,phage density ,ml^-1,-0.845099459,1,,0,0.119565036,lytic phage,SBWΦ2.,3,1,0,,,,,,,,,,
+81,duncan2016,figure 2,0,0,,,32,32,32,48,phage density ,ml^-1,-0.596190885,1,,0,0.114130262,lytic phage,SBWΦ2.,3,1,0,,,,,,,,,,
+81,duncan2016,figure 2,0,4,0,,30,28,32,48,phage density ,ml^-1,2.41359671,1,,0,0.282608267,lytic phage,SBWΦ2.,3,1,0,,,,,,,,,,

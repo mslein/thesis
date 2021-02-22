@@ -27,7 +27,7 @@ dat_MA_0<- read_csv("maggie_MA_2_8_21.csv")
 ```
 
 
-```{r}
+```{r, echo= FALSE}
 ##wrangling calculations for metafor
 
 #make standardized SD columns based on N and SE vs SD
@@ -55,52 +55,41 @@ summary(mod2)
 ```
 
 
-```{r}
-# data wrangling for plots
+```{r, echo= FALSE}
+## data wrangling for plots
+#count and propotions for the different variables
 count(dat_MA_ES, flux_range) #46 rows w/ range of 10, 51 w/ range of 15, 36 w/range of 6
-count(dat_MA_ES, resp_units)
+count(dat_MA_ES, resp_units, sort = TRUE) 
 count(dat_MA_ES, mean_temp_constant, study_id) #24 C common accross 5 studies
-count(dat_MA_ES, resp_def, sort = TRUE)
-count(dat_MA_ES, genus)
-count(dat_MA_ES, genus, study_id)
-count(dat_MA_ES, resp_units) # body mass, avg. cum. num of eggs laid/fm, avg. num of eggs laid/fm, survival, rate of change, are the the most common reponses
+count(dat_MA_ES, resp_def, sort = TRUE) # body mass, avg. cum. num of eggs laid/fm, avg. num of eggs laid/fm, survival, rate of change, are the the most common reponses
+count(dat_MA_ES, genus, study_id) # 3 studies featuring drosophila
+count(dat_MA_ES, genus)# 16 genuses to bin by 
+count(dat_MA_ES, size)# good spread for body size
+count(dat_MA_ES, larger_group) # pretty much mostly animal studies
 
+
+#removing outlier point to get better picture of data structure
 normalized <- dat_MA_ES %>%
   filter(yi > -20) 
-
+#filtering for studies with common variable C (CT assays)
 common_unit_C <-dat_MA_ES %>% 
   filter(resp_units == "C")
-
+#filtering for studies with common variable g 
 common_unit_g <-dat_MA_ES %>% 
 filter(resp_units == "g")
 #filtering for genus to only be drosophila 
 drosophila <- dat_MA_ES %>% 
   filter(genus == "Drosophila")
-
 #filtering for just flux ranges of 10 C 
 common_range <- dat_MA_ES %>% 
   filter(flux_range == "10")
 #filtering for just studies with mean temp of 24
 common_temp <- dat_MA_ES %>% 
   filter(mean_temp_constant == "24")
-
-
-count(dat_MA_ES, larger_group)
-count(dat_MA_ES, genus)
-count(dat_MA_ES, genus, study_id)
-
-
-
-#Drosophila used across 4 studies, potential to aggregate based on that?
-
-#16 genuses to aggregate across 
-count(dat_MA_ES, mean_temp_constant)
-
-
 ```
 
 
-```{r}
+```{r, echo= FALSE}
 #SMD across all studies
 ggplot(normalized, aes(x=study_id, y=yi))+
   geom_boxplot()+
@@ -110,7 +99,7 @@ ggplot(normalized, aes(x=study_id, y=yi))+
   ggtitle("SMD across all studies")
 ```
 
-```{r}
+```{r, echo= FALSE}
 # scatterplot of standardized mean response faceted by exp age
 ggplot(dat_MA_ES, aes(x=log(vi), y=log(yi), color = study_id))+
   geom_point()+
@@ -120,7 +109,7 @@ ggplot(dat_MA_ES, aes(x=log(vi), y=log(yi), color = study_id))+
           colored by study and faceted by experimental age")
 ```
 
-```{r}
+```{r, echo= FALSE}
 # scatterplot of standardized mean response vs mean temp faceted by org level and colored by flux_range
 ggplot(dat_MA_ES, aes(x=mean_temp_constant, y=yi, color = as.factor(flux_range)))+
   geom_point()+
@@ -130,17 +119,17 @@ ggplot(dat_MA_ES, aes(x=mean_temp_constant, y=yi, color = as.factor(flux_range))
           and faceted by organization level")
 ```
 
-```{r}
+```{r, echo= FALSE}
 # scatterplot of standardized mean response vs flux range colored and lm fit by org level
-ggplot(boxplot, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
+ggplot(normalized, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
   geom_point()+
   geom_smooth(method="lm", formula = y~x)+
   ggtitle("SMD across fluctuation ranges colored by organization level 
           and fit with linear model")
 ```
 
-```{r}
-ggplot(boxplot, aes(x=flux_range, y=yi, color = study_id))+
+```{r, echo= FALSE}
+ggplot(normalized, aes(x=flux_range, y=yi, color = study_id))+
   geom_point()+
   geom_smooth(method="lm", formula = y~x)+
   theme_minimal()+
@@ -148,7 +137,7 @@ ggplot(boxplot, aes(x=flux_range, y=yi, color = study_id))+
           studies and fit with linear model by study")
 ```
 
-```{r}
+```{r, echo= FALSE}
 #trying to look at drosophila response across studies 
 ggplot(drosophila, aes(y=yi, x=study_id, color = study_id))+
   geom_boxplot()+
@@ -156,22 +145,16 @@ ggplot(drosophila, aes(y=yi, x=study_id, color = study_id))+
   ggtitle("SMD across studies with the same study genus (Drosophila)")
 ```
 
-```{r}
+```{r, echo= FALSE}
 ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
-  geom_jitter()+
+  geom_jitter(alpha = 0.5)+
   theme_minimal()+
   ggtitle("SMD across fluctuation ranges colored by genus")
 ```
 
-```{r}
-ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
-  geom_jitter()+
-  theme_minimal()+
-  facet_wrap(~size)+
-  ggtitle("SMD across fluctuation ranges colored by genus")
-```
 
-```{r}
+
+```{r, echo= FALSE}
 #looking at yi across studies with the same temperature range (10 C)
 ggplot(common_range, aes(y=yi, x=study_id, color = study_id))+
   geom_boxplot()+
@@ -182,7 +165,7 @@ ggplot(common_range, aes(y=yi, x=study_id, color = study_id))+
                                           temperature fluctuation range (10 C)")
 ```
 
-```{r}
+```{r, echo= FALSE}
 #looking at yi across studies with the same mean temperature (24 C)
 ggplot(common_temp, aes(y=yi, x=study_id, color = study_id))+
   geom_boxplot()+
@@ -192,7 +175,7 @@ ggplot(common_temp, aes(y=yi, x=study_id, color = study_id))+
   ggtitle("SMD across studies with the same mean temperature (24 C)")
 ```
 
-```{r}
+```{r, echo= FALSE}
 #trying to look at how size trends yi across increasing flux ranges 
 ggplot(normalized, aes(y=abs(yi), x=flux_range, color = as.factor(size)))+
   geom_point(alpha = 0.5)+
@@ -204,7 +187,7 @@ ggplot(normalized, aes(y=abs(yi), x=flux_range, color = as.factor(size)))+
           by size of study organism and fitted with model curve")
 ```
 
-```{r}
+```{r, echo= FALSE}
 ggplot(common_unit_C, aes(y=yi, x=study_id, color = as.factor(flux_range)))+
   geom_point(alpha = 0.5)+
   theme_minimal()+
@@ -215,13 +198,13 @@ ggplot(common_unit_C, aes(y=yi, x=study_id, color = as.factor(flux_range)))+
 
 
 
-```{r}
+```{r, echo= FALSE}
 #plot across studies with common unit gram
 ggplot(common_unit_g, aes(y=yi, x=flux_range, color = study_id))+
   geom_point(alpha =0.5)+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
                                   size = 7, angle = 45))+
-  ggtitle(SMD across fluctuation ranges colored by studies with the common unit "grams")
+  ggtitle("SMD across fluctuation ranges colored by studies with the common unit grams")
 ```
 

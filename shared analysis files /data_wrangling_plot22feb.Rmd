@@ -1,0 +1,227 @@
+---
+title: "data wrangling and plots"
+author: "Maggie Slein"
+date: "2/22/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+
+## loading libraries 
+pacman::p_load(metafor, tidyverse)
+#devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", force = TRUE,build_vignettes = TRUE)
+#library(orchaRd)
+
+#load data
+dat_MA_0<- read_csv("maggie_MA_2_8_21.csv")
+```
+
+
+```{r}
+##wrangling calculations for metafor
+
+#make standardized SD columns based on N and SE vs SD
+dat_MA <-dat_MA_0 %>% 
+  mutate ( SD_constant= if_else ( variance_type== 0, constant_variance * sqrt(constant_samp), constant_variance))  %>%
+  mutate ( SD_variable= if_else ( variance_type== 0, flux_variance * sqrt(flux_variance) , flux_variance)) 
+         
+#calculate ES for data
+dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
+            data=dat_MA, slab=paste(study_id, experiment_id, response_id, sep=", "))
+
+# Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
+dat_MA_ES<-dat_MA_ES %>% filter (!is.na(yi))
+
+#fit initial MA model, abs (note structure )
+mod1 <- rma.mv(abs(yi), vi, data=dat_MA_ES, 
+                 method="REML", random = ~1 | response_id/ experiment_id/ study_id) 
+summary(mod1)
+
+#fit dirrectional model
+mod2<-rma.mv(yi, vi, data=dat_MA_ES, 
+             method="REML", random = ~1 | response_id/ experiment_id/ study_id) 
+summary(mod2)
+```
+
+
+```{r}
+# data wrangling for plots
+count(dat_MA_ES, flux_range) #46 rows w/ range of 10, 51 w/ range of 15, 36 w/range of 6
+count(dat_MA_ES, resp_units)
+count(dat_MA_ES, mean_temp_constant, study_id) #24 C common accross 5 studies
+count(dat_MA_ES, resp_def, sort = TRUE)
+count(dat_MA_ES, genus)
+count(dat_MA_ES, genus, study_id)
+count(dat_MA_ES, resp_units) # body mass, avg. cum. num of eggs laid/fm, avg. num of eggs laid/fm, survival, rate of change, are the the most common reponses
+
+normalized <- dat_MA_ES %>%
+  filter(yi > -20) 
+
+common_unit_C <-dat_MA_ES %>% 
+  filter(resp_units == "C")
+
+common_unit_g <-dat_MA_ES %>% 
+filter(resp_units == "g")
+#filtering for genus to only be drosophila 
+drosophila <- dat_MA_ES %>% 
+  filter(genus == "Drosophila")
+
+#filtering for just flux ranges of 10 C 
+common_range <- dat_MA_ES %>% 
+  filter(flux_range == "10")
+#filtering for just studies with mean temp of 24
+common_temp <- dat_MA_ES %>% 
+  filter(mean_temp_constant == "24")
+
+
+count(dat_MA_ES, larger_group)
+count(dat_MA_ES, genus)
+count(dat_MA_ES, genus, study_id)
+
+
+
+#Drosophila used across 4 studies, potential to aggregate based on that?
+
+#16 genuses to aggregate across 
+count(dat_MA_ES, mean_temp_constant)
+
+
+```
+
+
+```{r}
+#SMD across all studies
+ggplot(normalized, aes(x=study_id, y=yi))+
+  geom_boxplot()+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                   size = 10, angle = 45))+
+  ggtitle("SMD across all studies")
+```
+
+```{r}
+# scatterplot of standardized mean response faceted by exp age
+ggplot(dat_MA_ES, aes(x=log(vi), y=log(yi), color = study_id))+
+  geom_point()+
+  theme_bw()+
+  facet_wrap(~exp_age)+
+  ggtitle("Log transformed SMD across log transformed variance 
+          colored by study and faceted by experimental age")
+```
+
+```{r}
+# scatterplot of standardized mean response vs mean temp faceted by org level and colored by flux_range
+ggplot(dat_MA_ES, aes(x=mean_temp_constant, y=yi, color = as.factor(flux_range)))+
+  geom_point()+
+  facet_wrap(~org_level)+
+  theme_bw()+
+  ggtitle("SMD across mean temperature colored by fluctation range 
+          and faceted by organization level")
+```
+
+```{r}
+# scatterplot of standardized mean response vs flux range colored and lm fit by org level
+ggplot(boxplot, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
+  geom_point()+
+  geom_smooth(method="lm", formula = y~x)+
+  ggtitle("SMD across fluctuation ranges colored by organization level 
+          and fit with linear model")
+```
+
+```{r}
+ggplot(boxplot, aes(x=flux_range, y=yi, color = study_id))+
+  geom_point()+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_minimal()+
+  ggtitle("SMD across fluctuation ranges colored by 
+          studies and fit with linear model by study")
+```
+
+```{r}
+#trying to look at drosophila response across studies 
+ggplot(drosophila, aes(y=yi, x=study_id, color = study_id))+
+  geom_boxplot()+
+  theme_minimal()+
+  ggtitle("SMD across studies with the same study genus (Drosophila)")
+```
+
+```{r}
+ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
+  geom_jitter()+
+  theme_minimal()+
+  ggtitle("SMD across fluctuation ranges colored by genus")
+```
+
+```{r}
+ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
+  geom_jitter()+
+  theme_minimal()+
+  facet_wrap(~size)+
+  ggtitle("SMD across fluctuation ranges colored by genus")
+```
+
+```{r}
+#looking at yi across studies with the same temperature range (10 C)
+ggplot(common_range, aes(y=yi, x=study_id, color = study_id))+
+  geom_boxplot()+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                  size = 7, angle = 45))+
+                                  ggtitle("SMD across studies with the same 
+                                          temperature fluctuation range (10 C)")
+```
+
+```{r}
+#looking at yi across studies with the same mean temperature (24 C)
+ggplot(common_temp, aes(y=yi, x=study_id, color = study_id))+
+  geom_boxplot()+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                   size = 7, angle = 45))+
+  ggtitle("SMD across studies with the same mean temperature (24 C)")
+```
+
+```{r}
+#trying to look at how size trends yi across increasing flux ranges 
+ggplot(normalized, aes(y=abs(yi), x=flux_range, color = as.factor(size)))+
+  geom_point(alpha = 0.5)+
+  geom_smooth(formula = y~x)+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                   size = 7, angle = 45))+
+  ggtitle("Absolute SMD across fluctuation ranges colored 
+          by size of study organism and fitted with model curve")
+```
+
+```{r}
+ggplot(common_unit_C, aes(y=yi, x=study_id, color = as.factor(flux_range)))+
+  geom_point(alpha = 0.5)+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                   size = 7, angle = 45))+
+  ggtitle("SMD across studies with the common unit C (CT assays)")
+```
+
+
+
+```{r}
+#plot across studies with common unit gram
+ggplot(common_unit_g, aes(y=yi, x=flux_range, color = study_id))+
+  geom_point(alpha =0.5)+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                  size = 7, angle = 45))+
+  ggtitle(SMD across fluctuation ranges colored by studies with the common unit "grams")
+```
+

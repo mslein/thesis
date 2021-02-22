@@ -112,7 +112,7 @@ ggplot(dat_MA_ES, aes(x=log(vi), y=log(yi), color = study_id))+
 ```{r, echo= FALSE}
 # scatterplot of standardized mean response vs mean temp faceted by org level and colored by flux_range
 ggplot(dat_MA_ES, aes(x=mean_temp_constant, y=yi, color = as.factor(flux_range)))+
-  geom_point()+
+  geom_point(alpha=0.5, size =3)+
   facet_wrap(~org_level)+
   theme_bw()+
   ggtitle("SMD across mean temperature colored by fluctation range 
@@ -147,7 +147,7 @@ ggplot(drosophila, aes(y=yi, x=study_id, color = study_id))+
 
 ```{r, echo= FALSE}
 ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
-  geom_jitter(alpha = 0.5)+
+  geom_jitter(alpha = 0.5, size =3)+
   theme_minimal()+
   ggtitle("SMD across fluctuation ranges colored by genus")
 ```
@@ -189,7 +189,7 @@ ggplot(normalized, aes(y=abs(yi), x=flux_range, color = as.factor(size)))+
 
 ```{r, echo= FALSE}
 ggplot(common_unit_C, aes(y=yi, x=study_id, color = as.factor(flux_range)))+
-  geom_point(alpha = 0.5)+
+  geom_point(alpha = 0.5, size=7)+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
                                    size = 7, angle = 45))+
@@ -201,7 +201,7 @@ ggplot(common_unit_C, aes(y=yi, x=study_id, color = as.factor(flux_range)))+
 ```{r, echo= FALSE}
 #plot across studies with common unit gram
 ggplot(common_unit_g, aes(y=yi, x=flux_range, color = study_id))+
-  geom_point(alpha =0.5)+
+  geom_point(alpha =0.5, size =6)+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
                                   size = 7, angle = 45))+

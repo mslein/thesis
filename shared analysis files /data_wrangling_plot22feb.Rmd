@@ -18,7 +18,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r}
 
 ## loading libraries 
-pacman::p_load(metafor, tidyverse)
+pacman::p_load(metafor, tidyverse, viridis, ggsci, wesanderson)
 #devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", force = TRUE,build_vignettes = TRUE)
 #library(orchaRd)
 
@@ -91,23 +91,42 @@ common_temp <- dat_MA_ES %>%
 
 ```{r, echo= FALSE}
 #SMD across all studies
-ggplot(normalized, aes(x=study_id, y=yi))+
+glimpse(normalized)
+ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experiment_id)))+
   geom_boxplot()+
+  scale_color_tron()+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
-                                   size = 10, angle = 45))+
+                                   size = 10, angle = 45,hjust = 1), 
+        legend.position = "bottom")+
   ggtitle("SMD across all studies")
+
+#corresponding model
+fig1 <- rma.mv(yi, vi, data=dat_MA_ES, 
+               random = ~1 | response_id/ experiment_id/ study_id,
+                 method="REML") 
+
+fig1
 ```
 
 ```{r, echo= FALSE}
 # scatterplot of standardized mean response faceted by exp age
-ggplot(dat_MA_ES, aes(x=log(vi), y=log(yi), color = study_id))+
+ggplot(dat_MA_ES, aes(x=vi, y=yi, color = study_id))+
   geom_point()+
   theme_bw()+
-  facet_wrap(~exp_age)+
-  ggtitle("Log transformed SMD across log transformed variance 
-          colored by study and faceted by experimental age")
+  ggtitle("=SMD across variance 
+          colored by study")
 ```
+
+```{r}
+ggplot(normalized, aes(x=exp_age, y=yi, color = as.factor(exp_age)))+
+  geom_boxplot()+
+  theme_bw()+
+  ggtitle("SMD across different experimental ages")
+```
+
+
+
 
 ```{r, echo= FALSE}
 # scatterplot of standardized mean response vs mean temp faceted by org level and colored by flux_range

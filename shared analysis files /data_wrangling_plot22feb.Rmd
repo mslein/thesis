@@ -62,12 +62,12 @@ count(dat_MA_ES, size)# good spread for body size
 count(dat_MA_ES, larger_group) # pretty much mostly animal studies
 
 
-#removing outlier point to get better picture of data structure
+#removing outlier point to get better picture of data structure AND excluding CT assays 
 normalized <- dat_MA_ES %>%
   filter(yi > -20, resp_units != "C") 
 #filtering for studies with common variable g 
 common_unit_g <-dat_MA_ES %>% 
-filter(resp_units == "g")
+filter(resp_def == "body mass")
 #filtering for genus to only be drosophila 
 drosophila <- dat_MA_ES %>% 
   filter(genus == "Drosophila")
@@ -79,7 +79,9 @@ common_temp <- dat_MA_ES %>%
   filter(mean_temp_constant == "24")
 ```
 
-Figure 1.
+# Plots 
+## Question: How does response compare across studies and experiments?
+### Figure 1.
 ```{r, message=FALSE}
 #SMD across all studies
 ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experiment_id)))+
@@ -90,18 +92,21 @@ ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experim
                                    size = 10, angle = 45,hjust = 1), 
         legend.position = "bottom")+
   ggtitle("SMD across all studies")
-
-#corresponding model
+#corresponding random effects model 
 fig1 <- rma.mv(yi, vi, data=dat_MA_ES, 
                random = ~1 | experiment_id/ study_id,
                  method="REML") 
 fig1
+#trying out mixed effects model 
+fig1me <- rma(yi, vi, data=dat_MA_ES, mods = ~study_id,
+                 method="FE")
+fig1me
 #basic linear model 
 simple1<-lm(yi ~ study_id, data = dat_MA_ES)
 summary(fig1)
 ```
 
-Figure 2. 
+### Figure 2. 
 ```{r, echo= FALSE}
 # scatterplot of standardized mean response faceted by exp age
 ggplot(normalized, aes(x=vi, y=yi, color = study_id))+
@@ -115,77 +120,12 @@ simple2<-lm(yi ~ vi, data = dat_MA_ES)
 summary(simple2)
 ```
 
-Figure 3. 
-```{r, message=FALSE}
-#boxplot
-ggplot(normalized, aes(x=exp_age, y=yi, color = as.factor(exp_age)))+
-  geom_boxplot()+
-  theme_bw()+
-  ggtitle("SMD across different experimental ages")
 
-#random effects model including exp_age as a random variable
-fig3 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~exp_age, 
-               random = ~1 | experiment_id/ study_id,
-                 method="REML") 
-fig3
-#simple linear model looking at how exp_age affects yi
-simple3<-lm(yi~exp_age, data =dat_MA_ES)
-summary(simple3)
-```
 
-Figure 4. 
-```{r, message=FALSE}
-ggplot(normalized, aes(x=exp_age, y=vi, color = as.factor(exp_age)))+
-  geom_boxplot()+
-  theme_bw()+
-  ggtitle("Variance across different experimental ages")
 
-count(normalized, exp_age)
+## Question: How does fluctuation amplitude affect response variables?
 
-#simple linear model looking at how exp_age affects vi
-simple4<-lm(vi~ exp_age, data =dat_MA_ES)
-summary(simple4)
-```
-
-Figure 5. 
-```{r, message=FALSE}
-#boxplot of SMD across levels of organization
-ggplot(normalized, aes(x=as.factor(org_level), y=yi, fill=as.factor(org_level)))+
-  geom_boxplot(alpha =0.7)+
-  scale_fill_tron()+
-  theme_bw()+
-  theme(legend.position = "bottom")+
-  ggtitle("SMD across organization level")
-
-#random effects model including org_level as a random variable
-fig5 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~org_level,
-               random = ~1 | experiment_id/ study_id,
-                 method="REML") 
-fig5
-#simple linear model looking at how org_level affects yi
-simple5<-lm(yi~org_level, data =dat_MA_ES)
-summary(simple5)
-```
-
-Figure 6.
-```{r, message=FALSE}
-# boxplots of how mean temperature influences SMD
-ggplot(normalized, aes(x=as.factor(mean_temp_constant), y=yi))+
-  geom_boxplot()+
-  theme_bw()+
-  ggtitle("SMD across mean temperature")
-
-#random effects model including org_level as a random variable
-fig6 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~mean_temp_constant,
-               random = ~1 | experiment_id/ study_id,
-                 method="REML") 
-fig6
-#simple linear model looking at how mean_temp_constant affects yi
-simple6<-lm(yi~mean_temp_constant, data =dat_MA_ES)
-summary(simple6)
-```
-
-Figure 7.
+### Figure 3.
 ```{r, message=FALSE}
 # boxplots of how fluctuation range influences SMD
 ggplot(normalized, aes(x=as.factor(flux_range), y=yi))+
@@ -203,7 +143,7 @@ simple7<-lm(yi~flux_range, data =dat_MA_ES)
 summary(simple7)
 ```
 
-Figure 8.
+### Figure 4.
 ```{r, message=FALSE}
 # scatterplot of standardized mean response vs flux range colored and lm fit by org level
 ggplot(normalized, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
@@ -222,7 +162,7 @@ simple8<-lm(yi~flux_range*org_level, data =dat_MA_ES)
 summary(simple8)
 ```
 
-Figure 9.
+### Figure 5.
 ```{r, message=FALSE}
 #scatterplot of standardized mean difference across flux range colored by study fit with lm 
 ggplot(normalized, aes(x=flux_range, y=yi, color = study_id))+
@@ -242,7 +182,68 @@ simple9<-lm(yi~flux_range*study_id, data =dat_MA_ES)
 summary(simple9)
 ```
 
-Figure 10. 
+### Figure 6.
+```{r, message=FALSE}
+#looking at yi across studies with the same temperature range (10 C)
+ggplot(common_range, aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
+  geom_boxplot()+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                  size = 7, angle = 45))+
+                                  ggtitle("SMD across studies with the same 
+                                          temperature fluctuation range (10 C)")
+#random effects model within subset data
+fig12 <- rma.mv(yi, vi, data=common_range,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig12
+#simple linear model looking at how flux_range affects yi within subset data
+simple12<-lm(yi~flux_range, data =common_range)
+summary(simple12)
+```
+
+## Question how does mean temperature affect response variables?
+
+### Figure 7.
+```{r, message=FALSE}
+# boxplots of how mean temperature influences SMD
+ggplot(normalized, aes(x=as.factor(mean_temp_constant), y=yi))+
+  geom_boxplot()+
+  theme_bw()+
+  ggtitle("SMD across mean temperature")
+
+#random effects model including org_level as a random variable
+fig6 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~mean_temp_constant,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig6
+#simple linear model looking at how mean_temp_constant affects yi
+simple6<-lm(yi~mean_temp_constant, data =dat_MA_ES)
+summary(simple6)
+```
+
+### Figure 8.
+```{r, message=FALSE}
+#looking at yi across studies with the same mean temperature (24 C)
+ggplot(common_temp, aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
+  geom_boxplot()+
+  theme_minimal()+
+  theme(axis.text.x = element_text(face = "bold", 
+                                   size = 7, angle = 45))+
+  ggtitle("SMD across studies with the same mean temperature (24 C)")
+#random effects model within subset data
+fig13 <- rma.mv(yi, vi, data=common_temp,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig13
+#simple linear model looking at how flux_range affects yi within subset data
+simple13<-lm(yi~mean_temp_constant, data =common_temp)
+summary(simple13)
+```
+
+## Question: How does genus affect response?
+
+### Figure 9. 
 ```{r, message=FALSE}
 #trying to look at drosophila response across studies 
 ggplot(drosophila, aes(y=yi, x=as.factor(flux_range), color = study_id))+
@@ -260,54 +261,96 @@ simple10<-lm(yi~flux_range + study_id, data =drosophila)
 summary(simple10)
 ```
 
+### Figure 10.
 ```{r, message=FALSE}
-ggplot(normalized, aes(y=yi, x=flux_range, color = genus))+
-  geom_jitter(alpha = 0.5, size =3)+
-  theme_minimal()+
-  ggtitle("SMD across fluctuation ranges colored by genus")
-```
-
-
-
-```{r, message=FALSE}
-#looking at yi across studies with the same temperature range (10 C)
-ggplot(common_range, aes(y=yi, x=study_id, color = study_id))+
+#boxplots of SMD across different genuses colored by body size
+ggplot(normalized, aes(y=yi, x= reorder(genus, -yi), color = as.factor(size)))+
   geom_boxplot()+
   theme_minimal()+
+  ggtitle("SMD across genuses colored by body size")+
   theme(axis.text.x = element_text(face = "bold", 
-                                  size = 7, angle = 45))+
-                                  ggtitle("SMD across studies with the same 
-                                          temperature fluctuation range (10 C)")
+                                   size = 10, angle = 45,hjust = 1), 
+        legend.position = "bottom")
+#random effects model including genus as a random variable
+fig11 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~genus,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig11
+#simple linear model looking at how genus affects yi
+simple11<-lm(yi~genus, data =dat_MA_ES)
+summary(simple11)
 ```
 
+
+## Question how does scale (life or org level) affect response?
+### Figure 11. 
 ```{r, message=FALSE}
-#looking at yi across studies with the same mean temperature (24 C)
-ggplot(common_temp, aes(y=yi, x=study_id, color = study_id))+
+#boxplot
+ggplot(normalized, aes(x=exp_age, y=yi, color = as.factor(exp_age)))+
   geom_boxplot()+
-  theme_minimal()+
-  theme(axis.text.x = element_text(face = "bold", 
-                                   size = 7, angle = 45))+
-  ggtitle("SMD across studies with the same mean temperature (24 C)")
+  theme_bw()+
+  ggtitle("SMD across different experimental ages")
+
+#random effects model including exp_age as a random variable
+fig3 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~exp_age, 
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig3
+#simple linear model looking at how exp_age affects yi
+simple3<-lm(yi~exp_age, data =dat_MA_ES)
+summary(simple3)
 ```
 
+### Figure 12. 
 ```{r, message=FALSE}
-#trying to look at how size trends yi across increasing flux ranges 
-ggplot(normalized, aes(y=abs(yi), x=flux_range, color = as.factor(size)))+
-  geom_point(alpha = 0.5)+
-  geom_smooth(formula = y~x)+
-  theme_minimal()+
-  theme(axis.text.x = element_text(face = "bold", 
-                                   size = 7, angle = 45))+
-  ggtitle("Absolute SMD across fluctuation ranges colored 
-          by size of study organism and fitted with model curve")
+ggplot(normalized, aes(x=exp_age, y=vi, color = as.factor(exp_age)))+
+  geom_boxplot()+
+  theme_bw()+
+  ggtitle("Variance across different experimental ages")
+
+count(normalized, exp_age)
+
+#simple linear model looking at how exp_age affects vi
+simple4<-lm(vi~ exp_age, data =dat_MA_ES)
+summary(simple4)
 ```
 
+### Figure 13. 
 ```{r, message=FALSE}
-#plot across studies with common unit gram
-ggplot(common_unit_g, aes(y=yi, x=flux_range, color = study_id))+
-  geom_point(alpha =0.5, size =6)+
+#boxplot of SMD across levels of organization
+ggplot(normalized, aes(x=as.factor(org_level), y=yi, fill=as.factor(org_level)))+
+  geom_boxplot(alpha =0.7)+
+  scale_fill_tron()+
+  theme_bw()+
+  theme(legend.position = "bottom")+
+  ggtitle("SMD across organization level")
+
+#random effects model including org_level as a random variable
+fig5 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~org_level,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig5
+#simple linear model looking at how org_level affects yi
+simple5<-lm(yi~org_level, data =dat_MA_ES)
+summary(simple5)
+```
+
+## Question: How does response variable affect response?
+### Figure 14.
+```{r, message=FALSE}
+#plot across studies with common response variable body mass
+ggplot(common_unit_g, aes(y=yi, color=as.factor(flux_range), x = study_id))+
+  geom_boxplot()+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
                                   size = 7, angle = 45))+
   ggtitle("SMD across fluctuation ranges colored by studies with the common unit grams")
+#random effects model within subset data
+fig14 <- rma.mv(yi, vi, data=common_unit_g,
+               random = ~1 | experiment_id/ study_id,
+                 method="REML") 
+fig14
+#simple linear model looking at how flux_range affects yi within subset data
+simple14<-lm(yi~study_id, data =common_unit_g)
+summary(simple14)
 ```

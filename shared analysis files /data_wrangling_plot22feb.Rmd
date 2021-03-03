@@ -32,11 +32,13 @@ dat_MA <-dat_MA_0 %>%
 #calculate ES for data
 dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
             sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
-            data=dat_MA, slab=paste(study_id, experiment_id, response_id, sep=", "))
+            data=dat_MA, slab=paste(study_id, experiment_id, response_id, sep=", ")) 
 
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
-dat_MA_ES<-dat_MA_ES %>% filter (!is.na(yi))
-
+dat_MA_ES<-dat_MA_ES %>% 
+  filter (!is.na(yi)) %>%
+  filter(resp_units != "C")
+  
 #fit initial MA model, abs (note structure )
 mod1 <- rma.mv(abs(yi), vi, data=dat_MA_ES, 
                  method="REML", random = ~1 | response_id/ experiment_id/ study_id) 
@@ -64,7 +66,7 @@ count(dat_MA_ES, larger_group) # pretty much mostly animal studies
 
 #removing outlier point to get better picture of data structure AND excluding CT assays 
 normalized <- dat_MA_ES %>%
-  filter(yi > -20, resp_units != "C") 
+  filter(yi > -20) 
 #filtering for studies with common variable g 
 common_unit_g <-dat_MA_ES %>% 
 filter(resp_def == "body mass")
@@ -284,6 +286,7 @@ summary(simple11)
 
 ## Question how does scale (life or org level) affect response?
 ### Figure 11. 
+
 ```{r, message=FALSE}
 #boxplot
 ggplot(normalized, aes(x=exp_age, y=yi, color = as.factor(exp_age)))+
@@ -337,6 +340,21 @@ summary(simple5)
 
 ## Question: How does response variable affect response?
 ### Figure 14.
+```{r}
+#full random effects model looking at all the responses in the entire dataset
+response_variable_mod <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~resp_def, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+response_variable_mod
+
+#full random effects model looking at all the response units in the entire dataset
+response_units_mod <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~resp_units, 
+               random = ~1 | experiment_id/ study_id /response_id,
+                 method="REML") 
+response_units_mod
+```
+
+
 ```{r, message=FALSE}
 #plot across studies with common response variable body mass
 ggplot(common_unit_g, aes(y=yi, color=as.factor(flux_range), x = study_id))+

@@ -18,7 +18,6 @@ pacman::p_load(metafor, tidyverse, viridis, ggsci, wesanderson)
 
 #load data
 dat_MA_0<- read_csv("metafor.csv")
-regions <- read_csv("gbif_regiondata.csv")
 ```
 
 

@@ -17,7 +17,7 @@ pacman::p_load(metafor, tidyverse, viridis, ggsci, wesanderson)
 #library(orchaRd)
 
 #load data
-dat_MA_0<- read_csv("metafor7march.csv")
+dat_MA_0<- read_csv("metafor.csv")
 regions <- read_csv("gbif_regiondata.csv")
 ```
 
@@ -38,7 +38,8 @@ dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp,
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
 dat_MA_ES<-dat_MA_ES %>% 
   filter (!is.na(yi)) %>%
-  filter(resp_units != "C") 
+  filter(resp_units != "C") %>%
+  filter(study_id != "piccau2017")
 
 #fit initial MA model, abs (note structure )
 mod1 <- rma.mv(abs(yi), vi, data=dat_MA_ES, 
@@ -131,9 +132,10 @@ summary(simple2)
 ### Figure 3.
 ```{r, message=FALSE}
 # boxplots of how fluctuation range influences SMD
-ggplot(normalized, aes(x=as.factor(flux_range), y=yi))+
-  geom_boxplot()+
+ggplot(normalized, aes(x=flux_range, y=yi))+
+  geom_point()+
   theme_bw()+
+  geom_smooth(method="lm", formula = y~x)+
   ggtitle("SMD across flux_range")
 
 #random effects model including org_level as a random variable
@@ -190,6 +192,7 @@ summary(simple9)
 #looking at yi across studies with the same temperature range (10 C)
 ggplot(common_range, aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
   geom_boxplot()+
+  geom_point(alpha = 0.5)+
   theme_minimal()+
   theme(axis.text.x = element_text(face = "bold", 
                                   size = 7, angle = 45))+
@@ -209,9 +212,9 @@ summary(simple12)
 
 ### Figure 7.
 ```{r, message=FALSE}
-# boxplots of how mean temperature influences SMD
-ggplot(normalized, aes(x=as.factor(mean_temp_constant), y=yi))+
-  geom_boxplot()+
+# scatterplot of how mean temperature influences SMD
+ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
+  geom_point()+
   theme_bw()+
   ggtitle("SMD across mean temperature")
 
@@ -268,14 +271,14 @@ summary(simple10)
 ```{r, message=FALSE}
 #boxplots of SMD across different genuses colored by body size
 ggplot(normalized, aes(y=yi, x= reorder(genus, -yi), color = as.factor(size)))+
-  geom_boxplot()+
+  geom_point()+
   theme_minimal()+
   ggtitle("SMD across genuses colored by body size")+
   theme(axis.text.x = element_text(face = "bold", 
                                    size = 10, angle = 45,hjust = 1), 
         legend.position = "bottom")
 #random effects model including genus as a random variable
-fig11 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~genus,
+fig11 <- rma.mv(yi, vi, data=dat_MA_ES, mods = ~size,
                random = ~1 | experiment_id/ study_id,
                  method="REML") 
 fig11
@@ -356,7 +359,14 @@ response_units_mod
 ```
 
 
-```{r, message=FALSE}
+
+
+
+
+___________________________________
+Leftover/excluded plots 
+
+```{r, message=FALSE, results = 'hide'}
 #plot across studies with common response variable body mass
 ggplot(common_unit_g, aes(y=yi, color=as.factor(flux_range), x = study_id))+
   geom_boxplot()+
@@ -373,3 +383,4 @@ fig14
 simple14<-lm(yi~study_id, data =common_unit_g)
 summary(simple14)
 ```
+

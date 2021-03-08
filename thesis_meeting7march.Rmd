@@ -23,114 +23,8 @@ Notes:
 
 - Any of the remaining organisms have a sample size of at least 8 when aggregated by genus 
 
-- S. enterica was the only organism with no data on GBIF and was therefor leftout
+- S. enterica and E. coli had no data on GBIF and was therefore leftout.
 
-```{r}
-#extracting occurences for each species as available in gbif
-c_reevesii <- occ_search(scientificName = "Chinemys reevesii")
-a <- c_reevesii$data %>% 
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-x_arvicola <- occ_search(scientificName = "Xylotrechus arvicola")
-b <- x_arvicola$data %>% 
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-g_firmus <- occ_search(scientificName = "Gryllus firmus")
-c <- g_firmus$data %>% 
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-l_peronii <- occ_search(scientificName = "Limnodynastes	peronii")
-d <- l_peronii$data %>% 
-  as.data.frame() %>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-l_tasmaniensis <- occ_search(scientificName = "Limnodynastes	tasmaniensis")
-e <- l_tasmaniensis$data %>% 
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-d_simulans <- occ_search(scientificName = "Drosophila simulans")
-f <- d_simulans$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-r_prolixus <- occ_search(scientificName = "Rhodnius	prolixus")
-g <- r_prolixus$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-c_latirostris <- occ_search(scientificName = "Caiman latirostris")
-h <- c_latirostris$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-d_melanogaster <- occ_search(scientificName = "Drosophila melanogaster")
-i <- d_melanogaster$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-p_chinensis <- occ_search(scientificName = "Plestiodon chinensis")
-j <- p_chinensis$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-#no country column 
-e_coli <- occ_search(scientificName = "Escherichia 	coli")
-k <- e_coli$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-
-#zero observations 
-s_enetrica <- occ_search(scientificName = "Salmonella	enetrica")$data %>%
-  as.data.frame()
-
-d_birchii <- occ_search(scientificName = "Drosophila birchii")
-l <- d_birchii$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
-#binding all the data together
-gbif_data <- bind_rows(a,b,c,d,e,f,g,h,i,j,k,l) %>%
-  drop_na()
-```
-
-```{r}
-#binning data into different temperature zones
-regions <- gbif_data %>% 
-  mutate(thermal_zone = case_when(between(decimalLatitude, -20, 20.9) ~ "tropical", 
-                                  between(decimalLatitude, 21, 40.9) ~ "subtropical",
-                                  between(decimalLatitude, -21, -40.9) ~ "subtropical",
-                                  between(decimalLatitude, -41, -60.9) ~ "temperate",
-                                  between(decimalLatitude, 41, 60.9) ~ "temperate", 
-                                  between(decimalLatitude, 61, 90) ~ "arctic", 
-                                  between(decimalLatitude, -61, -90) ~ "arctic")) %>%
-  mutate(genus = case_when(species == "Caiman latirostris" ~ "Caiman", 
-         species %in% c("Drosophila birchii", "Drosophila melanogaster", 
-                        "Drosophila simulans") ~ "Drosophila", 
-         species == "Escherichia coli " ~ "Escherichia", 
-         species == "Gryllus firmus " ~ "Gryllus",
-         species %in% c("Limnodynastes peronii", 
-                        "Limnodynastes tasmaniensis") ~ "Limnodynastes",
-         species == "Mauremys reevesii" ~ "Mauremys",
-         species == "Plestiodon chinensis " ~ "Plestiodon",
-         species == "Rhodnius prolixus" ~ "Rhodnius",
-         species == "Xylotrechus arvicola" ~ "Xylotrechus")) %>%
-  drop_na()
-```
 
 ## Plotting preliminary plot from GBIF data 
 
@@ -144,6 +38,7 @@ Added in my own category of polar: anything above 60 N or below 60 S
 
 ```{r}
 #generating data for map overlay
+regions <- read_csv("gbif_regiondata.csv")
 world <- ne_countries(scale = "medium", returnclass = "sf")
 #plotting up data 
 ggplot(data = world)+
@@ -163,10 +58,19 @@ ggplot(data = world)+
   xlab("Longitude")
 ```
 
+
+
 ```{r}
-#writing to csv 
-write_csv(regions, "gbif_regiondata.csv")
+#attempting to pull thermal performance data from devRate
+
+myDf <- exTropicalMoth$raw$egg
+devRateModelAll(dfData = myDf)
+
+
+devRateFind(species = "Drosophila melanogaster")
+devRateFind(species = "Drosophila simulans")
 ```
+
 
 
 ## Running Questions:
@@ -178,10 +82,20 @@ write_csv(regions, "gbif_regiondata.csv")
 -Should I be grouping by genus or by species? 
 
 
+________
 
+Additional notes/questions from figures last week
 
-        
+- Semenov 2007 and Kern et al 2015 were the two studies with the strangely smooth curves
 
+  - Kern et al 2015--I changed the sample sizes but not sure they are right?
+    - Looks less curved after sample size change
+  -Not sure about the sample size for Semenov: sample size of 3 for 3 replicates, should I be multiplying that by the original CFU count?
+  
 
+- Removed Piccau et al (the big negative yi)--only study without a comparable constant and fluctuating mean 
 
-
+- How to best determine whether or not the temperatures each species is experiencing are heat stress temperatures?
+  -It looks like in the final processes meta-analysis file there are quite a few species with range of temperatures 
+  
+-Would it be useful to pull in and extract the thermal performance acclimation studies? 

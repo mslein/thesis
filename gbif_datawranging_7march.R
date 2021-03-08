@@ -1,8 +1,9 @@
-#grabbing data from rgbif 
+#loading libraries 
+pacman::p_load(rgbif, tidyverse)
+
 #extracting occurences for each species as available in gbif
-pacman::p_load(rvest, rgbif, tidyverse, rnaturalearth, rnaturalearthdata, rgeos)
-c_reevesii <- occ_search(scientificName = "Chinemys reevesii")
-a <- c_reevesii$data %>% 
+m_reevesii <- occ_search(scientificName = "Mauremys reevesii")
+a <- m_reevesii$data %>% 
   as.data.frame()%>% 
   select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
   drop_na()
@@ -61,16 +62,16 @@ j <- p_chinensis$data %>%
   select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
   drop_na()
 
-#no country column 
-e_coli <- occ_search(scientificName = "Escherichia 	coli")
-k <- e_coli$data %>%
-  as.data.frame()%>% 
-  select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
-  drop_na()
+#zero observations 
+#e_coli <- occ_search(scientificName = "Escherichia coli")
+#k <- e_coli$data %>%
+  #as.data.frame()%>% 
+  #select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
+  #drop_na()
 
 #zero observations 
-s_enetrica <- occ_search(scientificName = "Salmonella	enetrica")$data %>%
-  as.data.frame()
+#s_enetrica <- occ_search(scientificName = "Salmonella	enetrica")$data %>%
+#as.data.frame()
 
 d_birchii <- occ_search(scientificName = "Drosophila birchii")
 l <- d_birchii$data %>%
@@ -78,30 +79,8 @@ l <- d_birchii$data %>%
   select(countryCode, genus, species,  decimalLongitude, decimalLatitude) %>%
   drop_na()
 #binding all the data together
-gbif_data <- bind_rows(a,b,c,d,e,f,g,h,i,j,k,l) %>%
-  drop_na
-
-#generating data for map overlay
-world <- ne_countries(scale = "medium", returnclass = "sf")
-
-?ne_countries
-#plotting up data 
-ggplot(data = world)+
-  geom_sf()+
-  geom_point(data = gbif_data, aes(x=decimalLongitude, y=decimalLatitude, color=species), alpha = 0.5)+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = -20, ymax = 20, alpha = 0.2, fill = "lightcoral")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = 20, ymax = 40, alpha = 0.2, fill = "lightgoldenrod")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = -40, ymax = -20, alpha = 0.2, fill = "lightgoldenrod")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = 40, ymax = 60, alpha = 0.2, fill = "yellowgreen")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = -60, ymax = -40, alpha = 0.2, fill = "yellowgreen")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = 60, ymax = 90, alpha = 0.2, fill = "skyblue")+
-  annotate("rect",xmin = -Inf, xmax = Inf, ymin = -90, ymax = -60, alpha = 0.2, fill = "skyblue")+
-  geom_hline(yintercept = 0, alpha =0.5, linetype= "dashed")+
-  theme_classic()+
-  theme(legend.position="bottom")+
-  ylab("Latitude")+
-  xlab("Longitude")
-  
+gbif_data <- bind_rows(a,b,c,d,e,f,g,h,i,j,l) %>%
+  drop_na()
 
 #binning data into different temperature zones
 regions <- gbif_data %>% 
@@ -113,17 +92,17 @@ regions <- gbif_data %>%
                                   between(decimalLatitude, 61, 90) ~ "arctic", 
                                   between(decimalLatitude, -61, -90) ~ "arctic")) %>%
   mutate(genus = case_when(species == "Caiman latirostris" ~ "Caiman", 
-         species %in% c("Drosophila birchii", "Drosophila melanogaster", 
-                        "Drosophila simulans") ~ "Drosophila", 
-         species == "Escherichia coli " ~ "Escherichia", 
-         species == "Gryllus firmus " ~ "Gryllus",
-         species %in% c("Limnodynastes peronii", 
-                        "Limnodynastes tasmaniensis") ~ "Limnodynastes",
-         species == "Mauremys reevesii" ~ "Mauremys",
-         species == "Plestiodon chinensis " ~ "Plestiodon",
-         species == "Rhodnius prolixus" ~ "Rhodnius",
-         species == "Xylotrechus arvicola" ~ "Xylotrechus"))
-        
+                           species %in% c("Drosophila birchii", "Drosophila melanogaster", 
+                                          "Drosophila simulans") ~ "Drosophila", 
+                           species == "Escherichia coli " ~ "Escherichia", 
+                           species == "Gryllus firmus " ~ "Gryllus",
+                           species %in% c("Limnodynastes peronii", 
+                                          "Limnodynastes tasmaniensis") ~ "Limnodynastes",
+                           species == "Mauremys reevesii" ~ "Mauremys",
+                           species == "Plestiodon chinensis " ~ "Plestiodon",
+                           species == "Rhodnius prolixus" ~ "Rhodnius",
+                           species == "Xylotrechus arvicola" ~ "Xylotrechus")) %>%
+  drop_na()
 
 write_csv(regions, "gbif_regiondata.csv")
 

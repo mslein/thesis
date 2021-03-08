@@ -75,6 +75,10 @@ common_temp <- dat_MA_ES %>%
 
 ## Question: How does response vary with study covariates?
 
+Hypothesis: SMD between constant and fluctuating environments is most affected by temperature parameters (range and mean) but is also likely affected by demographic parameters (age, size, organization level)
+
+Initial conclusions: Flux_range and mean temperature appear to be the most important contributers to variation in yi, though organization also contributes. 
+
 ```{r}
 full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range +
                         exp_age + size + org_level + mean_temp_constant, 
@@ -100,6 +104,7 @@ ggplot(normalized, aes(x=flux_range, y=yi))+
 ggplot(normalized, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
   geom_point()+
   geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
   ggtitle("SMD across fluctuation ranges colored by organization level 
           and fit with linear model")
 ```
@@ -122,12 +127,16 @@ ggplot(normalized, aes(x=as.factor(org_level), y=yi, fill=as.factor(org_level)))
 ggplot(normalized, aes(x=flux_range, y=yi, color = study_id))+
   geom_point()+
   geom_smooth(method="lm", formula = y~x)+
-  theme_minimal()+
+  theme_bw()+
   ggtitle("SMD across fluctuation ranges colored by 
           studies and fit with linear model by study")
 ```
 
 ## Question: How does response compare across studies and experiments?
+Hypothesis: There should be differences across studies because of differences in experimental designs and study organism that would mean different magnitudes of response. 
+
+Initial conclusions: The studies overall are different in their responses but not owing to study_id or experiment. However, the mixed effects model does suggest some differences when you include study _id as a mod.
+
 ```{r, message=FALSE}
 #corresponding random effects model 
 fig1 <- rma.mv(yi, vi, data=dat_MA_ES, 
@@ -182,10 +191,9 @@ ggplot(common_range, aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
 # scatterplot of how mean temperature influences SMD
 ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
   geom_point()+
-  theme_bw()+
+  theme_minimal()+
   ggtitle("SMD across mean temperature")
 ```
-
 
 _________________________________
 Supplementary Plots/Code

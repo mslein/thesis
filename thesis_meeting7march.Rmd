@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 #loading libraries 
-pacman::p_load(rvest, rgbif, tidyverse, rnaturalearth, rnaturalearthdata, rgeos)
+pacman::p_load(rvest, rgbif, tidyverse, rnaturalearth, rnaturalearthdata, rgeos, devRate)
 ```
 
 
@@ -38,7 +38,7 @@ Added in my own category of polar: anything above 60 N or below 60 S
 
 ```{r}
 #generating data for map overlay
-regions <- read_csv("gbif_regiondata.csv")
+regions <- read_csv("gbif_region_data.csv")
 world <- ne_countries(scale = "medium", returnclass = "sf")
 #plotting up data 
 ggplot(data = world)+
@@ -60,13 +60,11 @@ ggplot(data = world)+
 
 
 
-```{r}
+```{r, results='hide'}
 #attempting to pull thermal performance data from devRate
 
 myDf <- exTropicalMoth$raw$egg
 devRateModelAll(dfData = myDf)
-
-
 devRateFind(species = "Drosophila melanogaster")
 devRateFind(species = "Drosophila simulans")
 ```

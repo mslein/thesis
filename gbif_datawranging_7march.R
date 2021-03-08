@@ -82,7 +82,7 @@ l <- d_birchii$data %>%
 gbif_data <- bind_rows(a,b,c,d,e,f,g,h,i,j,l) %>%
   drop_na()
 
-#binning data into different temperature zones
+#binning data into different temperature zones and creating a genus column
 regions <- gbif_data %>% 
   mutate(thermal_zone = case_when(between(decimalLatitude, -20, 20.9) ~ "tropical", 
                                   between(decimalLatitude, 21, 40.9) ~ "subtropical",
@@ -103,8 +103,8 @@ regions <- gbif_data %>%
                            species == "Rhodnius prolixus" ~ "Rhodnius",
                            species == "Xylotrechus arvicola" ~ "Xylotrechus")) %>%
   drop_na()
-
-write_csv(regions, "gbif_regiondata.csv")
-
+#writing all this data to a csv 
+write_csv(regions, "gbif_region_data.csv")
+#spread of geographic data
 count<-count(regions, countryCode, thermal_zone, species)
 glimpse(regions)

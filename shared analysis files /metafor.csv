@@ -44,8 +44,6 @@
 2,1,kern_2015phys,table 1,0,1,1,,24,20,30,10,24,body mass,g ,243.26,182.66,6.16,4.62,245,245,0,0,Platyplectrum ,ornatum,1,1,2,,,,,,,,y
 4,1,kern_2015phys,table 1,0,1,1,,24,20,30,10,24,body length,mm,11.48,10.46,0.12,0.11,245,245,0,0,Platyplectrum ,ornatum,1,1,2,,,,,,,,y
 3,1,kern_2015phys,table 1,0,1,1,,24,20,30,10,24,tail length,mm,19.77,17.78,0.21,0.22,245,245,0,0,Platyplectrum ,ornatum,1,1,2,,,,,,,,y
-1,1,kern_2015plasticity ,figure 1,1,1,1,,18,18,28,10,24,survival ,percent,86.5139949,83.4605598,3.117048345,6.361323155,12,12,1,0,Limnodynastes,peronii,1,1,2,UV exposure,UV absence,,,,,,n
-1,1,kern_2015plasticity ,figure 1,1,1,1,,18,18,28,10,24,survival ,percent,21.6284987,80.91603053,6.48854962,6.997455471,12,12,1,0,Limnodynastes,peronii,1,1,2,UV exposure,UV presence,,,,,,n
 1,1,maneti2014,figure 2a,0,2,1,23,23,13,28,15,24,productivity,offspring/female,78.12,70.56,2.16,2.7,20,20,1,0,Drosophila ,simulans,1,1,1,,,,,,,,y
 1,1,maneti2014,figure 2a,0,3,1,23,23,13,28,15,24,productivity,offspring/female,78.12,72.84,2.16,2.4,20,20,1,0,Drosophila ,simulans,1,1,1,,,,,,,,y
 2,1,maneti2014,figure 2c,1,2,1,23,23,13,28,15,24,egg to adult viability ,percent,70.90687473,71.96135094,2.389558233,3.092369478,20,20,1,0,Drosophila ,simulans,1,1,1,,,,,,,,y
@@ -122,7 +120,6 @@
 2,1,pendlebury2004,figure 1b,0,1,1,20,18.3,15,25,10,24,egg mass,g ,9.109677419,7.341935484,0.529032258,0.283870968,20,20,1,0,Coturnix ,japonica,1,2,2,food level,low food ,,,,,,y
 2,1,pendlebury2004,figure 1b,0,1,1,20,18.3,11.7,31.7,20,24,egg mass,g ,8.658064516,8.529032258,0.361290323,0.335483871,20,20,1,0,Coturnix ,japonica,1,2,2,food level,high food,,,,,,y
 2,1,pendlebury2004,figure 1b,0,1,1,20,18.3,11.7,31.7,20,24,egg mass,g ,9.109677419,6.748387097,0.529032258,0.490322581,20,20,1,0,Coturnix ,japonica,1,2,2,food level,low food ,,,,,,y
-1,1,piccau2017,figure 1,1,1,1,,10,10,25,15,24,germination,percent,0.81037277,87.5202593,1.62074554,7.37439222,120,120,1,1,Clematis,vitalba,0,0,1,irradiance per day ,0 hours ,,,,,,n
 1,1,semenov2007,figure 1a,1,1,1,37,7,0,14,14,24,survival ,CFU * g dry weight manure^-1,26366508.99,18649907.91,4587583.937,,3,3,1,1,Escherichia ,coli,3,1,0,manure type,untreated,,,,14,days,y
 1,1,semenov2007,figure 1a,1,1,1,37,16,9,23,14,24,survival ,CFU * g dry weight manure^-1,8557183.145,3926313.402,1948886.107,1031123.618,3,3,1,1,Escherichia ,coli,3,1,0,manure type,untreated,,,,14,days,y
 1,1,semenov2007,figure 1a,1,1,1,37,23,16,30,14,24,survival ,CFU * g dry weight manure^-1,1168608.855,246023.9821,181593.1785,94114.19375,3,3,1,1,Escherichia ,coli,3,1,0,manure type,untreated,,,,14,days,y
@@ -159,6 +156,3 @@
 1,2,saxon2017,figure 1,0,1,1,20.5,17,14,20,6,24,total offspring,total offspring,83.80752638,81.60275261,65.82586826,72.33144087,1600,1600,1,1,Drosophila ,birchii,1,2,1,,,,,,,,y
 2,2,saxon2017,figure 1,0,1,1,20.5,17,14,20,6,24,offspring per mating,offspring per mating,54.99302556,54.99554644,32.30649435,37.0364146,1600,1600,1,1,Drosophila ,birchii,1,2,1,,,,,,,,y
 3,2,saxon2017,figure 1,0,1,1,20.5,17,14,20,6,24,wing centroid,wing centroid,2252.5,2207.5,70.37037037,79.62962963,1600,1600,1,1,Drosophila ,birchii,1,2,1,,,,,,,,y
-3,3,saxon2017,figure 2,0,1,1,20.5,21,21,27,6,24,wing centroid,wing centroid,2089.071038,2006.010929,74.47885044,74.47885044,480,480,1,1,Drosophila ,birchii,1,2,1,,,,,,,,n
-1,1,duncan2016,figure 2,0,4,0,,32,28,32,4,48,phage density ,ml^-1,-0.023909825,-0.845099459,0.118206343,0.119565036,,,1,0,lytic phage,SBWΦ2.,3,1,0,direction of temp change,cold to hot,,,,,,n
-1,2,duncan2016,figure 2,0,4,0,,32,28,32,4,48,phage density ,ml^-1,-0.023909825,2.41359671,0.118206343,0.282608267,,,1,0,lytic phage,SBWΦ2.,3,1,0,direction of temp change,hot to cold ,,,,,,n

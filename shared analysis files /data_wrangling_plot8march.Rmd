@@ -12,12 +12,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE, results = 'hide', message=FALSE}
 ## loading libraries 
-pacman::p_load(metafor, tidyverse, viridis, ggsci, wesanderson)
+pacman::p_load(metafor, tidyverse, viridis, ggsci, plotly)
 #devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", force = TRUE,build_vignettes = TRUE)
 #library(orchaRd)
 
 #load data
-dat_MA_0<- read_csv("metafor.csv")
+dat_MA_0<- read_csv("metafor.csv") %>%
+  mutate(resp_type = case_when( resp_units %in% c("1 day ^-1", "kJ *day^-1 *kg^-1", "m * s^-1") ~ "rate", TRUE ~ "trait"))
+
+glimpse(dat_MA_0)
+
+count(dat_MA_0, study_id, genus, species, mean_temp_constant, min_temp, max_temp)
 ```
 
 
@@ -37,6 +42,16 @@ dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp,
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
 dat_MA_ES<-dat_MA_ES %>% 
   filter (!is.na(yi)) 
+
+#removing outlier point to get better picture of data structure AND excluding CT assays 
+normalized <- dat_MA_ES %>%
+  filter(yi > -20) 
+#filtering for just flux ranges of 10 C 
+common_range <- dat_MA_ES %>% 
+  filter(flux_range == "10")
+#filtering for just studies with mean temp of 24
+common_temp <- dat_MA_ES %>% 
+  filter(mean_temp_constant == "24")
 ```
 
 ```{r, echo= FALSE, results = 'hide', message=FALSE}
@@ -50,16 +65,6 @@ count(dat_MA_ES, genus, study_id) # 3 studies featuring drosophila
 count(dat_MA_ES, genus, species)# 16 genuses to bin by 
 count(dat_MA_ES, size)# good spread for body size
 count(dat_MA_ES, larger_group) # pretty much mostly animal studies
-
-#removing outlier point to get better picture of data structure AND excluding CT assays 
-normalized <- dat_MA_ES %>%
-  filter(yi > -20) 
-#filtering for just flux ranges of 10 C 
-common_range <- dat_MA_ES %>% 
-  filter(flux_range == "10")
-#filtering for just studies with mean temp of 24
-common_temp <- dat_MA_ES %>% 
-  filter(mean_temp_constant == "24")
 ```
 
 # Plots 
@@ -71,11 +76,32 @@ Hypothesis: SMD between constant and fluctuating environments is most affected b
 Initial conclusions: Flux_range and mean temperature appear to be the most important contributers to variation in yi, though organization also contributes. 
 
 ```{r}
-full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range +
-                        exp_age + size + org_level + mean_temp_constant, 
+#with interaction term 
+full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level, 
                random = ~1 | experiment_id/ study_id/ response_id,
                  method="REML") 
 full_rf_model
+
+#without interaction term
+full_rf_model2<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_constant +
+                        exp_age + size + org_level, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+full_rf_model2
+#full model split out by stocks/rates 
+full_rf_stocks<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_constant +
+                        exp_age + size + org_level + resp_type, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+full_rf_stocks
+
+#full model split out by life history outcomes
+full_rf_thermal<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_constant +
+                        exp_age + size + org_level + stressful , 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+full_rf_thermal
 ```
 
 ## Relevant plots
@@ -157,8 +183,8 @@ ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experim
 ### Figure 6. 
 ```{r, echo= FALSE}
 # scatterplot of standardized mean response faceted by exp age
-ggplot(normalized, aes(x=vi, y=yi, color = study_id))+
-  geom_point()+
+ggplot(normalized, aes(x=yi, y=vi, color = study_id))+
+  geom_point(alpha = 0.5)+
   theme_bw()+
   ggtitle("SMD across variance 
           colored by study")
@@ -183,8 +209,43 @@ ggplot(common_range, aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
 ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
   geom_point()+
   theme_minimal()+
+  geom_smooth(formula = y~x, method = "lm")+
   ggtitle("SMD across mean temperature")
 ```
+
+```{r}
+#contour plot with flux_range on the x axis, mean temp of the y axis and colored by yi
+fig <- plot_ly(
+  x = dat_MA_ES$flux_range, 
+  y = dat_MA_ES$mean_temp_constant, 
+  z = dat_MA_ES$yi, 
+  type = "contour" 
+)
+
+
+
+#funnel plot 
+### set up 2x2 array for plotting
+par(mfrow=c(2,2))
+ 
+funnel_model <- rma.mv(yi, vi, data=normalized, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+### draw funnel plots
+#funnel plot with confidence intervals for significant values from different studies; taken from normalized data set because of big outlier 
+funnel(funnel_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+
+?funnel
+
+```
+
+
+
+
+
+
+
 
 _________________________________
 Supplementary Plots/Code

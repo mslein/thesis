@@ -36,9 +36,7 @@ dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp,
 
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
 dat_MA_ES<-dat_MA_ES %>% 
-  filter (!is.na(yi)) %>%
-  filter(resp_units != "C") %>%
-  filter(study_id != "piccau2017")
+  filter (!is.na(yi)) 
 ```
 
 ```{r, echo= FALSE, results = 'hide', message=FALSE}
@@ -53,16 +51,9 @@ count(dat_MA_ES, genus, species)# 16 genuses to bin by
 count(dat_MA_ES, size)# good spread for body size
 count(dat_MA_ES, larger_group) # pretty much mostly animal studies
 
-
 #removing outlier point to get better picture of data structure AND excluding CT assays 
 normalized <- dat_MA_ES %>%
   filter(yi > -20) 
-#filtering for studies with common variable g 
-common_unit_g <-dat_MA_ES %>% 
-filter(resp_def == "body mass")
-#filtering for genus to only be drosophila 
-drosophila <- dat_MA_ES %>% 
-  filter(genus == "Drosophila")
 #filtering for just flux ranges of 10 C 
 common_range <- dat_MA_ES %>% 
   filter(flux_range == "10")

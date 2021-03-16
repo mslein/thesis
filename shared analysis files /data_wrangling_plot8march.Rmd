@@ -216,12 +216,11 @@ ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
 ```{r}
 #contour plot with flux_range on the x axis, mean temp of the y axis and colored by yi
 fig <- plot_ly(
-  x = dat_MA_ES$flux_range, 
-  y = dat_MA_ES$mean_temp_constant, 
-  z = dat_MA_ES$yi, 
-  type = "contour" 
-)
-
+  x = normalized$flux_range, 
+  y = normalized$mean_temp_constant, 
+  z = normalized$yi, 
+  type = "contour")
+fig
 
 
 #funnel plot 

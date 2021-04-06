@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE, results = 'hide', message=FALSE}
 ## loading libraries 
-pacman::p_load(metafor, tidyverse, viridis, ggsci, plotly)
+pacman::p_load(metafor, tidyverse, viridis, ggsci, plotly,  mgcv)
 #devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", force = TRUE,build_vignettes = TRUE)
 #library(orchaRd)
 
@@ -79,7 +79,7 @@ Initial conclusions: Flux_range and mean temperature appear to be the most impor
 #with interaction term 
 full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant +
                         exp_age + size + org_level, 
-               random = ~1 | experiment_id/ study_id/ response_id,
+               random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 full_rf_model
 
@@ -267,6 +267,63 @@ funnel(funnel_model, yaxis="vi", main="Sampling Variance")
 **Figure 10.** 
 Well, from what I can gather, a majority of the effect sizes from our meta-analysis have a non-signficant effect size value. However, there is a population of a couple influential effect sizes that are significantly important. 
 
+
+
+
+
+
+```{r}
+fig <- plot_ly(
+  x = normalized$mean_temp_constant, 
+  y = normalized$flux_range, 
+  z = normalized$yi, 
+  type = "contour", 
+  contours = list(
+    start = -19.42062,
+    end = 5.286697,
+    size = 1, 
+    coloring = 'heatmap'
+))
+fig
+
+
+
+#GAM APPROACH
+#fit GAM
+gam1<-gam(yi~te(mean_temp_constant,flux_range,k=6),data=normalized) # note, lots of decisions that I blew by here
+summary(gam1)
+#estimate values via gam
+vals<-expand.grid(flux_range=seq(0,20,length.out = 100), mean_temp_constant=seq(0,35,length.out = 100))
+pd.gam<-predict(gam1,newdata=vals)
+surf<-data.frame(vals,value=pd.gam)
+#plot values as a surface
+# setting up custom color palette for surfaces, or anything besides the default green/ yellow one
+or2<-c('#fdd49e','#fdbb84','#fc8d59','#e34a33','#b30000')
+or2.bl2.pal<-c(colorRampPalette(colors=or2)(100))
+#plot gam surface
+ggplot(surf,aes(x=mean_temp_constant,y=flux_range,z=value))+
+  geom_raster(aes(fill=value))+
+  #geom_abline(intercept=0,slope=1,linetype=2)+
+  geom_contour(colour=gray(0.2),binwidth=0.5,size=0.2)+
+  #geom_contour(colour='black',breaks=c(mean(surf$value)),size=2)+
+  #geom_point(data=sample.locs,alpha=0.5)+
+  geom_contour(colour="black",breaks=c(0),size=2)+
+  scale_x_continuous('Mean Temp (°C)',expand=c(0,0))+
+  scale_y_continuous('Temp Range (°C)',expand=c(0,0))+
+  scale_fill_gradientn('Size',
+                       colors= or2.bl2.pal,
+                       breaks=seq(-2,5,2),limits=c(-2,5),
+                       guide = guide_colourbar(ticks.colour = gray(.2),
+                                               ticks.linewidth = 1.,
+                                               frame.colour = "black"))+
+  coord_cartesian(xlim=c(0,35),ylim=c(0,20))+
+  theme_bw()
+
+max(normalized$yi)
+
+
+
+```
 
 _________________________________
 Supplementary Plots/Code

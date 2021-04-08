@@ -1,7 +1,7 @@
 ---
-title: "data wrangling and plots"
+title: "final figures for inclusion"
 author: "Maggie Slein"
-date: "4/2/21"
+date: "4/7/21"
 output: pdf_document
 
 ---
@@ -66,9 +66,101 @@ count(dat_MA_ES, larger_group) # pretty much mostly animal studies
 ```
 
 
+## Question: How does response compare across studies and experiments?
+Hypothesis: There should be differences across studies because of differences in experimental designs and study organism that would mean different magnitudes of response. 
 
-# Plots 
+Initial conclusions: The studies overall are different in their responses but not owing to study_id or experiment. However, the mixed effects model does suggest some differences when you include study _id as a mod.
 
+```{r, echo= FALSE, message=FALSE}
+#simple random effects model 
+simple_model <- rma.mv(yi, vi, data=dat_MA_ES, 
+               random = ~1 | study_id / experiment_id/ response_id,
+                 method="REML") 
+simple_model
+```
+
+## Relevant Plots 
+
+```{r, echo = FALSE}
+#forest plot
+forest <- normalized %>%
+  group_by(study_id, experiment_id) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(study_id, experiment_id), sep = " experiment ", remove = FALSE)
+forest(forest$mean_yi, forest$mean_vi, slab=forest$group, pch =19, psize=1, col = "gray2")
+```
+**Figure 1.**
+Forest plot broken out by study and experiment and their observed effected sizes and sampling variances.
+
+```{r, echo = FALSE}
+#funnel plot 
+### set up 2x2 array for plotting
+par(mfrow=c(2,2))
+funnel_model <- rma.mv(yi, vi, data=normalized, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+```
+
+
+```{r, echo = FALSE, fig.height=8, fig.width=12}
+### draw funnel plots
+#funnel plot with confidence intervals for significant values from different studies; taken from normalized data set because of big outlier 
+funnel(funnel_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+```
+
+**Figure 2.** 
+Well, from what I can gather, a majority of the effect sizes from our meta-analysis have a non-signficant effect size value. However, there is a population of a couple influential effect sizes that are significantly important. 
+
+```{r, echo= FALSE, message= FALSE}
+#GAM APPROACH
+#fit GAM
+gam1<-gam(yi~te(mean_temp_constant,flux_range,k=7),data=normalized) # note, lots of decisions that I blew by here
+summary(gam1)
+#estimate values via gam
+vals<-expand.grid(flux_range=seq(0,20,length.out = 100), mean_temp_constant=seq(0,35,length.out = 100))
+pd.gam<-predict(gam1,newdata=vals)
+surf<-data.frame(vals,value=pd.gam)
+vertices <- data.frame(
+  x = c(0, 0, 20),
+  y = c(10, 0, 0), 
+  id = c("a", "a", "a")
+)
+#plot values as a surface
+```
+
+
+```{r, echo= FALSE, message= FALSE}
+#plot gam surface
+ggplot()+
+  geom_raster(data = surf, aes(x=mean_temp_constant,y=flux_range, fill=value))+
+  geom_contour(data = surf, 
+               aes(x=mean_temp_constant,y=flux_range,z=value), colour=gray(0.2),binwidth=0.5,size=0.2)+
+  geom_contour(data = surf,  aes(x=mean_temp_constant,y=flux_range,z=value), 
+               colour="black", breaks=c(0),size=2)+
+  #geom_contour_filled()
+  scale_x_continuous('Mean Temp (°C)',expand=c(0,0))+
+  scale_y_continuous('Temp Range (°C)',expand=c(0,0))+
+  scale_fill_gradientn('Effect Size',
+                       colors= viridis(100),
+                       breaks=seq(-2,5,2),limits=c(-2,5),
+                       guide = guide_colourbar(ticks.colour = gray(.2),
+                                               ticks.linewidth = 1.,
+                                               frame.colour = "black"))+
+  coord_cartesian(xlim=c(0,35),ylim=c(0,20))+
+  geom_jitter(data = normalized, mapping = aes(x=mean_temp_constant,y=flux_range,z= yi,fill = yi),
+              alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
+  scale_fill_viridis('Effect Size', limits = c(-2,5), option = "C")+
+  theme_bw()+ 
+  theme(legend.position="bottom")+
+  geom_polygon(data = vertices, mapping = aes(x = x, y = y), fill = "gray")
+```
+**Figure 3.** Contour plot of GAM generated effects sizes overlayed with raw effect sizes from the extracted dataset. Black lines denote the boundary from negative to positive effect sizes. Grey triange denotes excluded contour that lacks any raw data. 
+
+
+
+\newpage
 ## Question: How does response vary with study covariates?
 
 Hypothesis: SMD between constant and fluctuating environments is most affected by temperature parameters (range and mean) but is also likely affected by demographic parameters (age, size, organization level)
@@ -78,11 +170,103 @@ Initial conclusions: Flux_range and mean temperature appear to be the most impor
 ```{r}
 #with interaction term 
 full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant +
-                        exp_age + size + org_level, 
+                        exp_age + size + org_level + resp_type, 
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 full_rf_model
 
+#separate model with thermal history trait as a mod 
+full_rf_thermal<-rma.mv(yi, vi, data=dat_MA_ES, mods = 
+                          ~flux_range * mean_temp_constant + stressful, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+full_rf_thermal
+#absolute yi model 
+absolute_model<-rma.mv(abs(yi), vi, data=dat_MA_ES, mods = 
+                          ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level + resp_type, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+absolute_model
+```
+
+## Relevant plots
+
+```{r, echo= FALSE}
+# scatterplot of standardized mean response vs flux range colored and lm fit by org level
+ggplot(normalized, aes(x=flux_range, y=yi, color = factor(org_level)))+
+  geom_point()+
+  scale_color_viridis(discrete = TRUE, option = "D")+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")+
+  ggtitle("SMD across fluctuation ranges colored by organization level 
+          and fit with linear model")
+```
+**Figure 4.**
+We can also see that there a difference in effect size in organization level responses across fluctuation range. Population level reponses trended positively across fluctuation ranges, while organism level responses trended negatively across fluctuation ranges. 
+
+```{r, echo= FALSE}
+# scatterplot of standardized mean response vs flux range colored and lm fit by life history thermal characteristic
+normalized %>%
+  drop_na(stressful) %>%
+ggplot(aes(x=flux_range, y=yi, color = factor(stressful)))+
+  geom_jitter()+
+  scale_color_viridis(discrete = TRUE, option = "D")+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")+
+  ggtitle("SMD across fluctuation ranges colored by 
+          whether or mean temperature was thermally stressful")
+```
+**Figure 5.** 
+When we consider where the temperatures in the fluctuation range reach thermally stressful levels, there is a small difference between responses to stressful  temperatures (negative) and non-stressful temperatures (positive).
+
+```{r, echo= FALSE}
+# scatterplot of standardized mean response vs flux range colored and lm fit by life history thermal characteristic
+normalized %>%
+ggplot(aes(x=flux_range, y=yi, color = resp_type))+
+  geom_jitter()+
+  scale_color_viridis(discrete = TRUE, option = "D")+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")+
+  ggtitle("SMD across fluctuation ranges colored by response type")  
+
+
+```
+**Figure 6.** We cab see that the ranges at which traits are measured is much wider than rates, however, there appears to a minorly negative trend in effect sizes as traits increase in fluctuation range. The opposite is true for rates. Great way to show that there is a lack of information on rates in the collected dataset. 
+
+\newpage
+
+Running questions:
+
+- How do all the different models sound? Does it make sense to have these different models?
+- Do the figures match up with the story/questions associated with them?
+- Jittering versus standard plotting for the regression plots?
+_________________________________
+Supplementary Plots/Code
+
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
+#scatterplot of standardized mean difference across flux range colored by study fit with lm 
+ggplot(normalized, aes(x=flux_range, y=yi, color = study_id))+
+  geom_point()+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  ggtitle("SMD across fluctuation ranges colored by 
+          studies and fit with linear model by study")
+```
+
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
+# boxplots of how fluctuation range influences SMD
+ggplot(normalized, aes(x=flux_range, y=yi))+
+  geom_point(alpha = 0.5)+
+  theme_bw()+
+  geom_smooth(method="lm", formula = y~x)+
+  ggtitle("SMD across flux_range")
+```
+
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
 #without interaction term
 full_rf_model2<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_constant +
                         exp_age + size + org_level, 
@@ -95,99 +279,20 @@ full_rf_stocks<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_co
                random = ~1 | experiment_id/ study_id/ response_id,
                  method="REML") 
 full_rf_stocks
-
-#full model split out by life history outcomes
-full_rf_thermal<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range + mean_temp_constant +
-                        exp_age + size + org_level + stressful , 
-               random = ~1 | experiment_id/ study_id/ response_id,
-                 method="REML") 
-full_rf_thermal
 ```
 
-## Relevant plots
 
-
-```{r, echo= FALSE}
-# boxplots of how fluctuation range influences SMD
-ggplot(normalized, aes(x=flux_range, y=yi))+
-  geom_point(alpha = 0.5)+
-  theme_bw()+
-  geom_smooth(method="lm", formula = y~x)+
-  ggtitle("SMD across flux_range")
-```
-**Figure 1.**
-Data visualization supports model findings that there is a differene between shorter fluctuation ranges and longer fluctuation ranges. 
-
-
-
-```{r, echo= FALSE}
-# scatterplot of standardized mean response vs flux range colored and lm fit by org level
-ggplot(normalized, aes(x=flux_range, y=yi, color = as.factor(org_level)))+
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
+# scatterplot of how mean temperature influences SMD
+ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
   geom_point()+
-  geom_smooth(method="lm", formula = y~x)+
-  theme_bw()+
-  ggtitle("SMD across fluctuation ranges colored by organization level 
-          and fit with linear model")
-```
-**Figure 2.**
-We can also see that there a difference in effect size in organization level responses across fluctuation range. Population level reponses trended positively across fluctuation ranges, while organism level responses trended negatively across fluctuation ranges. 
-
-
-```{r, echo= FALSE}
-#scatterplot of standardized mean difference across flux range colored by study fit with lm 
-ggplot(normalized, aes(x=flux_range, y=yi, color = study_id))+
-  geom_point()+
-  geom_smooth(method="lm", formula = y~x)+
-  theme_bw()+
-  ggtitle("SMD across fluctuation ranges colored by 
-          studies and fit with linear model by study")
-```
-**Figure 3.**
-When broken out by study, we can see that there is disagreement in the effect of fluctuation range on effect size.
-
-```{r, echo= FALSE}
-# scatterplot of standardized mean response vs flux range colored and lm fit by life history thermal characteristic
-normalized %>%
-  drop_na(stressful) %>%
-ggplot(aes(x=flux_range, y=yi, color = stressful))+
-  geom_point()+
-  geom_smooth(method="lm", formula = y~x)+
-  theme_bw()+
-  ggtitle("SMD across fluctuation ranges colored by 
-          whether or mean temperature was thermally stressful")
-```
-**Figure 4.** 
-When we consider where the temperatures in the fluctuation range reach thermally stressful levels, there is a small difference between responses to stressful  temperatures (negative) and non-stressful temperatures (positive).
-
-
-```{r, echo= FALSE}
-# scatterplot of standardized mean response vs flux range colored and lm fit by life history thermal characteristic
-normalized %>%
-ggplot(aes(x=flux_range, y=yi, color = resp_type))+
-  geom_point()+
-  geom_smooth(method="lm", formula = y~x)+
-  theme_bw()+
-  ggtitle("SMD across fluctuation ranges colored by response type")
-```
-**Figure 5.** 
-
-
-## Question: How does response compare across studies and experiments?
-Hypothesis: There should be differences across studies because of differences in experimental designs and study organism that would mean different magnitudes of response. 
-
-Initial conclusions: The studies overall are different in their responses but not owing to study_id or experiment. However, the mixed effects model does suggest some differences when you include study _id as a mod.
-
-```{r, echo= FALSE, message=FALSE}
-#corresponding random effects model 
-fig1 <- rma.mv(yi, vi, data=dat_MA_ES, 
-               random = ~1 | experiment_id/ study_id,
-                 method="REML") 
-fig1
+  theme_minimal()+
+  geom_smooth(formula = y~x, method = "lm")+
+  ggtitle("SMD across mean temperature")
 ```
 
-## Relevant Plots 
 
-```{r, echo = FALSE}
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
 #SMD across all studies
 ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experiment_id)))+
   geom_boxplot()+
@@ -199,25 +304,8 @@ ggplot(normalized, aes(x=reorder(study_id, -yi), y=yi, color = as.factor(experim
   ggtitle("SMD across all studies")
 ```
 
-**Figure 6.**
-When we look at experiment and study, we can see across the 15 studies included in this meta-analysis there are differences across and within experiments. 
 
-
-```{r, echo = FALSE}
-#forest plot that shows the same thing?
-forest <- normalized %>%
-  group_by(study_id) %>%
-  summarise(mean_yi = mean(yi),
-            mean_vi = mean(vi)) %>%
-  arrange(desc(mean_yi))
-forest(forest$mean_yi, forest$mean_vi, slab=forest$study_id)
-```
-
-**Figure 7.**
-I kind of like this figure better than the boxplot in Figure 5 as an overall figure?
-
-
-```{r, echo = FALSE}
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
 #looking at yi across studies with the same temperature range (10 C)
 #excluded wang because there were too few points to do a boxplot
 common_range %>%
@@ -232,47 +320,10 @@ ggplot(aes(y=yi, x=reorder(study_id, -yi), color = study_id))+
                                           temperature fluctuation range (10 C)")
 ```
 
-**Figure 8.** 
-
-```{r, echo = FALSE}
-# scatterplot of how mean temperature influences SMD
-ggplot(normalized, aes(x=mean_temp_constant, y=yi, color = study_id))+
-  geom_point()+
-  theme_minimal()+
-  geom_smooth(formula = y~x, method = "lm")+
-  ggtitle("SMD across mean temperature")
-```
-
-```{r, echo = FALSE}
-
-#funnel plot 
-### set up 2x2 array for plotting
-par(mfrow=c(2,2))
- 
-funnel_model <- rma.mv(yi, vi, data=normalized, mods = ~flux_range * mean_temp_constant +
-                        exp_age + size + org_level, 
-               random = ~1 | experiment_id/ study_id/ response_id,
-                 method="REML") 
-```
-
-**Figure 9.** 
-
-```{r, echo = FALSE, fig.height=8, fig.width=12}
-### draw funnel plots
-#funnel plot with confidence intervals for significant values from different studies; taken from normalized data set because of big outlier 
-funnel(funnel_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
-funnel(funnel_model, yaxis="vi", main="Sampling Variance")
-```
-
-**Figure 10.** 
-Well, from what I can gather, a majority of the effect sizes from our meta-analysis have a non-signficant effect size value. However, there is a population of a couple influential effect sizes that are significantly important. 
 
 
 
-
-
-
-```{r}
+```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
 fig <- plot_ly(
   x = normalized$mean_temp_constant, 
   y = normalized$flux_range, 
@@ -286,47 +337,8 @@ fig <- plot_ly(
 ))
 fig
 
-
-
-#GAM APPROACH
-#fit GAM
-gam1<-gam(yi~te(mean_temp_constant,flux_range,k=6),data=normalized) # note, lots of decisions that I blew by here
-summary(gam1)
-#estimate values via gam
-vals<-expand.grid(flux_range=seq(0,20,length.out = 100), mean_temp_constant=seq(0,35,length.out = 100))
-pd.gam<-predict(gam1,newdata=vals)
-surf<-data.frame(vals,value=pd.gam)
-#plot values as a surface
-# setting up custom color palette for surfaces, or anything besides the default green/ yellow one
-or2<-c('#fdd49e','#fdbb84','#fc8d59','#e34a33','#b30000')
-or2.bl2.pal<-c(colorRampPalette(colors=or2)(100))
-#plot gam surface
-ggplot(surf,aes(x=mean_temp_constant,y=flux_range,z=value))+
-  geom_raster(aes(fill=value))+
-  #geom_abline(intercept=0,slope=1,linetype=2)+
-  geom_contour(colour=gray(0.2),binwidth=0.5,size=0.2)+
-  #geom_contour(colour='black',breaks=c(mean(surf$value)),size=2)+
-  #geom_point(data=sample.locs,alpha=0.5)+
-  geom_contour(colour="black",breaks=c(0),size=2)+
-  scale_x_continuous('Mean Temp (°C)',expand=c(0,0))+
-  scale_y_continuous('Temp Range (°C)',expand=c(0,0))+
-  scale_fill_gradientn('Size',
-                       colors= or2.bl2.pal,
-                       breaks=seq(-2,5,2),limits=c(-2,5),
-                       guide = guide_colourbar(ticks.colour = gray(.2),
-                                               ticks.linewidth = 1.,
-                                               frame.colour = "black"))+
-  coord_cartesian(xlim=c(0,35),ylim=c(0,20))+
-  theme_bw()
-
-max(normalized$yi)
-
-
-
 ```
 
-_________________________________
-Supplementary Plots/Code
 
 ```{r, echo= FALSE, results = 'hide', message=FALSE, fig.show='hide'}
 #trying out mixed effects model 
@@ -425,7 +437,7 @@ simple6<-lm(yi~mean_temp_constant, data =dat_MA_ES)
 summary(simple6)
 ```
 
-```{r, echo= FALSE, results = 'hide', message=FALSE}
+```{r, echo= FALSE, results = 'hide', message=FALSE, eval = FALSE}
 #basic linear model for study_id
 simple1<-lm(yi ~ study_id, data = dat_MA_ES)
 summary(fig1)

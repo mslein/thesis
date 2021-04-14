@@ -116,7 +116,7 @@ Well, from what I can gather, a majority of the effect sizes from our meta-analy
 ```{r, echo= FALSE, message= FALSE}
 #GAM APPROACH
 #fit GAM
-gam1<-gam(yi~te(mean_temp_constant,flux_range,k=7),data=normalized) # note, lots of decisions that I blew by here
+gam1<-gam(yi~te(mean_temp_constant + te(as.factor(flux_range), k=7)),data=normalized) # note, lots of decisions that I blew by here
 summary(gam1)
 #estimate values via gam
 vals<-expand.grid(flux_range=seq(0,20,length.out = 100), mean_temp_constant=seq(0,35,length.out = 100))
@@ -134,7 +134,7 @@ vertices <- data.frame(
 ```{r, echo= FALSE, message= FALSE}
 #plot gam surface
 ggplot()+
-  geom_raster(data = surf, aes(x=mean_temp_constant,y=flux_range, fill=value))+
+  geom_raster(data = surf, aes(x=mean_temp_constant,y=flux_range))+
   geom_contour(data = surf, 
                aes(x=mean_temp_constant,y=flux_range,z=value), colour=gray(0.2),binwidth=0.5,size=0.2)+
   geom_contour(data = surf,  aes(x=mean_temp_constant,y=flux_range,z=value), 
@@ -152,9 +152,16 @@ ggplot()+
   geom_jitter(data = normalized, mapping = aes(x=mean_temp_constant,y=flux_range,z= yi,fill = yi),
               alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
   scale_fill_viridis('Effect Size', limits = c(-2,5), option = "C")+
-  theme_bw()+ 
+  theme_classic()+ 
   theme(legend.position="bottom")+
   geom_polygon(data = vertices, mapping = aes(x = x, y = y), fill = "gray")
+
+
+normalized %>%
+ggplot(aes(x=mean_temp_constant, y=flux_range, fill = yi))+
+  geom_jitter(data = normalized, mapping = aes(x=mean_temp_constant,y=flux_range,z= yi,fill = yi),
+              alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
+  scale_fill_viridis('Effect Size', limits = c(-2,5), option = "C")
 ```
 **Figure 3.** Contour plot of GAM generated effects sizes overlayed with raw effect sizes from the extracted dataset. Black lines denote the boundary from negative to positive effect sizes. Grey triange denotes excluded contour that lacks any raw data. 
 
@@ -244,6 +251,27 @@ Running questions:
 - How do all the different models sound? Does it make sense to have these different models?
 - Do the figures match up with the story/questions associated with them?
 - Jittering versus standard plotting for the regression plots?
+
+```{r}
+normalized %>%
+  ggplot(aes(y=yi, x=mean_temp_constant, color = flux_range))+
+  geom_point(size=4)+
+  scale_color_viridis(option= "B")+
+  theme_classic()
+
+normalized %>%
+  ggplot(aes(y=flux_range, x=mean_temp_constant, color = yi))+
+  geom_jitter(size=4)+
+  scale_color_viridis(option= "B")+
+  theme_classic()
+
+```
+
+
+
+
+
+
 _________________________________
 Supplementary Plots/Code
 

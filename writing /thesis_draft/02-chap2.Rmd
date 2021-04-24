@@ -1,11 +1,5 @@
-# Mathematics and Science {#math-sci}
+# Methods
 
-<!-- Required to number equations in HTML files -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
 
 ## Math
 

@@ -6,11 +6,95 @@ This is for including Chapter 1.  Notice that it's also good practice to name yo
 The {#rmd-basics} text after the chapter declaration will allow us to link throughout the document back to the beginning of Chapter 1.  These labels will automatically be generated (if not specified) by changing the spaces to hyphens and capital letters to lowercase.  Look for the reference to this label at the beginning of Chapter 2.
 -->
 
-# R Markdown Basics {#rmd-basics}
+# Background 
+## Environmental variability
+Environmental variability describes the dynamic nature of environmental conditions in the natural world and how organisms respond (cite). Though there are several characterized patterns of environmental variability (sinusoidal, stochastic, colored noise, reviewed below), patterns of variation can be further understood using the same core set of attributes: range, mean, duration, and predictability (Figure X). 
 
-Here is a brief introduction into using _R Markdown_. _Markdown_ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. _R Markdown_ provides the flexibility of _Markdown_ with the implementation of **R** input and output.  For more details on using _R Markdown_ see <https://rmarkdown.rstudio.com>.  
+```{r, echo=FALSE, fig.cap="Figure 1. An example of environmental variability using diurnal light availability to model how range, mean, predictability, and duration can be used to characterize different patterns of variability. Shown is a comparison of how duration of variability compares across the same environmental factor", out.width = '90%'}
+knitr::include_graphics("figures/figure1.png")
+```
 
-Be careful with your spacing in _Markdown_ documents.  While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.  As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.  In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
+### Mean
+Aggregating values together, whether it be temperature, light availability, precipitation, allows for a better understanding of trends and patterns as opposed to random events. The mean can be used as a zeroing point for any environmental condition that we can use to compare across patterns, studies, and time. It provides a departure point for what we expect the average value to be for all time. We can then expand additional information adjacent to the mean (i.e. range, duration, predictability) for a finer scale picture of environmental conditions, as Vasseur et al outlined that increases in temperature variation posed a greater risk than just simply considering increases in global temperature (2014). 
+
+### Amplitude/Range 
+We can further quantify how variable an environment is by accounting for the range, or total span of conditions an organism may experience. This range can be short or long, for example, geographic location drastically influences the amount of sunlight an ecosystem receives. The Amazon Rainforest experiences less variation in light availability during the year than Denali National Park in Alaska, which experiences high variation in light availability between the summer and winter seasons. The range of environmental conditions an organism experiences can influence their ability to withstand changes in mean temperature (Amarasekare et al 2013, 2012), as well as additional life history traits (size, speed, etc.). 
+
+### Duration 
+The amount of time an organism spends at different conditions is also important for how we understand and describe environmental variability. Variability can be examined on many different scales, from daily changes in light availability to seasonal changes in light availability (Figure X). Short term fluctuations, like Fluctuating Thermal Regimes (FTR), in which an organism only experiences a change in temperature for a short period of time, have differing effects on performance (Colinet et al 2018). While studies that employ FTR are doing so in an explicitly ecologically irrelevant context, there are instances in nature where organisms do experience short periods of extreme temperature changes (i.e. heat waves, cold fronts etc.). 
+
+Beyond the period of fluctuation organisms experience, it is important to also consider how the period of fluctuation aligns with organism, population, and community level processes. For instance, Temperature-dependent Sex Determination (TSD), in which ectotherms rely on the environment to incubate their larval offspring, is greatly affected by temperature changes during that specific window of development (cite). Further, at the population level, if organisms are closer or farther to carrying capacity, the impact of fluctuation may help or hinder population growth (cite). When considering community dynamics, similar effects may appear depending on when a fluctuation occurs in time relative to predator/prey dynamics (cite).
+
+### Predictability 
+FTR can also describe the predictability of the fluctuation period. Variability may not have evenly spaced intervals (i.e. heatwaves that occur at irregular intervals within a summer season), such that organisms can experience different amounts of variability for different amounts of time. Predictability can also attempt to describe stochastic vs. autocorrelated variation, however, that will be discussed in a different context below (Figure 4).  
+
+Link between temporal and spatial variability 
+While not explicitly an area of study for this work, it is important to include how temporal and spatial variability can interact. Spatial variability describes how in three dimensional space, environments, organisms, and conditions can vary based on their location in space (cite). Spatial variability can interact with temporal variability in cases where organisms mitigate temporally variable conditions by modifying their spatial location, i.e. Diel vertical migration (DVM). In DVM, organisms migrate to the surface and bottom of lakes based mainly on cues of light availability (cite). However, there are also instances in which the environment is not temporally variable yet an organism utilizes spatial variability to regulate its behavior, i.e. an organism moving from sun to shade during the day to regulate body temperature and metabolic processes (cite). 
+
+Though environmental variability can include many different forms, from fluctuations in resource availability (cite) to light (cite), one of the best studied and all-encompassing forms of fluctuations are thermal fluctuations (cite). 
+
+## Thermal variability
+
+### What is temperature variability?
+Changes in temperature can be grouped into a couple different orientations, the first being the difference between the terms “fluctuating” and “variation” with respect to temperature. Though many studies have implicitly assumed the audience understands the distinction between the two terms, Colinet et al explicitly defined fluctuating temperature as “a generic term that refers to any discontinuous thermal regime that occurs on a short-term basis” (2018). In any case, temperature variability describes changes in environmental temperature through time (cite). 
+
+
+### Why is it important to ecological processes?
+Most organisms experience and rely on temperature to regulate metabolic processes or signal a behavior or response to ultimately persist in the environment (cite). Brown et al (2004) highlighted the importance of both temperature and body size in the metabolic theory of  ecology (MTE), though highly debated (Clarke et al 2006), which serves as an origin point for understanding how organisms respond to environmental conditions. MTE is described by the following equation:
+
+$$
+B = b_0M^{3/4}e^{-E/kT}
+$$
+Where $B$ is organismal metabolic rate, $b_0$ is a normalization constant unrelated to temperate or body size, $M$ is organismal mass, and $e^-E/kT$ is referred to as the “Boltzman factor”, where $E$ is activation energy, $k$ is the Boltzman constant and $T$ is temperature. Together, all of these values aim to describe the relationship between temperature and body size to determine metabolic rate. We assume that organismal level responses should scale across higher levels of organization, as MTE predicts that after correcting for body mass and temperature, metabolic rates should be the same. However, there are unexplained differences that the equation cannot fully explain, like heterogeneity in resting metabolic rate of teleost fish (Clark and Johnston 1999, Clarke et al 2006). Others believe that MTE makes valid assumptions and is more flexible than opponents argue (Gillooly et al 2006). 
+
+MTE supports temperature impacting metabolic rate, which can have downstream effects on fitness characteristics. This is typically described by a characteristic unimodal, right skewed response that organisms typically demonstrate called a thermal performance curve (TPC) (Figure 2). 
+
+```{r, echo=FALSE, fig.cap="Figure 2. Schematic of thermal performance curve and it’s important components for understanding thermal performance. Adapted from (cite, cite)", out.width = '90%'}
+knitr::include_graphics("figures/figure2.png")
+```
+
+
+The critical points that have been identified in thermal performance curves include: Thermal Optimum (Topt), Critical Thermal Minimum (CTmin), Critical Thermal Maximum (CTmax), Thermal tolerance breadth, and the Tolerance range. CTmin and CTmax describe the absolute limits of an organism's tolerance range, such that beyond these two thresholds, organisms’ performance is negatively impacted (cite). Topt is the temperature at which performance is highest, and is importantly situated just before the sharp decline in performance that converges on CTmax.
+
+### Jensen’s Inequality and its impacts on metabolic rate
+TPCs have been crucial in predicting, understanding, and capitulating how organisms respond to their environment (cite, Bernhardt et al 2018). However, TPCs usually consist of measurements taken across an array of constant temperatures (i.e. 15-35 C in 5 C increments, with organisms reared at those temperatures constantly for the duration of an experiment to estimate thermal performance). These performance measurements are useful for a baseline understanding of thermal performance, however, they are not reflective of the variable conditions organisms experience in their environments. 
+
+Given the characteristically non-linear shape of TPCs, Jensen’s inequality is important in understanding the limits of thermal performance estimated under constant conditions versus variable conditions. Jensen’s inequality describes the phenomenon that environmental variance can predictably and significantly impact nonlinear biological processes such that the consequences cannot be aptly inferred from average environmental conditions (Ruel and Ayres, 1999). Given this, it is important to recognize that the constant temperatures used to generate TPCs are simply averages of environmental conditions during a moment in time. It is therefore reasonable to extrapolate that thermal performance under truly variable conditions may drastically differ and has been demonstrated by subsequent studies (Bernhardt et al 2018, Khelifa et al 2019. 
+
+Beyond accurately predicting how variable environmental conditions affect thermal performance, the bounds and critical points of TPCs are important for understanding how changes in environmental conditions may differentially impact different groups of organisms. For instance, Amarasekare et al (year) demonstrated the importance where Topt is located relative to CTmax, such that ectotherms with a closer range between those two critical points at different geographic ranges may be negatively impacted by shifts in temperature and variability patterns (cite 2012). Ectotherms in warm regions with an already minimized distance between Topt and CTmax may risk rapid extinction because there is less of a buffer to withstand increases in environmental temperature (cite 2012).
+
+### The relevancy of temperature variability in the modern context 
+
+```{r, echo=FALSE, fig.cap="Figure 3. DON’T FORGET THIS IS LOG SCALED!! Plot of generation time in days against fluctuation period in days, with yellow, red, and grey horizontal panels representing diurnal, autocorrelated, and stochastic fluctuation patterns. The blue, green, purple, and pink horizontal lines represent different examples of variety in organismal generation time. *Figure out how to overlap pngs of plankton for 1, drosophila for 10, beetle for 100, and fish for 4000*", out.width = '90%'}
+knitr::include_graphics("figures/figure3.png")
+```
+
+Outside of the debate about the equations for determining metabolic rate, many of these equations rely on constant temperature conditions to predict metabolic rate. Variation in temperature is predicted to affect performance more significantly than increasing temperatures (Vasseur et al 2014); thus, if there is disagreement about how metabolic rates scale across species, communities, and ecosystems, how might non-constant temperature alter predictions regarding performance. Khelifa et al (2019) demonstrated that when correcting for non-linearity, lab controlled experiments of diurnal variation in temperature and constant temperature did not differ significantly from one another in their thermal performance. 
+
+```{r, echo=FALSE, fig.cap="Figure 4. Time series of daily changes in autocorrelated (A), stochastic (C), and diurnal (E) temperature variation over one year, accompanied by the respective spectral density plots for each pattern of variation (B,D,F). Adapted from and inspired by Massey et al 2020 and Kroeker et al 2020.", out.width = '90%'}
+knitr::include_graphics("figures/figure4.png")
+```
+
+However, beyond diurnal or sinusoidal variation, there are other variation patterns at different timescales that all levels of biological organization experience (Figure 4). Khelifa et al demonstrated that when organisms are exposed to ambient temperatures in the environment, their thermal performance becomes less predictable (2019). Beyond diurnal fluctuations in temperature, organisms can experience seasonal fluctuations as well as annual fluctuations in temperature. Vasseur and Yodzis (2004) outline how the frequency (1/period) of environmental fluctuations describes the “color of environmental noise.” In colored noise, red noise describes lower frequencies and longer periods whereas white noise describes higher frequencies and shorter periods. Temperature is predicted to become more reddened or autocorrelated over time, meaning that temperatures will become more similar and predictable (cite). Understanding how organisms at all scales respond to these different patterns of variation in temperature is key for a more informed understanding of persistence. 
+
+Thermal fluctuations are expected to have an effect on performance across the individual, population, and community level (cite):
+
+* At the individual level, this usually comes in the form of reduced fitness or increased development rates (cite)
+* At the population level, this usually comes in the form of increases to population saturation
+* At the community level, this usually comes in the form of promoting coexistence or population success in the face of emigration
+
+It however, less understood, is how variation patterns influence these characteristic responses at each level of organization. Many individual level studies focus on responses to diurnal fluctuations in temperature, whereas higher levels of organization have explored how colored noise elicits these characteristic responses (cite).
+
+## Objectives, driving questions, hypotheses
+
+There has yet to be a quantitative review of the effect of environmental variability across ecological scales, even though many studies have looked at variability (cite). To understand how environmental variability affects organisms, populations, and communities, we conducted a meta analysis on the effects of thermal variability on responses across different levels of biological organization to answer the following questions: 
+
+1. Does variability pattern drive differences in response magnitude? (i.e. does autocorrelated variation have a larger impact on response than stochastic or diurnal?)
+2. Does temperature variability drive differential response levels at different levels of biological organization?
+3. How can the magnitude of response be influenced by additional factors (i.e. periodicity, age, size, thermal history, etc)? 
+
+We aim to answer these questions by collecting data from the literature at different levels of biological organization to systematically analyze responses across levels of organization. 
+
 
 ## Lists
 

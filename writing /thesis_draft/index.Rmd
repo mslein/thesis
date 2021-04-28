@@ -1,5 +1,5 @@
 ---
-title: 'My Final College Paper'
+title: 'Mean temperature, fluctuation range, and biological organization affect biological responses'
 author: 'Margaret A. Slein'
 date: 'May 2021'
 institution: 'Reed College'
@@ -13,7 +13,7 @@ params:
   'Install needed packages for {thesisdown}': True
 output:
   thesisdown::thesis_pdf: default 
-abstract: '`r if(knitr:::is_latex_output()) paste(readLines(here::here("prelims", "00-abstract.Rmd")), collapse = "\n  ")`'
+abstract: 'Ecosystems and organisms have experienced variation on many temporal scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the tenacity and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta analysis of how thermal variability impacts biological responses across a variety of taxa, organism sizes, and biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.'
 acknowledgements: |
   
   The future is bright, the future is dark 
@@ -74,8 +74,6 @@ acknowledgements: |
 
   Thank you for the support, and most ardently, for embracing me 
 
-dedication: |
-  You can have a dedication here if you wish. 
 bibliography: bib/thesis.bib
 csl: csl/apa.csl
 lot: true
@@ -151,11 +149,10 @@ Alternatively, you can put that content in files like 00--prelim.Rmd and
 # Introduction {.unnumbered}
 
 ## The historical significance of variability 
-It is no secret that the natural world has relied on resilience and persistence in the face of environmental change for millenia (cite). Cyanobacteria can trace their origin back to a bacteria that evolved the ability to perform oxygenic photosynthesis to persist in a changing world (Soo et al 2017, science). Similarly, vascular plants have evolved different photosynthetic systems (C3, CAM) to manage a variety of thermal and spatial conditions (cite). While cyanobacteria and vascular plants evolved new strategies and structures to persist in the environment, the environment has continued to remain dynamic, such that evolutionary responses and plasticity may become even more relevant (cite). Understanding how organisms respond to the environment and its dynamic nature is significant for how to capitulate ecosystems currently and in the future.
+It is no secret that life on earth has evolved and persisted in the face of environmental change for many millennia (Bouchard 2014, Bambach 1993). Cyanobacteria can trace their origin back nearly 2.5 billion years to a bacteria that evolved the ability to perform oxygenic photosynthesis and changed organismal composition forever (Soo et al 2017, Blankenship 2017). Cyanobacteria have continued to persist in the world, despite experiencing widely different conditions throughout time (Knoll 2008). In contrast, vascular plants have evolved different photosynthetic systems (C4, CAM) to manage a variety of environmental conditions (Guralnik et al 2007). Though cyanobacteria and vascular plants evolved new strategies and structures to persist in a new environment, the environment has continued to remain dynamic, such that evolutionary responses and plasticity have become even more relevant (Reed et al 2010, Burggren 2018). Understanding how organisms respond to dynamic environmental conditions is significant for how we recapitulate ecosystems currently and in the future.
 
 ## Relevant significance of variability today 
-In addition to the importance of environmental variability across geologic timescales, organisms also interact with environmental variability on several shorter timescales. Ecosystems and organisms inhabiting those environments have experienced variation on many scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns (i.e. ENSO). The scientific literature has continued to highlight the importance of ecologically relevant studies for drawing robust conclusions about the tenacity and dynamics of ecosystems (cite). As environmental patterns continue to change, from increased mean temperatures to more severe weather events (i.e. hurricanes), understanding the limits to organisms’ ability to cope with changes in environmental conditions is increasingly important (cite). 
+In addition to the importance of environmental variability across geologic timescales, organisms also interact with environmental variability on several shorter timescales. Organisms and the ecosystems they inhabit have experienced variation on many scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns (i.e. El Nino Southern Oscillation).  As such, the scientific literature has continued to highlight the importance of ecologically relevant studies for drawing robust conclusions about the tenacity and dynamics of ecosystems (Khelifa et al 2019, Stewart et al 2013). How variability impacts populations may impact biodiversity, such that only certain species may survive, and how that biodiversity is maintained are key components to the full picture of ecosystem dynamics. As environmental patterns continue to change, from increased mean temperatures to more severe weather events (i.e. hurricanes), understanding the limits to organisms’ ability to cope with changes in environmental conditions is increasingly important for both individual level responses as well as how individual level impacts scale across population and community level responses (Helmuth et al 2010, Bernardo 2014, Huey et al 2012). 
 
 ## Why this study on variability matters 
-While there is a large body of literature on environmental variability including its relevance for X, y, and Z (include citation), there is a lack of consensus as to which scales of biological organization will be most severely affected by different shifts in environmental conditions (problem statement). We aim to better understand how environmental variability affects the magnitude of responses across organization levels as well as whether different patterns of variation differentially affect different levels of organization (aims). To accomplish this, we review recent progress in the field of environmental variability, specifically changes in temperature, to identify gaps between theory, experiment, and implementation. 
-
+There is a large body of literature on environmental variability including its relevance for positive effects for populations and communities, i.e. inflationary effects in sink-source systems (Holt et al 2003, Vasseur and Fox 2009), such that variability aids population density when organisms emigrate. However, there is a lack of consensus as to which scales of biological organization, i.e. individuals, populations, or communities of organisms will be most severely affected by different shifts in environmental conditions (problem statement). We aim to better understand how environmental variability affects the magnitude of responses across organization levels as well as important factors implicated in mediating this response (aims). To accomplish this, we review recent progress in the field of environmental variability, specifically changes in temperature, to identify gaps between theory, experiment, and implementation. 

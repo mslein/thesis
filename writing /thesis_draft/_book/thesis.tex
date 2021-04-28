@@ -113,7 +113,7 @@
   \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 % To pass between YAML and LaTeX the dollar signs are added by CII
-\title{My Final College Paper}
+\title{Mean temperature, fluctuation range, and biological organization affect biological responses}
 \author{Margaret A. Slein}
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{May 2021}
@@ -220,7 +220,7 @@ Thank you for the support, and most ardently, for embracing me
 }
 
 \Dedication{
-You can have a dedication here if you wish.
+
 }
 
 \Preface{
@@ -228,13 +228,23 @@ You can have a dedication here if you wish.
 }
 
 \Abstract{
-The preface pretty much says it all.
-
-\par
-
-Second paragraph of abstract starts here.
+Ecosystems and organisms have experienced variation on many temporal scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the tenacity and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta analysis of how thermal variability impacts biological responses across a variety of taxa, organism sizes, and biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.
 }
 
+	\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 % End of CII addition
 %%
 %% End Preamble
@@ -314,15 +324,9 @@ Second paragraph of abstract starts here.
 
   \listoffigures
   \begin{abstract}
-    The preface pretty much says it all.
-    
-    \par
-    
-    Second paragraph of abstract starts here.
+    Ecosystems and organisms have experienced variation on many temporal scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the tenacity and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta analysis of how thermal variability impacts biological responses across a variety of taxa, organism sizes, and biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.
   \end{abstract}
-  \begin{dedication}
-    You can have a dedication here if you wish.
-  \end{dedication}
+
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{fancyplain} % turns page numbering back on
 
@@ -330,53 +334,58 @@ Second paragraph of abstract starts here.
 \chapter*{Introduction}\label{introduction}}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Placeholder
-
 \hypertarget{the-historical-significance-of-variability}{%
 \section{The historical significance of variability}\label{the-historical-significance-of-variability}}
+
+It is no secret that life on earth has evolved and persisted in the face of environmental change for many millennia (Bouchard 2014, Bambach 1993). Cyanobacteria can trace their origin back nearly 2.5 billion years to a bacteria that evolved the ability to perform oxygenic photosynthesis and changed organismal composition forever (Soo et al 2017, Blankenship 2017). Cyanobacteria have continued to persist in the world, despite experiencing widely different conditions throughout time (Knoll 2008). In contrast, vascular plants have evolved different photosynthetic systems (C4, CAM) to manage a variety of environmental conditions (Guralnik et al 2007). Though cyanobacteria and vascular plants evolved new strategies and structures to persist in a new environment, the environment has continued to remain dynamic, such that evolutionary responses and plasticity have become even more relevant (Reed et al 2010, Burggren 2018). Understanding how organisms respond to dynamic environmental conditions is significant for how we recapitulate ecosystems currently and in the future.
 
 \hypertarget{relevant-significance-of-variability-today}{%
 \section{Relevant significance of variability today}\label{relevant-significance-of-variability-today}}
 
+In addition to the importance of environmental variability across geologic timescales, organisms also interact with environmental variability on several shorter timescales. Organisms and the ecosystems they inhabit have experienced variation on many scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns (i.e.~El Nino Southern Oscillation). As such, the scientific literature has continued to highlight the importance of ecologically relevant studies for drawing robust conclusions about the tenacity and dynamics of ecosystems (Khelifa et al 2019, Stewart et al 2013). How variability impacts populations may impact biodiversity, such that only certain species may survive, and how that biodiversity is maintained are key components to the full picture of ecosystem dynamics. As environmental patterns continue to change, from increased mean temperatures to more severe weather events (i.e.~hurricanes), understanding the limits to organisms' ability to cope with changes in environmental conditions is increasingly important for both individual level responses as well as how individual level impacts scale across population and community level responses (Helmuth et al 2010, Bernardo 2014, Huey et al 2012).
+
 \hypertarget{why-this-study-on-variability-matters}{%
 \section{Why this study on variability matters}\label{why-this-study-on-variability-matters}}
 
+There is a large body of literature on environmental variability including its relevance for positive effects for populations and communities, i.e.~inflationary effects in sink-source systems (Holt et al 2003, Vasseur and Fox 2009), such that variability aids population density when organisms emigrate. However, there is a lack of consensus as to which scales of biological organization, i.e.~individuals, populations, or communities of organisms will be most severely affected by different shifts in environmental conditions (problem statement). We aim to better understand how environmental variability affects the magnitude of responses across organization levels as well as important factors implicated in mediating this response (aims). To accomplish this, we review recent progress in the field of environmental variability, specifically changes in temperature, to identify gaps between theory, experiment, and implementation.
+
 \hypertarget{background}{%
-\chapter{Background}\label{background}}
+\chapter*{Background}\label{background}}
+\addcontentsline{toc}{chapter}{Background}
 
 \hypertarget{environmental-variability}{%
 \section{Environmental variability}\label{environmental-variability}}
-
-Environmental variability describes the dynamic nature of environmental conditions in the natural world and how organisms respond (cite). Though there are several characterized patterns of environmental variability (sinusoidal, stochastic, colored noise, reviewed below), patterns of variation can be further understood using the same core set of attributes: range, mean, duration, and predictability (Figure X).
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{figures/figure1} \caption{Figure 1. An example of environmental variability using diurnal light availability to model how range, mean, predictability, and duration can be used to characterize different patterns of variability. Shown is a comparison of how duration of variability compares across the same environmental factor}\label{fig:unnamed-chunk-1}
+\includegraphics[width=1.05\linewidth]{figures/figure1} \caption{An example of environmental variability using diurnal light availability to model how range, mean, predictability, and duration can be used to characterize different patterns of variability. Shown is a comparison of how duration of variability compares across the same environmental factor}\label{fig:unnamed-chunk-3}
 \end{figure}
+Environmental variability describes the dynamic characteristics of abiotic and biotic environmental conditions, in addition to how abiotic and biotic factors interact to drive organisms' response to environmental conditions (Parepa et al 2013, Gudmundson et al 2015). Though there are several characterized patterns of environmental variability (sinusoidal, stochastic, colored noise, reviewed below), patterns of variation can be further understood using the same core set of attributes: range, mean, duration, and predictability (Figure 1).
+
 \hypertarget{mean}{%
 \subsection{Mean}\label{mean}}
 
-Aggregating values together, whether it be temperature, light availability, precipitation, allows for a better understanding of trends and patterns as opposed to random events. The mean can be used as a zeroing point for any environmental condition that we can use to compare across patterns, studies, and time. It provides a departure point for what we expect the average value to be for all time. We can then expand additional information adjacent to the mean (i.e.~range, duration, predictability) for a finer scale picture of environmental conditions, as Vasseur et al outlined that increases in temperature variation posed a greater risk than just simply considering increases in global temperature (2014).
+Aggregating values together, whether it be temperature, light availability, precipitation, allows for a better understanding of trends and patterns as opposed to random events. The mean can be used as a zeroing point for any environmental condition that we can use to compare across patterns, studies, and time. It provides a departure point for what we expect the average value to be for all time. In certain cases, the mean is a useful metric for observing trends by minimizing the noise of environmental conditions, i.e.~averaging population growth rates to understand if a disease is affecting organisms across geographic locations or just specific locations. However, in other cases, the mean is less useful compared to the variability. For instance, if there are key factors contributing to population growth rates from specific locations, comparing the amount of variability in additional variables across locations (individual respiration rates, temperature, etc.) is more fruitful for the task at this scale. At some point however, all data of interest are averages. The important distinction is the scale at which we average the data and the level of detail provided at each scale. Means are more useful in describing variation amongst normally distributed data, however, other statistical metrics like the median or mode may be more appropriate when the data is not normally distributed.
 
 \hypertarget{amplituderange}{%
 \subsection{Amplitude/Range}\label{amplituderange}}
 
-We can further quantify how variable an environment is by accounting for the range, or total span of conditions an organism may experience. This range can be short or long, for example, geographic location drastically influences the amount of sunlight an ecosystem receives. The Amazon Rainforest experiences less variation in light availability during the year than Denali National Park in Alaska, which experiences high variation in light availability between the summer and winter seasons. The range of environmental conditions an organism experiences can influence their ability to withstand changes in mean temperature (Amarasekare et al 2013, 2012), as well as additional life history traits (size, speed, etc.).
+We can expand additional information adjacent to the mean (i.e.~range, duration, predictability) for a finer scale picture of environmental conditions, as Vasseur et al outlined that increases in temperature variation posed a greater risk to species than just simply considering increases in global temperature (2014). We can further quantify how variable an environment is by accounting for the range, or total span of conditions an organism may experience. This range can be short or long, for example, geographic location drastically influences the amount of sunlight an ecosystem receives. The Amazon Rainforest experiences less variation in light availability during the year than Denali National Park in Alaska, which experiences high variation in light availability between the summer and winter seasons. The range of environmental conditions an organism experiences can influence their ability to withstand changes in mean temperature (Amarasekare et al 2013, 2012), as well as additional life history traits (size, speed, etc.). An organism's ability to withstand changes in mean temperature has been attributed to the location of their optimal thermal temperature and the temperature at which survival is no longer possible (Amarasekare 2012). If an organism has an optimal temperature that is very close to that survival threshold, they are less able to adapt and withstand an upward thermal shift that occurs on a faster timescale their adaptive evolution can manage.
 
 \hypertarget{duration}{%
 \subsection{Duration}\label{duration}}
 
-The amount of time an organism spends at different conditions is also important for how we understand and describe environmental variability. Variability can be examined on many different scales, from daily changes in light availability to seasonal changes in light availability (Figure X). Short term fluctuations, like Fluctuating Thermal Regimes (FTR), in which an organism only experiences a change in temperature for a short period of time, have differing effects on performance (Colinet et al 2018). While studies that employ FTR are doing so in an explicitly ecologically irrelevant context, there are instances in nature where organisms do experience short periods of extreme temperature changes (i.e.~heat waves, cold fronts etc.).
-
-Beyond the period of fluctuation organisms experience, it is important to also consider how the period of fluctuation aligns with organism, population, and community level processes. For instance, Temperature-dependent Sex Determination (TSD), in which ectotherms rely on the environment to incubate their larval offspring, is greatly affected by temperature changes during that specific window of development (cite). Further, at the population level, if organisms are closer or farther to carrying capacity, the impact of fluctuation may help or hinder population growth (cite). When considering community dynamics, similar effects may appear depending on when a fluctuation occurs in time relative to predator/prey dynamics (cite).
+The amount of time an organism spends at different conditions is also important for how we understand and describe environmental variability. Variability can be examined on many different scales, from daily changes in light availability to seasonal changes in light availability (Figure 1). Short term fluctuations, such as Fluctuating Thermal Regimes (FTR), in which an organism only experiences a change in temperature for a short period of time (less than one generation), have differing effects on performance (Colinet et al 2018). Performance is a set of whole organism traits (i.e.assimilation, development, metabolic rate) with the availability to perform dynamics actions and tasks pertinent to fitness or organismal success and is often used as a way to estimate the culmination of organismal processes that hinder or help an organisms' persistence in the environment (Husak and Lailvaux 2017, Amarasekare and Savage 2012).While studies that employ FTR are doing so in an explicitly ecologically irrelevant context, as organisms reared in a cold environment do not usually experience warming exposures during a single day. However, there are instances in nature where organisms do experience short periods of extreme temperature changes (i.e.~heat waves, cold fronts etc.) in which the benefits of FTR in mitigated chill injuries may be helpful. Beyond the period of fluctuation organisms experience, it is important to also consider how the period of fluctuation aligns with individual, population, and community level processes. For instance, Temperature-dependent Sex Determination (TSD), in which ectotherms rely on the environment to incubate their larval offspring, is greatly affected by temperature changes during a specific window of development (Delmas et al 2007, Bowden and Paitz 2018). Further, at the population level, if organisms are closer or farther to carrying capacity, the impact of fluctuation may help or hinder population growth (Lawson et al 2015) depending on the magnitude of variance. When considering community dynamics, similar effects may appear depending on when a fluctuation occurs in time relative to predator/prey dynamics (Romanuk and Kolasa 2002, Dobramys and Tauber 2013, Bastille-Rousseau et al 2018).
 
 \hypertarget{predictability}{%
 \subsection{Predictability}\label{predictability}}
 
-FTR can also describe the predictability of the fluctuation period. Variability may not have evenly spaced intervals (i.e.~heatwaves that occur at irregular intervals within a summer season), such that organisms can experience different amounts of variability for different amounts of time. Predictability can also attempt to describe stochastic vs.~autocorrelated variation, however, that will be discussed in a different context below (Figure 4).
+FTR can also describe the predictability of the fluctuation period. Variability may not have evenly spaced intervals (i.e.~heat waves that occur at irregular intervals within a summer season), such that organisms can experience different amounts of variability for different amounts of time. Predictability can also attempt to describe stochastic vs.~autocorrelated variation, however, that will be discussed in a different context below (Figure 4).
 
-Link between temporal and spatial variability
-While not explicitly an area of study for this work, it is important to include how temporal and spatial variability can interact. Spatial variability describes how in three dimensional space, environments, organisms, and conditions can vary based on their location in space (cite). Spatial variability can interact with temporal variability in cases where organisms mitigate temporally variable conditions by modifying their spatial location, i.e.~Diel vertical migration (DVM). In DVM, organisms migrate to the surface and bottom of lakes based mainly on cues of light availability (cite). However, there are also instances in which the environment is not temporally variable yet an organism utilizes spatial variability to regulate its behavior, i.e.~an organism moving from sun to shade during the day to regulate body temperature and metabolic processes (cite).
+\hypertarget{link-between-temporal-and-spatial-variability}{%
+\subsection{Link between temporal and spatial variability}\label{link-between-temporal-and-spatial-variability}}
 
-Though environmental variability can include many different forms, from fluctuations in resource availability (cite) to light (cite), one of the best studied and all-encompassing forms of fluctuations are thermal fluctuations (cite).
+While not explicitly an area of study for this work, it is important to include how temporal and spatial variability can interact. Spatial variability describes how in three dimensional space, environments, organisms, and conditions can vary based on their location in space (Horne and Schneider 1995, Farhang-Sardroodi et al 2019). Spatial variability can interact with temporal variability in cases where organisms mitigate temporally variable conditions by modifying their spatial location, i.e.~Diel vertical migration (DVM). In DVM, organisms migrate to the surface and bottom of lakes based mainly on cues of light availability (Lampert 1989, Brierly 2014). However, there are also instances in which the environment is not temporally variable yet an organism utilizes spatial variability to regulate its behavior, i.e.~an organism moving from sun to shade during the day to regulate body temperature and metabolic processes (Huey 1974, Kearney et al 2011).
+
+Though environmental variability can include many different forms, from fluctuations in resource availability (Dempster and Pollard 1981, Sommer 1984) to light (Ruel and Ayres 1999, Morison 2020), one of the best studied and all-encompassing forms of fluctuations are thermal fluctuations (Huey et al 1990, Colinet et al 2015).
 
 \hypertarget{thermal-variability}{%
 \section{Thermal variability}\label{thermal-variability}}
@@ -384,418 +393,297 @@ Though environmental variability can include many different forms, from fluctuat
 \hypertarget{what-is-temperature-variability}{%
 \subsection{What is temperature variability?}\label{what-is-temperature-variability}}
 
-Changes in temperature can be grouped into a couple different orientations, the first being the difference between the terms ``fluctuating'' and ``variation'' with respect to temperature. Though many studies have implicitly assumed the audience understands the distinction between the two terms, Colinet et al explicitly defined fluctuating temperature as ``a generic term that refers to any discontinuous thermal regime that occurs on a short-term basis'' (2018). In any case, temperature variability describes changes in environmental temperature through time (cite).
+Changes in temperature can be grouped into a couple different orientations, the first being the difference between the terms ``fluctuating'' and ``variation'' with respect to temperature. Though many studies have implicitly assumed the audience understands the distinction between the two terms, Colinet et al explicitly defined fluctuating temperature as ``a generic term that refers to any discontinuous thermal regime that occurs on a short-term basis'' (2018). Most generally, temperature variability describes changes in environmental temperature through time (Holmes et al 2016, Colinet et al 2018).
 
 \hypertarget{why-is-it-important-to-ecological-processes}{%
 \subsection{Why is it important to ecological processes?}\label{why-is-it-important-to-ecological-processes}}
 
-Most organisms experience and rely on temperature to regulate metabolic processes or signal a behavior or response to ultimately persist in the environment (cite). Brown et al (2004) highlighted the importance of both temperature and body size in the metabolic theory of ecology (MTE), though highly debated (Clarke et al 2006), which serves as an origin point for understanding how organisms respond to environmental conditions. MTE is described by the following equation:
+Most organisms experience and rely on temperature to regulate metabolic processes or signal a behavior or response to ultimately persist in the environment (Huey et al 1990). Brown et al (2004) highlighted the importance of both temperature and body size in the metabolic theory of ecology (MTE), though highly debated (Clarke et al 2006), which serves as an origin point for understanding how organisms respond to environmental conditions. MTE is described by the following equation:
 
 \[
 B = b_0M^{3/4}e^{-E/kT}
 \]
-Where \(B\) is organismal metabolic rate, \(b_0\) is a normalization constant unrelated to temperate or body size, \(M\) is organismal mass, and \(e^-E/kT\) is referred to as the ``Boltzman factor'', where \(E\) is activation energy, \(k\) is the Boltzman constant and \(T\) is temperature. Together, all of these values aim to describe the relationship between temperature and body size to determine metabolic rate. We assume that organismal level responses should scale across higher levels of organization, as MTE predicts that after correcting for body mass and temperature, metabolic rates should be the same. However, there are unexplained differences that the equation cannot fully explain, like heterogeneity in resting metabolic rate of teleost fish (Clark and Johnston 1999, Clarke et al 2006). Others believe that MTE makes valid assumptions and is more flexible than opponents argue (Gillooly et al 2006).
+Where \(B\) is organismal metabolic rate, \(b_0\) is a normalization constant unrelated to temperate or body size, \(M\) is organismal mass, and \(e^-E/kT\) is referred to as the ``Boltzman factor'', where \(E\) is activation energy, \(k\) is the Boltzman constant and \(T\) is temperature. Together, all of these values aim to describe the relationship between temperature and body size to determine metabolic rate. We assume that organismal level responses should scale across higher levels of organization, as MTE predicts that after correcting for body mass and temperature, metabolic rates should be the same. However, there are unexplained differences that the equation cannot fully explain, like heterogeneity in resting metabolic rate of teleost fish (Clark and Johnston 1999, Clarke et al 2006). Others believe that MTE makes valid assumptions and is more flexible than opponents argue, as it provides a foundational framework for general estimates of metabolic rate for larger, more generalizable taxonomic groups (Gillooly et al 2006). Regardless of the debates about the details of MTE, at the very least, it provides a great foundation for thinking about temperature dependent processes.
 
 MTE supports temperature impacting metabolic rate, which can have downstream effects on fitness characteristics. This is typically described by a characteristic unimodal, right skewed response that organisms typically demonstrate called a thermal performance curve (TPC) (Figure 2).
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{figures/figure2} \caption{Figure 2. Schematic of thermal performance curve and it’s important components for understanding thermal performance. Adapted from (cite, cite)}\label{fig:unnamed-chunk-2}
+\includegraphics[width=0.9\linewidth]{figures/figure2} \caption{Figure 2. Schematic of thermal performance curve and it’s important components for understanding thermal performance. Adapted from (cite, cite)}\label{fig:unnamed-chunk-4}
 \end{figure}
-The critical points that have been identified in thermal performance curves include: Thermal Optimum (Topt), Critical Thermal Minimum (CTmin), Critical Thermal Maximum (CTmax), Thermal tolerance breadth, and the Tolerance range. CTmin and CTmax describe the absolute limits of an organism's tolerance range, such that beyond these two thresholds, organisms' performance is negatively impacted (cite). Topt is the temperature at which performance is highest, and is importantly situated just before the sharp decline in performance that converges on CTmax.
+The critical points that have been identified in thermal performance curves include: Thermal Optimum (Topt), Critical Thermal Minimum (CTmin), Critical Thermal Maximum (CTmax), Thermal tolerance breadth, and the Tolerance range. CTmin and CTmax describe the absolute limits of an organism's tolerance range, such that beyond these two thresholds, organisms' performance is negatively impacted (Brown et al 2004, Dowd et al 2015). Topt is the temperature at which performance is highest, and is importantly situated just before the sharp decline in performance that converges on CTmax.
+
+TPCs non-linear shape represents the relationship between temperature and performance, such that performance is an amalgamation of many life history characteristics and biological processes (i.e.~metabolism) (Amarasekare et al 2012). If only temperature's effect on metabolism were considered, the shape of the relationship may be an exponential one. However, there are several other constraining factors (i.e.~energy acquisition, nutrient availability etc.) that derive the characteristically nonlinear pattern of TPCs. TPCs strive to represent the complexity of many interacting processes an organism experiences in the environment with respect to thermal dependence, cementing their place as an important metric to conceptualize and understand temperature dependence.
 
 \hypertarget{jensens-inequality-and-its-impacts-on-metabolic-rate}{%
 \subsection{Jensen's Inequality and its impacts on metabolic rate}\label{jensens-inequality-and-its-impacts-on-metabolic-rate}}
 
-TPCs have been crucial in predicting, understanding, and capitulating how organisms respond to their environment (cite, Bernhardt et al 2018). However, TPCs usually consist of measurements taken across an array of constant temperatures (i.e.~15-35 C in 5 C increments, with organisms reared at those temperatures constantly for the duration of an experiment to estimate thermal performance). These performance measurements are useful for a baseline understanding of thermal performance, however, they are not reflective of the variable conditions organisms experience in their environments.
+TPCs have been crucial in predicting, understanding, and capitulating how organisms respond to their environment (Bernhardt et al 2018). However, TPCs usually consist of measurements taken across an array of constant temperatures (i.e.~15-35 C in 5 C increments, with organisms reared at those temperatures constantly for the duration of an experiment to estimate thermal performance). These performance measurements are useful for a baseline understanding of thermal performance, however, they are not reflective of the variable conditions organisms experience in their environments.
 
-Given the characteristically non-linear shape of TPCs, Jensen's inequality is important in understanding the limits of thermal performance estimated under constant conditions versus variable conditions. Jensen's inequality describes the phenomenon that environmental variance can predictably and significantly impact nonlinear biological processes such that the consequences cannot be aptly inferred from average environmental conditions (Ruel and Ayres, 1999). Given this, it is important to recognize that the constant temperatures used to generate TPCs are simply averages of environmental conditions during a moment in time. It is therefore reasonable to extrapolate that thermal performance under truly variable conditions may drastically differ and has been demonstrated by subsequent studies (Bernhardt et al 2018, Khelifa et al 2019.
+Given the characteristically non-linear shape of TPCs, Jensen's inequality is important in understanding the limits of thermal performance estimated under constant conditions versus variable conditions. Jensen's inequality describes the phenomenon that environmental variation can predictably and significantly impact nonlinear biological processes such that the consequences cannot be aptly inferred from average environmental conditions (Ruel and Ayres, 1999). For instance, Ruel and Ayres (1999) provide the development rate of ectotherms as an example to demonstrate Jensen's inequality. The development rate of ectotherms have a characteristically non-linear shape, such that responses increase at lower temperatures, become linear at intermediate temperatures, and decrease at higher temperatures (Ruel and Ayres, 1999). With Jensen's inequality, we can predict that the effects of temperature variation will be positive at lower temperatures, neutral at intermediate temperatures, and negative at higher temperatures (Ruel and Ayres, 1999). Given this, it is important to recognize that the constant temperatures used to generate TPCs are simply averages of environmental conditions during a moment in time. It is therefore reasonable to extrapolate that thermal performance under truly variable conditions may drastically differ and has been demonstrated by subsequent studies (Bernhardt et al 2018, Khelifa et al 2019).
 
-Beyond accurately predicting how variable environmental conditions affect thermal performance, the bounds and critical points of TPCs are important for understanding how changes in environmental conditions may differentially impact different groups of organisms. For instance, Amarasekare et al (year) demonstrated the importance where Topt is located relative to CTmax, such that ectotherms with a closer range between those two critical points at different geographic ranges may be negatively impacted by shifts in temperature and variability patterns (cite 2012). Ectotherms in warm regions with an already minimized distance between Topt and CTmax may risk rapid extinction because there is less of a buffer to withstand increases in environmental temperature (cite 2012).
+Beyond accurately predicting how variable environmental conditions affect thermal performance, the bounds and critical points of TPCs are important for understanding how changes in environmental conditions may differentially impact different groups of organisms. For instance, Amarasekare et al 2012 demonstrated the importance where Topt is located relative to CTmax, such that ectotherms with a closer range between those two critical points at different geographic ranges may be negatively impacted by shifts in temperature and variability patterns (Amarasekare et al 2012, Paajimans et al 2013). Ectotherms in warm regions with an already minimized distance between Topt and CTmax may risk rapid extinction because there is less of a buffer to withstand increases in environmental temperature (Amarasekare et al 2012).
 
 \hypertarget{the-relevancy-of-temperature-variability-in-the-modern-context}{%
 \subsection{The relevancy of temperature variability in the modern context}\label{the-relevancy-of-temperature-variability-in-the-modern-context}}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figures/figure3} \caption{Figure 3. DON’T FORGET THIS IS LOG SCALED!! Plot of generation time in days against fluctuation period in days, with yellow, red, and grey horizontal panels representing diurnal, autocorrelated, and stochastic fluctuation patterns. The blue, green, purple, and pink horizontal lines represent different examples of variety in organismal generation time. *Figure out how to overlap pngs of plankton for 1, drosophila for 10, beetle for 100, and fish for 4000*}\label{fig:unnamed-chunk-3}
-\end{figure}
-Outside of the debate about the equations for determining metabolic rate, many of these equations rely on constant temperature conditions to predict metabolic rate. Variation in temperature is predicted to affect performance more significantly than increasing temperatures (Vasseur et al 2014); thus, if there is disagreement about how metabolic rates scale across species, communities, and ecosystems, how might non-constant temperature alter predictions regarding performance. Khelifa et al (2019) demonstrated that when correcting for non-linearity, lab controlled experiments of diurnal variation in temperature and constant temperature did not differ significantly from one another in their thermal performance.
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figures/figure4} \caption{Figure 4. Time series of daily changes in autocorrelated (A), stochastic (C), and diurnal (E) temperature variation over one year, accompanied by the respective spectral density plots for each pattern of variation (B,D,F). Adapted from and inspired by Massey et al 2020 and Kroeker et al 2020.}\label{fig:unnamed-chunk-4}
-\end{figure}
-However, beyond diurnal or sinusoidal variation, there are other variation patterns at different timescales that all levels of biological organization experience (Figure 4). Khelifa et al demonstrated that when organisms are exposed to ambient temperatures in the environment, their thermal performance becomes less predictable (2019). Beyond diurnal fluctuations in temperature, organisms can experience seasonal fluctuations as well as annual fluctuations in temperature. Vasseur and Yodzis (2004) outline how the frequency (1/period) of environmental fluctuations describes the ``color of environmental noise.'' In colored noise, red noise describes lower frequencies and longer periods whereas white noise describes higher frequencies and shorter periods. Temperature is predicted to become more reddened or autocorrelated over time, meaning that temperatures will become more similar and predictable (cite). Understanding how organisms at all scales respond to these different patterns of variation in temperature is key for a more informed understanding of persistence.
 
-Thermal fluctuations are expected to have an effect on performance across the individual, population, and community level (cite):
-\begin{itemize}
-\tightlist
-\item
-  At the individual level, this usually comes in the form of reduced fitness or increased development rates (cite)
-\item
-  At the population level, this usually comes in the form of increases to population saturation
-\item
-  At the community level, this usually comes in the form of promoting coexistence or population success in the face of emigration
-\end{itemize}
-It however, less understood, is how variation patterns influence these characteristic responses at each level of organization. Many individual level studies focus on responses to diurnal fluctuations in temperature, whereas higher levels of organization have explored how colored noise elicits these characteristic responses (cite).
+Outside of the debate about the equations for determining metabolic rate, many of these equations rely on constant temperature conditions to predict metabolic rate. Variation in temperature is predicted to affect performance more significantly than increasing temperatures (Vasseur et al 2014); thus, if there is disagreement about how metabolic rates scale across species, communities, and ecosystems, how might non-constant temperature alter predictions regarding performance? Khelifa et al (2019) demonstrated in five species from the same genus that when correcting for non-linearity, lab controlled experiments of diurnal variation in temperature and constant temperature did not differ significantly from one another in their thermal performance.
 
+However, beyond diurnal or sinusoidal variation, there are other variation patterns at different timescales that all levels of biological organization experience (Figure 3). Khelifa et al demonstrated that when organisms are exposed to ambient temperatures in the environment, their thermal performance becomes less predictable (2019). Beyond diurnal fluctuations in temperature, organisms can experience seasonal fluctuations as well as annual fluctuations in temperature. Vasseur and Yodzis (2004) outline how the frequency (1/period) of environmental fluctuations describes the ``color of environmental noise.'' In colored noise, red noise describes lower frequencies and longer periods whereas white noise describes higher frequencies and shorter periods. Temperature is predicted to become more reddened or autocorrelated over time, meaning that temperatures will become more similar and predictable (Wigley et al 1998, Tabari et al 2012). Understanding how organisms at all scales respond to these different patterns of variation in temperature is key for a more informed understanding of persistence.
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figures/figure4} \caption{Time series of daily changes in autocorrelated (A), stochastic (C), and diurnal (E) temperature variation over one year, accompanied by the respective spectral density plots for each pattern of variation (B,D,F). Adapted from and inspired by Massey et al 2020 and Kroeker et al 2020.}\label{fig:unnamed-chunk-5}
+\end{figure}
 \hypertarget{objectives-driving-questions-hypotheses}{%
 \section{Objectives, driving questions, hypotheses}\label{objectives-driving-questions-hypotheses}}
 
-There has yet to be a quantitative review of the effect of environmental variability across ecological scales, even though many studies have looked at variability (cite). To understand how environmental variability affects organisms, populations, and communities, we conducted a meta analysis on the effects of thermal variability on responses across different levels of biological organization to answer the following questions:
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Does variability pattern drive differences in response magnitude? (i.e.~does autocorrelated variation have a larger impact on response than stochastic or diurnal?)
-\item
-  Does temperature variability drive differential response levels at different levels of biological organization?
-\item
-  How can the magnitude of response be influenced by additional factors (i.e.~periodicity, age, size, thermal history, etc)?
-\end{enumerate}
-We aim to answer these questions by collecting data from the literature at different levels of biological organization to systematically analyze responses across levels of organization.
+Thermal fluctuations are expected to have an effect on performance across the individual, population, and community level:
+* At the individual level, this usually comes in the form of reduced fitness, increased development rates, and/or decreased physiological responses from reduced maximum temperatures, flattening the thermal performance curve (Bartheld et al 2017) to changes in TSD ratios (Bowden and Paitz 2018)
+* At the population level, this usually comes in the form of decreasing population densities (Anders and Post 2006)
+* At the community level, this usually comes in the form of promoting coexistence or population success in the face of emigration (Descamps-Julien and Gonzalez 2005), inflationary effects (Holt et al 2003)
+It is, however, less understood how variation patterns influence these characteristic responses at each level of organization. Many individual level studies focus on responses to diurnal fluctuations in temperature, whereas higher levels of organization have explored how colored noise elicits these characteristic responses (Wang et al 2016, Petchey et al 2000).
 
-\hypertarget{lists}{%
-\section{Lists}\label{lists}}
+There has yet to be a quantitative review of the effect of environmental variability across ecological scales, even though many studies have looked at variability (Kroeker et al 2019, Massey et al 2020). To understand how environmental variability affects organisms, populations, and communities, we conducted a meta analysis on the effects of thermal variability on responses across different levels of biological organization to answer the following questions:
+1) Does variability pattern drive differences in response magnitude? (i.e.~does autocorrelated variation have a larger impact on response than stochastic or diurnal variation?), 2) Does temperature variability drive differential response levels at different levels of biological organization?, 3) How can the magnitude of response be influenced by additional factors (i.e.~periodicity, age, size, thermal history, etc)? We aim to answer these questions by collecting data from the literature at different levels of biological organization to systematically analyze responses across levels of organization.
 
-It's easy to create a list. It can be unordered like
+We hypothesize that: 1) The larger the range of temperatures an organism will experience relative to their thermal performance curve will negatively impact the magnitude of response (full model), 2) Additional covariates related to biological fitness and success, experimental age and organism size will be correlated with negative responses, such that older organisms will cope better and larger organisms will cope worse with increased thermal variability (full model), 3) Across organization levels, individual level studies will experience decreased performance compared to population level studies and higher levels of organization due to their ability to mitigate and rescue performance with population dynamics (full model), 4) If organisms experience temperatures that exceed their Topt, their responses will be negatively impacted (thermal stress model).
+
+\hypertarget{methods}{%
+\chapter*{Methods}\label{methods}}
+\addcontentsline{toc}{chapter}{Methods}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figures/figure5} \caption{Diagram of the paper selection process from the original 176 papers returned from the Web of Science to the 19 studies included in the analysis. Red indicates no usable data, purple indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.}\label{fig:unnamed-chunk-7}
+\end{figure}
+We conducted a systematic literature search using the ISI Web of Science database to collect studies that investigated the effects of temperature variability (Figure 3). After trying several different combinations of search terms to capture research on temperature variability, our final search utilized these search terms in an advanced search: AK=((temperature OR thermal) NEAR (vari* OR fluc*) ) AND SU=(Life Sciences \& Biomedicine). This search returned a total of 176 results. We downloaded the .bib file of this search and imported this file into the revtools R package (version 0.4.1). Using the revtools package we then screened studies by title, then by abstract, for inclusion in analysis (Figure 5). Once we screened studies for relevance to the field of biology and environmental variation, we began excluding studies using the following strict criteria:
 \begin{itemize}
 \tightlist
 \item
-  Item 1
+  We excluded studies that did not feature both a constant and fluctuating treatment (i.e.~studies with several fluctuating treatments but no constant comparison or studies with a gradient of constant treatment temperatures but no periodic fluctuating treatment)
 \item
-  Item 2
+  We excluded studies that were not completed in a laboratory (i.e.~modeling predictions or results from models, mesocosm experiments, in situ experiments)
+\item
+  We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (i.e.~organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a thermal performance curve (TPC))
+\item
+  We excluded any articles not written in English
+\item
+  We excluded studies that did not report measurements of error
+\item
+  We excluded studies in which the response variables are comparable or extrable (i.e.~one study performed Principal component analysis for their responses)
 \end{itemize}
-or it can be ordered like
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Item 1
-\item
-  Item 2
-\end{enumerate}
-Notice that I intentionally mislabeled Item 2 as number 4. \emph{Markdown} automatically figures this out! You can put any numbers in the list and it will create the list. Check it out below.
+\begin{table}
 
-To create a sublist, just indent the values a bit (at least four spaces or a tab). (Here's one case where indentation is key!)
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Item 1
-\item
-  Item 2
-\item
-  Item 3
-  \begin{itemize}
-  \tightlist
-  \item
-    Item 3a
-  \item
-    Item 3b
-  \end{itemize}
-\end{enumerate}
-\hypertarget{line-breaks}{%
-\section{Line breaks}\label{line-breaks}}
-
-Make sure to add white space between lines if you'd like to start a new paragraph. Look at what happens below in the outputted document if you don't:
-
-Here is the first sentence. Here is another sentence. Here is the last sentence to end the paragraph.
-This should be a new paragraph.
-
-\emph{Now for the correct way:}
-
-Here is the first sentence. Here is another sentence. Here is the last sentence to end the paragraph.
-
-This should be a new paragraph.
-
-\hypertarget{r-chunks}{%
-\section{R chunks}\label{r-chunks}}
-
-When you click the \textbf{Knit} button above a document will be generated that includes both content as well as the output of any embedded \textbf{R} code chunks within the document. You can embed an \textbf{R} code chunk like this (\texttt{cars} is a built-in \textbf{R} dataset):
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{summary}\NormalTok{(cars)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-\end{verbatim}
-\hypertarget{inline-code}{%
-\section{Inline code}\label{inline-code}}
-
-If you'd like to put the results of your analysis directly into your discussion, add inline code like this:
-\begin{quote}
-The \texttt{cos} of \(2 \pi\) is 1.
-\end{quote}
-Another example would be the direct calculation of the standard deviation:
-\begin{quote}
-The standard deviation of \texttt{speed} in \texttt{cars} is 5.2876444.
-\end{quote}
-One last neat feature is the use of the \texttt{ifelse} conditional statement which can be used to output text depending on the result of an \textbf{R} calculation:
-\begin{quote}
-The standard deviation is less than 6.
-\end{quote}
-Note the use of \texttt{\textgreater{}} here, which signifies a quotation environment that will be indented.
-
-As you see with \texttt{\$2\ \textbackslash{}pi\$} above, mathematics can be added by surrounding the mathematical text with dollar signs. More examples of this are in \protect\hyperlink{math-sci}{Mathematics and Science} if you uncomment the code in \protect\hyperlink{math}{Math}.
-
-\hypertarget{including-plots}{%
-\section{Including plots}\label{including-plots}}
-
-You can also embed plots. For example, here is a way to use the base \textbf{R} graphics package to produce a plot using the built-in \texttt{pressure} dataset:
-
-\includegraphics{thesis_files/figure-latex/pressure-1.pdf}
-
-Note that the \texttt{echo=FALSE} parameter was added to the code chunk to prevent printing of the \textbf{R} code that generated the plot. There are plenty of other ways to add chunk options (like \texttt{fig.height} and \texttt{fig.width} in the chunk above). More information is available at \url{https://yihui.org/knitr/options/}.
-
-Another useful chunk option is the setting of \texttt{cache=TRUE} as you see here. If document rendering becomes time consuming due to long computations or plots that are expensive to generate you can use knitr caching to improve performance. Later in this file, you'll see a way to reference plots created in \textbf{R} or external figures.
-
-\hypertarget{loading-and-exploring-data}{%
-\section{Loading and exploring data}\label{loading-and-exploring-data}}
-
-Included in this template is a file called \texttt{flights.csv}. This file includes a subset of the larger dataset of information about all flights that departed from Seattle and Portland in 2014. More information about this dataset and its \textbf{R} package is available at \url{https://github.com/ismayc/pnwflights14}. This subset includes only Portland flights and only rows that were complete with no missing values. Merges were also done with the \texttt{airports} and \texttt{airlines} data sets in the \texttt{pnwflights14} package to get more descriptive airport and airline names.
-
-We can load in this data set using the following commands:
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# flights.csv is in the data directory}
-\NormalTok{flights_path <-}\StringTok{ }\NormalTok{here}\OperatorTok{::}\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"flights.csv"}\NormalTok{)}
-\CommentTok{# string columns will be read in as strings and not factors now}
-\NormalTok{flights <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(flights_path, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-The data is now stored in the data frame called \texttt{flights} in \textbf{R}. To get a better feel for the variables included in this dataset we can use a variety of functions. Here we can see the dimensions (rows by columns) and also the names of the columns.
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{dim}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-[1] 12649    16
-\end{verbatim}
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{names}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
- [1] "month"        "day"          "dep_time"     "dep_delay"    "arr_time"    
- [6] "arr_delay"    "carrier"      "tailnum"      "flight"       "dest"        
-[11] "air_time"     "distance"     "hour"         "minute"       "carrier_name"
-[16] "dest_name"   
-\end{verbatim}
-Another good idea is to take a look at the dataset in table form. With this dataset having more than 20,000 rows, we won't explicitly show the results of the command here. I recommend you enter the command into the Console \textbf{\emph{after}} you have run the \textbf{R} chunks above to load the data into \textbf{R}.
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{View}\NormalTok{(flights)}
-\end{Highlighting}
-\end{Shaded}
-While not required, it is highly recommended you use the \texttt{dplyr} package to manipulate and summarize your data set as needed. It uses a syntax that is easy to understand using chaining operations. Below I've created a few examples of using \texttt{dplyr} to get information about the Portland flights in 2014. You will also see the use of the \texttt{ggplot2} package, which produces beautiful, high-quality academic visuals.
-
-We begin by checking to ensure that needed packages are installed and then we load them into our current working environment:
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# List of packages required for this analysis}
-\NormalTok{pkg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# Check if packages are not installed and assign the}
-\CommentTok{# names of the packages not installed to the variable new.pkg}
-\NormalTok{new.pkg <-}\StringTok{ }\NormalTok{pkg[}\OperatorTok{!}\NormalTok{(pkg }\OperatorTok{%in%}\StringTok{ }\KeywordTok{installed.packages}\NormalTok{())]}
-\CommentTok{# If there are any packages in the list that aren't installed,}
-\CommentTok{# install them}
-\ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(new.pkg)) \{}
-  \KeywordTok{install.packages}\NormalTok{(new.pkg, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
-\NormalTok{\}}
-\CommentTok{# Load packages}
-\KeywordTok{library}\NormalTok{(thesisdown)}
-\KeywordTok{library}\NormalTok{(dplyr)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-Warning: package 'dplyr' was built under R version 4.0.2
-\end{verbatim}
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(ggplot2)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-Warning: package 'ggplot2' was built under R version 4.0.2
-\end{verbatim}
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(knitr)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-Warning: package 'knitr' was built under R version 4.0.2
-\end{verbatim}
-\clearpage
-
-The example we show here does the following:
-\begin{itemize}
-\item
-  Selects only the \texttt{carrier\_name} and \texttt{arr\_delay} from the \texttt{flights} dataset and then assigns this subset to a new variable called \texttt{flights2}.
-\item
-  Using \texttt{flights2}, we determine the largest arrival delay for each of the carriers.
-\end{itemize}
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{flights2 <-}\StringTok{ }\NormalTok{flights }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{select}\NormalTok{(carrier_name, arr_delay)}
-\NormalTok{max_delays <-}\StringTok{ }\NormalTok{flights2 }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(carrier_name) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{max_arr_delay =} \KeywordTok{max}\NormalTok{(arr_delay, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-A useful function in the \texttt{knitr} package for making nice tables in \emph{R Markdown} is called \texttt{kable}. It is much easier to use than manually entering values into a table by copying and pasting values into Excel or LaTeX. This again goes to show how nice reproducible documents can be! (Note the use of \texttt{results="asis"}, which will produce the table instead of the code to create the table.) The \texttt{caption.short} argument is used to include a shorter title to appear in the List of Tables.
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{kable}\NormalTok{(max_delays,}
-  \DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"Airline"}\NormalTok{, }\StringTok{"Max Arrival Delay"}\NormalTok{),}
-  \DataTypeTok{caption =} \StringTok{"Maximum Delays by Airline"}\NormalTok{,}
-  \DataTypeTok{caption.short =} \StringTok{"Max Delays by Airline"}\NormalTok{,}
-  \DataTypeTok{longtable =} \OtherTok{TRUE}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-\begin{longtable}[t]{lr}
-\caption[Max Delays by Airline]{\label{tab:maxdelays}Maximum Delays by Airline}\\
+\caption{\label{tab:unnamed-chunk-8}Studies included in analysis of thermal variability (n=15)}
+\centering
+\begin{tabular}[t]{lll}
 \toprule
-Airline & Max Arrival Delay\\
+\textbf{Study} & \textbf{Year} & \textbf{Extracted data points (n)}\\
 \midrule
-Alaska Airlines Inc. & 338\\
-American Airlines Inc. & 1539\\
-Delta Air Lines Inc. & 371\\
-Frontier Airlines Inc. & 166\\
-Hawaiian Airlines Inc. & 116\\
+Delava et al & 2016 & 16\\
+Du et al & 2009 & 32\\
+Garcia-Ruiz et al & 2011 & 16\\
+Glass et al & 2009 & 16\\
+Kern et al & 2015 & 24\\
 \addlinespace
-JetBlue Airways & 256\\
-SkyWest Airlines Inc. & 321\\
-Southwest Airlines Co. & 315\\
-United Air Lines Inc. & 319\\
-US Airways Inc. & 347\\
+Kern et al & 2014 & 4\\
+Lowenborg et al & 2012 & 10\\
+Maneti et al & 2014 & 24\\
+Pendlebury et al & 2004 & 16\\
+Qu et al & 2014 & 40\\
 \addlinespace
-Virgin America & 366\\
+Rolandi et al & 2018 & 4\\
+Saxon et al & 2017 & 12\\
+Semenov et al & 2007 & 32\\
+Simonici et al & 2019 & 30\\
+Triedel et al & 2015 & 4\\
 \bottomrule
-\end{longtable}
-The last two options make the table a little easier-to-read.
+\end{tabular}
+\end{table}
+We excluded studies that did not have the same mean for constant and fluctuating treatments (i.e.~treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1 C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude to most simply variation, as changes in mean temperature significantly influence the magnitude of response (Brown et al 2004). The final number of data points included in the analysis is broken down by study (Table 1).
 
-We can further look into the properties of the largest value here for American Airlines Inc.~To do so, we can isolate the row corresponding to the arrival delay of 1539 minutes for American in our original \texttt{flights} dataset.
+\hypertarget{data-extraction-and-analysis}{%
+\section{Data extraction and analysis}\label{data-extraction-and-analysis}}
+
+From the studies that met our inclusion criteria, we extracted data from tables and figures. Figures were extracted via png files imported into WebPlotDigitizer to obtain the raw data. The extracted data was then imported into a master spreadsheet of data from all studies for analysis. We extracted mean values for response variables, any measure of variance (Standard Deviation (SD) or Standard Error of the Mean (SEM)), and sample size. For studies that reported error as SEM, we converted SEM to SD by multiplying the SEM by the square root of the same SEM (see code appendix). We also collected information on mean temperature, fluctuation range, organization level, body size, life stage, response type, thermal history, and aggregated these values (Table 2).
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-9}All covariates included in the model}
+\centering
+\begin{tabular}[t]{l>{\raggedright\arraybackslash}p{8cm}}
+\toprule
+\textbf{Variable} & \textbf{Description}\\
+\midrule
+mean\_temp\_constant & Reported mean temperature in study\\
+flux\_range & Reported range (difference between minimum 
+                                     and maximum) of temperature fluctuation experienced\\
+org\_level & Level of biological organization, categorized
+                                     as either 0 for individual or 1 for population level
+                                     responses\\
+size & Size estimate of study organism, 0 for extra-small
+                                     (microscopic), 1 for small (macroscopic), 2 for medium 
+                                     (less than a foot), and 3 for large (more than a foot)\\
+exp\_age & Life stage at which experiment was conducted, 
+                                     categorized as 0 for larval, 1 for juvenile, and 
+                                     2 for adult\\
+\addlinespace
+resp\_type & Response variables units classified as rates to traits, 
+                                     such that rates included any response variable units with a
+                                     “per day” clarifier were classified as rates, all else as
+                                     traits\\
+stressful & Whether or not the organisms experienced thermally stressful 
+                                     temperatures throughout study duration, if temperature range 
+                                     exceeded Topt, classified as thermally stressful, else not
+                                     thermally stressful. See appendix for references in which
+                                     organisms’ thermal history was included\\
+\bottomrule
+\end{tabular}
+\end{table}
+If studies reported findings using medians and the Interquartile Range (IQR) via boxplots, a normal distribution of the data was assumed and subsequent calculation was performed, such that the median is the mean and the IQR is the SD with a conversion calculation (Cochrane Handbook for Systematic Reviews of Interventions, Version 5.1.0, 2011). Lastly, if extracted values were missing variance or sample size estimates, the points were automatically excluded via data analysis software metafor.
+
+\hypertarget{metafor}{%
+\section{Metafor}\label{metafor}}
+
+We utilized metafor (version 2.4.0) in R to analyze the extracted, aggregated data. Metafor builds on the functionality of older meta-analysis packages (meta, etc) by allowing for greater flexibility in model types (mixed and random effects models) (Viechtbauer et al 2010). In order to use metafor, the package requires the data to be in a wider format, in which data are input into the following columns:
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-10}Column names expanded to wider format for data analysis in metafor}
+\centering
+\begin{tabular}[t]{ll}
+\toprule
+\textbf{Column name} & \textbf{Purpose}\\
+\midrule
+Mf & Mean of experimental group\\
+SDf & Standard deviation of the experimental group\\
+Mc & Mean of the control group\\
+SDc & Standard deviation of the control group\\
+Nf & Sample size (n) of the experimental group\\
+\addlinespace
+Nc & Sample size (n) of the control group\\
+\bottomrule
+\end{tabular}
+\end{table}
+Formatting the data in this way allows for metafor to calculate an effect size and sampling variance for each row in the dataset, such that a constant treatment and corresponding fluctuating treatment will be paired together using the escalc function in metafor to calculate effect size and sampling variance:
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{filter}\NormalTok{(}
-\NormalTok{    arr_delay }\OperatorTok{==}\StringTok{ }\DecValTok{1539}\NormalTok{,}
-\NormalTok{    carrier_name }\OperatorTok{==}\StringTok{ "American Airlines Inc."}
-\NormalTok{  ) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}
-\NormalTok{    month, day, carrier, dest_name, hour,}
-\NormalTok{    minute, carrier_name, arr_delay}
-\NormalTok{  ))}
+\KeywordTok{escalc}\NormalTok{(}\DataTypeTok{measure=}\StringTok{"SMD"}\NormalTok{, }\DataTypeTok{m1i=}\StringTok{`}\DataTypeTok{constant_resp}\StringTok{`}\NormalTok{, }\DataTypeTok{m2i=}\NormalTok{flux_resp, }
+            \DataTypeTok{sd1i=}\StringTok{`}\DataTypeTok{SD_constant}\StringTok{`}\NormalTok{, }\DataTypeTok{sd2i=} \StringTok{`}\DataTypeTok{SD_variable}\StringTok{`}\NormalTok{, }\DataTypeTok{n1i=}\NormalTok{constant_samp, }
+       \DataTypeTok{n2i=}\NormalTok{flux_samp, }\DataTypeTok{data=}\NormalTok{dat_MA, }\DataTypeTok{slab=}\KeywordTok{paste}\NormalTok{(study_id, experiment_id, }
+\NormalTok{                                              response_id, }\DataTypeTok{sep=}\StringTok{", "}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
-\begin{verbatim}
-  dep_time dep_delay arr_time tailnum flight dest air_time distance
-1     1403      1553     1934  N595AA   1568  DFW      182     1616
-\end{verbatim}
-We see that the flight occurred on March 3rd and departed a little after 2 PM on its way to Dallas/Fort Worth. Lastly, we show how we can visualize the arrival delay of all departing flights from Portland on March 3rd against time of departure.
+We specified the effect size metric of interest to be the standardized mean difference (SMD), as this is a common calculation used to compare two groups head to head (Viechtbauer 2010). It is also a powerful metric to use in a meta-analysis because it standardizes the responses across studies to reduce heterogeneity and bias (Viechtbauer 2010). Each of the subsequent arguments of the escalc function specify the mean, standard deviation, and sample size for each paired constant and fluctuating treatment. The escalc function is using multiple equations to ultimately output the SMD and sampling variance, all of which are below (Figure 6).
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/figure6} \caption{Workflow diagram of how data were extracted, analyzed, and processed for downstream analysis in metafor.}\label{fig:unnamed-chunk-12}
+\end{figure}
+First, it calculates the pooled standard deviation (Pooled SD) from the sample sizes of both studies. Our data had studies with a wide range of sample sizes, so we wanted to include separate sample sizes between the constant and fluctuating treatments. The Pooled SD, Cohen's d, which is one of the most common ways to measure effect size, is used to normalize the mean differences between constant and fluctuating treatments. Then, using a correction factor J, which again normalizes the data further, we obtain the final SMD. The SMD is then ultimately used to calculate the sampling variance, which creates a unitless metric for variance.
+
+Both the SMD and sampling variance are then input into the rma.mv function in metafor to generate a multivariate random effects model to understand how variability compares across studies and what factors may influence the magnitude of response (see insert of pseudo code).
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{flights }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{filter}\NormalTok{(month }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{, day }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dep_time, }\DataTypeTok{y =}\NormalTok{ arr_delay)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_point}\NormalTok{()}
+\KeywordTok{rma.mv}\NormalTok{(yi, vi, }
+       \DataTypeTok{data=}\NormalTok{dat_MA_ES, }
+       \DataTypeTok{random =} \OperatorTok{~}\DecValTok{1} \OperatorTok{|}\StringTok{ }\NormalTok{study_id }\OperatorTok{/}\StringTok{ }\NormalTok{experiment_id}\OperatorTok{/}\StringTok{ }\NormalTok{response_id, }
+       \DataTypeTok{method=}\StringTok{"REML"}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
-\includegraphics{thesis_files/figure-latex/march3plot-1.pdf}
+The arguments of the rma.mv function include SMD (yi), sampling variance (vi), the datafile, as well the random argument to specify the structure of the model. We specified a nested structure to account for the colinearity of data points from within the same study, experiment, and response metric. We used Restricted Maximum-Likelihood (REML) to specify the fit of the model, as REML is best at handling small samples sizes compared to Maximum Likelihood (ML) (Viechtbauer 2010). We chose a random effects model as opposed to a fixed effects model because we were interested in better understanding the patterns of the larger population of environmental variability literature, as we assumed the studies that were included in this analysis to be a random selection from the true population (Viechtbauer 2010).
 
-\hypertarget{additional-resources}{%
-\section{Additional resources}\label{additional-resources}}
-\begin{itemize}
-\item
-  \emph{Markdown} Cheatsheet - \url{https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet}
-\item
-  \emph{R Markdown}
-  \begin{itemize}
-  \tightlist
-  \item
-    Reference Guide - \url{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}
-  \item
-    Cheatsheet - \url{https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf}
-  \end{itemize}
-\item
-  \emph{RStudio IDE}
-  \begin{itemize}
-  \tightlist
-  \item
-    Cheatsheet - \url{https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf}
-  \item
-    Official website - \url{https://rstudio.com/products/rstudio/}
-  \end{itemize}
-\item
-  Introduction to \texttt{dplyr} - \url{https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html}
-\item
-  \texttt{ggplot2}
-  \begin{itemize}
-  \tightlist
-  \item
-    Documentation - \url{https://ggplot2.tidyverse.org/}
-  \item
-    Cheatsheet - \url{https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf}
-  \end{itemize}
-\end{itemize}
-\hypertarget{math-sci}{%
-\chapter{Mathematics and Science}\label{math-sci}}
+We then ran two multivariate random effects models, one with modifiers and one without (see insert above). This was to establish baseline heterogeneity between studies to then examine modifiers that could better explain the heterogeneity in effect sizes across studies. The full model we ran included:
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rma.mv}\NormalTok{(yi, vi, }\DataTypeTok{data=}\NormalTok{dat_MA_ES, }\DataTypeTok{mods =} \OperatorTok{~}\NormalTok{flux_range }\OperatorTok{*}\StringTok{ }\NormalTok{mean_temp_constant }
+       \OperatorTok{+}\StringTok{ }\NormalTok{exp_age }\OperatorTok{+}\StringTok{ }\NormalTok{size }\OperatorTok{+}\StringTok{ }\NormalTok{org_level }\OperatorTok{+}\StringTok{ }\NormalTok{resp_type, }
+               \DataTypeTok{random =} \OperatorTok{~}\DecValTok{1} \OperatorTok{|}\StringTok{  }\NormalTok{study_id}\OperatorTok{/}\StringTok{ }\NormalTok{experiment_id}\OperatorTok{/}\StringTok{ }\NormalTok{response_id,}
+                 \DataTypeTok{method=}\StringTok{"REML"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+We decided to exclude the thermally stressful covariate as an argument in the full model because we lacked thermal history data for one study. That particular study happened to be very influential in our model but the data was not misrepresented, as the data was extracted from a table (Garcia-Ruiz 2011, Table 1). We ran a separate model without this study and included the thermal history covariate separately from all the other modifiers:
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rma.mv}\NormalTok{(yi, vi, }\DataTypeTok{data=}\NormalTok{dat_MA_ES, }\DataTypeTok{mods =}  \OperatorTok{~}\StringTok{ }\NormalTok{stressful, }
+               \DataTypeTok{random =} \OperatorTok{~}\DecValTok{1} \OperatorTok{|}\StringTok{ }\NormalTok{experiment_id}\OperatorTok{/}\StringTok{ }\NormalTok{study_id}\OperatorTok{/}\StringTok{ }\NormalTok{response_id,}
+                 \DataTypeTok{method=}\StringTok{"REML"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{results}{%
+\chapter*{Results}\label{results}}
+\addcontentsline{toc}{chapter}{Results}
 
-Placeholder
+Overall, even our simple model demonstrates that the intercept is not significant but there was significant heterogeneity across studies (z= 0.79, p \textless{} 0.0001), as demonstrated by Figure 6. These results allow us to reject the null hypothesis that there are no significant differences between SMD across the studies included in analysis. As was referenced in the methods, this allowed us to proceed in further detail how different covariates were influencing the effect sizes specifically.
+\begin{figure}
+\includegraphics[width=1.1\linewidth]{thesis_files/figure-latex/unnamed-chunk-17-1} \caption{Forest plot of effects sizes by study and experiment within a study. Indicates that both within and across studies, there were a wide range of effect sizes, likely due to experimental design (including fluctuation range, mean temperature, etc.) Each point represents an average of SDM for multiple responses within each experiment in a single study. Accordingly, the error bars represent an average of variance across multiple responses within a single experiment.}\label{fig:unnamed-chunk-17}
+\end{figure}
+Our full model, including 7 covariates (all and an additional interaction term between fluctuation range and mean temperature, excluding thermal history), responses were still significantly different from each other when accounting for the nested structure of responses, experiments, and studies (QM=191.3722, df=7, p \textless{} 0.0001). Further, fluctuation range and the interaction term between fluctuation range and mean temperature were statistically significant in the model (df = 139, p \textless{} 0.00001). Organization level was also important in the model, as a statistically significant covariate (df= 139, p \textless{} 0.05).
+\begin{figure}
+\includegraphics[width=1.05\linewidth]{thesis_files/figure-latex/unnamed-chunk-18-1} \caption{Coefficients estimates for each covariate in the full model, where asterix symbols signify statistically significant model predictors.}\label{fig:unnamed-chunk-18}
+\end{figure}
+Fluctuation range had a positive estimate while the interaction term between range and mean temperature was only slightly negative, both of which were statistically significant at the p \textless{} 0.001 level (Figure 7).The most negative estimate (organization level) was significantly influential in our model at a significance level of p \textless{} 0.05. Surprisingly, the most negative estimates of our model coefficients were not statistically significant. In our analysis of thermal history via a separate random effects model, we found thermal history was not statistically significant in explaining the effect size (Table 3).
+\begin{table}
 
-\hypertarget{math}{%
-\section{Math}\label{math}}
+\caption{\label{tab:unnamed-chunk-19}Model summary statistics for random effects model using thermal history as sole modifier}
+\centering
+\begin{tabular}[t]{lrrrrrr}
+\toprule
+\textbf{Term} & \textbf{estimate} & \textbf{se} & \textbf{zval} & \textbf{pval} & \textbf{ci.lb} & \textbf{ci.ub}\\
+\midrule
+intercept & 0.2050 & 0.1846 & 1.1104 & 0.2668 & -0.1568 & 0.5669\\
+stressful & -0.0489 & 0.0702 & -0.6975 & 0.4855 & -0.1864 & 0.0886\\
+\bottomrule
+\end{tabular}
+\end{table}
+The interaction between fluctuation range and mean temperature as well as fluctuation range is best displayed in Figure 8. At lower mean temperatures, higher fluctuation ranges have a more positive effect on\ldots{}, though that trend starkly ends at about 24O C. Beyond 24O C, the effect size decreases to nearly half the size of colder temperatures and hovers just above an effect size of one (Figure 8).
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-20-1} \caption{Scatterplot describing the relationship between mean temperature, temperature range, and effect size. Temperature fluctuation range from 0-20C, Mean temperature range from 7-33OC. Effect size range from -2 to 6, restricted based on the distribution of effect sizes to minimize impact of outliers (see Appendix Figure S2.)}\label{fig:unnamed-chunk-20}
+\end{figure}
+The trend between organization level and temperature fluctuation range, suggests that populations perform better at higher fluctuation ranges than organisms (Figure 9). Interestingly, there were not any significant differences between thermal history (Figure 10), life history metric (Figure 11), body size (Figure 12), or age (Figure 13).
 
-\hypertarget{chemistry-101-symbols}{%
-\section{Chemistry 101: Symbols}\label{chemistry-101-symbols}}
+As noted in the methods, when we excluded one highly influential study and included thermal history (exclusion model), size became much more important in the thermal stress model (df=123, p \textless{} 0.001) as did mean temperature. Surprisingly, organization level, fluctuation range, and the interaction between range and mean temperature became insignificant in the thermal stress model (df=123, p \textless{} 0.1).
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-21-1} \caption{Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by organization level: individual or population level responses reported in studies.}\label{fig:unnamed-chunk-21}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-22-1} \caption{Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by thermal history: stressful or not stressful.}\label{fig:unnamed-chunk-22}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-23-1} \caption{Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by life history metric: responses categorized as rate or trait.}\label{fig:unnamed-chunk-23}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-24-1} \caption{Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by body size: extra-small, small, medium, or large.}\label{fig:unnamed-chunk-24}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{thesis_files/figure-latex/unnamed-chunk-25-1} \caption{Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by experimental age: larval, juvenile, or adult.}\label{fig:unnamed-chunk-25}
+\end{figure}
+\hypertarget{discussion}{%
+\chapter*{Discussion}\label{discussion}}
+\addcontentsline{toc}{chapter}{Discussion}
 
-\hypertarget{typesetting-reactions}{%
-\subsection{Typesetting reactions}\label{typesetting-reactions}}
+The results of this meta analysis suggest that fluctuation range is of significant importance to performance, both at the individual and population level. There were not overall differences in the direction o,
 
-\hypertarget{other-examples-of-reactions}{%
-\subsection{Other examples of reactions}\label{other-examples-of-reactions}}
+These results suggest that mean temperature and fluctuation range must be considered together when understanding the impacts of environmental variability, i.e.~higher fluctuation ranges at lower mean temperatures have higher effect sizes compared to effects sizes at lower fluctuation ranges at high mean temperatures. The ways in which organisms, populations, and communities have dealt with natural disturbances has become even more significant in the face of climate change (Vasseur et al 2014, Sunday et al 2012). With global mean temperatures expected to exceed the crucial 2 degree centigrade threshold scientists have deemed ``the point of no return'' (Russill and Nyssa 2009), understanding how organisms will cope is key for understanding how ecosystem composition will change at all scales in the next several decades (West et al 2002, Cheung et al 2008). In this context, perhaps the range of temperatures experienced is of greater importance to predictions of performance under future conditions than simply mean temperature (Vasseur et al 2014).
 
-\hypertarget{physics}{%
-\section{Physics}\label{physics}}
+These conclusions further drive home the decadal conclusion that Jensen's Inequality has demonstrated: averaging nonlinear responses linearly will not accurately predict anticipated performance, in fact, it will underestimate performance (Ruel and Ayres 1999, Bernhardt et al 2018). The ramifications of underestimating performance and not accounting for environmental variability are inumerable, the biggest of which may be our inability to gauge the critical tipping point for many species' ability to survive.
 
-\hypertarget{biology}{%
-\section{Biology}\label{biology}}
+Equally as interesting as the significant model coefficients were the insignificant model coefficients: body size, thermal history, life history traits, and experimental age. Body size has been identified as important in the allometric scaling of MTE and it is interesting in these subsets of studies, body size did not explain the differences in responses across studies. This could simply be because we had a small sample size of studies (n=15), though multiple responses in studies contributed to a large sample of effect sizes (n=139) and there were only a subset of relative body sizes included. It could also provide support for the argument against allometric scaling in MTE, such that there only individualized trends amongst taxonomic groups as opposed to general trends across individuals, populations, and communities of organisms (Clark and Johnston 1999, Clarke et al 2006). This theory may also explain why thermal stress was not a significant predictor in our model, if MTE does not aptly describe the patterns variability in temperature drives.
 
-\hypertarget{ref-labels}{%
-\chapter{Graphics, References, and Labels}\label{ref-labels}}
+An important side note is that our full model and thermal history model differed in the number of studies, as one study, Garcia-Ruiz et al (2011) did not have any supplemental information on thermal performance curve points for the taxa used in that study (Xylotrechus arvicola). This study happened to contribute highly influential points to our model and subsequent analysis, as our model results change drastically when excluding Garcia-Ruiz et al (2011) from our full model. We decided to include this study in our analysis because the data were extracted from a table, therefore there were no inaccuracies in obtaining the data. It provides an important counter and discussion for how and why responses from different studies may be so different from others.
 
-Placeholder
+While body size and thermal history emerged as not statistically significant coefficients in our model may contradict MTE and its allometric scaling component, an additional analysis, with explicit masses for each of these organisms, would better explore the relationship thermal variability and MTE. If we were able to obtain additional information about the CTmax, CTmin, thermal breadth, and tolerance range for each of the species included in the analysis, we may also be able to better understand the trends and the significance of variability patterns in dictating responses.
 
-\hypertarget{figures}{%
-\section{Figures}\label{figures}}
+Both the type of response (i.e.~whether it was a rate or trait) and experimental age were also not important predictors in our full model. We expected rates and traits to have different effects, as traits may be more heavily affected by variability because they are not as temporally dynamic as rates. The lack of difference between rates and traits may be because variability is not differentially acting on rate or trait based responses, simply dampening their overall effects. Again, this may be an artifact of having a small sample size, with mainly trait based responses as opposed to rate based responses.
 
-\hypertarget{footnotes-and-endnotes}{%
-\section{Footnotes and Endnotes}\label{footnotes-and-endnotes}}
+We also expected for experimental age to be an important predictor, as the time period in which an organism experiences thermal variability has been demonstrated to be important for organisms like turtles, relying on TSD for development (Bowden and Paitz 2018). This result may again be the result of many studies not focused on explicitly the larval stage of development, mainly focusing on the juvenile. However, there have been meta analyses, both qualitative (Massey et al 2020), and quantitative (Noble et al 2018), that explicitly looked at the effects of incubation temperature on reptiles, concluding that there is a moderate to large effect of incubation temperature on the magnitude of response (Noble et al 2018). These results align with patterns of juvenile organisms (i.e.~fish) routinely having higher CTmax values than adults, such that life stage during experimental duration is of importance to thermal tolerance and performance (Portner and Farrell 2008, Moyano et al 2017).
 
-\hypertarget{bibliographies}{%
-\section{Bibliographies}\label{bibliographies}}
+Beyond the data included in our meta analysis, it is also important to note that there was little variety in the pattern of variation (diurnal, colored noise, etc.) as was initially a question of interest for this project. As Figure 4 demonstrated, diurnal cycles are more correlated than reddened cycles, like seasonal temperatures. It is surprising that so many thermal variability studies are focused on diurnal cycles, when in fact, temperature patterns are more stable than diurnal cycles, and less autocorrelated in fact. Are these diurnal temperature fluctuations accurate for what is expected under natural conditions? This lack of variety in pattern may be due to a lack of consensus on the language used to classify and discuss thermal variability. Though there is a large body of literature that investigates temperature variation, there appears to be dissonance in the scientific literature about the language used to discuss such variation. Many of the background papers pulled from the systematic literature search used temperature variation to mean just different temperatures (Amarasekare et al 2012) as well as different ranges of temperature, both of which are different concepts. For instance, Amarasekare et al 2012 addressed the need for more complexity when we think about the processes underlying temperature dependent fitness, as fitness is an amalgamation of interactions between different life-history traits. Though temperature variation appeared in the keywords of the article, there was little to no mention of actual thermal variation or variation pattern. Additionally, a subsection of the papers included in our search specifically defined thermal variability as short term changes in temperature, though these studies were mainly focused on explicitly irrelevant thermal regimes (Colinet et al 2018, Colinet et al 2015). Using standardized language to describe specific patterns or durations of variability may be helpful in better summarizing the results and conclusions from previous studies.
 
-\hypertarget{anything-else}{%
-\section{Anything else?}\label{anything-else}}
+Many of these studies failed to justify why certain temperatures were chosen as mean temperatures as well as the range of temperatures studied. In order to compile information on the thermal history of each of the organisms included in the studies of this meta analysis, additional resources were needed (see Appendix Table S1). Understanding where these organisms' performance falls in relation to temperature on its TPC is crucial for drawing reliable conclusions of how thermal variability affects performance. Without it, only broad conclusions can be drawn, as have been drawn here, that variability and range affects thermal performance.
 
-\hypertarget{conclusion}{%
-\chapter*{Conclusion}\label{conclusion}}
-\addcontentsline{toc}{chapter}{Conclusion}
+Many of the studies made little to no mention of generation time with respect to duration of their experiments or study organisms used. Understanding how organisms' life cycles and life spans interact with and are impacted by fluctuation patterns is important for understanding the layers variation permeates and how organisms respond (Bernhardt et al 2020). This is also pertinent to scale at which we study variability, given the overrepresentation of diurnal fluctuation patterns featured in our meta analysis. Diurnal thermal fluctuations may affect organisms with shorter generation times differentially compared to organisms with longer generation times. The converse is true for seasonal or decadal thermal fluctuations.
 
-If we don't want Conclusion to have a chapter number next to it, we can add the \texttt{\{-\}} attribute.
+The results of this analysis differ from previous attempts to understand variability as they quantitatively address how variability affects organisms across taxa, not simply one group. Understanding how allometric scaling and thermal variability patterns interact is important for predicting realistic organismal responses in the face of variable conditions in the environment.
 
-\textbf{More info}
+\hypertarget{conclusions-and-future-directions}{%
+\chapter*{Conclusions and Future Directions}\label{conclusions-and-future-directions}}
+\addcontentsline{toc}{chapter}{Conclusions and Future Directions}
 
-And here's some other random info: the first paragraph after a chapter title or section head \emph{shouldn't be} indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+While there are limitations to the reach of this meta analysis and its results, it is the first cross-taxa quantitative summary of how environmental variability has been studied in the literature. Our results suggest that thermal variability influences responses across several studies, positively as lower mean temperatures with higher fluctuation ranges, and less so at high mean temperatures with lower fluctuation ranges.
+
+However, most importantly, our results highlight the importance of learning from previous research to push how environmental variability is studied further. It has been noted for years the importance of including thermal variability in ecological research, yet there are still an overwhelming number of studies that employ the same patterns of variability with the same lack of reference to thermal performance. Going forward, experiments that explicitly account for and justify variation patterns with respect to generation time, organization level, duration, and natural relevance are needed. In order to draw conclusions that are relevant to natural conditions, patterns of variability across colors of noise (red, white, etc.) and across lengths of time must be investigated. A larger sample size of studies to draw more robust conclusions with respect to support for or against allometric scaling and MTE with respect to thermal variability would be useful. There is more to be studied on how additional experimental designs, i.e.~acclimation or heat-wave simulations, and biological performance respond to environmental variability, however, this is an important first step in quantitatively summarizing progress so far.
 
 \appendix
 
@@ -805,17 +693,140 @@ And here's some other random info: the first paragraph after a chapter title or 
 This first appendix includes all of the R chunks of code that were hidden throughout the document (using the \texttt{include\ =\ FALSE} chunk tag) to help with readibility and/or setup.
 
 \textbf{In the main Rmd file}
-
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This chunk ensures that the thesisdown package is}
+\CommentTok{# installed and loaded. This thesisdown package includes}
+\CommentTok{# the template files for the thesis.}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(remotes)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}\StringTok{'You need to run install.packages("remotes")",}
+\StringTok{            "first in the Console.'}\NormalTok{)}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(thesisdown)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+\NormalTok{    remotes}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{"You need to run"}\NormalTok{,}
+        \StringTok{'remotes::install_github("ismayc/thesisdown")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\KeywordTok{library}\NormalTok{(thesisdown)}
+\CommentTok{# Set how wide the R output will go}
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{width =} \DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \textbf{In Chapter \ref{ref-labels}:}
-
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This chunk ensures that the thesisdown package is}
+\CommentTok{# installed and loaded. This thesisdown package includes}
+\CommentTok{# the template files for the thesis and also two functions}
+\CommentTok{# used for labeling and referencing}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(remotes)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{'You need to run install.packages("remotes")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(dplyr)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{'You need to run install.packages("dplyr")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(ggplot2)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{'You need to run install.packages("ggplot2")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(bookdown)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+    \KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{, }\DataTypeTok{repos =} \StringTok{"https://cran.rstudio.com"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{'You need to run install.packages("bookdown")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{require}\NormalTok{(thesisdown)) \{}
+  \ControlFlowTok{if}\NormalTok{ (params}\OperatorTok{$}\StringTok{`}\DataTypeTok{Install needed packages for \{thesisdown\}}\StringTok{`}\NormalTok{) \{}
+\NormalTok{    remotes}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{stop}\NormalTok{(}
+      \KeywordTok{paste}\NormalTok{(}
+        \StringTok{"You need to run"}\NormalTok{,}
+        \StringTok{'remotes::install_github("ismayc/thesisdown")'}\NormalTok{,}
+        \StringTok{"first in the Console."}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+\NormalTok{\}}
+\KeywordTok{library}\NormalTok{(thesisdown)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\NormalTok{flights <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{, }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \hypertarget{the-second-appendix-for-fun}{%
 \chapter{The Second Appendix, for Fun}\label{the-second-appendix-for-fun}}
+
+\backmatter
 
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
 
-Placeholder
+\markboth{References}{References}
+
+\noindent
+
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-angel2000}{}%
+Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with opengl}. Boston, MA: Addison Wesley Longman.
+
+\leavevmode\hypertarget{ref-angel2001}{}%
+Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach with quicktime}. Boston, MA: Wesley Addison Longman.
+
+\leavevmode\hypertarget{ref-angel2002a}{}%
+Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
 
 
 % Index?

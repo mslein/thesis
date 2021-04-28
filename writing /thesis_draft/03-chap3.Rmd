@@ -72,99 +72,202 @@ flights <- read.csv("data/flights.csv", stringsAsFactors = FALSE)
 ```
 
 
-# Graphics, References, and Labels {#ref-labels}
+# Results {-}
 
+```{r, echo=FALSE, results = 'hide', message=FALSE}
+pacman::p_load(metafor, tidyverse, viridis, visreg, forcats, kableExtra)
+dat_MA_0<- read_csv("metafor.csv") %>%
+  mutate(resp_type = case_when( resp_units %in% c("1 day ^-1", "kJ *day^-1 *kg^-1", "m * s^-1") ~ "rate", TRUE ~ "trait"))
 
-## Figures
+#make standardized SD columns based on N and SE vs SD
+dat_MA <-dat_MA_0 %>% 
+  mutate ( SD_constant= if_else ( variance_type== 0, constant_variance * sqrt(constant_samp), constant_variance))  %>%
+  mutate ( SD_variable= if_else ( variance_type== 0, flux_variance * sqrt(flux_variance) , flux_variance)) 
+         
+#calculate ES for data
+dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
+            data=dat_MA, slab=paste(study_id, experiment_id, response_id, sep=", ")) 
 
-If your thesis has a lot of figures, _R Markdown_ might behave better for you than that other word processor.  One perk is that it will automatically number the figures accordingly in each chapter.    You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier.  If you label your figures, you can move the figures around and _R Markdown_ will automatically adjust the numbering for you.  No need for you to remember!  So that you don't have to get too far into LaTeX to do this, a couple **R** functions have been created for you to assist.  You'll see their use below.
+# Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
+dat_MA_ES<-dat_MA_ES %>% 
+  filter (!is.na(yi)) 
+count(dat_MA_ES, study_id)
 
-<!--
-One thing that may be annoying is the way _R Markdown_ handles "floats" like tables and figures (it's really \LaTeX's fault). \LaTeX\ will try to find the best place to put your object based on the text around it and until you're really, truly done writing you should just leave it where it lies. There are some optional arguments specified in the options parameter of the `label` function.  If you need to shift your figure around, it might be good to look here on tweaking the options argument:  <https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions>
-
-If you need a graphic or tabular material to be part of the text, you can just put it inline. If you need it to appear in the list of figures or tables, it should be placed in a code chunk.
--->
-
-
-In the **R** chunk below, we will load in a picture stored as `reed.jpg` in our main directory.  We then give it the caption of "Reed logo", the label of "reedlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
-
-```{r reedlogo, fig.cap="Reed logo", out.width="0.2\\linewidth", fig.align="center"}
-include_graphics(path = "figure/reed.jpg")
+#removing outlier point to get better picture of data structure AND excluding CT assays 
+normalized <- dat_MA_ES %>%
+  filter(yi > -4) 
 ```
 
-<!-- Note the use of `out.width` as a chunk option here. The resulting
-image is 20% of what the linewidth is in LaTeX. You can also center
-the image using `fig.align="center"` as shown.-->
 
-Here is a reference to the Reed logo: Figure \@ref(fig:reedlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
+Overall, even our simple model demonstrates that the intercept is not significant but there was significant heterogeneity across studies (z= 0.79, p < 0.0001), as demonstrated by Figure 6. These results allow us to reject the null hypothesis that there are no significant differences between SMD across the studies included in analysis. As was referenced in the methods, this allowed us to proceed in further detail how different covariates were influencing the effect sizes specifically.
 
-\clearpage
-
-<!-- clearpage ends the page, and also dumps out all floats.
-  Floats are things like tables and figures. -->
-  
-Below we will investigate how to save the output of an **R** plot and label it in a way similar to that done above.  Recall the `flights` dataset from Chapter \@ref(rmd-basics).  (Note that we've shown a different way to reference a section or chapter here.)  We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014.
-
-```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6, fig.height=5}
-mean_delay_by_carrier <- flights %>%
-  group_by(carrier) %>%
-  summarize(mean_dep_delay = mean(dep_delay))
-ggplot(mean_delay_by_carrier, aes(x = carrier, y = mean_dep_delay)) +
-  geom_bar(position = "identity", stat = "identity", fill = "red")
+```{r, echo= FALSE, message= FALSE, fig.cap="Forest plot of effects sizes by study and experiment within a study. Indicates that both within and across studies, there were a wide range of effect sizes, likely due to experimental design (including fluctuation range, mean temperature, etc.) Each point represents an average of SDM for multiple responses within each experiment in a single study. Accordingly, the error bars represent an average of variance across multiple responses within a single experiment.", out.width="110%"}
+forest <- dat_MA_ES %>%
+  group_by(study_id, experiment_id) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(study_id, experiment_id), sep = " experiment ", remove = FALSE)
+forest(forest$mean_yi, forest$mean_vi, slab=forest$group, pch =19, psize=1, col = "gray2")
 ```
 
-Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
+Our full model, including 7 covariates (all and an additional interaction term between fluctuation range and mean temperature, excluding thermal history), responses were still significantly different from each other when accounting for the nested structure of responses, experiments, and studies (QM=191.3722, df=7, p < 0.0001). Further, fluctuation range and the interaction term between fluctuation range and mean temperature were statistically significant in the model (df = 139, p < 0.00001). Organization level was also important in the model, as a statistically significant covariate (df= 139, p < 0.05). 
 
-A table linking these carrier codes to airline names is available at <https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv>.
+```{r,  echo=FALSE, results = 'hide', message=FALSE, fig.cap = "Coefficients estimates for each covariate in the full model, where asterix symbols signify statistically significant model predictors.", out.width="105%"}
+full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level + resp_type, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
 
-\clearpage
+#plot to include to demonstrate model estimates
+full_model_coefficients<- as.data.frame(coef(full_rf_model)) %>%
+  tibble::rownames_to_column("covariates") %>%
+  rename(value = "coef(full_rf_model)") %>%
+  arrange(desc(value)) %>%
+  mutate(coefficients = c("intercept", "response trait type", 
+                          "fluctuation range", "mean temperature",
+                          "fluctuation range:mean temperature",
+                                       "size", "experimental age","organization level" 
+                                      ))
 
-Next, we will explore the use of the `out.extra` chunk option, which can be used to shrink or expand an image loaded from a file by specifying `"scale= "`. Here we use the mathematical graph stored in the "subdivision.pdf" file.
 
-```{r subd, results="asis", echo=FALSE, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
-include_graphics("figure/subdivision.pdf")
+label.df <- data.frame(coefficients = c("fluctuation range", "fluctuation range:mean temperature", "organization level"),
+                       value = c(0.35, -0.07, -0.69))
+
+ggplot(data=full_model_coefficients, aes(x = reorder(coefficients, value),
+             y = value,
+             fill = value > 0)) +
+  geom_col(show.legend = FALSE) +
+  labs(x = NULL, y = "Coefficient estimate") +
+  scale_fill_viridis(discrete = TRUE)+
+  theme_bw()+
+  coord_flip()+
+  geom_text(data=label.df, label = "*")
 ```
 
-Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
+Fluctuation range had a positive estimate while the interaction term between range and mean temperature was only slightly negative, both of which were statistically significant at the p < 0.001 level (Figure 7).The most negative estimate (organization level) was significantly influential in our model at a significance level of p < 0.05.  Surprisingly, the most negative estimates of our model coefficients were not statistically significant. In our analysis of thermal history via a separate random effects model, we found thermal history was not statistically significant in explaining the effect size (Table 3). 
 
-**More Figure Stuff**
-
-Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
-
-```{r subd2, results="asis", echo=FALSE, out.extra="angle=180, scale=1.1", fig.cap="A Larger Figure, Flipped Upside Down"}
-include_graphics("figure/subdivision.pdf")
+```{r, echo= FALSE}
+table3 <- data.frame(Cat = c("intercept", "stressful"),
+                     estimate = c(0.2050, -0.0489), 
+                 se = c(0.1846, 0.0702),
+                 zval = c(1.1104, -0.6975),
+                 pval = c(0.2668, 0.4855), 
+                 ci.lb = c(-0.1568, -0.1864), 
+                 ci.ub = c(0.5669, 0.0886))
+kable(table3, "latex", booktabs = T, col.names = c("Term", "estimate", "se", "zval", "pval", "ci.lb", "ci.ub"), escape = F, caption = "Model summary statistics for random effects model using thermal history as sole modifier") %>%
+   row_spec(0,bold=TRUE)
 ```
 
-As another example, here is a reference: Figure \@ref(fig:subd2).  
+The interaction between fluctuation range and mean temperature as well as fluctuation range is best displayed in Figure 8. At lower mean temperatures, higher fluctuation ranges have a more positive effect on..., though that trend starkly ends at about 24O C. Beyond 24O C, the effect size decreases to nearly half the size of colder temperatures and hovers just above an effect size of one (Figure 8). 
 
-## Footnotes and Endnotes
+```{r, echo=FALSE, message = FALSE, fig.cap="Scatterplot describing the relationship between mean temperature, temperature range, and effect size. Temperature fluctuation range from 0-20C, Mean temperature range from 7-33OC. Effect size range from -2 to 6, restricted based on the distribution of effect sizes to minimize impact of outliers (see Appendix Figure S2.)", out.width = '90%'}
+normalized %>%
+ggplot(aes(x=mean_temp_constant, y = yi, fill=flux_range))+
+  geom_jitter( alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
+  scale_fill_viridis('Temperature range (C)', option = "C")+
+  theme_classic()+
+  xlab("Mean Temperature (C)")+
+  ylab("Effect Size")+
+  geom_line(y=0, linetype = "dashed")+
+  theme(legend.position="bottom")
+```
 
-You might want to footnote something. ^[footnote text] The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way. More information can be found about both on the CUS site or feel free to reach out to <data@reed.edu>.
+The trend between organization level and temperature fluctuation range, suggests that populations perform better at higher fluctuation ranges than organisms (Figure 9). Interestingly, there were not any significant differences between thermal history (Figure 10), life history metric (Figure 11), body size (Figure 12), or age (Figure 13). 
 
-## Bibliographies
+As noted in the methods, when we excluded one highly influential study and included thermal history (exclusion model), size became much more important in the thermal stress model (df=123, p < 0.001) as did mean temperature. Surprisingly, organization level, fluctuation range, and the interaction between range and mean temperature became insignificant in the thermal stress model (df=123, p < 0.1). 
 
-Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension).  In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero.  The Reed librarians have created Zotero documentation at <https://libguides.reed.edu/citation/zotero>.  In addition, a tutorial is available from Middlebury College at <https://sites.middlebury.edu/zoteromiddlebury/>.
+```{r, echo= FALSE, fig.cap="Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by organization level: individual or population level responses reported in studies.", out.width = '90%'}
+# scatterplot of standardized mean response vs flux range colored and lm fit by org level
+ggplot(normalized, aes(x=flux_range, y=yi, color = factor(org_level)))+
+  geom_point()+
+  labs(x = "Temperature fluctuation range (C)",
+       y ="SMD",
+       color = "Biological organization level")+
+  scale_color_viridis(discrete = TRUE, option = "D", labels = c("individual", "population"))+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom") 
+```
 
-_R Markdown_ uses _pandoc_ (<https://pandoc.org/>) to build its bibliographies.  One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the "at" symbol.  For example, here's a reference to a book about worrying:  [@Molina1994].  This `Molina1994` entry appears in a file called `thesis.bib` in the `bib` folder.  This bibliography database file was created by a program called BibTeX.  You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the `bib` folder.  
 
-For more information about BibTeX and bibliographies, see our CUS site (<https://web.reed.edu/cis/help/latex/index.html>)^[@reedweb2007]. There are three pages on this topic:  _bibtex_ (which talks about using BibTeX, at <https://web.reed.edu/cis/help/latex/bibtex.html>), _bibtexstyles_ (about how to find and use the bibliography style that best suits your needs, at <https://web.reed.edu/cis/help/latex/bibtexstyles.html>) and _bibman_ (which covers how to make and maintain a bibliography by hand, without BibTeX, at <https://web.reed.edu/cis/help/latex/bibman.html>). The last page will not be useful unless you have only a few sources.
 
-If you look at the YAML header at the top of the main .Rmd file you can see that we can specify the style of the bibliography by referencing the appropriate csl file.  You can download a variety of different style files at <https://www.zotero.org/styles>.  Make sure to download the file into the csl folder.  
+```{r, echo= FALSE, fig.cap="Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by thermal history: stressful or not stressful.", out.width = '90%'}
+normalized %>%
+  drop_na(stressful) %>%
+ggplot(aes(x=flux_range, y=yi, color = factor(stressful)))+
+  geom_jitter()+
+  labs(x = "Temperature fluctuation range (C)",
+       y ="SMD",
+       color = "Thermally stressfull")+
+  scale_color_viridis(discrete = TRUE, option = "D", labels = c("no", "yes"))+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")
+```
 
-<!-- Fill the rest of the page with the content below for the PDF version. -->
+```{r, echo=FALSE, fig.cap="Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by life history metric: responses categorized as rate or trait.", out.width = '90%'}
+normalized %>%
+ggplot(aes(x=flux_range, y=yi, color = resp_type))+
+  geom_jitter()+
+  labs(x = "Temperature fluctuation range (C)",
+       y ="SMD",
+       color = "Life history metric")+
+  scale_color_viridis(discrete = TRUE, option = "D", labels = c("rate", "trait"))+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")
+```
 
-\vfill
 
-**Tips for Bibliographies**
+```{r, echo=FALSE, fig.cap="Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by body size: extra-small, small, medium, or large.", out.width = '90%'}
+ggplot(normalized, aes(x=flux_range, y=yi, color = factor(size)))+
+  geom_point()+
+  labs(x = "Temperature fluctuation range (C)",
+       y ="SMD",
+       color = "Size")+
+  scale_color_viridis(discrete = TRUE, option = "D", labels = c("extra-small", "small", "medium", "large"))+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")
+```
 
-- Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. Typing in source after source is mind-numbing enough; do you really want to do it for hours on end in late April? Think of it as procrastination.
-- The cite key (a citation's label) needs to be unique from the other entries.
-- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
-- Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
-- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
-- You can add a Reed Thesis citation^[@noble2002] option. The best way to do this is to use the phdthesis type of citation, and use the optional "type" field to enter "Reed thesis" or "Undergraduate thesis." 
+```{r, echo= FALSE, fig.cap="Linear regression of SMD across temperature fluctuation ranges from 0 to 20 C, colored by experimental age: larval, juvenile, or adult.", out.width = '90%'}
+ggplot(normalized, aes(x=flux_range, y=yi, color = factor(exp_age)))+
+  geom_point()+
+  labs(x = "Temperature fluctuation range (C)",
+       y ="SMD",
+       color = "Experimental age")+
+  scale_color_viridis(discrete = TRUE, option = "D", labels = c("larval", "juvenile", "adult"))+
+  geom_smooth(method="lm", formula = y~x)+
+  theme_bw()+
+  theme(legend.position="bottom")
+```
 
-## Anything else?
+# Discussion {-}
 
-If you'd like to see examples of other things in this template, please contact the Data @ Reed team (email <data@reed.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, and are happy to help.
+The results of this meta analysis suggest that fluctuation range is of significant importance to performance, both at the individual and population level. There were not overall differences in the direction o,
+
+
+These results suggest that mean temperature and fluctuation range must be considered together when understanding the impacts of environmental variability, i.e. higher fluctuation ranges at lower mean temperatures have higher effect sizes compared to effects sizes at lower fluctuation ranges at high mean temperatures. The ways in which organisms, populations, and communities have dealt with natural disturbances has become even more significant in the face of climate change (Vasseur et al 2014, Sunday et al 2012). With global mean temperatures expected to exceed the crucial 2 degree centigrade threshold scientists have deemed “the point of no return” (Russill and Nyssa 2009), understanding how organisms will cope is key for understanding how ecosystem composition will change at all scales in the next several decades (West et al 2002, Cheung et al 2008). In this context, perhaps the range of temperatures experienced is of greater importance to predictions of performance under future conditions than simply mean temperature (Vasseur et al 2014). 
+
+These conclusions further drive home the decadal conclusion that Jensen’s Inequality has demonstrated: averaging nonlinear responses linearly will not accurately predict anticipated performance, in fact, it will underestimate performance (Ruel and Ayres 1999, Bernhardt et al 2018). The ramifications of underestimating performance and not accounting for environmental variability are inumerable, the biggest of which may be our inability to gauge the critical tipping point for many species' ability to survive. 
+
+Equally as interesting as the significant model coefficients were the insignificant model coefficients: body size, thermal history, life history traits, and experimental age. Body size has been identified as important in the allometric scaling of MTE and it is interesting in these subsets of studies, body size did not explain the differences in responses across studies. This could simply be because we had a small sample size of studies (n=15), though multiple  responses in studies contributed to a large sample of effect sizes (n=139) and there were only a subset of relative body sizes included. It could also provide support for the argument against allometric scaling in MTE, such that there only individualized trends amongst taxonomic groups as opposed to general trends across individuals, populations, and communities of organisms (Clark and Johnston 1999, Clarke et al 2006). This theory may also explain why thermal stress was not a significant predictor in our model, if MTE does not aptly describe the patterns variability in temperature drives. 
+
+An important side note is that our full model and thermal history model differed in the number of studies, as one study, Garcia-Ruiz et al (2011) did not have any supplemental information on thermal performance curve points for the taxa used in that study (Xylotrechus arvicola). This study happened to contribute highly influential points to our model and subsequent analysis, as our model results change drastically when excluding Garcia-Ruiz et al (2011) from our full model. We decided to include this study in our analysis because the data were extracted from a table, therefore there were no inaccuracies in obtaining the data. It provides an important counter and discussion for how and why responses from different studies may be so different from others. 
+
+While body size and thermal history emerged as not statistically significant coefficients in our model may contradict MTE and its allometric scaling component, an additional analysis, with explicit masses for each of these organisms, would better explore the relationship thermal variability and MTE. If we were able to obtain additional information about the CTmax, CTmin, thermal breadth, and tolerance range for each of the species included in the analysis, we may also be able to better understand the trends and the significance of variability patterns in dictating responses. 
+
+Both the type of response (i.e. whether it was a rate or trait) and experimental age were also not important predictors in our full model. We expected rates and traits to have different effects, as traits may be more heavily affected by variability because they are not as temporally dynamic as rates. The lack of difference between rates and traits may be because variability is not differentially acting on rate or trait based responses, simply dampening their overall effects. Again, this may be an artifact of having a small sample size, with mainly trait based responses as opposed to rate based responses. 
+
+We also expected for experimental age to be an important predictor, as the time period in which an organism experiences thermal variability has been demonstrated to be important for organisms like turtles, relying on TSD for development (Bowden and Paitz 2018). This result may again be the result of many studies not focused on explicitly the larval stage of development, mainly focusing on the juvenile. However, there have been meta analyses, both qualitative (Massey et al 2020), and quantitative (Noble et al 2018), that explicitly looked at the effects of incubation temperature on reptiles, concluding that there is a moderate to large effect of incubation temperature on the magnitude of response (Noble et al 2018). These results align with patterns of juvenile organisms (i.e. fish) routinely having higher CTmax values than adults, such that life stage during experimental duration is of importance to thermal tolerance and performance (Portner and Farrell 2008, Moyano et al 2017). 
+
+Beyond the data included in our meta analysis, it is also important to note that there was little variety in the pattern of variation (diurnal, colored noise, etc.) as was initially a question of interest for this project. As Figure 4 demonstrated, diurnal cycles are more correlated than reddened cycles, like seasonal temperatures. It is surprising that so many thermal variability studies are focused on diurnal cycles, when in fact, temperature patterns are more stable than diurnal cycles, and less autocorrelated in fact. Are these diurnal temperature fluctuations accurate for what is expected under natural conditions? This lack of variety in pattern may be due to a lack of consensus on the language used to classify and discuss thermal variability. Though there is a large body of literature that investigates temperature variation, there appears to be dissonance in the scientific literature about the language used to discuss such variation. Many of the background papers pulled from the systematic literature search used temperature variation to mean just different temperatures (Amarasekare et al 2012) as well as different ranges of temperature, both of which are different concepts. For instance, Amarasekare et al 2012 addressed the need for more complexity when we think about the processes underlying temperature dependent fitness, as fitness is an amalgamation of interactions between different life-history traits. Though temperature variation appeared in the keywords of the article, there was little to no mention of actual thermal variation or variation pattern. Additionally, a subsection of the papers included in our search specifically defined thermal variability as short term changes in temperature, though these studies were mainly focused on explicitly irrelevant thermal regimes (Colinet et al 2018, Colinet et al 2015). Using standardized language to describe specific patterns or durations of variability may be helpful in better summarizing the results and conclusions from previous studies. 
+
+Many of these studies failed to justify why certain temperatures were chosen as mean temperatures as well as the range of temperatures studied. In order to compile information on the thermal history of each of the organisms included in the studies of this meta analysis, additional resources were needed (see Appendix Table S1). Understanding where these organisms' performance falls in relation to temperature on its TPC is crucial for drawing reliable conclusions of how thermal variability affects performance. Without it, only broad conclusions can be drawn, as have been drawn here, that variability and range affects thermal performance.
+
+Many of the studies made little to no mention of generation time with respect to duration of their experiments or study organisms used. Understanding how organisms’ life cycles and life spans interact with and are impacted by fluctuation patterns is important for understanding the layers variation permeates and how organisms respond (Bernhardt et al 2020). This is also pertinent to scale at which we study variability, given the overrepresentation of diurnal fluctuation patterns featured in our meta analysis. Diurnal thermal fluctuations may affect organisms with shorter generation times differentially compared to organisms with longer generation times. The converse is true for seasonal or decadal thermal fluctuations.
+
+The results of this analysis differ from previous attempts to understand variability as they quantitatively address how variability affects organisms across taxa, not simply one group. Understanding how allometric scaling and thermal variability patterns interact is important for predicting realistic organismal responses in the face of variable conditions in the environment.
 

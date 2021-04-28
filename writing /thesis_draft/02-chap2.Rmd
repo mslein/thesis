@@ -1,117 +1,145 @@
-# Methods
+# Methods {-}
+```{r, include=FALSE}
+pacman::p_load(knitr, kableExtra, tidyverse)
+```
+
+```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science to the 19 studies included in the analysis. Red indicates no usable data, purple indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%'}
+knitr::include_graphics("figures/figure5.png")
+```
+
+We conducted a systematic literature search using the ISI Web of Science database to collect studies that investigated the effects of temperature variability (Figure 3). After trying several different combinations of search terms to capture research on temperature variability, our final search utilized these search terms in an advanced search: AK=((temperature OR thermal) NEAR (vari* OR fluc*) ) AND SU=(Life Sciences & Biomedicine). This search returned a total of 176 results. We downloaded the .bib file of this search and imported this file into the revtools R package (version 0.4.1). Using the revtools package we then screened studies by title, then by abstract, for inclusion in analysis (Figure 5). Once we screened studies for relevance to the field of biology and environmental variation, we began excluding studies using the following strict criteria:
+
+* We excluded studies that did not feature both a constant and fluctuating treatment (i.e. studies with several fluctuating treatments but no constant comparison or studies with a gradient of constant treatment temperatures but no periodic fluctuating treatment)
+* We excluded studies that were not completed in a laboratory (i.e. modeling predictions or results from models, mesocosm experiments, in situ experiments)
+* We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (i.e. organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a thermal performance curve (TPC))
+* We excluded any articles not written in English 
+* We excluded studies that did not report measurements of error
+* We excluded studies in which the response variables are comparable or extrable (i.e. one study performed Principal component analysis for their responses)
 
 
-## Math
+```{r, echo = FALSE}
+table1 <- data.frame(Cat = c("Delava et al", "Du et al", 
+                         "Garcia-Ruiz et al", "Glass et al", 
+                         "Kern et al", "Kern et al", 
+                         "Lowenborg et al", "Maneti et al", 
+                         "Pendlebury et al", "Qu et al", 
+                         "Rolandi et al", "Saxon et al", 
+                         "Semenov et al", "Simonici et al", 
+                         "Triedel et al"), 
+                 Year = c("2016", "2009", "2011", "2009", "2015", "2014",
+                          "2012", "2014", "2004", "2014", "2018", "2017",
+                          "2007", "2019", "2015"), 
+                 `Extracted data points (n)` = c("16", "32", "16", "16", "24",
+                                                 "4", "10", "24", "16", "40", "4", 
+                                                 "12", "32", "30", "4"))
+kable(table1, "latex", booktabs = T, col.names = c("Study", "Year", "Extracted data points (n)"), escape = F, caption = "Studies included in analysis of thermal variability (n=15)") %>%
+   row_spec(0,bold=TRUE)
+```
 
-\TeX\ is the best way to typeset mathematics. Donald Knuth designed \TeX\ when he got frustrated at how long it was taking the typesetters to finish his book, which contained a lot of mathematics.  One nice feature of _R Markdown_ is its ability to read LaTeX code directly.
-
-If you are doing a thesis that will involve lots of math, you will want to read the following section which has been commented out. If you're not going to use math, skip over or delete this next commented section.
-
-
-<!-- MATH and PHYSICS majors: Uncomment the following section -->
-<!--
-$$\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
-\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
-$$
-
-From Informational Dynamics, we have the following (Dave Braden):
-
-After _n_ such encounters the posterior density for $\theta$ is
-
-$$
-\pi(\theta|X_1< y_1,\dots,X_n<y_n) \varpropto \pi(\theta) \prod_{i=1}^n\int_{-\infty}^{y_i}
-   \exp\left(-{(x-\theta)^2\over{2\sigma^2}}\right)\ dx
-$$
-
-Another equation:
-
-$$\det\left|\,\begin{matrix}%
-c_0&c_1\hfill&c_2\hfill&\ldots&c_n\hfill\cr
-c_1&c_2\hfill&c_3\hfill&\ldots&c_{n+1}\hfill\cr
-c_2&c_3\hfill&c_4\hfill&\ldots&c_{n+2}\hfill\cr
-\,\vdots\hfill&\,\vdots\hfill&
-  \,\vdots\hfill&&\,\vdots\hfill\cr
-c_n&c_{n+1}\hfill&c_{n+2}\hfill&\ldots&c_{2n}\hfill\cr
-\end{matrix}\right|>0$$
+We excluded studies that did not have the same mean for constant and fluctuating treatments (i.e. treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1 C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude to most simply variation, as changes in mean temperature significantly influence the magnitude of response (Brown et al 2004).  The final number of data points included in the analysis is broken down by study (Table 1). 
 
 
-Lapidus and Pindar, Numerical Solution of Partial Differential Equations in Science and
-Engineering.  Page 54
-
-$$
-\int_t\left\{\sum_{j=1}^3 T_j \left({d\phi_j\over dt}+k\phi_j\right)-kT_e\right\}w_i(t)\ dt=0,
-   \qquad\quad i=1,2,3.
-$$
-
-L\&P  Galerkin method weighting functions.  Page 55
-
-$$
-\sum_{j=1}^3 T_j\int_0^1\left\{{d\phi_j\over dt} + k\phi_j\right\} \phi_i\ dt
-   = \int_{0}^1k\,T_e\phi_idt, \qquad i=1,2,3 $$
-
-Another L\&P (p145)
-
-$$
-\int_{-1}^1\!\int_{-1}^1\!\int_{-1}^1 f\big(\xi,\eta,\zeta\big)
-   = \sum_{k=1}^n\sum_{j=1}^n\sum_{i=1}^n w_i w_j w_k f\big( \xi,\eta,\zeta\big).
-$$
-
-Another L\&P (p126)
-
-$$
-\int_{A_e} (\,\cdot\,) dx dy = \int_{-1}^1\!\int_{-1}^1 (\,\cdot\,) \det[J] d\xi d\eta.
-$$
--->
-
-## Chemistry 101: Symbols
-
-Chemical formulas will look best if they are not italicized. Get around math mode's automatic italicizing in LaTeX by using the argument `$\mathrm{formula here}$`, with your formula inside the curly brackets.  (Notice the use of the backticks here which enclose text that acts as code.)
-
-So, $\mathrm{Fe_2^{2+}Cr_2O_4}$ is written `$\mathrm{Fe_2^{2+}Cr_2O_4}$`.
-
-<!--
-The \noindent command below does what you'd expect:  it forces the current line/paragraph to not indent. This was done here to match the format of the LaTeX thesis PDF.
--->
-
-\noindent Exponent or Superscript: $\mathrm{O^-}$
-
-\noindent Subscript: $\mathrm{CH_4}$
-
-To stack numbers or letters as in $\mathrm{Fe_2^{2+}}$, the subscript is defined first, and then the superscript is defined.
-
-\noindent Bullet: CuCl $\bullet$ $\mathrm{7H_{2}O}$
 
 
-\noindent Delta: $\Delta$
+## Data extraction and analysis 
 
-\noindent Reaction Arrows: $\longrightarrow$ or  $\xrightarrow{solution}$
+From the studies that met our inclusion criteria, we extracted data from tables and figures. Figures were extracted via png files imported into WebPlotDigitizer to obtain the raw data. The extracted data was then imported into a master spreadsheet of data from all studies for analysis. We extracted mean values for response variables, any measure of variance (Standard Deviation (SD) or Standard Error of the Mean (SEM)), and sample size. For studies that reported error as SEM, we converted SEM to SD by multiplying the SEM by the square root of the same SEM (see code appendix). We also collected information on mean temperature, fluctuation range, organization level, body size, life stage, response type, thermal history, and aggregated these values (Table 2).
 
-\noindent Resonance Arrows: $\leftrightarrow$
+```{r, echo = FALSE, include = TRUE}
+table2 <- data.frame(Variable = c("mean_temp_constant", "flux_range", 
+                         "org_level", "size", 
+                         "exp_age", "resp_type", 
+                         "stressful"),
+                     Description = c("Reported mean temperature in study",
+                                     "Reported range (difference between minimum 
+                                     and maximum) of temperature fluctuation experienced", 
+                                     "Level of biological organization, categorized
+                                     as either 0 for individual or 1 for population level
+                                     responses", 
+                                     "Size estimate of study organism, 0 for extra-small
+                                     (microscopic), 1 for small (macroscopic), 2 for medium 
+                                     (less than a foot), and 3 for large (more than a foot)", 
+                                     "Life stage at which experiment was conducted, 
+                                     categorized as 0 for larval, 1 for juvenile, and 
+                                     2 for adult",
+                                     "Response variables units classified as rates to traits, 
+                                     such that rates included any response variable units with a
+                                     “per day” clarifier were classified as rates, all else as
+                                     traits",
+                                     "Whether or not the organisms experienced thermally stressful 
+                                     temperatures throughout study duration, if temperature range 
+                                     exceeded Topt, classified as thermally stressful, else not
+                                     thermally stressful. See appendix for references in which
+                                     organisms’ thermal history was included"))
 
-\noindent Reversible Reaction Arrows: $\rightleftharpoons$
+kable(table2, caption = "All covariates included in the model", "latex", booktabs = T) %>%
+  column_spec(2, width = "8cm") %>%
+   row_spec(0,bold=TRUE)
+```
 
-### Typesetting reactions
 
-You may wish to put your reaction in an equation environment, which means that LaTeX will place the reaction where it fits and will number the equations for you. 
+If studies reported findings using medians and the Interquartile Range (IQR) via boxplots, a normal distribution of the data was assumed and subsequent calculation was performed, such that the median is the mean and the IQR is the SD with a conversion calculation (Cochrane Handbook for Systematic Reviews of Interventions, Version 5.1.0, 2011). Lastly, if extracted values were missing variance or sample size estimates, the points were automatically excluded via data analysis software metafor. 
 
-\begin{equation}
-  \mathrm{C_6H_{12}O_6  + 6O_2} \longrightarrow \mathrm{6CO_2 + 6H_2O}
-  (\#eq:reaction)
-\end{equation}
+## Metafor 
 
-We can reference this combustion of glucose reaction via Equation \@ref(eq:reaction).
+We utilized metafor (version 2.4.0) in R to analyze the extracted, aggregated data. Metafor builds on the functionality of older meta-analysis packages (meta, etc) by allowing for greater flexibility in model types (mixed and random effects models) (Viechtbauer et al 2010). In order to use metafor, the package requires the data to be in a wider format, in which data are input into the following columns:
 
-### Other examples of reactions
+```{r, echo = FALSE}
+table3 <- data.frame(Cat = c("Mf", "SDf", 
+                         "Mc", "SDc", 
+                         "Nf", "Nc"), 
+                 Purpose = c("Mean of experimental group ", 
+                             "Standard deviation of the experimental group",
+                             "Mean of the control group",
+                             "Standard deviation of the control group",
+                             "Sample size (n) of the experimental group",
+                             "Sample size (n) of the control group"))
+kable(table3, "latex", booktabs = T, col.names = c("Column name", "Purpose"), escape = F, caption = "Column names expanded to wider format for data analysis in metafor") %>%
+   row_spec(0,bold=TRUE)
+```
 
-$\mathrm{NH_4Cl_{(s)}}$ $\rightleftharpoons$ $\mathrm{NH_{3(g)}+HCl_{(g)}}$
+Formatting the data in this way allows for metafor to calculate an effect size and sampling variance for each row in the dataset, such that a constant treatment and corresponding fluctuating treatment will be paired together using the escalc function in metafor to calculate effect size and sampling variance:
+```{r, eval= FALSE}
+escalc(measure="SMD", m1i=`constant_resp`, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, 
+       n2i=flux_samp, data=dat_MA, slab=paste(study_id, experiment_id, 
+                                              response_id, sep=", "))
+```
+We specified the effect size metric of interest to be the standardized mean difference (SMD), as this is a common calculation used to compare two groups head to head (Viechtbauer 2010). It is also a powerful metric to use in a meta-analysis because it standardizes the responses across studies to reduce heterogeneity and bias (Viechtbauer 2010). Each of the subsequent arguments of the escalc function specify the mean, standard deviation, and sample size for each paired constant and fluctuating treatment. The escalc function is using multiple equations to ultimately output the SMD and sampling variance, all of which are below (Figure 6). 
 
-\noindent $\mathrm{MeCH_2Br + Mg}$ $\xrightarrow[below]{above}$ $\mathrm{MeCH_2\bullet Mg \bullet Br}$
+```{r, echo= FALSE, fig.cap= "Workflow diagram of how data were extracted, analyzed, and processed for downstream analysis in metafor.", out.width="100%"}
+knitr::include_graphics("figures/figure6.png")
+```
 
-## Physics
+First, it calculates the pooled standard deviation (Pooled SD) from the sample sizes of both studies. Our data had studies with a wide range of sample sizes, so we wanted to include separate sample sizes between the constant and fluctuating treatments. The Pooled SD, Cohen’s d, which is one of the most common ways to measure effect size, is used to normalize the mean differences between constant and fluctuating treatments. Then, using a correction factor J, which again normalizes the data further, we obtain the final SMD. The SMD is then ultimately used to calculate the sampling variance, which creates a unitless metric for variance. 
 
-Many of the symbols you will need can be found on the math page <https://web.reed.edu/cis/help/latex/math.html> and the Comprehensive LaTeX Symbol Guide (<https://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf>).
+Both the SMD and sampling variance are then input into the rma.mv function in metafor to generate a multivariate random effects model to understand how variability compares across studies and what factors may influence the magnitude of response (see insert of pseudo code). 
 
-## Biology
+```{r, eval = FALSE}
+rma.mv(yi, vi, 
+       data=dat_MA_ES, 
+       random = ~1 | study_id / experiment_id/ response_id, 
+       method="REML") 
+```
+               
+The arguments of the rma.mv function include SMD (yi), sampling variance (vi), the datafile, as well the random argument to specify the structure of the model. We specified a nested structure to account for the colinearity of data points from within the same study, experiment, and response metric. We used Restricted Maximum-Likelihood (REML) to specify the fit of the model, as REML is best at handling small samples sizes compared to Maximum Likelihood (ML) (Viechtbauer 2010). We chose a random effects model as opposed to a fixed effects model because we were interested in better understanding the patterns of the larger population of environmental variability literature, as we assumed the studies that were included in this analysis to be a random selection from the true population (Viechtbauer 2010). 
 
-You will probably find the resources at <https://www.lecb.ncifcrf.gov/~toms/latex.html> helpful, particularly the links to bsts for various journals. You may also be interested in TeXShade for nucleotide typesetting (<https://homepages.uni-tuebingen.de/beitz/txe.html>).  Be sure to read the proceeding chapter on graphics and tables.
+We then ran two multivariate random effects models, one with modifiers and one without (see insert above). This was to establish baseline heterogeneity between studies to then examine modifiers that could better explain the heterogeneity in effect sizes across studies. The full model we ran included: 
+
+
+```{r, eval = FALSE}
+rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant 
+       + exp_age + size + org_level + resp_type, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+```
+
+
+We decided to exclude the thermally stressful covariate as an argument in the full model because we lacked thermal history data for one study. That particular study happened to be very influential in our model but the data was not misrepresented, as the data was extracted from a table (Garcia-Ruiz 2011, Table 1). We ran a separate model without this study and included the thermal history covariate separately from all the other modifiers:
+
+```{r, eval =FALSE}
+rma.mv(yi, vi, data=dat_MA_ES, mods =  ~ stressful, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+```
 

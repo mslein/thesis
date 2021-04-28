@@ -160,6 +160,14 @@ full_rf_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_con
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 full_rf_model
+
+#full model plus thermal stress
+full_stress_model<-rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level + resp_type + stressful, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+full_stress_model
+
 ```
 
 ```{r}
@@ -167,12 +175,18 @@ full_rf_model
 full_model_coefficients<- as.data.frame(coef(full_rf_model)) %>%
   tibble::rownames_to_column("covariates") %>%
   rename(value = "coef(full_rf_model)") %>%
-  arrange(desc(value))
+  arrange(desc(value)) %>%
+  mutate(coefficients = c("intercept", "response trait type", 
+                          "fluctuation range", "mean temperature",
+                          "fluctuation range:mean temperature",
+                                       "size", "experimental age","organization level" 
+                                      ))
 
-label.df <- data.frame(covariates = c("flux_range", "flux_range:mean_constant_temp", "org_level"),
-                       value = c(0.3, -0.01, -0.69))
 
-ggplot(data=full_model_coefficients, aes(x = reorder(covariates, value),
+label.df <- data.frame(coefficients = c("fluctuation range", "fluctuation range:mean temperature", "organization level"),
+                       value = c(0.35, -0.07, -0.69))
+
+ggplot(data=full_model_coefficients, aes(x = reorder(coefficients, value),
              y = value,
              fill = value > 0)) +
   geom_col(show.legend = FALSE) +

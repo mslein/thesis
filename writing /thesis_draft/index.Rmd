@@ -1,5 +1,5 @@
 ---
-title: 'Mean temperature, fluctuation magnitude, and level of biological organization affect biological responses amidst thermal variability: a meta analysis'
+title: 'Mean temperature, fluctuation magnitude, and level of biological organization affect biological responses amidst thermal variability: a meta-analysis'
 author: 'Margaret Anne Slein'
 date: 'May 2021'
 institution: 'Reed College'
@@ -15,7 +15,7 @@ params:
   'Install needed packages for {thesisdown}': True
 output:
   thesisdown::thesis_pdf: default 
-abstract: 'Ecosystems and organisms have experienced variation on many temporal scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the tenacity and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta analysis of how thermal variability impacts biological responses across a variety of taxa, organism sizes, and biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.'
+abstract: 'Ecosystems and organisms have experienced variation on many temporal scales, from diurnal changes in light availability, to seasonal changes in temperature, to decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the tenacity and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta-analysis of how thermal variability impacts biological responses across a variety of taxa, organism sizes, and biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.'
 acknowledgements: |
   
   The future is bright, the future is dark 

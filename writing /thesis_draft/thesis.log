@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.29)  29 APR 2021 11:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.29)  29 APR 2021 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,45 +871,44 @@ Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-22-1.pdf  used
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
 [26
 
- <./thesis_files/figure-latex/unnamed-chunk-21-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=407, 469.755pt x 325.215p
+ <./thesis_files/figure-latex/unnamed-chunk-21-1.pdf>] [27 <./thesis_files/figu
+re-latex/unnamed-chunk-22-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=420, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-23-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-23-1.pdf  used
- on input line 707.
+ on input line 708.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
-<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=408, 469.755pt x 325.215p
+<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=421, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-24-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used
- on input line 715.
+ on input line 716.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27 <./thesis_files/figure-latex/unnamed-chunk-22-1.pdf>]
 <thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=422, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-25-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used
- on input line 723.
+ on input line 724.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
 <thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=423, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-26-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-26-1.pdf  used
- on input line 731.
+ on input line 732.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
 
 Underfull \vbox (badness 1253) has occurred while \output is active []
 
-[28 <./thesis_files/figure-latex/unnamed-chunk-23-1.pdf> <./thesis_files/figure
--latex/unnamed-chunk-24-1.pdf>] [29 <./thesis_files/figure-latex/unnamed-chunk-
-25-1.pdf> <./thesis_files/figure-latex/unnamed-chunk-26-1.pdf>] [30
+[28
+
+ <./thesis_files/figure-latex/unnamed-chunk-23-1.pdf> <./thesis_files/figure-la
+tex/unnamed-chunk-24-1.pdf>] [29 <./thesis_files/figure-latex/unnamed-chunk-25-
+1.pdf> <./thesis_files/figure-latex/unnamed-chunk-26-1.pdf>] [30
 
 ]
 Chapter 4.
@@ -935,7 +934,7 @@ t>
 File: thesis_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-29-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-29-1.pdf  used
- on input line 777.
+ on input line 778.
 (pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
 [39 <./thesis_files/figure-latex/unnamed-chunk-29-1.pdf>]
 <thesis_files/figure-latex/unnamed-chunk-30-1.pdf, id=516, 469.755pt x 325.215p
@@ -943,10 +942,10 @@ t>
 File: thesis_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-30-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-30-1.pdf  used
- on input line 786.
+ on input line 787.
 (pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
 
-Overfull \hbox (0.5881pt too wide) in paragraph at lines 796--821
+Overfull \hbox (0.5881pt too wide) in paragraph at lines 797--822
  [][] 
  []
 
@@ -963,7 +962,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [43
 
 ]
-Underfull \hbox (badness 1033) in paragraph at lines 882--884
+Underfull \hbox (badness 1033) in paragraph at lines 883--885
  \T1/lmr/m/n/12 RON-MENTS. \T1/lmr/m/it/12 Evo-lu-tion\T1/lmr/m/n/12 , \T1/lmr/
 m/it/12 55\T1/lmr/m/n/12 (1), 33--40. []$\T1/lmtt/m/n/12 http : / / doi . org /
  10 . 1111 / j . 0014 -[]
@@ -982,7 +981,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [47]
-Underfull \hbox (badness 1097) in paragraph at lines 993--995
+Underfull \hbox (badness 1097) in paragraph at lines 994--996
  \T1/lmr/m/n/12 NORMS AMONG POP-U-LA-TIONS OF \T1/lmr/m/it/12 DROSOPHILA MELANO
 GASTER\T1/lmr/m/n/12 :
  []
@@ -997,13 +996,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [50]
-Underfull \hbox (badness 4518) in paragraph at lines 1080--1082
+Underfull \hbox (badness 4518) in paragraph at lines 1081--1083
  \T1/lmr/m/n/12 and phe-no-types in \T1/lmr/m/it/12 caiman latirostris\T1/lmr/m
 /n/12 : SI-MONCINI <span style="font-
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 1080--1082
+Underfull \hbox (badness 3492) in paragraph at lines 1081--1083
  \T1/lmr/m/n/12 variant:Small-caps;">et al.</span>. \T1/lmr/m/it/12 J. Exp. Zoo
 l.\T1/lmr/m/n/12 , \T1/lmr/m/it/12 331\T1/lmr/m/n/12 (5), 299--307.
  []
@@ -1041,7 +1040,7 @@ ts/type1/public/lm/lmro12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmtk10.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type1/p
 ublic/lm/lmtt12.pfb>
-Output written on thesis.pdf (67 pages, 1298387 bytes).
+Output written on thesis.pdf (67 pages, 1298490 bytes).
 PDF statistics:
  928 PDF objects out of 1000 (max. 8388607)
  809 compressed objects within 9 object streams

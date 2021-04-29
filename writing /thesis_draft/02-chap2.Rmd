@@ -3,7 +3,7 @@
 pacman::p_load(knitr, kableExtra, tidyverse)
 ```
 
-```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science to the 19 studies included in the analysis. Red indicates no usable data, purple indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta analysis paper selection process"}
+```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science to the 19 studies included in the analysis. Red indicates no usable data, purple indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta-analysis paper selection process"}
 knitr::include_graphics("figures/figure5.png")
 ```
 

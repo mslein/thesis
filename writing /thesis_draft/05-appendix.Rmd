@@ -79,7 +79,7 @@ table4 <- data.frame(Species = c("Drosophila melanogaster", "Leptopilina boulard
                                  "Simoncini et al 2019, Parachu-Marco et al 2017, Pina et al 2002", 
                                  "Dang et al 2019", "Wang et al 2015"))
 kable(table4, "latex", booktabs = T, 
-      col.names = c("Species", "Topt (°C)", "Reference"), escape = F, caption = "TPC metrics extracted from additional papers to collect thermal history data for each species in the meta analysis (missing data on species X. arvicola, used in Garcia-Ruiz et al 2011)", caption.short ="Thermal stress data by species") %>%
+      col.names = c("Species", "Topt (°C)", "Reference"), escape = F, caption = "TPC metrics extracted from additional papers to collect thermal history data for each species in the meta-analysis (missing data on species X. arvicola, used in Garcia-Ruiz et al 2011)", caption.short ="Thermal stress data by species") %>%
    row_spec(0,bold=TRUE) %>%
   column_spec(3, width = "6cm") %>%
    kable_styling(latex_options = c("striped", "hold_position"))

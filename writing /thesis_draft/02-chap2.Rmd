@@ -54,9 +54,9 @@ table2 <- data.frame(Variable = c("mean_temp_constant", "flux_range",
                          "org_level", "size", 
                          "exp_age", "resp_type", 
                          "stressful"),
-                     Description = c("Reported mean temperature in study",
+                     Description = c("Reported mean temperature (°C) in study",
                                      "Reported range (difference between minimum 
-                                     and maximum) of temperature fluctuation experienced", 
+                                     and maximum) of temperature fluctuation (°C) experienced", 
                                      "Level of biological organization, categorized
                                      as either 0 for individual or 1 for population level
                                      responses", 

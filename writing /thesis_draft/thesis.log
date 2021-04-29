@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  28 APR 2021 23:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.29)  29 APR 2021 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -886,25 +886,30 @@ File: thesis_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used
  on input line 715.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
-<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=409, 469.755pt x 325.215p
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[27 <./thesis_files/figure-latex/unnamed-chunk-22-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=422, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-25-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used
  on input line 723.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
-[27 <./thesis_files/figure-latex/unnamed-chunk-22-1.pdf> <./thesis_files/figure
--latex/unnamed-chunk-23-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=431, 469.755pt x 325.215p
+<thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=423, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-26-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-26-1.pdf  used
  on input line 731.
 (pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
-[28 <./thesis_files/figure-latex/unnamed-chunk-24-1.pdf> <./thesis_files/figure
--latex/unnamed-chunk-25-1.pdf>] [29 <./thesis_files/figure-latex/unnamed-chunk-
-26-1.pdf>] [30
+
+Underfull \vbox (badness 1253) has occurred while \output is active []
+
+[28 <./thesis_files/figure-latex/unnamed-chunk-23-1.pdf> <./thesis_files/figure
+-latex/unnamed-chunk-24-1.pdf>] [29 <./thesis_files/figure-latex/unnamed-chunk-
+25-1.pdf> <./thesis_files/figure-latex/unnamed-chunk-26-1.pdf>] [30
 
 ]
 Chapter 4.
@@ -940,6 +945,11 @@ File: thesis_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-30-1.pdf  used
  on input line 786.
 (pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+
+Overfull \hbox (0.5881pt too wide) in paragraph at lines 796--821
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1009,11 +1019,11 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: C4EBAB8B22778D804678A85691A36C87;4788.
  ) 
 Here is how much of TeX's memory you used:
- 13656 strings out of 480954
- 208873 string characters out of 5906449
- 513718 words of memory out of 5000000
- 30341 multiletter control sequences out of 15000+600000
- 449393 words of font info for 61 fonts, out of 8000000 for 9000
+ 13658 strings out of 480954
+ 208799 string characters out of 5906535
+ 513702 words of memory out of 5000000
+ 30344 multiletter control sequences out of 15000+600000
+ 449769 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,12n,74p,2347b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/maslein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Use
@@ -1031,10 +1041,10 @@ ts/type1/public/lm/lmro12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmtk10.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type1/p
 ublic/lm/lmtt12.pfb>
-Output written on thesis.pdf (67 pages, 1296733 bytes).
+Output written on thesis.pdf (67 pages, 1298387 bytes).
 PDF statistics:
- 926 PDF objects out of 1000 (max. 8388607)
- 807 compressed objects within 9 object streams
+ 928 PDF objects out of 1000 (max. 8388607)
+ 809 compressed objects within 9 object streams
  239 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

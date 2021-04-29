@@ -1,5 +1,5 @@
 ---
-title: 'Thermal variability affects biological responses as a result of interactions between mean temperature, fluctuation and biological organization: A Meta Analysis'
+title: 'Thermal variability affects biological responses as a result of interactions between mean temperature, fluctuation range and biological organization: A Meta Analysis'
 author: 'Margaret Anne Slein'
 date: 'May 2021'
 institution: 'Reed College'

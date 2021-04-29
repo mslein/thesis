@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  27 APR 2021 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  28 APR 2021 22:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,7 +539,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 25
-3.
+4.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -551,24 +551,24 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 253.
-LaTeX Font Info:    ... okay on input line 253.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
 
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base
 .sty
@@ -581,7 +581,7 @@ fg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 253.
+Package hyperref Info: Link coloring OFF on input line 254.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -593,9 +593,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 253.
-LaTeX Info: Redefining \pageref on input line 253.
-LaTeX Info: Redefining \nameref on input line 253.
+LaTeX Info: Redefining \ref on input line 254.
+LaTeX Info: Redefining \pageref on input line 254.
+LaTeX Info: Redefining \nameref on input line 254.
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
@@ -605,42 +605,42 @@ Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-57.
+58.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-57.
+58.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-257.
+258.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-257.
+258.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 257.
+(Font)              <12> on input line 258.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 257.
+(Font)              <8> on input line 258.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 257.
+(Font)              <6> on input line 258.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 25
-7.
+8.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 257
+LaTeX Font Info:    Trying to load font information for U+msa on input line 258
 .
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 257
+LaTeX Font Info:    Trying to load font information for U+msb on input line 258
 .
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -662,55 +662,53 @@ Non-PDF special ignored!
 ] [2
 
 
-] (./thesis.toc)
+] (./thesis.toc
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+[3])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
-[3] [4
-
-] (./thesis.lot)
+[4] (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
-[5] [6
+[5
 
-] (./thesis.lof
-Underfull \vbox (badness 10000) has occurred while \output is active []
+] [6
 
-[7])
+] (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
-[8] [9
+[7] [8
 
-] [10
+] [9] [10
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.348 ...l{why-this-study-on-variability-matters}}
-                                                   [1
+l.347 
+       [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.353 \chapter*{Background}\label{background}}
-                                               [2]
-<figures/figure1.png, id=279, 955.57pt x 502.87875pt>
+l.354 \chapter{Background}\label{background}}
+                                              [2]
+Chapter 1.
+<figures/figure1.png, id=247, 955.57pt x 502.87875pt>
 File: figures/figure1.png Graphic file (type png)
 <use figures/figure1.png>
-Package pdftex.def Info: figures/figure1.png  used on input line 359.
+Package pdftex.def Info: figures/figure1.png  used on input line 360.
 (pdftex.def)             Requested size: 455.3023pt x 239.60652pt.
 
-Overfull \hbox (21.68231pt too wide) in paragraph at lines 359--359
-[][] 
+Overfull \hbox (21.68231pt too wide) in paragraph at lines 360--361
+ [][] 
  []
-
-
-Underfull \vbox (badness 3158) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
@@ -724,263 +722,300 @@ ifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.377 
-       [4] [5] [6]
-<figures/figure2.png, id=313, 595.22375pt x 479.7925pt>
+       [4]
+Underfull \vbox (badness 1629) has occurred while \output is active []
+
+[5]
+Underfull \vbox (badness 3557) has occurred while \output is active []
+
+[6] [7]
+<figures/figure2.png, id=284, 595.22375pt x 479.7925pt>
 File: figures/figure2.png Graphic file (type png)
 <use figures/figure2.png>
-Package pdftex.def Info: figures/figure2.png  used on input line 410.
+Package pdftex.def Info: figures/figure2.png  used on input line 418.
 (pdftex.def)             Requested size: 390.25534pt x 314.57019pt.
-[7 <./figures/figure2.png>] [8]
-<figures/figure4.png, id=324, 1104.125pt x 1108.14pt>
+[8 <./figures/figure2.png>]
+Underfull \vbox (badness 1629) has occurred while \output is active []
+
+[9]
+<figures/figure4.png, id=295, 1104.125pt x 1108.14pt>
 File: figures/figure4.png Graphic file (type png)
 <use figures/figure4.png>
-Package pdftex.def Info: figures/figure4.png  used on input line 432.
+Package pdftex.def Info: figures/figure4.png  used on input line 445.
 (pdftex.def)             Requested size: 390.25534pt x 391.67621pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1629) has occurred while \output is active []
 
-[9] [10 <./figures/figure4.png>] [11] [12
-
-]
-<figures/figure5.png, id=346, 663.47874pt x 444.66125pt>
-File: figures/figure5.png Graphic file (type png)
-<use figures/figure5.png>
-Package pdftex.def Info: figures/figure5.png  used on input line 452.
-(pdftex.def)             Requested size: 390.25534pt x 261.54723pt.
-[13 <./figures/figure5.png>]
+[10] [11 <./figures/figure4.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-58.
+59.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [14]
-Underfull \vbox (badness 5970) has occurred while \output is active []
+) [12
 
-[15]
+] [13] [14
 
-Package xcolor Warning: Incompatible color definition on input line 562.
+]
+Chapter 2.
+<figures/figure5.png, id=323, 663.47874pt x 444.66125pt>
+File: figures/figure5.png Graphic file (type png)
+<use figures/figure5.png>
+Package pdftex.def Info: figures/figure5.png  used on input line 474.
+(pdftex.def)             Requested size: 390.25534pt x 261.54723pt.
+[15 <./figures/figure5.png>] [16] [17
+
+] [18
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 573--593
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 595.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-63.
+96.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 564.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 597.
 
-Package xcolor Warning: Incompatible color definition on input line 569.
+Package xcolor Warning: Incompatible color definition on input line 602.
 
 
-Package xcolor Warning: Incompatible color definition on input line 569.
+Package xcolor Warning: Incompatible color definition on input line 602.
 
-<figures/figure6.png, id=362, 1069.9975pt x 601.24625pt>
+<figures/figure6.png, id=343, 1069.9975pt x 601.24625pt>
 File: figures/figure6.png Graphic file (type png)
 <use figures/figure6.png>
-Package pdftex.def Info: figures/figure6.png  used on input line 572.
+Package pdftex.def Info: figures/figure6.png  used on input line 605.
 (pdftex.def)             Requested size: 433.62pt x 243.65935pt.
-[16]
-
-Package xcolor Warning: Incompatible color definition on input line 577.
-
-
-Package xcolor Warning: Incompatible color definition on input line 584.
-
-
-Package xcolor Warning: Incompatible color definition on input line 584.
-
-[17 <./figures/figure6.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 588.
-
-
-Package xcolor Warning: Incompatible color definition on input line 595.
-
-
-Package xcolor Warning: Incompatible color definition on input line 595.
-
-
-Package xcolor Warning: Incompatible color definition on input line 597.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-
-Package xcolor Warning: Incompatible color definition on input line 603.
-
-[18]
-<thesis_files/figure-latex/unnamed-chunk-17-1.pdf, id=381, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-17-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-17-1.pdf  used
- on input line 610.
-(pdftex.def)             Requested size: 476.98463pt x 330.22124pt.
-
-Overfull \hbox (43.36464pt too wide) in paragraph at lines 610--610
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [19
 
 ]
-<thesis_files/figure-latex/unnamed-chunk-18-1.pdf, id=386, 469.755pt x 325.215p
+
+Package xcolor Warning: Incompatible color definition on input line 610.
+
+
+Package xcolor Warning: Incompatible color definition on input line 617.
+
+
+Package xcolor Warning: Incompatible color definition on input line 617.
+
+[20 <./figures/figure6.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 619.
+
+
+Package xcolor Warning: Incompatible color definition on input line 626.
+
+
+Package xcolor Warning: Incompatible color definition on input line 626.
+
+
+Package xcolor Warning: Incompatible color definition on input line 630.
+
+
+Package xcolor Warning: Incompatible color definition on input line 637.
+
+
+Package xcolor Warning: Incompatible color definition on input line 637.
+
+[21]
+
+Package xcolor Warning: Incompatible color definition on input line 639.
+
+
+Package xcolor Warning: Incompatible color definition on input line 645.
+
+
+Package xcolor Warning: Incompatible color definition on input line 645.
+
+[22]
+Chapter 3.
+<thesis_files/figure-latex/unnamed-chunk-18-1.pdf, id=365, 469.755pt x 325.215p
 t>
 File: thesis_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use thesis_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-18-1.pdf  used
- on input line 614.
-(pdftex.def)             Requested size: 455.3023pt x 315.21005pt.
+ on input line 650.
+(pdftex.def)             Requested size: 411.93767pt x 285.18768pt.
+[23
 
-Overfull \hbox (21.68231pt too wide) in paragraph at lines 614--614
-[][] 
+ <./thesis_files/figure-latex/unnamed-chunk-18-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-19-1.pdf, id=377, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-19-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-19-1.pdf  used
+ on input line 661.
+(pdftex.def)             Requested size: 411.93767pt x 285.18768pt.
+[24 <./thesis_files/figure-latex/unnamed-chunk-19-1.pdf>] [25
+
+]
+<thesis_files/figure-latex/unnamed-chunk-21-1.pdf, id=391, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-21-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-21-1.pdf  used
+ on input line 688.
+(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+<thesis_files/figure-latex/unnamed-chunk-22-1.pdf, id=392, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-22-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-22-1.pdf  used
+ on input line 699.
+(pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
+[26
+
+ <./thesis_files/figure-latex/unnamed-chunk-21-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=407, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-23-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-23-1.pdf  used
+ on input line 707.
+(pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
+<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=408, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used
+ on input line 715.
+(pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
+<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=409, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-25-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used
+ on input line 723.
+(pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
+[27 <./thesis_files/figure-latex/unnamed-chunk-22-1.pdf> <./thesis_files/figure
+-latex/unnamed-chunk-23-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-26-1.pdf, id=431, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-26-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-26-1.pdf  used
+ on input line 731.
+(pdftex.def)             Requested size: 368.57964pt x 255.17027pt.
+[28 <./thesis_files/figure-latex/unnamed-chunk-24-1.pdf> <./thesis_files/figure
+-latex/unnamed-chunk-25-1.pdf>] [29 <./thesis_files/figure-latex/unnamed-chunk-
+26-1.pdf>] [30
+
+]
+Chapter 4.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[34] [35] [36
+
+] [37] [38
+
+]
+<thesis_files/figure-latex/unnamed-chunk-29-1.pdf, id=505, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-29-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-29-1.pdf  used
+ on input line 777.
+(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+[39 <./thesis_files/figure-latex/unnamed-chunk-29-1.pdf>]
+<thesis_files/figure-latex/unnamed-chunk-30-1.pdf, id=516, 469.755pt x 325.215p
+t>
+File: thesis_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pdf)
+<use thesis_files/figure-latex/unnamed-chunk-30-1.pdf>
+Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-30-1.pdf  used
+ on input line 786.
+(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[40
+
+ <./thesis_files/figure-latex/unnamed-chunk-30-1.pdf>] [41] [42
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[43
+
+]
+Underfull \hbox (badness 1033) in paragraph at lines 882--884
+ \T1/lmr/m/n/12 RON-MENTS. \T1/lmr/m/it/12 Evo-lu-tion\T1/lmr/m/n/12 , \T1/lmr/
+m/it/12 55\T1/lmr/m/n/12 (1), 33--40. []$\T1/lmtt/m/n/12 http : / / doi . org /
+ 10 . 1111 / j . 0014 -[]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[20 <./thesis_files/figure-latex/unnamed-chunk-17-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-20-1.pdf, id=396, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-20-1.pdf  used
- on input line 632.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
-[21 <./thesis_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-21-1.pdf, id=406, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-21-1.pdf  used
- on input line 638.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
-<thesis_files/figure-latex/unnamed-chunk-22-1.pdf, id=407, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-22-1.pdf  used
- on input line 641.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+[44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[45]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[46]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[47]
+Underfull \hbox (badness 1097) in paragraph at lines 993--995
+ \T1/lmr/m/n/12 NORMS AMONG POP-U-LA-TIONS OF \T1/lmr/m/it/12 DROSOPHILA MELANO
+GASTER\T1/lmr/m/n/12 :
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[22 <./thesis_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-23-1.pdf, id=423, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-23-1.pdf  used
- on input line 644.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
+[48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[50]
+Underfull \hbox (badness 4518) in paragraph at lines 1080--1082
+ \T1/lmr/m/n/12 and phe-no-types in \T1/lmr/m/it/12 caiman latirostris\T1/lmr/m
+/n/12 : SI-MONCINI <span style="font-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 1080--1082
+ \T1/lmr/m/n/12 variant:Small-caps;">et al.</span>. \T1/lmr/m/it/12 J. Exp. Zoo
+l.\T1/lmr/m/n/12 , \T1/lmr/m/it/12 331\T1/lmr/m/n/12 (5), 299--307.
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23 <./thesis_files/figure-latex/unnamed-chunk-21-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-24-1.pdf, id=437, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-24-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-24-1.pdf  used
- on input line 647.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
-
+[51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[24 <./thesis_files/figure-latex/unnamed-chunk-22-1.pdf>]
-<thesis_files/figure-latex/unnamed-chunk-25-1.pdf, id=450, 469.755pt x 325.215p
-t>
-File: thesis_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/unnamed-chunk-25-1.pdf  used
- on input line 650.
-(pdftex.def)             Requested size: 390.25534pt x 270.1765pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[25 <./thesis_files/figure-latex/unnamed-chunk-23-1.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[26 <./thesis_files/figure-latex/unnamed-chunk-24-1.pdf>] [27 <./thesis_files/f
-igure-latex/unnamed-chunk-25-1.pdf>] [28
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[30] [31] [32
-
-] [33] [34
-
-]
-Appendix A.
-
-Package xcolor Warning: Incompatible color definition on input line 696.
-
-
-Package xcolor Warning: Incompatible color definition on input line 728.
-
-
-Package xcolor Warning: Incompatible color definition on input line 728.
-
-
-Package xcolor Warning: Incompatible color definition on input line 728.
-
-[35]
-
-Package xcolor Warning: Incompatible color definition on input line 728.
-
-
-Package xcolor Warning: Incompatible color definition on input line 728.
-
-
-LaTeX Warning: Reference `ref-labels' on page 36 undefined on input line 729.
-
-
-Package xcolor Warning: Incompatible color definition on input line 730.
-
-
-Package xcolor Warning: Incompatible color definition on input line 803.
-
-
-Package xcolor Warning: Incompatible color definition on input line 803.
-
-
-Package xcolor Warning: Incompatible color definition on input line 803.
-
-[36]
-
-Package xcolor Warning: Incompatible color definition on input line 803.
-
-
-Package xcolor Warning: Incompatible color definition on input line 803.
-
-[37] [38
-
-]
-Appendix B.
-[39] [40
-
-] [41
-
-] (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
+[52] [53] (./thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CD5FCEFDC644F12F90843A321DD7D346;4984.
+(rerunfilecheck)             Checksum: C4EBAB8B22778D804678A85691A36C87;4788.
  ) 
 Here is how much of TeX's memory you used:
- 13534 strings out of 480954
- 205605 string characters out of 5906449
- 519763 words of memory out of 5000000
- 30329 multiletter control sequences out of 15000+600000
- 449712 words of font info for 62 fonts, out of 8000000 for 9000
+ 13656 strings out of 480954
+ 208873 string characters out of 5906449
+ 513712 words of memory out of 5000000
+ 30341 multiletter control sequences out of 15000+600000
+ 449393 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,12n,74p,2263b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,2347b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/maslein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Use
 rs/maslein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/mas
 lein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/maslei
@@ -995,12 +1030,11 @@ fonts/type1/public/lm/lmri12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fon
 ts/type1/public/lm/lmro12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmtk10.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type1/p
-ublic/lm/lmtt12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type1/publ
-ic/lm/lmtti10.pfb>
-Output written on thesis.pdf (55 pages, 1207035 bytes).
+ublic/lm/lmtt12.pfb>
+Output written on thesis.pdf (67 pages, 1296699 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 130 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 926 PDF objects out of 1000 (max. 8388607)
+ 807 compressed objects within 9 object streams
+ 239 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

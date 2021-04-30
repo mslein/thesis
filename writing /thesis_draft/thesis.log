@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.29)  29 APR 2021 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.29)  29 APR 2021 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,10 +735,15 @@ File: figures/figure2.png Graphic file (type png)
 Package pdftex.def Info: figures/figure2.png  used on input line 418.
 (pdftex.def)             Requested size: 390.25534pt x 314.57019pt.
 [8 <./figures/figure2.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+31.
+(/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 Underfull \vbox (badness 1629) has occurred while \output is active []
 
 [9]
-<figures/figure4.png, id=295, 1104.125pt x 1108.14pt>
+<figures/figure4.png, id=296, 1104.125pt x 1108.14pt>
 File: figures/figure4.png Graphic file (type png)
 <use figures/figure4.png>
 Package pdftex.def Info: figures/figure4.png  used on input line 445.
@@ -746,22 +751,17 @@ Package pdftex.def Info: figures/figure4.png  used on input line 445.
 
 Underfull \vbox (badness 1629) has occurred while \output is active []
 
-[10] [11 <./figures/figure4.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-59.
-(/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [12
+[10] [11 <./figures/figure4.png>] [12
 
 ] [13] [14
 
 ]
 Chapter 2.
-<figures/figure5.png, id=323, 663.47874pt x 444.66125pt>
+<figures/figure5.png, id=323, 654.445pt x 442.65375pt>
 File: figures/figure5.png Graphic file (type png)
 <use figures/figure5.png>
-Package pdftex.def Info: figures/figure5.png  used on input line 474.
-(pdftex.def)             Requested size: 390.25534pt x 261.54723pt.
+Package pdftex.def Info: figures/figure5.png  used on input line 475.
+(pdftex.def)             Requested size: 390.25534pt x 263.95973pt.
 [15 <./figures/figure5.png>] [16] [17
 
 ] [18
@@ -771,14 +771,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 573--593
 
  []
 
-
-Package xcolor Warning: Incompatible color definition on input line 595.
-
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-96.
+94.
 (/Users/maslein/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+
+Package xcolor Warning: Incompatible color definition on input line 595.
+
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 597.
 
@@ -981,7 +981,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [47]
-Underfull \hbox (badness 1097) in paragraph at lines 994--996
+Underfull \hbox (badness 1097) in paragraph at lines 997--999
  \T1/lmr/m/n/12 NORMS AMONG POP-U-LA-TIONS OF \T1/lmr/m/it/12 DROSOPHILA MELANO
 GASTER\T1/lmr/m/n/12 :
  []
@@ -996,13 +996,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [50]
-Underfull \hbox (badness 4518) in paragraph at lines 1081--1083
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[51]
+Underfull \hbox (badness 4518) in paragraph at lines 1084--1086
  \T1/lmr/m/n/12 and phe-no-types in \T1/lmr/m/it/12 caiman latirostris\T1/lmr/m
 /n/12 : SI-MONCINI <span style="font-
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 1081--1083
+Underfull \hbox (badness 3492) in paragraph at lines 1084--1086
  \T1/lmr/m/n/12 variant:Small-caps;">et al.</span>. \T1/lmr/m/it/12 J. Exp. Zoo
 l.\T1/lmr/m/n/12 , \T1/lmr/m/it/12 331\T1/lmr/m/n/12 (5), 299--307.
  []
@@ -1010,21 +1013,18 @@ l.\T1/lmr/m/n/12 , \T1/lmr/m/it/12 331\T1/lmr/m/n/12 (5), 299--307.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[51]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [52] [53] (./thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: C4EBAB8B22778D804678A85691A36C87;4788.
  ) 
 Here is how much of TeX's memory you used:
- 13658 strings out of 480954
- 208799 string characters out of 5906535
- 513702 words of memory out of 5000000
+ 13659 strings out of 480954
+ 208830 string characters out of 5906535
+ 514694 words of memory out of 5000000
  30344 multiletter control sequences out of 15000+600000
  449769 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,12n,74p,2347b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,2350b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/maslein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Use
 rs/maslein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/mas
 lein/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/maslei
@@ -1040,10 +1040,10 @@ ts/type1/public/lm/lmro12.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type
 1/public/lm/lmtk10.pfb></Users/maslein/Library/TinyTeX/texmf-dist/fonts/type1/p
 ublic/lm/lmtt12.pfb>
-Output written on thesis.pdf (67 pages, 1298490 bytes).
+Output written on thesis.pdf (67 pages, 1298844 bytes).
 PDF statistics:
- 928 PDF objects out of 1000 (max. 8388607)
- 809 compressed objects within 9 object streams
- 239 named destinations out of 1000 (max. 500000)
+ 932 PDF objects out of 1000 (max. 8388607)
+ 813 compressed objects within 9 object streams
+ 240 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

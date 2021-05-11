@@ -3,20 +3,20 @@
 pacman::p_load(knitr, kableExtra, tidyverse)
 ```
 
-```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science search to the 19 studies included in the analysis. Red indicates no usable data, purple indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta-analysis paper selection process"}
+```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science search to the 19 studies included in the analysis. Red indicates no usable data, magenta indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta-analysis paper selection process"}
 knitr::include_graphics("figures/figure5.png")
 ```
 
 We conducted a systematic literature search using the ISI Web of Science database to collect studies that investigated the effects of temperature variability (Figure 2.1). After trying several different combinations of search terms to capture research on temperature variability, our final search utilized these search terms in an advanced search: AK=((temperature OR thermal) NEAR (vari* OR fluc*)) AND SU=(Life Sciences & Biomedicine). This search returned a total of 176 results. We downloaded the .bib file of this search and imported this file into the revtools R package (version 0.4.1). Using the revtools package we then screened studies by title, then by abstract, for inclusion in analysis (Figure 2.1). Once we screened studies for relevance to the field of biology and environmental variation, we began excluding studies using the following strict criteria: 
 
-* We excluded studies that did not feature both a constant and fluctuating treatment (i.e. studies with several fluctuating treatments but no constant comparison or studies with a gradient of constant treatment temperatures but no periodic fluctuating treatment)
-* We excluded studies that were not completed in a laboratory (i.e. modeling predictions or results from models, mesocosm experiments, in situ experiments)
-* We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (i.e. organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a thermal performance curve (TPC))
+* We excluded studies that did not feature both a constant and fluctuating treatment (e.g. studies with several fluctuating treatments but no constant comparison or studies with a gradient of constant treatment temperatures but no periodic fluctuating treatment)
+* We excluded studies that were not completed in a laboratory (e.g. modeling predictions or results from models, mesocosm experiments, *in situ* experiments)
+* We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (e.g. organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a thermal performance curve (TPC))
 * We excluded any articles not written in English 
 * We excluded studies that did not report measurements of error
-* We excluded studies in which the response variables are comparable or extractable (i.e. one study performed Principal component analysis for their responses)
+* We excluded studies in which the response variables were not comparable or extractable (e.g. one study performed Principal component analysis for their responses)
 
-We excluded studies that did not have the same mean for constant and fluctuating treatments (i.e. treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1°C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude to most simply variation, as changes in mean temperature significantly influence the magnitude of response [@brown_toward_2004].  The final number of data points included in the analysis is broken down by study (Table 2.1). 
+We excluded studies that did not have the same mean for constant and fluctuating treatments (e.g. treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1°C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude to most simply variation, as changes in mean temperature significantly influence the magnitude of response [@brown_toward_2004].  The final number of data points included in the analysis is broken down by study (Table 2.1). 
 
 \clearpage
 
@@ -46,7 +46,7 @@ kable(table1, "latex", booktabs = T, col.names = c("Study", "Year", "Extracted d
 
 From the studies that met our inclusion criteria, we extracted data from tables and figures. Figures were extracted via .png files imported into WebPlotDigitizer to obtain the raw data. The extracted data was then imported into a master spreadsheet of data from all studies for analysis. We extracted mean values for response variables, any measure of variance (Standard Deviation (SD) or Standard Error of the Mean (SEM)), and sample size. For studies that reported error as SEM, we converted SEM to SD by multiplying the SEM by the square root of the same SEM. We also collected information on mean temperature, fluctuation range, organization level, body size, life stage, response type, thermal stress, and aggregated these values (Table 2.2).
 
-If studies reported findings using medians and the Interquartile Range (IQR) via boxplots, a normal distribution of the data was assumed and a subsequent calculation was performed, such that the median is the mean and the IQR is the SD with a conversion calculation [@higgins_cochrane_2011]. Lastly, if extracted values were missing variance or sample size estimates, the points were automatically excluded via the data analysis software, metafor. 
+If studies reported findings using medians and the Interquartile Range (IQR) via boxplots, a normal distribution of the data was assumed and a subsequent calculation was performed, such that the median is the mean and the IQR is the SD with a conversion calculation [@higgins_cochrane_2011]. Lastly, if extracted values were missing variance or sample size estimates, the points were automatically excluded via the data analysis software, *metafor*. 
 
 \clearpage
 
@@ -59,8 +59,8 @@ table2 <- data.frame(Variable = c("mean_temp_constant", "flux_range",
                                      "Reported range (difference between minimum 
                                      and maximum) of temperature fluctuation (°C) experienced", 
                                      "Level of biological organization, categorized
-                                     as either 0 for individual or 1 for population level
-                                     responses", 
+                                     as either 0 for individual, 1 for population level
+                                     responses, 2 for community level responses", 
                                      "Size estimate of study organism, 0 for extra-small (less than 1mm),
                                      1 for small (less than 5 cm), 2 for medium (less than 0.3 m), and 3
                                      for large (greater than 0.3 m)", 
@@ -69,7 +69,8 @@ table2 <- data.frame(Variable = c("mean_temp_constant", "flux_range",
                                      and 2 for adult",
                                      "Response variable units classified as rates or traits, 
                                      such that rates included any response variable units with a
-                                     “per day” clarifier, all else as traits",
+                                     “per day” clarifier (e.g. growth rate), all else as traits (e.g. body
+                                     width)",
                                      "Whether or not the organisms experienced thermally stressful 
                                      temperatures throughout study duration, if temperature range 
                                      exceeded Topt, classified as thermally stressful, else not
@@ -87,7 +88,7 @@ kable(table2, caption = "Covariates included in models", "latex", booktabs = T) 
 
 ## Metafor 
 
-We utilized metafor (version 2.4.0) in R to analyze the extracted, aggregated data. Metafor builds on the functionality of older meta-analysis packages (meta, etc.) by allowing for greater flexibility in model types (mixed and random effects models) [@viechtbauer_conducting_2010]. In order to use metafor, the package requires the data to be in a wider format, in which data are input into the following columns:     
+We used *metafor* (version 2.4.0) in R to analyze the extracted, aggregated data. *Metafor* builds on the functionality of older meta-analysis packages (meta, etc.) by allowing for greater flexibility in model types (mixed and random effects models) [@viechtbauer_conducting_2010]. In order to use *metafor*, the package requires the data to be in a wider format, in which data are input into the following columns:     
 
 ```{r, echo = FALSE}
 table3 <- data.frame(Cat = c("Mf", "SDf", 
@@ -119,9 +120,9 @@ We specified the effect size metric of interest to be the standardized mean diff
 knitr::include_graphics("figures/figure6.png")
 ```
 
-First, it calculates the pooled standard deviation (Pooled SD) from the sample sizes of both studies. Our data had studies with a wide range of sample sizes, so we wanted to include separate sample sizes between the constant and fluctuating treatments. The Pooled SD, Cohen’s d, which is one of the most common ways to measure effect size, is used to normalize the mean differences between constant and fluctuating treatments. Then, using a correction factor J, which again normalizes the data further, we obtain the final SMD. The SMD is then ultimately used to calculate the sampling variance, which creates a unitless metric for variance. 
+First, it calculated the pooled standard deviation (Pooled SD) from the sample sizes of both studies. Our data had studies with a wide range of sample sizes, so we wanted to include separate sample sizes between the constant and fluctuating treatments. The Pooled SD, Cohen’s d, which is one of the most common ways to measure effect size, was used to normalize the mean differences between constant and fluctuating treatments. Then, using a correction factor J, which again normalized the data further, we obtained the final SMD. The SMD was then ultimately used to calculate the sampling variance, which created a unitless metric for variance. 
 
-Both the SMD and sampling variance are then input into the `rma.mv` function in metafor to generate a multivariate random effects model to understand how variability compares across studies and what factors may influence the magnitude of response. We first ran a multivariate random effects model without modifiers (simple model) to establish baseline heterogeneity between studies to then examine modifiers that could better explain the heterogeneity in effect sizes across studies:
+Both the SMD and sampling variance were then input into the `rma.mv` function in *metafor* to generate a multivariate random effects model to understand how variability compares across studies and what factors may influence the magnitude of response. We first ran a multivariate random effects model without modifiers (simple model) to establish baseline heterogeneity between studies, and then examine modifiers that could better explain the heterogeneity in effect sizes across studies:
 
 ```{r, eval = FALSE}
 rma.mv(yi, vi, 
@@ -152,7 +153,7 @@ rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant
                  method="REML") 
 ```
 
-We also ran a separate model without this study and included the thermal stress covariate separately from all the other modifiers (thermal stress model) to see if thermal stress was truly an important factor or if it was simply excluding those influential data points:
+We also ran a separate model without Garcia-Ruiz et al 2011 and included the thermal stress covariate separately from all the other modifiers (thermal stress model) to see if thermal stress was truly an important factor or if it was simply excluding those influential data points:
 
 ```{r, eval =FALSE}
 rma.mv(yi, vi, data=dat_MA_ES, mods =  ~ stressful, 

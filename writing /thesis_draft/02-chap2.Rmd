@@ -3,7 +3,7 @@
 pacman::p_load(knitr, kableExtra, tidyverse)
 ```
 
-```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science search to the 19 studies included in the analysis. Red indicates no usable data, magenta indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta-analysis paper selection process"}
+```{r, echo=FALSE, fig.cap="Diagram of the paper selection process from the original 176 papers returned from the Web of Science search to the 15 studies included in the analysis. Red indicates no usable data, magenta indicates some usable data but not for our study questions, and green indicates usable data flow for inclusion in analysis.", out.width = '90%', fig.align="center", fig.scap="Meta-analysis paper selection process"}
 knitr::include_graphics("figures/figure5.png")
 ```
 
@@ -11,12 +11,12 @@ We conducted a systematic literature search using the ISI Web of Science databas
 
 * We excluded studies that did not feature both a constant and fluctuating treatment (e.g. studies with several fluctuating treatments but no constant comparison or studies with a gradient of constant treatment temperatures but no periodic fluctuating treatment)
 * We excluded studies that were not completed in a laboratory (e.g. modeling predictions or results from models, mesocosm experiments, *in situ* experiments)
-* We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (e.g. organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a thermal performance curve (TPC))
+* We excluded studies in which the responses were measured in different thermal conditions than the incubation or rearing thermal conditions (e.g. organisms reared in fluctuating temperatures, but measured responses at different constant temperatures to yield a TPC)
 * We excluded any articles not written in English 
 * We excluded studies that did not report measurements of error
-* We excluded studies in which the response variables were not comparable or extractable (e.g. one study performed Principal component analysis for their responses)
+* We excluded studies in which the response variables were not comparable or extractable (e.g. one study performed Principal Component Analysis for their responses)
 
-We excluded studies that did not have the same mean for constant and fluctuating treatments (e.g. treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1°C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude to most simply variation, as changes in mean temperature significantly influence the magnitude of response [@brown_toward_2004].  The final number of data points included in the analysis is broken down by study (Table 2.1). 
+We excluded studies that did not have the same mean for constant and fluctuating treatments (e.g. treatments at the minimum and maximum with a fluctuation treatment across the range) or a mean within 1°C of the two treatments. We chose to exclude studies that did not match this criteria as there would not have been a baseline comparison to attribute changes in response magnitude most simply to variation, as changes in mean temperature significantly influence the magnitude of response [@brown_toward_2004].  The final number of data points included in the analysis is broken down by study (Table 2.1). 
 
 \clearpage
 
@@ -60,7 +60,7 @@ table2 <- data.frame(Variable = c("mean_temp_constant", "flux_range",
                                      and maximum) of temperature fluctuation (°C) experienced", 
                                      "Level of biological organization, categorized
                                      as either 0 for individual, 1 for population level
-                                     responses, 2 for community level responses", 
+                                     responses", 
                                      "Size estimate of study organism, 0 for extra-small (less than 1mm),
                                      1 for small (less than 5 cm), 2 for medium (less than 0.3 m), and 3
                                      for large (greater than 0.3 m)", 
@@ -86,7 +86,7 @@ kable(table2, caption = "Covariates included in models", "latex", booktabs = T) 
 
 \clearpage
 
-## Metafor 
+## *Metafor* 
 
 We used *metafor* (version 2.4.0) in R to analyze the extracted, aggregated data. *Metafor* builds on the functionality of older meta-analysis packages (meta, etc.) by allowing for greater flexibility in model types (mixed and random effects models) [@viechtbauer_conducting_2010]. In order to use *metafor*, the package requires the data to be in a wider format, in which data are input into the following columns:     
 
@@ -114,7 +114,7 @@ escalc(measure="SMD", m1i=`constant_resp`, m2i=flux_resp,
        n2i=flux_samp, data=dat_MA, slab=paste(study_id, experiment_id, 
                                               response_id, sep=", "))
 ```
-We specified the effect size metric of interest to be the standardized mean difference (SMD), as this is a common calculation used to compare two groups head to head [@viechtbauer_conducting_2010]. It is also a powerful metric to use in a meta-analysis because it standardizes the responses across studies to reduce heterogeneity and bias [@viechtbauer_conducting_2010]. Each of the subsequent arguments of the `escalc` function specify the mean, standard deviation, and sample size for each paired constant and fluctuating treatment. The `escalc` function is using multiple equations to ultimately output the SMD and sampling variance, all of which are below (Figure 2.2). 
+We specified the effect size metric of interest to be the standardized mean difference (SMD), as this is a common calculation used to compare two groups head to head [@viechtbauer_conducting_2010]. It is also a powerful metric to use in a meta-analysis because it standardizes the responses across studies to reduce heterogeneity and bias [@viechtbauer_conducting_2010]. Each of the subsequent arguments of the `escalc` function specify the mean, standard deviation, and sample size for each paired constant and fluctuating treatment. The `escalc` function uses multiple equations to ultimately output the SMD and sampling variance, all of which are below (Figure 2.2). 
 
 ```{r, echo= FALSE, fig.cap= "Workflow diagram of how data were extracted, analyzed, and processed for downstream analysis in metafor.", out.width="100%", fig.scap="Workflow of analysis in metafor"}
 knitr::include_graphics("figures/figure6.png")
@@ -131,7 +131,7 @@ rma.mv(yi, vi,
        method="REML") 
 ```
                
-The arguments of the `rma.mv` function include SMD (yi), sampling variance (vi), the datafile, as well the random argument to specify the structure of the model. We specified a nested structure to account for the colinearity of data points from within the same study, experiment, and response metric. We used Restricted Maximum-Likelihood (REML) to specify the fit of the model, as REML is best at handling small samples sizes compared to Maximum Likelihood (ML) [@viechtbauer_conducting_2010]. We chose a random effects model as opposed to a fixed effects model because we were interested in better understanding the patterns of the larger population of environmental variability literature, as we assumed the studies that were included in this analysis to be a random selection from the true population [@viechtbauer_conducting_2010]. The random effects model structure also allowed us to account for the nested structure of responses, experiment, and study to address the dependence of observations from within each study. The multivariate random effects model with all modifiers (full model) we ran included:
+The arguments of the `rma.mv` function include SMD (yi), sampling variance (vi), the datafile, as well the random argument to specify the structure of the model. We specified a nested structure to account for the colinearity of data points from within the same study, experiment, and response metric. We used Restricted Maximum-Likelihood (REML) to specify the fit of the model, as REML is best at handling small samples sizes compared to Maximum Likelihood (ML) [@viechtbauer_conducting_2010]. We chose a random effects model as opposed to a fixed effects model because we were interested in better understanding the patterns of the larger population of environmental variability literature, as we assumed the studies that were included in this analysis to be a random selection from the true population [@viechtbauer_conducting_2010]. The random effects model structure also allowed us to account for the nested structure of responses, experiments, and studies to address the dependence of observations from within each study. The multivariate random effects model with all modifiers (full model) we ran included:
  
 
 ```{r, eval = FALSE}
@@ -142,7 +142,7 @@ rma.mv(yi, vi, data=dat_MA_ES, mods = ~flux_range * mean_temp_constant
 ```
 
 
-The full model also included an interaction term between mean temperature and fluctuation range to understand if mean temperature coupled with fluctuation range was an important component in explaining patterns of variation. If an organism experiences large fluctuations in temperature range at a high mean temperature, it is more likely to exceed an organisms’ Topt and become thermally stressful. 
+The full model also included an interaction term between mean temperature and fluctuation range to understand if mean temperature coupled with fluctuation range was an important component in explaining patterns of variation. If an organism experiences large fluctuations in temperature range at a high mean temperature, it is more likely to exceed the organisms’ Topt and become thermally stressful. 
 
 We decided to exclude the thermally stressful covariate as an argument in the full model because we lacked thermal stress data for one study. That particular study happened to be very influential in our model but the data was not misrepresented, as the data was extracted from a table (Garcia-Ruiz et al 2011, Table 1). The  multivariate random effects model with all the covariates in the full model as well as thermal stress (exclusion model), which excluded Garcia-Ruiz et al 2011 entirely, included:
 

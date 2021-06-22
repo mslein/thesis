@@ -1,0 +1,124 @@
+---
+title: "manuscript_data_wrangling"
+author: "Maggie Slein"
+date: "6/14/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE, results = 'hide', message=FALSE}
+## loading libraries 
+pacman::p_load(metafor, tidyverse, viridis, visreg, forcats)
+
+#load data
+dat_acclim_0<- read_csv("acclimation_full_2june21.csv")
+dat_full_var_0 <- read_csv("metafor.csv")
+```
+
+
+```{r, echo= FALSE, results = 'hide', message=FALSE}
+##wrangling calculations for acclimation data
+#make standardized SD columns based on N and SE vs SD
+dat_acclim <-dat_acclim_0 %>% 
+  mutate ( SD_constant= if_else ( variance_type== 0, constant_variance * sqrt(constant_samp), constant_variance))  %>%
+  mutate ( SD_variable= if_else ( variance_type== 0, flux_variance * sqrt(flux_variance) , flux_variance)) 
+         
+#calculate ES for data
+dat_acclim_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
+            data=dat_acclim, slab=paste(study_id, experiment_id, response_id, sep=", ")) 
+
+# Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
+dat_acclim_ES<-dat_acclim_ES %>% 
+  filter (!is.na(yi)) 
+```
+
+
+```{r, echo= FALSE, results = 'hide', message=FALSE}
+##wrangling calculations for full variability data
+#make standardized SD columns based on N and SE vs SD
+dat_full_var <-dat_full_var_0 %>% 
+  mutate ( SD_constant= if_else ( variance_type== 0, constant_variance * sqrt(constant_samp), constant_variance))  %>%
+  mutate ( SD_variable= if_else ( variance_type== 0, flux_variance * sqrt(flux_variance) , flux_variance)) 
+         
+#calculate ES for data
+dat_full_var_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
+            data=dat_full_var, slab=paste(study_id, experiment_id, response_id, sep=", ")) 
+
+# Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
+dat_full_var_ES<-dat_full_var_ES %>% 
+  filter (!is.na(yi)) 
+```
+
+# Acclimation Model 
+
+This data and analysis accounts for the temperatures at which organisms are reared and how their performance compares when exposed to different temperature. The results from this model has very similar results from the model I originally ran for my thesis...
+
+
+```{r}
+simple_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, 
+               random = ~1 | study_id / experiment_id/ response_id,
+                 method="REML") 
+simple_acclimation_model
+```
+
+```{r}
+acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, mods = ~flux_range * mean_temp_reared +
+                        exp_age + size + org_level + exposure_temp, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+acclimation_model
+```
+
+# Neglecting Acclimation 
+
+This uses the full dataset from my thesis (with more data from the additional search). Interesting that this time, mean temp is the only significant predictor?
+
+```{r}
+simple_full_var_model <- rma.mv(yi, vi, data=dat_full_var_ES, 
+               random = ~1 | study_id / experiment_id/ response_id,
+                 method="REML") 
+simple_full_var_model
+```
+
+```{r}
+full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+full_var_model
+```
+
+
+```{r}
+dat_acclim_ES %>%
+  filter(yi > -5) %>%
+ggplot(aes(x=mean_temp_reared, y = yi, fill=flux_range))+
+  geom_point(alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
+  scale_fill_viridis('Temperature range (°C)', option = "C")+
+  theme_classic()+
+  xlab("Mean Temperature (°C)")+
+  ylab("SMD")+
+  geom_line(y=0, linetype = "dashed")+
+  theme(legend.position="bottom")+
+  ggtitle("acclimation")
+```
+
+```{r}
+dat_full_var_ES %>%
+  filter(yi > -5) %>%
+ggplot(aes(x=mean_temp_constant, y = yi, fill=flux_range))+
+  geom_point(alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
+  scale_fill_viridis('Temperature range (°C)', option = "C")+
+  theme_classic()+
+  xlab("Mean Temperature (°C)")+
+  ylab("SMD")+
+  geom_line(y=0, linetype = "dashed")+
+  theme(legend.position="bottom")+
+  ggtitle("neglecting acclimation (full dataset)")
+```
+

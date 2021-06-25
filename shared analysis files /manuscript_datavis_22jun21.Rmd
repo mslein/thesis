@@ -93,7 +93,6 @@ full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~flux_range * mean_
 full_var_model
 ```
 
-
 ```{r}
 dat_acclim_ES %>%
   filter(yi > -5) %>%

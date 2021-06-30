@@ -85,10 +85,8 @@
 2,1,delava2016,table 1,0,1,0,25,20.1,16,26,10,24,development time,days ,36.27,30.52,4.82,0.64,125,125,0,0,Leptopilina,bourlardi,1,1,1,,,,,,,,y,y
 3,1,delava2016,table 1,1,1,0,25,20.1,16,26,10,24,infestation rate ,percent ,70,63.17,14.4,17.78,125,125,0,0,Leptopilina,bourlardi,1,1,1,,,,,,,,y,y
 4,1,delava2016,table 1,1,1,0,25,20.1,16,26,10,24,success of parasitism,percent,39.84,69.21,13.3,11.33,125,125,0,0,Leptopilina,bourlardi,1,1,1,,,,,,,,y,y
-1,1,lowenborg2012,figure 2a,0,1,1,,25,19,31,12,24,incubation time ,days ,40.08064516,41.69354839,0.39824771,1.393866985,25,29,1,1,Natrix ,natrix,1,1,2,,,,,,,,y,y
 2,1,lowenborg2012,figure 2b,0,1,1,,25,19,31,12,24,days to first slough,days ,9.075268817,10.27956989,0.49382716,0.541616886,25,29,1,1,Natrix ,natrix,1,1,2,,,,,,,,y,y
 1,2,lowenborg2012,figure 4a,0,1,1,,25,19,31,12,24,aquatic speed ,m * s^-1,0.246757679,0.272696246,0.025281254,0.022247503,25,29,1,1,Natrix ,natrix,1,1,2,,,,,,,,y,y
-2,2,lowenborg2012,figure 4b,0,1,1,,25,19,31,12,24,terrestrial speed,m * s^-1,0.152210884,0.149404762,0.029100529,0.042957924,25,29,1,1,Natrix ,natrix,1,1,2,,,,,,,,y,y
 3,2,lowenborg2012,figure 4c,0,1,1,,25,19,31,12,24,distance covered,m  ,2.8125,3.125,1.774691358,1.800411523,25,29,1,1,Natrix ,natrix,1,1,2,,,,,,,,y,y
 1,1,qu2014,table 2 ,0,1,1,,27,24,30,6,24,body mass ,g ,0.71,0.7,0.02,0.01,20,20,0,0,Plestiodon ,chinensis,1,1,2,,,,,,,,y,n
 2,1,qu2014,table 2 ,0,1,1,,27,24,30,6,24,snout-vent length,mm,31.3,30.7,0.2,0.3,20,20,0,0,Plestiodon ,chinensis,1,1,2,,,,,,,,y,n
@@ -163,8 +161,6 @@
 1,1,bernhardt_2018,Figure 2,1,1,1,16,24.0,19,29,10,24,population growth rate ,population growth rate day^-1,1.46899225,1.15206186,0.2237652,0.28954182,9,9,1,1,Tetraselmis,tetrahele,1,1,1,,,,,,,,y,
 1,1,bernhardt_2018,Figure 2,1,1,1,16,27.0,22,32,10,24,population growth rate ,population growth rate day^-1,1.5503876,0.80412371,0.09071562,0.69972607,9,9,1,1,Tetraselmis,tetrahele,1,1,1,,,,,,,,y,
 1,1,fabricio2019_thermal,Figure 2 ,0,1,1,25,20.0,15,25,10,24,RMR,ml O2 * kg^-1 *h^-1,13.15315315,11.89189189,8.274941608,3.069736403,13,13,1,1,Crotalus,durissus,1,2,2,,,,,,,,,
-1,2,fabricio2019_thermal,Figure 2 ,0,1,1,25,25.0,20,30,10,24,RMR,ml O2 * kg^-1 *h^-1,17.21818182,17.8,8.942760943,3.016835017,13,13,1,1,Crotalus,durissus,1,2,2,,,,,,,,,
-1,3,fabricio2019_thermal,Figure 2 ,0,1,1,25,30.0,25,35,10,24,RMR,ml O2 * kg^-1 *h^-1,35.69852941,28.75,13.53485839,6.862745098,13,13,1,1,Crotalus,durissus,1,2,2,,,,,,,,,
 1,1,bozinovic2016,Figure 4,1,1,1,,20,15,25,10,24,Survival ,percent,97.42173112,94.84346225,2.394106814,3.314917127,200,200,1,1,Drosophila ,melanogaster,1,2,1,,,,,,,,,
 1,1,bahar2012,Table 2 ,0,1,1,,7.0,0,14,14,24,Third instar to pupa,days ,14.6,8.81,0.96,1.02,36,36,0,0,Plutella ,xylostella,1,0,1,,,,,,,,,
 2,1,bahar2012,Table 2 ,0,1,1,,7.0,0,14,14,24,Third instar to adult,days ,35.1,25.55,1.37,1.85,36,36,0,0,Plutella ,xylostella,1,0,1,,,,,,,,,
@@ -254,16 +250,6 @@
 3,1,peng2014,Table 2 ,0,1,1,,20,15,25,10,24,specific growth rate,percent *d^-1,0.71,0.73,0.06,0.07,30,30,0,0,Parabramis ,pekinensis,1,1,2,,,,,,,,,
 4,1,peng2014,Table 2 ,0,1,1,,20,15,25,10,24,feeding rate ,percent body mass * d^-1,2.62,3.03,0.1,0.11,30,30,0,0,Parabramis ,pekinensis,1,1,2,,,,,,,,,
 5,1,peng2014,Table 2 ,0,1,1,,20,15,25,10,24,feeding efficiency ,percent,26.21,24.41,1.67,2.32,30,30,0,0,Parabramis ,pekinensis,1,1,2,,,,,,,,,
-1,1,saatkamp2011,Figure 2a,0,1,1,,12,8,16,12,24,germination pattern,number of germinated seeds,10.48133938,9.015230787,5.831650354,2.626740215,200,200,1,1,Papaver ,argemone,0,0,2,,,,,,,,,
-1,1,saatkamp2011,Figure 2a,0,1,1,,12,8,16,12,24,germination pattern,number of germinated seeds,0.457311165,1.970313529,0.788022065,1.365904912,200,200,1,1,Papaver ,argemone,0,0,2,light exposure,light,,,,,,,
-1,1,saatkamp2011,Figure 2b,0,1,1,,12,8,16,12,24,germination pattern,number of germinated seeds,3.966968231,4.968966968,2.585501555,3.038314982,200,200,1,1,Androsace ,maxima,0,0,2,light exposure,dark,,,,,,,
-1,1,saatkamp2011,Figure 2b,0,1,1,,12,8,16,12,24,germination pattern,number of germinated seeds,8.417104986,13.39901115,3.356242841,3.628117914,200,200,1,1,Androsace ,maxima,0,0,2,light exposure,light,,,,,,,
-1,1,saatkamp2011,Figure 2c,0,1,1,,12,8,16,12,24,germination pattern,number of germinated seeds,19.36765041,16.79349063,1.872504475,3.249626988,200,200,1,1,Vaccaria, hispanica,0,0,2,light exposure,dark,,,,,,,
-1,1,sheldon2020,Figure 2a,0,1,1,,20,8,32,24,24,glycogen mass,mg,3.210299625,7.393726592,3.456790123,2.49382716,5,5,1,1,Phanaeus ,vindex,1,2,1,,,,,,,,,
-1,1,sheldon2020,Figure 2a,0,1,1,,20,15,25,10,24,glycogen mass,mg,3.210299625,8.976966292,3.456790123,4.888888889,5,5,1,1,Phanaeus ,vindex,1,2,1,,,,,,,,,
-2,1,sheldon2020,Figure 2b,0,1,1,,20,8,32,24,24,lipid mass,mg,155,209.4444444,31.6872428,21.39917695,5,5,1,1,Phanaeus ,vindex,1,2,1,,,,,,,,,
-2,1,sheldon2020,Figure 2b,0,1,1,,20,15,25,10,24,lipid mass,mg,155,177.7777778,31.6872428,83.95061728,5,5,1,1,Phanaeus ,vindex,1,2,1,,,,,,,,,
-1,1,vatansever2009,Table 1,0,1,1,,22,18,26,8,24,developmental time,days ,36.5,32.4,0.42,0.96,22,12,0,1,Cales ,noacki,1,0,,sex,female,,,,,,,
 1,1,vatansever2009,Table 1,0,1,1,,22,18,26,8,24,developmental time,days ,36.5,29.2,0.64,0.94,13,9,0,1,Cales ,noacki,1,0,,sex,male,,,,,,,
 1,1,vatansever2009,Table 1,0,1,1,,30,26,34,8,24,developmental time,days ,18.5,21,0.27,0.6,24,12,0,1,Cales ,noacki,1,0,,sex,female,,,,,,,
 1,1,vatansever2009,Table 1,0,1,1,,30,26,34,8,24,developmental time,days ,18.9,22.1,0.36,0.85,15,8,0,1,Cales ,noacki,1,0,,sex,male,,,,,,,
@@ -367,3 +353,32 @@
 1,3,verheyen2020,Figure 3,0,1,1,22,24,14,34,20,24,Sqrt Cellular energy allocation (CEA),,1.069318281,1.007346939,0.039716312,0.039710523,24,24,1,0,Ischnura ,elegans ,1,0,1,latitude,low,Chlorpyrifos concentration,medium ,,,,,
 1,3,verheyen2020,Figure 3,0,1,1,22,24,21.5,26.5,5,24,Sqrt Cellular energy allocation (CEA),,1.05607179,0.999565784,0.039716312,0.041134752,24,24,1,0,Ischnura ,elegans ,1,0,1,latitude,low,Chlorpyrifos concentration,high ,,,,,
 1,3,verheyen2020,Figure 3,0,1,1,22,24,14,34,20,24,Sqrt Cellular energy allocation (CEA),,1.05607179,0.999785787,0.039716312,0.039716312,24,24,1,0,Ischnura ,elegans ,1,0,1,latitude,low,Chlorpyrifos concentration,high ,,,,,
+1,1,burghardt2015,Figure 2b,0,1,1,,22,32,12,20,24,median days to bolt,days ,58.3061903,54.74060823,14.67505241,6.289308176,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col ld-1,,,,,
+1,1,burghardt2015,Figure 2b,0,1,1,,22,32,12,20,24,median days to bolt,days ,54.20521026,44.35471774,8.909704744,6.289203349,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col fve-3,,,,,
+1,1,burghardt2015,Figure 2c,0,1,1,,22,32,12,20,24,median days to bolt,days ,71.6120551,65.18587218,6.319115324,8.425487098,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col ,,,,,
+1,2,burghardt2015,Figure 3a,0,1,1,,22,32,12,20,24,median days to bolt,days ,60.4338843,40.80578512,8.800122436,3.443526171,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col fld-3,,,,,
+1,2,burghardt2015,Figure 3a,0,1,1,,22,32,12,20,24,median days to bolt,days ,70.76446281,53.20247934,11.09580655,14.53933272,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col fpa-7,,,,,
+1,2,burghardt2015,Figure 3c,0,1,1,,12,18,6,12,24,median days to bolt,days ,79.41027313,74.18314859,11.00136578,6.600819468,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col,,,,,
+1,2,burghardt2015,Figure 3c,0,1,1,,22,32,12,20,24,median days to bolt,days ,64.50409331,58.53437658,6.600819468,7.700956046,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col,,,,,
+1,2,burghardt2015,Figure 3c,0,1,1,,12,18,6,12,24,median days to bolt,days ,63.6709411,63.64196189,7.700956046,4.400546312,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col (V),,,,,
+1,2,burghardt2015,Figure 3c,0,1,1,,12,18,6,12,24,median days to bolt,days ,141.9582699,124.1070782,12.65157065,11.00136578,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col vin3-4 FRI,,,,,
+1,2,burghardt2015,Figure 3c,0,1,1,,12,18,6,12,24,median days to bolt,days ,118.0504238,113.5695139,12.10150236,12.65157065,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col vin3-4 FRI (V),,,,,
+1,3,burghardt2015,Figure 5a,0,1,1,,22,32,12,20,24,median days to bolt,,20.8839779,20.8839779,1.718845918,2.209944751,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col,,,,,
+1,3,burghardt2015,Figure 5b,0,1,1,,22,32,12,20,24,median days to bolt,,64.72081218,58.62944162,6.768189509,8.460236887,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col,,,,,
+1,3,burghardt2015,Figure 5d,0,1,1,,22,32,12,20,24,median days to bolt,,53.03030303,43.93939394,5.611672278,6.734006734,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col,,,,,
+1,3,burghardt2015,Figure 5e,0,1,1,,22,32,12,20,24,median days to bolt,,20.8839779,20.8839779,1.841620626,1.596071209,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,genotype,Col,,,,,
+1,3,burghardt2015,Figure 5f,0,1,1,,22,32,12,20,24,median days to bolt,,66.31578947,60,6.237816764,8.576998051,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,genotype,Col,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,12,18,6,12,24,blade length/total leaf length,,0.609134267,0.602867665,0.050135501,0.048780488,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,location,Columbia background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,12,18,6,12,24,blade length/total leaf length,,0.606000966,0.607033325,0.044715447,0.043360434,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Columbia background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,22,32,12,20,24,blade length/total leaf length,,0.625851244,0.5354383,0.037940379,0.056910569,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,location,Columbia background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,22,32,12,20,24,blade length/total leaf length,,0.591620382,0.554247163,0.035230352,0.052845528,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Columbia background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,12,18,6,12,24,blade length/total leaf length,,0.668177976,0.658252837,0.067750678,0.048780488,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,long days,location,Landsberg background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,12,18,6,12,24,blade length/total leaf length,,0.676020285,0.673412219,0.059620596,0.063685637,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Landsberg background,,,,,
+1,4,burghardt2015,Figure S8a,0,1,1,,22,32,12,20,24,blade length/total leaf length,,0.692755373,0.50354383,0.073170732,0.078590786,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Landsberg background,,,,,
+2,4,burghardt2015,Figure S8b,0,1,1,,22,32,12,20,24,hypocotyl length,mm,5.052264808,13.31010453,0.851722803,1.89701897,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Columbia   ,,,,,
+2,4,burghardt2015,Figure S8b,0,1,1,,22,32,12,20,24,hypocotyl length,mm,7.770034843,13.31010453,1.08401084,1.89701897,12,12,1,1,Arabidopsis ,thaliana,0,1,2,light cycle,short days,location,Landsburg,,,,,
+1,1,prakoso2021,Figure 2a,0,1,1,,30,25,35,10,24,Survival ,percent,96.0280374,94.3925234,1.1682243,2.80373832,4,4,1,1,Osphronemus ,goramy,1,0,2,,,,,,,,,
+1,2,prakoso2021,Figure 3a,0,1,1,,30,25,35,10,24,body weight,mg,276.470588,178.431373,47.5490196,37.254902,88,88,1,1,Osphronemus ,goramy,1,0,2,,,,,,,,,
+2,2,prakoso2021,Figure 3b,0,1,1,,30,25,35,10,24,total length ,mm,26.1152416,22.8252788,1.366171,1.67286245,88,88,1,1,Osphronemus ,goramy,1,0,2,,,,,,,,,
+1,3,prakoso2021,Figure 4a,0,1,1,,30,25,35,10,24,cortisol,ng *mL^-1,6.11764706,13.8039216,6.2745098,5.80392157,40,40,1,1,Osphronemus ,goramy,1,0,2,,,,,,,,,
+2,3,prakoso2021,Figure 4b,0,1,1,,30,25,35,10,24,glucose,mg *dL^-1,46.9626168,43.8084112,20.3271028,17.5233645,40,40,1,1,Osphronemus ,goramy,1,0,2,,,,,,,,,

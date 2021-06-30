@@ -1,0 +1,92 @@
+`r if(knitr:::is_latex_output()) '\\appendix'`
+
+
+
+# Appendix {-}
+
+```{r, echo=FALSE, results = 'hide', message=FALSE}
+pacman::p_load(metafor, tidyverse, viridis, visreg, forcats, kableExtra)
+dat_MA_0<- read_csv("metafor.csv") %>%
+  mutate(resp_type = case_when( resp_units %in% c("1 day ^-1", "kJ *day^-1 *kg^-1", "m * s^-1") ~ "rate", TRUE ~ "trait"))
+
+#make standardized SD columns based on N and SE vs SD
+dat_MA <-dat_MA_0 %>% 
+  mutate ( SD_constant= if_else ( variance_type== 0, constant_variance * sqrt(constant_samp), constant_variance))  %>%
+  mutate ( SD_variable= if_else ( variance_type== 0, flux_variance * sqrt(flux_variance) , flux_variance)) 
+         
+#calculate ES for data
+dat_MA_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp, 
+            sd1i=`SD_constant`, sd2i= `SD_variable`, n1i=constant_samp, n2i=flux_samp, 
+            data=dat_MA, slab=paste(study_id, experiment_id, response_id, sep=", ")) 
+
+# Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
+dat_MA_ES<-dat_MA_ES %>% 
+  filter (!is.na(yi)) 
+count(dat_MA_ES, study_id)
+
+#removing outlier point to get better picture of data structure AND excluding CT assays 
+normalized <- dat_MA_ES %>%
+  filter(yi > -4) 
+```
+
+
+```{r, echo = FALSE}
+#funnel plot 
+### set up 2x2 array for plotting
+par(mfrow=c(2,2))
+funnel_model <- rma.mv(yi, vi, data=normalized, mods = ~flux_range * mean_temp_constant +
+                        exp_age + size + org_level, 
+               random = ~1 | experiment_id/ study_id/ response_id,
+                 method="REML") 
+```
+
+
+```{r, echo=FALSE, message = FALSE, fig.cap="Funnel plot displaying the extracted data points and the distribution of their residuals centered around zero.", fig.align="center", out.width = '90%', fig.scap="Funnel plot"}
+### draw funnel plots
+#funnel plot with confidence intervals for significant values from different studies; taken from normalized data set because of big outlier 
+funnel(funnel_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+```
+
+\clearpage
+
+```{r, echo= FALSE, fig.cap="Distribution of effect sizes (n=140) across data from all 15 studies.", fig.align="center", out.width = '90%', fig.scap="Histogram of effect sizes"}
+dat_MA_ES %>%
+filter(yi > -20) %>%
+  ggplot(aes(x=yi))+
+  geom_histogram(binwidth = 1)+
+  theme_bw()+
+  scale_fill_viridis()
+```
+
+```{r, echo= FALSE}
+table4 <- data.frame(Species = c("Drosophila melanogaster", "Leptopilina boulardi", 
+                         "Mauremys reevesii", "Gryllus firmus", 
+                         "Limnodynastes peronii", "Limnodynastes tasmaniensis", 
+                         "Platyplectrum ornatum ", "Natrix natrix", 
+                         "Coturnix japoncia", "Plestiodon chinensis", 
+                         "Rhodnis prolixus", "Escherichia coli", 
+                         "Salmonella", "Caiman latirostris", 
+                         "Trachemys scripta", "Esteya vermicola", "Xylotrechus arvicola"), 
+                 Topt = c("24-26.6°C", "25°C", "37.97 ± 0.64 °C", "30°C", "30°C", "30-33°C",
+                          "33°C", "30°C", "26°C", "33°C", "30-35°C", "37°C, 35-36°C",
+                          "35-36°C", "32-33°C", "32-33°C", "26°C", "N/A"), 
+                 Class = c("Insecta", "Insecta", "Reptilia", "Insecta", "Amphibia", "Amphibia", "Amphibia",
+                           "Reptilia", "Aves", "Reptilia", "Insecta", "Gammaproteobacteria",
+                           "Gammaproteobacteria","Reptilia", "Reptilia", "Not assigned; Fungus", "Insecta"),
+                 `Reference` = c("Klepsatel 2013, David 1988", "De lava et al 2016", 
+                                 "Dang et al 2019", "Singh et al 2020", "Seebacher et al 2014",
+                                 "Whitehead et al 1989", "Kern et al 2014", "Issac 1997",
+                                 "Alagawany et al 2017", "Baojun et al 2010", "Fresquet and Lazzari 2011",
+                                 "Doyle and Schoeni 1984, Bronikowski et al 2001", 
+                                 "Bronikowski et al 2001", 
+                                 "Simoncini et al 2019, Parachu-Marco et al 2017, Pina et al 2002", 
+                                 "Dang et al 2019", "Wang et al 2015", "Garcia-Ruiz et al 2011"))
+kable(table4, "latex", booktabs = T, 
+      col.names = c("Species", "Topt (°C)", "Class", "Reference"), escape = F, caption = "TPC metrics extracted from additional papers to collect thermal history data for each species in the meta-analysis and scientific classification at the class level", caption.short ="Thermal stress data by species") %>%
+   row_spec(0,bold=TRUE) %>%
+  column_spec(1, width = "3cm") %>%
+  column_spec(4, width = "3cm") %>%
+   kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+

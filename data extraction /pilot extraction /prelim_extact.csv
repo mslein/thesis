@@ -1,0 +1,23 @@
+﻿study_id,org_level,species ,fluctuation_pattern,delta_amplitude,var_name,var_response,var_resp_sd,control_response,control_rep_sd,diff_mean,pool_sd,cohen_d,additional categories 
+khelifa_2019,population,Sepsis thoracia ,diurnal ,3,developmental rate,0.64488189,0.012992126,0.609448819,0.018110236,0.035433071,0.018242414,1.942345515,
+khelifa_2019,population,Sepsis thoracia ,diurnal ,8,developmental rate,0.703149606,0.020472441,0.609448819,0.018110236,0.093700787,0.024147695,3.880320172,
+khelifa_2019,population,Sepsis cynipsea ,diurnal ,3,developmental rate,0.613385827,0.012204724,0.594488189,0.024015748,0.018897638,0.020912517,0.903651992,
+khelifa_2019,population,Sepsis cynipsea ,diurnal ,8,developmental rate,0.678740157,0.016535433,0.594488189,0.024015748,0.084251969,0.023702292,3.55459169,
+khelifa_2019,population,Sepsis punctum,diurnal ,3,developmental rate,0.52992126,0.009448819,0.503149606,0.008661417,0.026771654,0.011260118,2.377564244,
+khelifa_2019,population,Sepsis punctum,diurnal ,8,developmental rate,0.568503937,0.017322835,0.503149606,0.008661417,0.065354331,0.018373641,3.556961384,
+khelifa_2019,population,Sepsis neocynipsea,diurnal ,3,developmental rate,0.508661417,0.014566929,0.494488189,0.009448819,0.014173228,0.016026089,0.884384751,
+khelifa_2019,population,Sepsis neocynipsea,diurnal ,8,developmental rate,0.544094488,0.009055118,0.494488189,0.009448819,0.049606299,0.011253233,4.408181981,
+khelifa_2019,population,Sepsis fulgens,diurnal ,3,developmental rate,0.471653543,0.009448819,0.459055118,0.013385827,0.012598425,0.013374242,0.941991695,
+khelifa_2019,population,Sepsis fulgens,diurnal ,8,developmental rate,0.508661417,0.011811024,0.459055118,0.013385827,0.049606299,0.015135734,3.277429271,
+petchey_2002,community ,,white ,,total biomass,0.647808803,0.312200019,0.507819314,0.356424125,0.13998949,0.401233012,0.348898235,
+petchey_2002,community ,,red,,total biomass,0.661292222,0.35138755,0.507819314,0.356424125,0.153472909,0.43242605,0.354911339,
+joshi_1996,individual ,Aedes krombeini,diurnal ,16-12,development time,26,1.81,39,6.27,-13,4.788794211,-2.714670839,female
+joshi_1996,individual ,Aedes krombeini,diurnal ,22-14,development time,18,2.62,24,2.83,-6,3.296793897,-1.819949984,female
+joshi_1996,individual ,Aedes krombeini,diurnal ,26-18,development time,9.3,0.83,10.3,0.76,-1,0.988787136,-1.011340018,female
+joshi_1996,individual ,Aedes krombeini,diurnal ,30-22,development time,7.1,0.43,6.3,0.71,0.8,0.661021936,1.21024728,female
+joshi_1996,individual ,Aedes krombeini,diurnal ,33-27,development time,5.2,0.41,5,0.36,0.2,0.48259714,0.414424337,female
+joshi_1996,individual ,Aedes krombeini,diurnal ,16-12,development time,21,1.7,29,2.71,-8,2.561649859,-3.122987309,male
+joshi_1996,individual ,Aedes krombeini,diurnal ,22-14,development time,16,2.05,21,2.28,-5,2.608006902,-1.91717284,male
+joshi_1996,individual ,Aedes krombeini,diurnal ,26-18,development time,8.3,1.39,7.4,0.75,0.9,1.487733175,0.604947188,male
+joshi_1996,individual ,Aedes krombeini,diurnal ,30-22,development time,4.6,0.49,5.1,0.36,-0.5,0.552177508,-0.905505916,male
+joshi_1996,individual ,Aedes krombeini,diurnal ,33-27,development time,4.1,0.41,4.6,0.42,-0.5,0.506260802,-0.987633247,male

@@ -1,0 +1,176 @@
+---
+title: 'Mean temperature, fluctuation magnitude, and level of biological organization affect biological responses amidst thermal variability: a meta-analysis'
+author: 'Margaret Anne Slein'
+date: 'May 2021'
+institution: 'Reed College'
+division: 'Mathematical and Natural Sciences'
+advisor: 'Sam Fey'
+department: 'Biology'
+degree: 'Bachelor of Arts'
+header-includes:
+    - \usepackage{setspace}\onehalfspacing
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+params:
+  'Install needed packages for {thesisdown}': True
+output:
+  thesisdown::thesis_pdf: default 
+abstract: 'Ecosystems and organisms have experienced variation on many temporal scales, including diurnal changes in light availability, seasonal changes in temperature, and decadal changes in weather patterns. Though scientific literature has continued to highlight the importance of ecologically relevant studies for understanding the persistence and dynamics of ecosystems, there has yet to be a quantitative review of how variability impacts biological responses across taxa and scales of biological organization. Here, we present a quantitative meta-analysis of how thermal variability impacts biological responses across multiple taxa, organism sizes, and levels of biological organization. Our results suggest that the range of temperatures an organism experiences is the most important driver of response magnitude, with the interaction of mean temperature and fluctuation range emerging equally as significant predictors in our model of biological responsiveness to temperature variability. Further, our results also suggest that level of biological organization is a less important, though statistically significant, predictor of organismal responses.'
+acknowledgements: |
+  
+  The future is bright, the future is dark 
+ 
+  Time stands still, yet flies like a lark 
+ 
+  Memories endure and memories fade 
+ 
+  People are rough, yet smooth like suede
+ 
+  The days seem long, the days seem short 
+ 
+  It rains all year, until the sunshine retorts 
+ 
+  Reed is an experience, Reed is a place 
+ 
+  Reed is a journey of learning how to keep pace
+ 
+  Reed is a individual, Reed is a kollective 
+ 
+  Reed is space for being reflective 
+ 
+  Reed is the present, Reed is the past
+  
+  Reed is the net for our future that we cast
+
+
+  To those from Reed 
+ 
+  To those from before 
+ 
+  To those from the outside
+ 
+  To those at the core 
+ 
+  To those I still talk to 
+ 
+  To those I talk to no more
+ 
+  To those still here today
+ 
+  To those who now soar 
+ 
+  A few words of dear thanks….
+
+
+  Thank you for the laughs, the tears, the screams 
+ 
+  Gratitude for the late nights, the dancing, the dreams 
+ 
+  Thank you for the walks, the talks, and meals together 
+ 
+  Many thanks for the shenanigans I’ll cherish forever 
+ 
+  Thank you for the compassion, for the coffee and tea 
+ 
+  Appreciation for the love, the hate, and learning to be 
+
+  Thank you for the support, and most ardently, for embracing me 
+
+bibliography: bib/thesis.bib
+csl: csl/apa.csl
+lot: true
+lof: true
+nocite : |
+  
+  @alagawany_heat_2017, @delava_effects_2016, @dang_thermal_2019, 
+  @singh_effect_2020, @seebacher_embryonic_2014, @whitehead_effect_1989, 
+  @kern_temperature_2014, @isaac_isaac_2003pdf_2003, @sunday_thermal_2012, 
+  @baojun_seasonal_2014, @fresquet_response_2011, @doyle_survival_1984, 
+  @bronikowski_evolutionary_2001, @parachu_marco_new_2017,
+  @pina_effect_2003, @simoncini_influence_2019, @dang_thermal_2019, 
+  @wang_effects_2015, @du_embryonic_2009, @garcia-ruiz_effects_2011, 
+  @glass_should_2019, @kern_physiological_2015-3, @lowenborg_how_2012, 
+  @manenti_predictability_2014-2, @pendlebury_variation_2004-1,
+  @qu_incubation_2014, @rolandi_costs_2018, @saxon_temperature_2018-1, 
+  @semenov_influence_2007, @treidel_temperature_2016-1, @klepsatel_variation_2013,
+  @krenek_coping_2012, @tuff_framework_2016, @vasseur_increased_2014, @khelifa_usefulness_2019
+  
+  
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of 
+metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd prefer to not include a Dedication, for example, simply delete the section entirely, or silence them (add # before each line). 
+
+If you have other LaTeX packages you would like to include, delete the # before header-includes and list the packages after hyphens on new lines.
+
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+
+If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
+-->
+
+```{r include_packages, include=FALSE}
+# This chunk ensures that the thesisdown package is
+# installed and loaded. This thesisdown package includes
+# the template files for the thesis.
+if (!require(remotes)) {
+  if (params$`Install needed packages for {thesisdown}`) {
+    install.packages("remotes", repos = "https://cran.rstudio.com")
+  } else {
+    stop(
+      paste('You need to run install.packages("remotes")",
+            "first in the Console.')
+    )
+  }
+}
+if (!require(thesisdown)) {
+  if (params$`Install needed packages for {thesisdown}`) {
+    remotes::install_github("ismayc/thesisdown")
+  } else {
+    stop(
+      paste(
+        "You need to run",
+        'remotes::install_github("ismayc/thesisdown")',
+        "first in the Console."
+      )
+    )
+  }
+}
+library(thesisdown)
+# Set how wide the R output will go
+options(width = 70)
+```
+
+<!--
+The acknowledgments, preface, dedication, and abstract are added into the PDF
+version automatically by inputting them in the YAML at the top of this file.
+Alternatively, you can put that content in files like 00--prelim.Rmd and
+00-abstract.Rmd like done below.
+-->
+
+
+
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00--prelim.Rmd")}
+
+```
+
+```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-abstract.Rmd")}
+
+```
+
+<!-- The {.unnumbered} option here means that the introduction will be 
+"Chapter 0." You can also use {-} for no numbers on chapters.
+-->
+
+# Introduction {.unnumbered}
+
+## The historical significance of variability 
+It is no secret that life on earth has evolved and persisted in the face of environmental change for many millennia [@bouchard_ecosystem_2014; @bambach_seafood_1993]. Cyanobacteria can trace their origin back nearly 2.5 billion years to a bacteria that evolved the ability to perform oxygenic photosynthesis and changed organismal composition forever [@soo_origins_2017; @blankenship_how_2017]. Cyanobacteria have continued to persist in the world, despite experiencing widely different conditions throughout time [@knoll_chapter_2008]. Vascular plants have also evolved different photosynthetic systems (e.g. C4, CAM) to manage a variety of environmental conditions [@guralnick_evolutionary_2007]. Though cyanobacteria and vascular plants evolved new strategies and structures to persist as the environment changed, the environment has continued to remain dynamic, such that evolutionary responses and plasticity have become even more relevant [@reed_phenotypic_2010; @burggren_developmental_2018]. Understanding how organisms respond to dynamic environmental conditions is significant for how we recapitulate ecosystems currently and in the future.
+
+## Relevant significance of variability today 
+Organisms and the ecosystems they inhabit have experienced variation on many scales, including diurnal changes in light availability, seasonal changes in temperature, and decadal changes in weather patterns (e.g. El Niño Southern Oscillation).  As such, the scientific literature has continued to highlight the importance of ecologically relevant studies for drawing robust conclusions about the dynamics of ecosystems [@khelifa_usefulness_2019; @stewart_mesocosm_2013]. How variability impacts populations may impact biodiversity, such that only certain species may survive, and how that biodiversity is maintained are key components to the full picture of ecosystem dynamics. As environmental patterns continue to change, from increased mean temperatures to more severe weather events (e.g. hurricanes), understanding the limits to organisms’ ability to cope with changes in environmental conditions is increasingly important for both individual level responses as well as how individual level impacts scale across population and community level responses [@helmuth_organismal_2010; @bernardo_biologically_2014; @huey_predicting_2012]. 
+
+## Why this study on variability matters 
+There is a large body of literature on environmental variability including its relevance for positive effects on populations and communities, e.g. inflationary effects in sink-source systems [@holt_impacts_2003; @vasseur_phase-locking_2009], such that variability aids population density when organisms emigrate. However, there is a lack of consensus as to which scales of biological organization, i.e. individuals, populations, or communities of organisms, will be most severely affected by different shifts in environmental conditions. We aim to better understand how environmental variability affects the magnitude of responses across organization levels as well as important factors implicated in mediating this response. To accomplish this, we review recent progress in the field of environmental variability, specifically changes in temperature, to identify gaps between theory, experiment, and implementation. 

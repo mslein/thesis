@@ -72,72 +72,126 @@ knitr::include_graphics("conceptfig_30jun.png")
 
 This data and analysis accounts for the temperatures at which organisms are reared and how their performance compares when exposed to different temperature. The results from this model has very similar results from the model I originally ran for my thesis...
 
-## Acclimation without modifiers
+## Acclimation with temperature modifiers
 ```{r, echo=FALSE, message=FALSE}
-simple_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, 
+temp_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, mods=~flux_range * mean_temp_reared,
                random = ~1 | study_id / experiment_id/ response_id,
                  method="REML") 
-simple_acclimation_model
+temp_acclimation_model
 ```
 
-## Acclimation with modifiers
+## Acclimation with trait modifiers
 ```{r, echo=FALSE, message=FALSE}
-acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, mods = ~flux_range * mean_temp_reared +
-                        exp_age + size + org_level + exposure_temp, 
+trait_acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
+                                mods = ~exp_age + size + org_level + exposure_temp, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+trait_acclimation_model
+```
+
+## Acclimation with all modifiers
+```{r, echo=FALSE, message=FALSE}
+acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
+            mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp, 
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 acclimation_model
 ```
 
-# Acclimation data split out by CT data and other thermal performance metrics 
-```{r, echo=FALSE, message=FALSE}
-CT_acclim_data <- dat_acclim_ES %>%
-  filter(resp_def %in% c("CTmax", "CT max", "CTmin", "LTmax", "LTmin", "Topt", "Tpref", "Thermal preference", "ULT50", "Scope of thermal tolerance (CTmax - CTmin)"))
-
-curve_acclim_data <- dat_acclim_ES %>%
-  filter(resp_def %in% 
-           c("CCO activity", "CS activity", "LDH activity", "log CO2 production", 
-             "maximal swimming speed", "Maximum burst swim speed", 
-             "Performance breadth (Tbr)", "RMR", "ULT50", "Speed", "Time to heat knockdown",
-             "Ucrit", "Umax"))
-```
-
-## CT aggregated model 
-```{r, echo=FALSE, message=FALSE}
-CT_model <-rma.mv(yi, vi, data=CT_acclim_data, mods = ~flux_range * mean_temp_reared +
-                        exp_age + size + org_level + exposure_temp, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
-                 method="REML")
-CT_model
-```
-## Remaining acclimation metrics model 
-```{r, echo=FALSE, message=FALSE}
-curve_model <- rma.mv(yi, vi, data=curve_acclim_data, mods = ~flux_range * mean_temp_reared +
-                        exp_age + size + org_level + exposure_temp, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
-                 method="REML")
-curve_model
-```
 
 # Effects of non-linear averaging
 This uses the full dataset from my thesis (with more data from the additional search). Interesting that this time, mean temp is the only significant predictor?
 
-## Non-linear averaging model with no modifiers
+## Non-linear averaging model with temperature modifiers
 ```{r, echo= FALSE, message=FALSE}
-simple_full_var_model <- rma.mv(yi, vi, data=dat_full_var_ES, 
+temp_full_var_model <- rma.mv(yi, vi, data=dat_full_var_ES, 
+                                mods = ~flux_range * mean_temp_constant,
                random = ~1 | study_id / experiment_id/ response_id,
                  method="REML") 
-simple_full_var_model
+temp_full_var_model
 ```
 
-## Non-linear averaging model with modifiers
+## Non-linear averaging model with trait modifiers
 ```{r, echo = FALSE, message=FALSE}
-full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~flux_range * mean_temp_constant +
-                        exp_age + size + org_level, 
+trait_full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~exp_age + size + org_level, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML") 
+trait_full_var_model
+```
+
+## Non-linear averaging model with all modifiers
+```{r, echo = FALSE, message=FALSE}
+full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, 
+                        mods = ~flux_range * mean_temp_constant + exp_age + size + org_level, 
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 full_var_model
 ```
+
+```{r}
+#Model selection 
+
+AIC(temp_acclimation_model, trait_acclimation_model, acclimation_model, temp_full_var_model, trait_full_var_model, full_var_model)
+```
+
+```{r}
+normalized_acclim <- dat_acclim_ES %>% filter(between(yi, -5, 5))
+normalized_var <- dat_full_var_ES  %>% filter(between(yi, -5, 5))
+
+dummy_acclim <- rma.mv(yi, vi, data=normalized_acclim, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML")
+dummy_var <- rma.mv(yi, vi, data=normalized_var, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML")
+```
+
+```{r}
+install.packages("devtools")
+install.packages("tidyverse")
+install.packages("metafor")
+install.packages("patchwork")
+install.packages("R.rsp")
+
+devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", method= 'libcurl', force = TRUE, build_vignettes = TRUE)
+library(orchaRd)
+library(patchwork)
+I2_acclim <- i2_ml(dummy_var)
+I2_var <-i2_ml(dummy_acclim)
+
+
+
+p1 <- orchard_plot(dummy_acclim, mod = "Int", xlab = "Standardised mean difference", transfm = "none", )+
+  annotate(geom = "text", x = 0, y = 1.5, label = "Acclimation")+
+  annotate(geom = "text", x = -4.7, y = 1.5, label = paste0("italic(I)^{2} == ",
+round(I2_acclim[1] * 100, 2)), color = "black", parse = TRUE, size = 5) + annotate(geom = "text",
+x = -3.7, y = 1.49, label = "%", color = "black", parse = FALSE, size = 5)
+
+p2 <- orchard_plot(dummy_var, mod = "Int", xlab = "Standardised mean difference", transfm = "none")+
+  annotate(geom = "text", x = 0, y = 1.5, label = "Non-linear averaging and acclimation")+
+  annotate(geom = "text", x = -4.1, y = 1.5, label = paste0("italic(I)^{2} == ",
+round(I2_var[1] * 100, 2)), color = "black", parse = TRUE, size = 5) + annotate(geom = "text",
+x = -3.1, y = 1.49, label = "%", color = "black", parse = FALSE, size = 5)
+p1 / p2
+
+```
+
+
+```{r}
+normalized_acclim %>%
+  ggplot(aes(y=yi, x=as.factor(mean_temp_reared)))+
+  geom_boxplot()+
+  geom_point()
+
+normalized_acclim %>%
+  group_by(flux_range, mean_temp_reared) %>%
+  summarise(yi=mean(yi)) %>%
+  ggplot(aes(x=flux_range, y=yi, color=mean_temp_reared))+
+  geom_point(size= 4)+
+  geom_smooth(method="lm")
+```
+
+
 
 # Figures
 ```{r, echo = FALSE, message=FALSE}
@@ -168,3 +222,34 @@ ggplot(aes(x=mean_temp_constant, y = yi, fill=flux_range))+
   ggtitle("Non-linear averaging")
 ```
 
+# Supplementary code and models 
+
+## Acclimation data split out by CT data and other thermal performance metrics 
+```{r, echo=FALSE, message=FALSE, results='hide'}
+CT_acclim_data <- dat_acclim_ES %>%
+  filter(resp_def %in% c("CTmax", "CT max", "CTmin", "LTmax", "LTmin", "Topt", "Tpref", "Thermal preference", "ULT50", "Scope of thermal tolerance (CTmax - CTmin)"))
+
+curve_acclim_data <- dat_acclim_ES %>%
+  filter(resp_def %in% 
+           c("CCO activity", "CS activity", "LDH activity", "log CO2 production", 
+             "maximal swimming speed", "Maximum burst swim speed", 
+             "Performance breadth (Tbr)", "RMR", "ULT50", "Speed", "Time to heat knockdown",
+             "Ucrit", "Umax"))
+```
+
+## CT aggregated model 
+```{r, echo=FALSE, message=FALSE, results='hide'}
+CT_model <-rma.mv(yi, vi, data=CT_acclim_data, mods = ~flux_range * mean_temp_reared +
+                        exp_age + size + org_level + exposure_temp, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML")
+CT_model
+```
+## Remaining acclimation metrics model 
+```{r, echo=FALSE, message=FALSE, results='hide'}
+curve_model <- rma.mv(yi, vi, data=curve_acclim_data, mods = ~flux_range * mean_temp_reared +
+                        exp_age + size + org_level + exposure_temp, 
+               random = ~1 |  study_id/ experiment_id/ response_id,
+                 method="REML")
+curve_model
+```

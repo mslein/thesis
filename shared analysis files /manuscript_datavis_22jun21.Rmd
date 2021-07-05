@@ -127,6 +127,15 @@ full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES,
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
 full_var_model
+
+
+pacman::p_load(esc, dmetar)
+summary(full_var_model)
+convert_z2r(1.3702) #r=0.8787378
+var.comp(full_var_model)
+
+summary(acclimation_model)
+convert_z2r(6.0093) #r=0.9999879
 ```
 
 ```{r}
@@ -163,6 +172,57 @@ round(I2_var[1] * 100, 2)), color = "black", parse = TRUE, size = 5) + annotate(
 x = -3.1, y = 1.49, label = "%", color = "black", parse = FALSE, size = 5)
 p1 / p2
 ```
+
+
+```{r, echo=FALSE}
+mean_temp_acclim <- normalized_acclim %>%
+  group_by(mean_temp_reared, flux_range) %>%
+  summarise(yi=mean(yi), 
+            vi=mean(vi))
+
+mean_var<-normalized_var %>%
+  group_by(mean_temp_constant, flux_range) %>%
+  summarise(yi=mean(yi), 
+            vi=mean(vi))
+```
+
+```{r, echo=FALSE}
+ggplot(normalized_acclim, aes(y=yi, x=mean_temp_reared, fill=flux_range))+
+  geom_line(y=0, linetype = "dashed")+
+  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.7, height = 0.7)+
+  geom_errorbar(data=mean_temp_acclim, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  geom_point(data = mean_temp_acclim, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis()+
+  ggtitle("Acclimation and fluctuation range")
+ 
+ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=flux_range))+
+  geom_jitter(alpha = 0.5, pch=21,size=1)+
+  geom_line(y=0, linetype = "dashed")+
+  geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis()+
+  ggtitle("Non-linear averaging + acclimation and fluctuation range")
+  
+
+ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=mean_temp_constant))+
+  geom_jitter(alpha = 0.5, pch=21,size=1)+
+  geom_line(y=0, linetype = "dashed")+
+  geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis()+
+  ggtitle("Non-linear averaging + acclimation and mean temperature")
+  
+
+```
+
+
+
+
+
+
 
 ```{r, echo=FALSE}
 forest_acclim<- dat_acclim_ES %>%

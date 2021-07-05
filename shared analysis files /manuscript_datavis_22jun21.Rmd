@@ -11,8 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE, results = 'hide', message=FALSE}
 ## loading libraries 
-pacman::p_load(metafor, tidyverse, viridis, visreg, forcats)
-
+pacman::p_load(metafor, tidyverse, viridis, visreg, forcats, devtools, patchwork, R.rsp)
+#devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", method= 'libcurl', force = TRUE, build_vignettes = TRUE)
+library(orchaRd)
 #load data
 dat_acclim_0<- read_csv("acclimation_dummytherm_30jun.csv")
 dat_full_var_0 <- read_csv("metafor.csv")
@@ -73,7 +74,7 @@ knitr::include_graphics("conceptfig_30jun.png")
 This data and analysis accounts for the temperatures at which organisms are reared and how their performance compares when exposed to different temperature. The results from this model has very similar results from the model I originally ran for my thesis...
 
 ## Acclimation with temperature modifiers
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE}
 temp_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, mods=~flux_range * mean_temp_reared,
                random = ~1 | study_id / experiment_id/ response_id,
                  method="REML") 
@@ -81,7 +82,7 @@ temp_acclimation_model
 ```
 
 ## Acclimation with trait modifiers
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE}
 trait_acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
                                 mods = ~exp_age + size + org_level + exposure_temp, 
                random = ~1 |  study_id/ experiment_id/ response_id,
@@ -90,7 +91,7 @@ trait_acclimation_model
 ```
 
 ## Acclimation with all modifiers
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE}
 acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
             mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp, 
                random = ~1 |  study_id/ experiment_id/ response_id,
@@ -103,7 +104,7 @@ acclimation_model
 This uses the full dataset from my thesis (with more data from the additional search). Interesting that this time, mean temp is the only significant predictor?
 
 ## Non-linear averaging model with temperature modifiers
-```{r, echo= FALSE, message=FALSE}
+```{r, echo= FALSE}
 temp_full_var_model <- rma.mv(yi, vi, data=dat_full_var_ES, 
                                 mods = ~flux_range * mean_temp_constant,
                random = ~1 | study_id / experiment_id/ response_id,
@@ -112,7 +113,7 @@ temp_full_var_model
 ```
 
 ## Non-linear averaging model with trait modifiers
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE}
 trait_full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~exp_age + size + org_level, 
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML") 
@@ -120,7 +121,7 @@ trait_full_var_model
 ```
 
 ## Non-linear averaging model with all modifiers
-```{r, echo = FALSE, message=FALSE}
+```{r, echo = FALSE}
 full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, 
                         mods = ~flux_range * mean_temp_constant + exp_age + size + org_level, 
                random = ~1 |  study_id/ experiment_id/ response_id,
@@ -130,11 +131,12 @@ full_var_model
 
 ```{r}
 #Model selection 
-
 AIC(temp_acclimation_model, trait_acclimation_model, acclimation_model, temp_full_var_model, trait_full_var_model, full_var_model)
 ```
 
-```{r}
+# Figures
+
+```{r, echo=FALSE}
 normalized_acclim <- dat_acclim_ES %>% filter(between(yi, -5, 5))
 normalized_var <- dat_full_var_ES  %>% filter(between(yi, -5, 5))
 
@@ -144,22 +146,9 @@ dummy_acclim <- rma.mv(yi, vi, data=normalized_acclim,
 dummy_var <- rma.mv(yi, vi, data=normalized_var, 
                random = ~1 |  study_id/ experiment_id/ response_id,
                  method="REML")
-```
 
-```{r}
-install.packages("devtools")
-install.packages("tidyverse")
-install.packages("metafor")
-install.packages("patchwork")
-install.packages("R.rsp")
-
-devtools::install_github("itchyshin/orchard_plot", subdir = "orchaRd", method= 'libcurl', force = TRUE, build_vignettes = TRUE)
-library(orchaRd)
-library(patchwork)
 I2_acclim <- i2_ml(dummy_var)
 I2_var <-i2_ml(dummy_acclim)
-
-
 
 p1 <- orchard_plot(dummy_acclim, mod = "Int", xlab = "Standardised mean difference", transfm = "none", )+
   annotate(geom = "text", x = 0, y = 1.5, label = "Acclimation")+
@@ -173,54 +162,77 @@ p2 <- orchard_plot(dummy_var, mod = "Int", xlab = "Standardised mean difference"
 round(I2_var[1] * 100, 2)), color = "black", parse = TRUE, size = 5) + annotate(geom = "text",
 x = -3.1, y = 1.49, label = "%", color = "black", parse = FALSE, size = 5)
 p1 / p2
+```
+
+```{r, echo=FALSE}
+forest_acclim<- dat_acclim_ES %>%
+  group_by(mean_temp_reared, flux_range) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(mean_temp_reared, flux_range), sep = " range ", remove = FALSE)%>%
+  arrange(desc(flux_range))
+
+forest_var<- normalized_var %>%
+  group_by(mean_temp_constant, flux_range) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(mean_temp_constant, flux_range), sep = "+/-", remove = FALSE) %>%
+  arrange(desc(flux_range))
+
+forest(forest_acclim$mean_yi, forest_acclim$mean_vi, slab=forest_acclim$group, pch =19, psize=1, col = "gray2", 
+       header=TRUE, cex=0.77)
+
+forest(forest_var$mean_yi, forest_var$mean_vi, slab=forest_var$group, pch =19, psize=1, col = "gray2", 
+       header=TRUE, cex=0.77)
 
 ```
 
 
-```{r}
+## Funnel plot of acclimation data 
+````{r, echo=FALSE}
+funnel(dummy_acclim, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+```
+## Funnel plot of non-linear averaging + acclimation data 
+````{r, echo=FALSE}
+funnel(dummy_var, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+```
+
+```{r, echo=FALSE}
+p3<-normalized_acclim %>%
+  ggplot(aes(x=flux_range, y=yi, color=as.factor(mean_temp_reared)))+
+  scale_color_viridis(discrete=TRUE)+
+  geom_point(size=3, alpha =0.5)+
+  geom_smooth(method="lm")+
+  theme_bw()
+
+p4<-normalized_var %>%
+  ggplot(aes(x=flux_range, y=yi, color=as.factor(mean_temp_constant)))+
+  scale_color_viridis(discrete=TRUE)+
+  geom_point(size= 3, alpha =0.5)+
+  geom_smooth(method="lm")+
+  theme_bw()
+p3/p4
+
 normalized_acclim %>%
-  ggplot(aes(y=yi, x=as.factor(mean_temp_reared)))+
+  ggplot(aes(x=as.factor(flux_range), y=yi, color=as.factor(mean_temp_reared)))+
+  scale_color_viridis(discrete = TRUE)+
   geom_boxplot()+
-  geom_point()
+  geom_point(alpha=0.5)+
+  theme_bw()
 
-normalized_acclim %>%
-  group_by(flux_range, mean_temp_reared) %>%
-  summarise(yi=mean(yi)) %>%
-  ggplot(aes(x=flux_range, y=yi, color=mean_temp_reared))+
-  geom_point(size= 4)+
-  geom_smooth(method="lm")
+normalized_var %>%
+  ggplot(aes(x=as.factor(flux_range), y=yi, color=as.factor(mean_temp_constant)))+
+  scale_color_viridis(discrete = TRUE)+
+  geom_boxplot()+
+  geom_point(alpha=0.5)+
+  theme_bw()
+
 ```
 
 
 
-# Figures
-```{r, echo = FALSE, message=FALSE}
-dat_acclim_ES %>%
-  filter(yi > -5) %>%
-ggplot(aes(x=mean_temp_reared, y = yi, fill=flux_range))+
-  geom_point(alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
-  scale_fill_viridis('Temperature range (°C)', option = "C")+
-  theme_classic()+
-  xlab("Mean Temperature (°C)")+
-  ylab("SMD")+
-  geom_line(y=0, linetype = "dashed")+
-  theme(legend.position="bottom")+
-  ggtitle("Acclimation")
-```
 
-```{r, echo = FALSE, message=FALSE}
-dat_full_var_ES %>%
-  filter(yi > -5) %>%
-ggplot(aes(x=mean_temp_constant, y = yi, fill=flux_range))+
-  geom_point(alpha = 0.9, pch=21,size=3,colour="black", width = 0.7, height = 0.7)+
-  scale_fill_viridis('Temperature range (°C)', option = "C")+
-  theme_classic()+
-  xlab("Mean Temperature (°C)")+
-  ylab("SMD")+
-  geom_line(y=0, linetype = "dashed")+
-  theme(legend.position="bottom")+
-  ggtitle("Non-linear averaging")
-```
+
 
 # Supplementary code and models 
 

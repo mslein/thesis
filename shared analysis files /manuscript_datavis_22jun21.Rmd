@@ -78,7 +78,7 @@ This data and analysis accounts for the temperatures at which organisms are rear
 temp_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, mods=~flux_range * mean_temp_reared,
                random = ~1 | study_id / experiment_id/ response_id,
                  method="REML") 
-temp_acclimation_model
+summary(temp_acclimation_model)
 ```
 
 ## Acclimation with trait modifiers
@@ -93,8 +93,8 @@ trait_acclimation_model
 ## Acclimation with all modifiers
 ```{r, echo=FALSE}
 acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
-            mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
+            mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp +environment, 
+               random = ~1 |  study_id/ response_id,
                  method="REML") 
 acclimation_model
 ```
@@ -122,21 +122,254 @@ trait_full_var_model
 
 ## Non-linear averaging model with all modifiers
 ```{r, echo = FALSE}
+
 full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, 
-                        mods = ~flux_range * mean_temp_constant + exp_age + size + org_level, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
+                        mods = ~flux_range * mean_temp_constant + exp_age + size + org_level +environment, 
+               random = list(~1 | study_id/ response_id),
                  method="REML") 
 full_var_model
-
 
 pacman::p_load(esc, dmetar)
 summary(full_var_model)
 convert_z2r(1.3702) #r=0.8787378
-var.comp(full_var_model)
 
 summary(acclimation_model)
 convert_z2r(6.0093) #r=0.9999879
+
+acclimation_model
+
+##I-SQUARED CALCS FROM ASSINK + WIBBELINK 2016 (doi:10.20982/tqmp.12.3.p154)
+n <- length(dat_acclim_ES$vi)
+list.inverse.variances <- 1 / (dat_acclim_ES$vi)
+sum.inverse.variances <- sum(list.inverse.variances)
+squared.sum.inverse.variances <- (sum.inverse.variances) ^ 2
+list.inverse.variances.square <- 1 / (dat_acclim_ES$vi^2)
+sum.inverse.variances.square <-
+sum(list.inverse.variances.square)
+numerator <- (n - 1) * sum.inverse.variances
+denominator <- squared.sum.inverse.variances -
+sum.inverse.variances.square
+estimated.sampling.variance <- numerator / denominator
+I2_1 <- (estimated.sampling.variance) / (acclimation_model$sigma2[1]
++ acclimation_model$sigma2[2] + estimated.sampling.variance)
+I2_2 <- (acclimation_model$sigma2[1]) / (acclimation_model$sigma2[1]
++ acclimation_model$sigma2[2] + estimated.sampling.variance)
+I2_3 <- (acclimation_model$sigma2[2]) / (acclimation_model$sigma2[1]
++ acclimation_model$sigma2[2] + estimated.sampling.variance)
+
+
+amountvariancelevel1 <- I2_1 * 100
+amountvariancelevel2 <- I2_2 * 100
+amountvariancelevel3 <- I2_3 * 100
+amountvariancelevel1 ##16.20628
+amountvariancelevel2 ##1.966446e-06
+amountvariancelevel3 ##83.79732
+
+n_f <- length(dat_full_var_ES$vi)
+list.inverse.variances_f <- 1 / (dat_full_var_ES$vi)
+sum.inverse.variances_f <- sum(list.inverse.variances_f)
+squared.sum.inverse.variances_f <- (sum.inverse.variances_f) ^ 2
+list.inverse.variances.square_f <- 1 / (dat_full_var_ES$vi^2)
+sum.inverse.variances.square_f <-
+sum(list.inverse.variances.square_f)
+numerator_f <- (n_f - 1) * sum.inverse.variances_f
+denominator_f <- squared.sum.inverse.variances_f -
+sum.inverse.variances.square_f
+estimated.sampling.variance_f <- numerator_f / denominator_f
+I2_1f <- (estimated.sampling.variance_f) / (full_var_model$sigma2[1]
++ full_var_model$sigma2[2] + estimated.sampling.variance_f)
+I2_2f <- (full_var_model$sigma2[1]) / (full_var_model$sigma2[1]
++ full_var_model$sigma2[2] + estimated.sampling.variance_f)
+I2_3f <- (full_var_model$sigma2[2]) / (full_var_model$sigma2[1]
++ full_var_model$sigma2[2] + estimated.sampling.variance_f)
+
+
+amountvariancelevel1f <- I2_1f * 100
+amountvariancelevel2f <- I2_2f * 100
+amountvariancelevel3f <- I2_3f * 100
+amountvariancelevel1f #7.629274
+amountvariancelevel2f #15.61584
+amountvariancelevel3f #76.75488
+
+
+count(dat_acclim_ES, resp_units)
+count(dat_full_var_ES, resp_units)
+
+
+dat_acclim_ES %>%
+  
+
 ```
+
+
+```{r}
+#looking at the effects sizes for each categorical moderator not related to temperature...
+# acclimation analysis 
+
+a <- dat_acclim_ES %>%
+  group_by(size) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(size), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Body Size")+
+  ylim(-1,3.5)+
+  ggtitle("ACCLIMATION")+
+  coord_flip()
+  
+
+b <- dat_acclim_ES %>%
+  group_by(exp_age) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(exp_age), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Age")+
+  ylim(-1,0.75)+
+  coord_flip()
+
+c <- dat_acclim_ES %>%
+  group_by(environment) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(environment), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Environment")+
+  ylim(-1,0.5)+
+  coord_flip()
+
+
+
+# assay analysis
+d <- dat_full_var_ES %>%
+  group_by(size) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(size), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Body Size")+
+  ylim(-1,3.5)+
+  ggtitle("ASSAY")+
+  coord_flip()
+
+e <- dat_full_var_ES %>%
+  group_by(exp_age) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(exp_age), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Age")+
+  ylim(-1,0.75)+
+  coord_flip()
+
+f <- dat_full_var_ES %>%
+  group_by(org_level) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(org_level), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Organization Level")+
+  ggtitle("ASSAY")+
+  coord_flip()
+
+g <- dat_full_var_ES %>%
+  group_by(environment) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=as.factor(environment), y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Environment")+
+  ylim(-1,0.5)+
+  coord_flip()
+
+acclimation_mods<- a + b + c 
+var_mods <- d + e + g
+
+acclimation_mods / var_mods
+
+f
+
+```
+
+
+
+
+
+```{r}
+full_model_coefficients<- as.data.frame(coef(full_var_model)) %>%
+  tibble::rownames_to_column("covariates") %>%
+  rename(value = "coef(full_var_model)") %>%
+  arrange(desc(value)) %>%
+  mutate(coefficients = c("intercept", "experimental age", "fluctuation range:mean temperature",
+                          "fluctuation range", "environmentterrestrial", "mean temperature",
+                                       "size", "organization level" 
+                                      ), 
+         lb = c(0.4597, -0.0738, -0.0008, -0.0646, -0.7671, -0.0719, -0.5783, -0.8331), 
+         ub= c(2.2806, 0.2150, 0.0031, 0.0227, 0.6876, -0.0214, 0.2861, 0.2738)) 
+
+
+label.df_full <- data.frame(coefficients = c("intercept","mean temperature"),
+                       value = c(0.35, -0.2))
+
+ggplot(data=full_model_coefficients, aes(x = reorder(coefficients, value),
+             y = value,
+             fill = value > 0)) +
+  geom_errorbar(aes(ymin=lb, ymax=ub), width=.2, size =0.6,
+                 position=position_dodge(.95), color = "black")+ 
+  geom_point(size = 3, show.legend = FALSE, pch=21,colour="black") +
+  labs(x = NULL, y = "Coefficient estimate") +
+  scale_fill_viridis(discrete = TRUE)+
+  theme_bw()+
+  coord_flip()+
+  geom_text(data=label.df_full, label = "*", color = "black", size = 6)
+
+
+acclim_model_coefficients<- as.data.frame(coef(acclimation_model)) %>%
+  tibble::rownames_to_column("covariates") %>%
+  rename(value = "coef(acclimation_model)") %>%
+  arrange(desc(value)) %>%
+  mutate(coefficients = c("intercept", "fluctuation range:mean temperature",  "exposure_temp",
+                          "experimental age", "mean temperature", 
+                          "fluctuation range", "environmentterrestrial","size"), 
+         lb = c(3.2855, 0.0140, -0.0030, -0.7078, -0.3457, -0.6700, -2.5526, -1.4671), 
+         ub= c(8.6331, 0.0312, 0.0093, 0.5405, -0.1733, -0.2814, 1.0587, 0.1290)) 
+
+label.df_acclim <- data.frame(coefficients = c("intercept", "fluctuation range:mean temperature", "mean temperature", "fluctuation range"),
+                       value = c(3, -0.5, -0.7, -1))
+
+ggplot(data=acclim_model_coefficients, aes(x = reorder(coefficients, value),
+             y = value,
+             fill = value > 0)) +
+  geom_errorbar(aes(ymin=lb, ymax=ub), width=.2, size =0.6,
+                 position=position_dodge(.95), color = "black")+ 
+  geom_point(size = 3, show.legend = FALSE, pch=21,colour="black") +
+  labs(x = NULL, y = "Coefficient estimate") +
+  scale_fill_viridis(discrete = TRUE)+
+  theme_bw()+
+  coord_flip()+
+  geom_text(data=label.df_acclim, label = "*", color = "black", size = 6)
+```
+
+
+
+
+
+
+
 
 ```{r}
 #Model selection 
@@ -146,19 +379,20 @@ AIC(temp_acclimation_model, trait_acclimation_model, acclimation_model, temp_ful
 # Figures
 
 ```{r, echo=FALSE}
+#creating orchard plot with trimmed/normalized effect sizes from both datasets
 normalized_acclim <- dat_acclim_ES %>% filter(between(yi, -5, 5))
 normalized_var <- dat_full_var_ES  %>% filter(between(yi, -5, 5))
-
+#corresponding models
 dummy_acclim <- rma.mv(yi, vi, data=normalized_acclim, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
+               random = ~1 |  study_id/ response_id,
                  method="REML")
 dummy_var <- rma.mv(yi, vi, data=normalized_var, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
+               random = ~1 |  study_id/ response_id,
                  method="REML")
-
+#calculating I2 for each of the analyses
 I2_acclim <- i2_ml(dummy_var)
 I2_var <-i2_ml(dummy_acclim)
-
+#orchard plots 
 p1 <- orchard_plot(dummy_acclim, mod = "Int", xlab = "Standardised mean difference", transfm = "none", )+
   annotate(geom = "text", x = 0, y = 1.5, label = "Acclimation")+
   annotate(geom = "text", x = -4.7, y = 1.5, label = paste0("italic(I)^{2} == ",
@@ -175,6 +409,7 @@ p1 / p2
 
 
 ```{r, echo=FALSE}
+#calculating mean effect sizes by mean temperature and flux range for ggplots
 mean_temp_acclim <- normalized_acclim %>%
   group_by(mean_temp_reared, flux_range) %>%
   summarise(yi=mean(yi), 
@@ -194,58 +429,40 @@ ggplot(normalized_acclim, aes(y=yi, x=mean_temp_reared, fill=flux_range))+
   geom_point(data = mean_temp_acclim, size=4, pch=21, colour="black")+
   theme_bw()+
   scale_fill_viridis()+
-  ggtitle("Acclimation and fluctuation range")
+  ggtitle("Acclimation and fluctuation range")+
+  labs(x = "Mean temperature (°C)",
+       y ="SMD",
+       fill = "Temperature fluctuation range (°C)")+
+  theme(legend.position="bottom")
  
 ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=flux_range))+
-  geom_jitter(alpha = 0.5, pch=21,size=1)+
+  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
   geom_line(y=0, linetype = "dashed")+
   geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
   geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
   theme_bw()+
   scale_fill_viridis()+
-  ggtitle("Non-linear averaging + acclimation and fluctuation range")
+  ggtitle("Non-linear averaging + acclimation and fluctuation range")+
+  labs(x = "Mean temperature (°C)",
+       y ="SMD",
+       fill = "Temperature fluctuation range (°C)")+
+  theme(legend.position="bottom")
   
 
 ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=mean_temp_constant))+
-  geom_jitter(alpha = 0.5, pch=21,size=1)+
+  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
   geom_line(y=0, linetype = "dashed")+
   geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
   geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
   theme_bw()+
   scale_fill_viridis()+
-  ggtitle("Non-linear averaging + acclimation and mean temperature")
-  
-
+  ggtitle("Non-linear averaging + acclimation and mean temperature")+
+  labs(x = "Mean temperature (°C)",
+       y ="SMD",
+       fill = "Mean temperature (°C)")+
+  theme(legend.position="bottom")
 ```
 
-
-
-
-
-
-
-```{r, echo=FALSE}
-forest_acclim<- dat_acclim_ES %>%
-  group_by(mean_temp_reared, flux_range) %>%
-  summarise(mean_yi = mean(yi),
-            mean_vi = mean(vi)) %>%
-  unite(group, c(mean_temp_reared, flux_range), sep = " range ", remove = FALSE)%>%
-  arrange(desc(flux_range))
-
-forest_var<- normalized_var %>%
-  group_by(mean_temp_constant, flux_range) %>%
-  summarise(mean_yi = mean(yi),
-            mean_vi = mean(vi)) %>%
-  unite(group, c(mean_temp_constant, flux_range), sep = "+/-", remove = FALSE) %>%
-  arrange(desc(flux_range))
-
-forest(forest_acclim$mean_yi, forest_acclim$mean_vi, slab=forest_acclim$group, pch =19, psize=1, col = "gray2", 
-       header=TRUE, cex=0.77)
-
-forest(forest_var$mean_yi, forest_var$mean_vi, slab=forest_var$group, pch =19, psize=1, col = "gray2", 
-       header=TRUE, cex=0.77)
-
-```
 
 
 ## Funnel plot of acclimation data 
@@ -256,6 +473,15 @@ funnel(dummy_acclim, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), 
 ````{r, echo=FALSE}
 funnel(dummy_var, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
 ```
+
+
+
+
+
+
+
+
+# Supplementary code and models 
 
 ```{r, echo=FALSE}
 p3<-normalized_acclim %>%
@@ -290,11 +516,30 @@ normalized_var %>%
 ```
 
 
+```{r, echo=FALSE}
+forest_acclim<- dat_acclim_ES %>%
+  group_by(mean_temp_reared, flux_range) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(mean_temp_reared, flux_range), sep = " range ", remove = FALSE)%>%
+  arrange(desc(flux_range))
+
+forest_var<- normalized_var %>%
+  group_by(mean_temp_constant, flux_range) %>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  unite(group, c(mean_temp_constant, flux_range), sep = "+/-", remove = FALSE) %>%
+  arrange(desc(flux_range))
+
+forest(forest_acclim$mean_yi, forest_acclim$mean_vi, slab=forest_acclim$group, pch =19, psize=1, col = "gray2", 
+       header=TRUE, cex=0.77)
+
+forest(forest_var$mean_yi, forest_var$mean_vi, slab=forest_var$group, pch =19, psize=1, col = "gray2", 
+       header=TRUE, cex=0.77)
+
+```
 
 
-
-
-# Supplementary code and models 
 
 ## Acclimation data split out by CT data and other thermal performance metrics 
 ```{r, echo=FALSE, message=FALSE, results='hide'}

@@ -33,7 +33,23 @@ dat_acclim_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp,
 
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
 dat_acclim_ES<-dat_acclim_ES %>% 
-  filter (!is.na(yi)) 
+  filter (!is.na(yi)) %>%
+  mutate(metric = case_when(resp_def %in% c("log CO2 production", 
+                                            "maximal swimming speed", 
+                                            "Maximum burst swim speed", 
+                                            "Oxygen consumption", 
+                                            "Performance breadth (Tbr)",
+                                            "Time to heat knockdown",
+                                            "Scope of thermal tolerance (CTmax - CTmin)",
+                                            "RMR", 
+                                            "Speed", "Thermal preference", 
+                                            "Topt", "Tpref", 
+                                            "Ucrit", "Umax") ~ "Pmax",
+                            resp_def %in% c("CTmin", "LTmin") ~ "CTmin",
+                            resp_def %in% c("CT max", "CTmax", "LTmax", "ULT50") ~ "CTmax",
+                            resp_def %in% c("LDH activity", "CCO activity", 
+                                            "CS activity") ~ "Biochemical"
+                            ))
 ```
 
 
@@ -51,7 +67,68 @@ dat_full_var_ES <-escalc(measure="SMD", m1i=constant_resp, m2i=flux_resp,
 
 # Note in the above, you loose ~15% of data because of missing sample sizes and SEs reported, below these are removed for now
 dat_full_var_ES<-dat_full_var_ES %>% 
-  filter (!is.na(yi)) 
+  filter (!is.na(yi)) %>%
+  mutate(metric = case_when(resp_def %in% c("abdomen length", "adult weight", 
+                                            "blade length/total leaf length", 
+                                            "body length", "body mass", "body size", 
+                                            "body weight", "carapace height", 
+                                            "carapace width", 
+                                            "final length", "final mass",
+                                            "fore-limb length", 
+                                            "group mean body weight", 
+                                            "head length", "head width", 
+                                            "hind-limb length", 
+                                            "hypocotyl length", "mass", 
+                                            "maximal length", 
+                                            "snout-vent length", "tail length",
+                                            "total length", 
+                                            "wing centroid", "body (centroid) size", 
+                                            "egg mass", "ovary mass, dry", 
+                                             "testes mass, dry", 
+                                             "pupal shell weight", "pupal weight") ~ "size", 
+                            resp_def %in%  c("average cumulative number of eggs laid per female",
+                                             "hatching success", 
+                                             "offspring per mating",
+                                             "total offspring", 
+                                             "percent females") ~ "fecundity",
+                            resp_def %in% c("Adult eclosion to death", 
+                                            "dessication tolerance", 
+                                            "egg to adult viability",
+                                            "infestation rate", 
+                                            "Mortaility", 
+                                            "Parasitism success", 
+                                            "startvation tolerance", 
+                                            "success of parasitism", 
+                                            "survival", "Survival", 
+                                            "Larval mortaility", "longevity") ~ "survivorship", 
+                            resp_def %in% c("aquatic speed", 
+                                            "daily energy expenditure", 
+                                            "distance covered", 
+                                            "Energy consumption", 
+                                            "feeding efficiency", 
+                                            "feeding rate", ,
+                                            "RMR", "sprint speed",
+                                          "Sqrt Cellular energy allocation (CEA)", 
+                                            "Sqrt of available energy", 
+                                          "population growth rate","productivity", 
+                                             "rate of change", 
+                                             "specific growth rate") ~ "energetics", 
+                            resp_def %in% c("development time", 
+                                            "development to stages 35-37", 
+                                            "days to first slough", 
+                                            "developmental time", 
+                                            "egg to adult", 
+                                            "egg to pupa", "incubation period", 
+                                            "median days to bolt", 
+                                            "Third instar to adult", 
+                                            "Third instar to pupa") ~ "development", 
+                            resp_def %in% c("Catalase", "cortisol",
+                                             "Hexokinase", "Hsp70", 
+                                            "oxidative damage", 
+                                            "Pyruvate kinase", "TAC", 
+                                            "SOD", "glucose") ~ "biochemistry"))
+
+count(dat_full_var_ES, metric)
 ```
 # Motivation and Hypotheses
 
@@ -191,14 +268,6 @@ amountvariancelevel1f #7.629274
 amountvariancelevel2f #15.61584
 amountvariancelevel3f #76.75488
 
-
-count(dat_acclim_ES, resp_units)
-count(dat_full_var_ES, resp_units)
-
-
-dat_acclim_ES %>%
-  
-
 ```
 
 
@@ -305,6 +374,36 @@ f
 
 ```
 
+```{r}
+g <- dat_full_var_ES %>%
+  group_by(metric)%>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=metric, y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Metric")+
+  ylim(-2.6,1.7)+
+  coord_flip()+
+  ggtitle("ASSAY")
+
+
+h <- dat_acclim_ES %>%
+  group_by(metric)%>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=metric, y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Metric")+
+  ylim(-2.6,1.7)+
+  coord_flip()+
+  ggtitle("ACCLIMATION")
+
+h / g
+```
 
 
 

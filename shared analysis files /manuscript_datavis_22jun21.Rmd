@@ -106,13 +106,13 @@ dat_full_var_ES<-dat_full_var_ES %>%
                                             "distance covered", 
                                             "Energy consumption", 
                                             "feeding efficiency", 
-                                            "feeding rate", ,
+                                            "feeding rate",
                                             "RMR", "sprint speed",
                                           "Sqrt Cellular energy allocation (CEA)", 
                                             "Sqrt of available energy", 
                                           "population growth rate","productivity", 
                                              "rate of change", 
-                                             "specific growth rate") ~ "energetics", 
+                                          "specific growth rate") ~ "energetics", 
                             resp_def %in% c("development time", 
                                             "development to stages 35-37", 
                                             "days to first slough", 
@@ -128,7 +128,7 @@ dat_full_var_ES<-dat_full_var_ES %>%
                                             "Pyruvate kinase", "TAC", 
                                             "SOD", "glucose") ~ "biochemistry"))
 
-count(dat_full_var_ES, metric)
+
 ```
 # Motivation and Hypotheses
 
@@ -169,9 +169,9 @@ trait_acclimation_model
 
 ## Acclimation with all modifiers
 ```{r, echo=FALSE}
-acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
-            mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp +environment, 
-               random = ~1 |  study_id/ response_id,
+acclimation_model<-rma.mv(yi, vi, data=normalized_acclim, 
+            mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp +environment +metric, 
+               random = ~1 |  study_id/response_id,
                  method="REML") 
 acclimation_model
 ```
@@ -200,9 +200,9 @@ trait_full_var_model
 ## Non-linear averaging model with all modifiers
 ```{r, echo = FALSE}
 
-full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, 
-                        mods = ~flux_range * mean_temp_constant + exp_age + size + org_level +environment, 
-               random = list(~1 | study_id/ response_id),
+full_var_model <-rma.mv(yi, vi, data=normalized_var, 
+                        mods = ~flux_range * mean_temp_constant + exp_age + size  +environment +org_level +metric, 
+               random = ~1 | study_id/response_id,
                  method="REML") 
 full_var_model
 
@@ -269,6 +269,22 @@ amountvariancelevel2f #15.61584
 amountvariancelevel3f #76.75488
 
 ```
+
+```{r}
+#devtools::install_github("MathiasHarrer/dmetar")
+library(dmetar)
+res <- var.comp(full_var_model)
+plot(res)
+
+
+res_acclim <- var.comp(acclimation_model)
+plot(res_acclim)
+
+```
+
+
+
+
 
 
 ```{r}
@@ -370,12 +386,10 @@ var_mods <- d + e + g
 
 acclimation_mods / var_mods
 
-f
-
 ```
 
 ```{r}
-g <- dat_full_var_ES %>%
+h <- dat_full_var_ES %>%
   group_by(metric)%>%
   summarise(mean_yi = mean(yi),
             mean_vi = mean(vi)) %>%
@@ -384,12 +398,12 @@ g <- dat_full_var_ES %>%
   geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
   scale_fill_viridis(discrete = TRUE)+
   xlab("Metric")+
-  ylim(-2.6,1.7)+
+  ylim(-3,1.7)+
   coord_flip()+
   ggtitle("ASSAY")
 
 
-h <- dat_acclim_ES %>%
+i <- dat_acclim_ES %>%
   group_by(metric)%>%
   summarise(mean_yi = mean(yi),
             mean_vi = mean(vi)) %>%
@@ -398,11 +412,47 @@ h <- dat_acclim_ES %>%
   geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
   scale_fill_viridis(discrete = TRUE)+
   xlab("Metric")+
-  ylim(-2.6,1.7)+
+  ylim(-3,1.7)+
   coord_flip()+
   ggtitle("ACCLIMATION")
 
-h / g
+i / h
+
+h <- dat_full_var_ES %>%
+  group_by(metric)%>%
+  summarise(mean_yi = mean(yi),
+            mean_vi = mean(vi)) %>%
+  ggplot(aes(x=metric, y=mean_yi, fill = mean_yi > 0))+
+  geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  geom_point(size = 4, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  xlab("Metric")+
+  ylim(-3,1.7)+
+  coord_flip()+
+  ggtitle("ASSAY")
+
+i <- normalized_acclim %>%
+  ggplot(aes(x=yi, y=mean_temp_reared,size = flux_range))+
+  #geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  #geom_boxplot(aes(fill = yi > 0))+
+  geom_point(aes(fill = yi > 0), alpha=0.8, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  coord_flip()+
+  ggtitle("ACCLIMATION")+
+  facet_wrap(~metric)
+
+j <- normalized_var %>%
+  ggplot(aes(x=yi, y=mean_temp_constant, size=flux_range))+
+  #geom_errorbar(aes(ymin=mean_yi-mean_vi, ymax=mean_yi+mean_vi), width=.2)+
+  #geom_boxplot(aes(fill = yi > 0))+
+  geom_point(aes(fill = yi > 0), alpha=0.8, show.legend = FALSE, pch=21,colour="black")+
+  scale_fill_viridis(discrete = TRUE)+
+  coord_flip()+
+  ggtitle("ASSAY")+
+  facet_wrap(~metric)
+ 
+i + j
+
 ```
 
 
@@ -534,7 +584,7 @@ ggplot(normalized_acclim, aes(y=yi, x=mean_temp_reared, fill=flux_range))+
        fill = "Temperature fluctuation range (°C)")+
   theme(legend.position="bottom")
  
-ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=flux_range))+
+ggplot(normalized_var, aes(y=yi, fill=mean_temp_constant, x=flux_range))+
   geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
   geom_line(y=0, linetype = "dashed")+
   geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
@@ -542,35 +592,44 @@ ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=flux_range))+
   theme_bw()+
   scale_fill_viridis()+
   ggtitle("Non-linear averaging + acclimation and fluctuation range")+
-  labs(x = "Mean temperature (°C)",
+  labs(x = "flux range",
        y ="SMD",
-       fill = "Temperature fluctuation range (°C)")+
-  theme(legend.position="bottom")
-  
-
-ggplot(normalized_var, aes(y=yi, x=mean_temp_constant, fill=mean_temp_constant))+
-  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
-  geom_line(y=0, linetype = "dashed")+
-  geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
-  geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
-  theme_bw()+
-  scale_fill_viridis()+
-  ggtitle("Non-linear averaging + acclimation and mean temperature")+
-  labs(x = "Mean temperature (°C)",
-       y ="SMD",
-       fill = "Mean temperature (°C)")+
-  theme(legend.position="bottom")
+       fill = "mean temp")+
+  theme(legend.position="bottom")+ 
+  facet_wrap(~mean_temp_constant)
 ```
 
 
 
 ## Funnel plot of acclimation data 
 ````{r, echo=FALSE}
-funnel(dummy_acclim, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+funnel(acclimation_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+
+
+par(mfrow=c(2,2))
+ 
+### draw funnel plots
+funnel(dummy_acclim, main="Standard Error")
+funnel(dummy_acclim, yaxis="vi", main="Sampling Variance")
+funnel(dummy_acclim, yaxis="seinv", main="Inverse Standard Error")
+funnel(dummy_acclim, yaxis="vinv", main="Inverse Sampling Variance")
+
+
+funnel(dummy_var, main="Standard Error")
+funnel(dummy_var, yaxis="vi", main="Sampling Variance")
+funnel(dummy_var, yaxis="seinv", main="Inverse Standard Error")
+funnel(dummy_var, yaxis="vinv", main="Inverse Sampling Variance")
+
+ggplot(normalized_acclim, aes(y=yi, x=vi))+
+  geom_point()
+
+ggplot(normalized_var, aes(y=yi, x=vi))+
+  geom_point()
+
 ```
 ## Funnel plot of non-linear averaging + acclimation data 
 ````{r, echo=FALSE}
-funnel(dummy_var, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
+funnel(full_var_model, level=c(90, 95, 99), shade=c("white", "gray55", "gray75"), refline=0, legend=TRUE)
 ```
 
 

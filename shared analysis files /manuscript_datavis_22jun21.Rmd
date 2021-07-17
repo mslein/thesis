@@ -50,6 +50,8 @@ dat_acclim_ES<-dat_acclim_ES %>%
                             resp_def %in% c("LDH activity", "CCO activity", 
                                             "CS activity") ~ "Biochemical"
                             ))
+
+count(dat_acclim_ES, metric)
 ```
 
 
@@ -153,17 +155,17 @@ This data and analysis accounts for the temperatures at which organisms are rear
 ## Acclimation with temperature modifiers
 ```{r, echo=FALSE}
 temp_acclimation_model <- rma.mv(yi, vi, data=dat_acclim_ES, mods=~flux_range * mean_temp_reared,
-               random = ~1 | study_id / experiment_id/ response_id,
-                 method="REML") 
-summary(temp_acclimation_model)
+               random = ~1 | study_id / response_id,
+                 method="ML") 
+temp_acclimation_model
 ```
 
 ## Acclimation with trait modifiers
 ```{r, echo=FALSE}
 trait_acclimation_model<-rma.mv(yi, vi, data=dat_acclim_ES, 
-                                mods = ~exp_age + size + org_level + exposure_temp, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
-                 method="REML") 
+                                mods = ~exp_age + size + org_level + exposure_temp + metric, 
+               random = ~1 |  study_id/  response_id,
+                 method="ML") 
 trait_acclimation_model
 ```
 
@@ -172,7 +174,7 @@ trait_acclimation_model
 acclimation_model<-rma.mv(yi, vi, data=normalized_acclim, 
             mods = ~flux_range * mean_temp_reared + exp_age + size + org_level + exposure_temp +environment +metric, 
                random = ~1 |  study_id/response_id,
-                 method="REML") 
+                 method="ML") 
 acclimation_model
 ```
 
@@ -184,16 +186,16 @@ This uses the full dataset from my thesis (with more data from the additional se
 ```{r, echo= FALSE}
 temp_full_var_model <- rma.mv(yi, vi, data=dat_full_var_ES, 
                                 mods = ~flux_range * mean_temp_constant,
-               random = ~1 | study_id / experiment_id/ response_id,
-                 method="REML") 
+               random = ~1 | study_id / response_id,
+                 method="ML") 
 temp_full_var_model
 ```
 
 ## Non-linear averaging model with trait modifiers
 ```{r, echo = FALSE}
-trait_full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~exp_age + size + org_level, 
-               random = ~1 |  study_id/ experiment_id/ response_id,
-                 method="REML") 
+trait_full_var_model <-rma.mv(yi, vi, data=dat_full_var_ES, mods = ~exp_age + size + org_level +metric +environment, 
+               random = ~1 |  study_id/ response_id,
+                 method="ML") 
 trait_full_var_model
 ```
 
@@ -203,8 +205,16 @@ trait_full_var_model
 full_var_model <-rma.mv(yi, vi, data=normalized_var, 
                         mods = ~flux_range * mean_temp_constant + exp_age + size  +environment +org_level +metric, 
                random = ~1 | study_id/response_id,
-                 method="REML") 
+                 method="ML") 
 full_var_model
+
+
+
+
+full_no_org <- rma.mv(yi, vi, data=normalized_var, 
+                        mods = ~flux_range * mean_temp_constant + exp_age + size  +environment +metric, 
+               random = ~1 | study_id/response_id,
+                 method="ML") 
 
 pacman::p_load(esc, dmetar)
 summary(full_var_model)
@@ -522,7 +532,11 @@ ggplot(data=acclim_model_coefficients, aes(x = reorder(coefficients, value),
 
 ```{r}
 #Model selection 
-AIC(temp_acclimation_model, trait_acclimation_model, acclimation_model, temp_full_var_model, trait_full_var_model, full_var_model)
+AIC(temp_acclimation_model, trait_acclimation_model, acclimation_model)
+
+AIC(temp_full_var_model, trait_full_var_model, full_var_model, full_no_org)
+
+
 ```
 
 # Figures
@@ -597,6 +611,69 @@ ggplot(normalized_var, aes(y=yi, fill=mean_temp_constant, x=flux_range))+
        fill = "mean temp")+
   theme(legend.position="bottom")+ 
   facet_wrap(~mean_temp_constant)
+
+
+ggplot(normalized_var, aes(y=flux_range, fill=yi > 0, x=mean_temp_constant))+
+  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
+  geom_line(y=0, linetype = "dashed")+
+  #geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis(discrete =TRUE)+
+  ggtitle("Non-linear averaging + acclimation and fluctuation range")+
+  labs(x = "mean temp",
+       y ="fllux_range",
+       fill = "yi")+
+  theme(legend.position="bottom")+
+  geom_smooth(method=lm)
+
+
+ggplot(normalized_var, aes(y=flux_range, fill=yi > 0, x=mean_temp_constant))+
+  geom_jitter(alpha = 0.5, pch=21,size=1, width = 0.3, height = 0.7)+
+  geom_line(y=0, linetype = "dashed")+
+  #geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis(discrete =TRUE)+
+  ggtitle("Non-linear averaging + acclimation and fluctuation range")+
+  labs(x = "flux range",
+       y ="SMD",
+       fill = "mean temp")+
+  theme(legend.position="bottom")+
+  geom_smooth(method=lm)
+
+ggplot(normalized_var, aes(y=yi, fill=mean_temp_constant, x=flux_range))+
+  geom_jitter(alpha = 0.5, pch=21,size=3, width = 0.3, height = 0.7)+
+  geom_line(y=0, linetype = "dashed")+
+  #geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  #geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis()+
+  ggtitle("Non-linear averaging + acclimation and fluctuation range")+
+  labs(x = "flux_range",
+       y ="yi",
+       fill = "mean temp")+
+  theme(legend.position="bottom")+
+  geom_smooth(method=lm)+
+  facet_wrap(~mean_temp_constant)
+
+
+ggplot(normalized_acclim, aes(y=yi, x=flux_range, fill=mean_temp_reared))+
+  geom_jitter(alpha = 0.5, pch=21,size=3, width = 0.3, height = 0.7)+
+  geom_line(y=0, linetype = "dashed")+
+  #geom_errorbar(data=mean_var, aes(ymin=yi-vi, ymax=yi+vi), size=.7, width=.4, color = "black")+
+  #geom_jitter(data = mean_var, size=4, pch=21, colour="black")+
+  theme_bw()+
+  scale_fill_viridis()+
+  ggtitle("Acclimation and fluctuation range")+
+  labs(x = "mean temp",
+       y ="yi",
+       fill = " flux range")+
+  theme(legend.position="bottom")+
+  geom_smooth(method=lm)+
+  facet_wrap(~mean_temp_reared)
+
+
 ```
 
 
